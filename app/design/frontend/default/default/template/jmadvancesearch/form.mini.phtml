@@ -1,0 +1,79 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/* @var $this Mage_Core_Block_Template */
+/* @var $catalogSearchHelper Mage_Catalogsearch_Helper_Data */
+$catalogSearchHelper =  $this->helper('catalogsearch');
+?>
+<form id="search_mini_form" action="<?php echo Mage::getBaseUrl().'catalogsearch/advanced/result/'?>" method="get">
+	<div class="jm-search-category">
+		<div class="select-box lits-category">
+			<select name="category" id="category_search_field">
+				<option value="all"> <?php echo $this->__('All Categories');?></option>
+				<?php 
+					$helper = Mage::helper('catalog/category');
+					$StoreCategories= $helper->getStoreCategories();
+				?>
+				<?php foreach ($StoreCategories as $_category): ?>
+					<?php if($_category->getData('is_active')): ?>
+						<option value="<?php echo $_category->getId(); ?>"><?php echo $_category->getName();?></option>
+					<?php endif; ?>
+				<?php endforeach ?>
+			</select>
+		</div>
+		<div class="form-search">
+			<input type="text" maxlength="128" class="input-text " title="Name" value="" id="name" name="name">
+			<button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><?php echo $this->__('Search') ?></span></span></button>
+		</div>
+		
+		<?php 
+		$enable= Mage::getStoreConfig("joomlart_jmadvancesearch/joomlart_jmadvancesearch/maxnumbers");
+		if (isset($enable)&&$enable):
+		?>
+			<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmadvancesearch/js/jquery.autocomplete.js');?>"></script>
+			<script type="text/javascript">
+		
+				(function($) {
+					var options, a,params;
+					params= 'cate='+$('#search_mini_form #category_search_field').val();
+				   options = { 
+						   serviceUrl:'<?php echo(mage::getBaseUrl())?>jmadvancesearch/ajax/auto',
+						   params: params,
+						   noCache: true,
+						   dataType: 'jsonp',
+						   addfeild: '#search_mini_form #category_search_field',
+					    };
+				    a = $('#search_mini_form #name').autocomplete(options);
+					$('#search_mini_form #category_search_field').change(function(){
+						params= 'cate='+$('#search_mini_form #category_search_field').val();
+						a.autocomplete().disable();
+						a.autocomplete().setOptions({params: params});
+						a.autocomplete().enable();
+					});
+				})(jQuery);
+			</script>
+		<?php endif;?>
+	</div>
+</form>

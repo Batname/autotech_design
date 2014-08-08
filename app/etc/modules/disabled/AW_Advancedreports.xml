@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <AW_Advancedreports>
+            <active>true</active>
+            <codePool>local</codePool>
+        </AW_Advancedreports>
+    </modules>
+</config>
+
+        <!-- OK -->

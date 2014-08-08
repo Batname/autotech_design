@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_orderexport_profile_index>
+        <reference name="content">
+            <block type="xtento_orderexport/adminhtml_profile" name="xtento_orderexport_profile"/>
+        </reference>
+    </adminhtml_orderexport_profile_index>
+    <!--<adminhtml_orderexport_profile_edit>
+        <reference name="head">
+            <action method="addJs"><script>xtento/orderexport/ace/ace.js</script></action>
+        </reference>
+    </adminhtml_orderexport_profile_edit>-->
+    <adminhtml_orderexport_profile_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="xtento_orderexport/adminhtml_profile_grid" name="xtento_orderexport_profile_grid"/>
+        </block>
+    </adminhtml_orderexport_profile_grid>
+    <adminhtml_orderexport_profile_destination>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="xtento_orderexport/adminhtml_profile_edit_tab_destination" name="orderexport.profile.edit.tab.destination"/>
+            <block type="xtento_orderexport/adminhtml_widget_grid_serializer" name="destination_grid_serializer">
+                <reference name="destination_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>orderexport.profile.edit.tab.destination</grid_block_name>
+                        <data_callback>getSelectedDestinations</data_callback>
+                        <hidden_input_name>destination_ids</hidden_input_name>
+                        <reload_param_name>profile_destinations</reload_param_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_orderexport_profile_destination>
+    <adminhtml_orderexport_profile_destinationgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="xtento_orderexport/adminhtml_profile_edit_tab_destination" name="orderexport.profile.edit.tab.destination"/>
+        </block>
+    </adminhtml_orderexport_profile_destinationgrid>
+    <adminhtml_orderexport_profile_loggrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="xtento_orderexport/adminhtml_profile_edit_tab_log" name="orderexport.profile.edit.tab.log"/>
+        </block>
+    </adminhtml_orderexport_profile_loggrid>
+    <adminhtml_orderexport_profile_historygrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="xtento_orderexport/adminhtml_profile_edit_tab_history" name="orderexport.profile.edit.tab.history"/>
+        </block>
+    </adminhtml_orderexport_profile_historygrid>
+    <adminhtml_orderexport_destination_index>
+        <reference name="content">
+            <block type="xtento_orderexport/adminhtml_destination" name="xtento_orderexport_destination"/>
+        </reference>
+    </adminhtml_orderexport_destination_index>
+    <adminhtml_orderexport_destination_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="xtento_orderexport/adminhtml_destination_grid" name="xtento_orderexport_destination_grid"/>
+        </block>
+    </adminhtml_orderexport_destination_grid>
+    <adminhtml_orderexport_log_index>
+        <reference name="content">
+            <block type="xtento_orderexport/adminhtml_log" name="xtento_orderexport_log"/>
+        </reference>
+    </adminhtml_orderexport_log_index>
+    <adminhtml_orderexport_log_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="xtento_orderexport/adminhtml_log_grid" name="xtento_orderexport_log_grid"/>
+        </block>
+    </adminhtml_orderexport_log_grid>
+    <adminhtml_orderexport_history_index>
+        <reference name="content">
+            <block type="xtento_orderexport/adminhtml_history" name="xtento_orderexport_history"/>
+        </reference>
+    </adminhtml_orderexport_history_index>
+    <adminhtml_orderexport_history_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="xtento_orderexport/adminhtml_history_grid" name="xtento_orderexport_history_grid"/>
+        </block>
+    </adminhtml_orderexport_history_grid>
+    <adminhtml_orderexport_manual_index>
+        <reference name="head">
+            <action method="addJs">
+                <file>mage/cookies.js</file>
+            </action>
+            <!--
+            <action method="addJs"><script>xtento/orderexport/jquery/jquery-1.8.3.min.js</script></action>
+            <action method="addJs"><script>xtento/orderexport/jquery/jquery.fileDownload.js</script></action>
+            <action method="addJs"><script>xtento/orderexport/jquery/jquery.blockUI.js</script></action>
+            <action method="addJs"><script>prototype/prototype.js</script></action>
+            -->
+        </reference>
+        <reference name="content">
+            <block type="xtento_orderexport/adminhtml_manual" name="xtento_orderexport_manual"/>
+        </reference>
+    </adminhtml_orderexport_manual_index>
+    <adminhtml_orderexport_tools_index>
+        <reference name="content">
+            <block type="xtento_orderexport/adminhtml_tools" name="xtento_orderexport_tools">
+                <block type="xtento_orderexport/adminhtml_tools_import" name="xtento_orderexport_tools_import" template="xtento/orderexport/tools/import.phtml"/>
+                <block type="xtento_orderexport/adminhtml_tools_export" name="xtento_orderexport_tools_export" template="xtento/orderexport/tools/export.phtml"/>
+            </block>
+        </reference>
+    </adminhtml_orderexport_tools_index>
+</layout>

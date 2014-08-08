@@ -1,0 +1,388 @@
+.jm-slideshow {
+	border-bottom: 5px solid #2c2d35;
+	margin: 30px 0 20px;
+	border: 0;
+}
+
+.jm-slidewrap {
+	background: white no-repeat left bottom;
+	margin: 0;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	height: auto;
+}
+
+.jm-slide-main-wrap {
+	position: relative;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.jm-slide-main {
+	position: absolute;
+	z-index: 1;
+}
+
+.jm-slide-item {
+	display: block;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+}
+
+.jm-slide-item img {
+	padding: 0;
+}
+
+.jm-slide-thumbs-wrap {
+	background: #000;
+	position: absolute;
+	overflow: hidden;
+	clear: both;
+	bottom: 40px;
+	right: 40px;
+	z-index: 999;
+}
+
+.jm-thumbs-top {
+	margin-top: 10px;
+}
+
+.jm-thumbs-bottom {
+	margin-bottom: 10px;
+}
+
+.jm-thumbs-left {
+	margin-left: 10px;
+}
+
+.jm-thumbs-right {
+	margin-right: 10px;
+}
+
+.jm-slide-thumbs,
+.jm-slide-thumbs-mask,
+.jm-slide-thumbs-handles {
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 5000px;
+}
+
+.jm-slide-descs {
+	display: none;
+}
+
+.jm-slide-thumb,
+.jm-slide-thumbs-handles span {
+	display: block;
+	margin: 0;
+	float: left;
+	cursor: pointer;
+	color: #eee;
+	background: url(../images/blank.png) left top no-repeat;
+}
+
+.jm-slide-thumbs-mask-left,
+.jm-slide-thumbs-mask-right,
+.jm-slide-thumbs-mask-center {
+	float: left;
+}
+
+.jm-slide-thumbs-mask-left, .jm-slide-thumbs-mask-right{
+	background: #000000;
+}
+
+.jm-mask-desc {
+	display: block;
+	z-index: 100;
+	position: relative;
+	padding: 20px;
+}
+
+.jm-mask-desc .jm-slide-desc br {
+	display: none;
+}
+
+.jm-mask-desc .readmore {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	color: #B5B5B4;
+	font-size: 100%;
+	margin: 30px;
+}
+
+.jm-mask-desc a.readon:hover,
+.jm-mask-desc a.readon:active,
+.jm-mask-desc a.readon:focus {
+	color: #eee;
+}
+
+.jm-slide-buttons {
+	z-index: 999;
+	position: absolute;
+	display: block;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	width: 100%;
+}
+
+.jm-slide-controls {
+	position: absolute;
+	z-index: 901;
+}
+
+.jm-slide-buttons span {
+	background: url(../images/arrow.png) left top no-repeat;
+	color: #eee;
+	display: block;
+	cursor: pointer;
+	width: 37px;
+	height: 37px;
+	text-indent: -10000em;
+}
+
+.jm-slide-buttons span.jm-slide-prev {
+	float: left;
+	margin-left: 30px;
+	background-position: left top;
+}
+
+.jm-slide-buttons span.jm-slide-next {
+	float: right;
+	margin-right: 30px;
+	background-position: right top;
+}
+
+.jm-slide-buttons span.jm-slide-prev:hover {
+	background-position: left bottom;
+}
+
+.jm-slide-buttons span.jm-slide-next:hover {
+	background-position: right bottom;
+}
+
+.jm-slide-mask {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	height: 70px;
+	width: 210px;
+	z-index: 99;
+	display: none;
+	filter: none !important; /* IE < 9 */
+}
+
+.jm-slide-thumb img {
+	overflow: hidden;
+}
+
+.jm-mask-desc .jm-slide-desc {
+	color: #999;
+	font-size: 100%;
+	padding: 30px;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	min-width: 300px;
+}
+
+.jm-mask-desc .jm-slide-desc h3 {
+	color: #eee;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+	font-size: 200%;
+}
+
+.jm-mask-top {
+	margin-top: 0px;
+}
+
+.jm-mask-bottom {
+	margin-bottom: 0px;
+}
+
+.jm-mask-left {
+	margin-left: 0px;
+}
+
+.jm-mask-right {
+	margin-right: 0px;
+}
+
+.jm-slide-desc {
+	color: #999;
+	font-size: 115%;
+}
+
+.jm-slide-desc h3 {
+	color: #eee;
+	font-size: 200%;
+	font-weight: normal;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+.jm-slide-desc p {
+	font-weight: normal;
+}
+
+.jm-slide-desc .price {
+	font-size: 165%;
+	color: #eee;
+	margin-right: 30px;
+	vertical-align: middle;
+}
+
+.jm-slide-desc button span {
+	background-image: url(../images/btn-bg-01-active.png);
+}
+
+.jm-slide-desc button:hover span {
+	background-image: url(../images/btn-bg-01.png);
+}
+
+/* Slideshow layout style ---*/
+.jm-vertical_right {
+	overflow: hidden;
+	position: absolute;
+	right: 80px;
+	top: 40px;
+	z-index: 100;
+}
+
+.jm-vertical_left {
+	left: 80px;
+	overflow: hidden;
+	position: absolute;
+	top: 40px;
+	z-index: 999;
+}
+
+.jm-vertical_right .active {}
+
+.jm-vertical_left .active {}
+
+.jm-slide-right{
+	margin-left: auto;
+	right: 0;
+	top: 0;
+}
+
+.jm-slideshowjm-vertical_left .jm-mask-desc .jm-slide-desc {
+	right: 40px;
+	left: auto;
+}
+
+.jm-slideshowjm-vertical_left .jm-mask-desc a.readon {
+	right: 60px;
+	left: auto;
+}
+
+.jm-vertical_right .jm-slide-thumb,
+.jm-vertical_right .jm-slide-thumbs-handles span {
+	float: none!important; 
+}
+
+.jm-vertical_left .jm-slide-thumb,
+.jm-vertical_left .jm-slide-thumbs-handles span {
+	float: none!important; 
+}
+
+.jm-slide-thumbs-wrap .active .jm-slide-thumb-inner {
+	background-image: url(../images/grad2.gif);
+	color: #eee;
+}
+
+.jm-vertical_right .jm-slide-thumbs-mask-left,
+.jm-vertical_right .jm-slide-thumbs-mask-right,
+.jm-vertical_right .jm-slide-thumbs-mask-center {
+	display: block;
+	float: none;
+}
+
+.jm-vertical_left .jm-slide-thumbs-mask-left,
+.jm-vertical_left .jm-slide-thumbs-mask-right,
+.jm-vertical_left .jm-slide-thumbs-mask-center {
+	display: block;
+	float: none;
+}
+
+.jm-vertical_left .jm-slide-thumb-inner {
+	margin-left: 0px;
+	margin-right: 19px;
+}
+
+.jm-slide-thumb-inner img {
+	background: #fcfcfc;
+	border: 1px solid #ddd;
+	margin: 15px 15px 4px !important;
+	padding: 3px;
+}
+ 
+.jm-slide-thumb-inner h3 {
+	color: #1c1c1c;
+	font-family: "Segoe UI", Verdana, Arial, sans-serif;
+	font-size: 125%;
+	margin-top: 15px;
+}
+
+.jm-slide-thumb-inner .ratings {
+	height: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+.jm-slide-thumb-inner .price-box {
+	font-size: 110%;
+	margin: 0;
+}
+
+.active .jm-slide-thumb-inner {
+	border-top: 1px solid #65A7F5;
+}
+
+.active .jm-slide-thumb-inner img {
+	background: #88BBF7;
+	border: 1px solid #5F9DE7;
+}
+
+.active .jm-slide-thumb-inner h3 {
+	color: #eee;
+}
+
+.ja-slideshow .block .block-title {
+	margin-bottom: 20px;
+	margin-top: -10px;
+	padding-top: 0;
+}
+
+.jm-slide-loader {
+	background: #fff url(../images/ajax-loader.gif);
+	width: 16px;
+	height: 11px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -5px 0 0 -8px;
+	z-index: 501;
+}
+
+.jm-slide-progress {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	height: 7px;
+	z-index: 500;
+	background: #fff;
+	opacity: 0.7;
+}

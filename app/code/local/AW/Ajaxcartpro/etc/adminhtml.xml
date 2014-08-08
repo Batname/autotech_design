@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    
+	<acl>
+	    <resources>
+		<all>
+		    <title>Allow Everything</title>
+		</all>
+		<admin>
+		    <children>
+			<system>
+			    <children>
+				<config>
+				    <children>
+					<ajaxcartpro>
+					    <title>aheadWorks - AJAX Cart Pro</title>
+					</ajaxcartpro>
+				    </children>
+				</config>
+			    </children>
+			</system>
+		    </children>
+		</admin>
+	    </resources>
+	</acl>
+	<translate>
+	    <modules>
+		<AW_Ajaxcartpro>
+		    <files>
+			<default>AW_Ajaxcartpro.csv</default>
+		    </files>
+		</AW_Ajaxcartpro>
+	    </modules>
+	</translate>
+    
+</config>

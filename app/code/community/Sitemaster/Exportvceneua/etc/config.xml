@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Sitemaster_Exportvceneua>
+            <version>1.0.0</version>
+        </Sitemaster_Exportvceneua>
+    </modules>
+
+	<adminhtml>
+		<translate>
+            <modules>
+                <mage_adminhtml>
+                    <files>
+                        <exportvceneua>Sitemaster_Exportvceneua.csv</exportvceneua>
+                    </files>
+                </mage_adminhtml>
+            </modules>
+        </translate>
+	</adminhtml>
+
+	<default>
+        <exportvceneua>
+            <settings>
+                <storename>4auto-service.com.ua</storename>
+            </settings>
+        </exportvceneua>
+    </default>
+
+    <default>
+        <exportvceneua>
+            <settings>
+                <shopname>4auto</shopname>
+            </settings>
+        </exportvceneua>
+    </default>
+
+    <global>
+        <helpers>
+            <exportvceneua>
+                <class>Sitemaster_Exportvceneua_Helper</class>
+            </exportvceneua>
+        </helpers>
+		<blocks>
+			<exportvceneua>
+				<class>Sitemaster_Exportvceneua_Block</class>
+			</exportvceneua>
+		</blocks>
+    </global>
+	<admin>
+        <routers>
+            <exportvceneua>
+                <use>admin</use>
+                <args>
+                    <module>Sitemaster_Exportvceneua</module>
+                    <frontName>exportvceneua</frontName>
+                </args>
+            </exportvceneua>
+        </routers>
+    </admin>
+
+</config>
+ 

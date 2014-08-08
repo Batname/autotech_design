@@ -1,0 +1,31 @@
+<?xml version="1.0"?> 
+<config>
+          <acl>
+             <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <wavethemes_jmbasetheme>
+                                            <title>JM Basetheme</title>
+                                        </wavethemes_jmbasetheme>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+			<modules>
+				<Wavethemes_Jmbasetheme>
+					<files>
+						<default>Wavethemes_Jmbasetheme.csv</default>
+					</files>
+				</Wavethemes_Jmbasetheme>
+			</modules>
+		</translate>
+</config>

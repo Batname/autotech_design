@@ -1,0 +1,111 @@
+
+/*-------------------MASLA---------------------------*/
+
+#menu_masla ul{
+    list-style: none;
+    padding-left: 70px;
+    margin: 0;	
+}
+
+#menu_masla ul li a{
+	color: #000;
+}
+
+#menu_masla ul li a:hover{
+	color: #FF171F;
+}
+
+
+#menu_masla{
+    width: 810px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#col{
+    width: 235px;
+    margin: 10px 0 15px 0;
+    float: left;
+}
+
+#col1{
+    width: 270px;
+    margin: 10px 0 15px 0;
+    float: left;
+}
+
+#col2{
+    width: 300px;
+    margin: 10px 0 15px 0;
+    float: left;
+}
+
+#item_menu{
+    height: 40px;
+}
+
+#item_menu img{
+   position: absolute;
+   padding-left: 15px;
+}
+
+#item_menu a{
+    padding-left: 70px;
+    line-height: 40px;
+	color: #000;
+}
+
+#item_menu a:hover{
+	color: #FF171F;
+}
+
+
+/*-----------------------Original MASLA----------------------------*/
+
+
+#original_oils{
+    width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+/*-----------------------Smazki----------------------------*/
+
+#smazki{
+    width: 550px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/*-----------------------Filters----------------------------*/
+
+#filters{
+    width: 470px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/*-----------------------Zap4asti----------------------------*/
+
+#zap4asti{
+    width: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/*-----------------------Avtokosmetika----------------------------*/
+
+#avtokosmetika{
+    width: 560px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/*-----------------------Avtohimia----------------------------*/
+
+#avto_himia{
+    width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}

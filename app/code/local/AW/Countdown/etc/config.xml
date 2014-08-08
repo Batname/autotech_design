@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <AW_Countdown>
+            <version>1.0.3</version><platform>ce</platform>
+        </AW_Countdown>
+    </modules>
+    <crontab>
+        <jobs>
+            <awcountdown_cron>
+                <schedule>
+                    <cron_expr>* * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>awcountdown/cron::run</model>
+                </run>
+            </awcountdown_cron>
+        </jobs>
+    </crontab>
+    <frontend>
+        <layout>
+            <updates>
+                <awcountdown module="AW_Countdown">
+                    <file>aw_countdown.xml</file>
+                </awcountdown>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <AW_Countdown>
+                    <files>
+                        <default>AW_Countdown.csv</default>
+                    </files>
+                </AW_Countdown>
+            </modules>
+        </translate>
+        <routers>
+            <awcountdown>
+                <use>standard</use>
+                <args>
+                    <module>AW_Countdown</module>
+                    <frontName>awcountdown</frontName>
+                </args>
+            </awcountdown>
+        </routers>
+    </frontend>
+    <global>
+        <helpers>
+            <awcountdown>
+                <class>AW_Countdown_Helper</class>
+            </awcountdown>
+        </helpers>
+        <models>
+            <awcountdown>
+                <class>AW_Countdown_Model</class>
+                <resourceModel>awcountdown_countdown_mysql4</resourceModel>
+            </awcountdown>
+            <awcountdown_countdown_mysql4>
+                <class>AW_Countdown_Model_Countdown_Mysql4</class>
+                <entities>
+                    <countdown>
+                        <table>aw_countdown</table>
+                    </countdown>
+                </entities>
+            </awcountdown_countdown_mysql4>
+            <awtrigger>
+                <class>AW_Countdown_Model</class>
+                <resourceModel>awcountdown_trigger_mysql4</resourceModel>
+            </awtrigger>
+            <awcountdown_trigger_mysql4>
+                <class>AW_Countdown_Model_Trigger_Mysql4</class>
+                <entities>
+                    <trigger>
+                        <table>aw_countdown_trigger</table>
+                    </trigger>
+                </entities>
+            </awcountdown_trigger_mysql4>
+        </models>
+        <resources>
+            <awcountdown_setup>
+                <setup>
+                    <module>AW_Countdown</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </awcountdown_setup>
+            <awcountdown_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </awcountdown_write>
+            <awcountdown_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </awcountdown_read>
+        </resources>
+        <blocks>
+            <awcountdown>
+                <class>AW_Countdown_Block</class>
+            </awcountdown>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <awcountdown_admin>
+                <use>admin</use>
+                <args>
+                    <module>AW_Countdown</module>
+                    <frontName>admin_awcountdown</frontName>
+                </args>
+            </awcountdown_admin>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <promo>
+                <children>
+                    <awcountdown module="awcountdown">
+                        <title>Countdown Timers</title>
+                        <sort_order>10</sort_order>
+                        <children>
+                            <new module="awcountdown">
+                                <title>Add new</title>
+                                <sort_order>10</sort_order>
+                                <action>awcountdown_admin/adminhtml_countdown/new</action>
+                            </new>
+                            <list module="awcountdown">
+                                <title>Blocks List</title>
+                                <sort_order>20</sort_order>
+                                <action>awcountdown_admin/adminhtml_countdown/list</action>
+                            </list>
+                        </children>
+                    </awcountdown>
+                </children>
+            </promo>
+        </menu>
+        <enterprise>
+            <admingws>
+                <collection_load_before>
+                    <awcountdown_countdown_collection>addStoreFilter</awcountdown_countdown_collection>
+                </collection_load_before>
+                <model_save_before>
+                    <awcountdown__countdown>AW_Countdown_Model_Countdown::awSaveBefore</awcountdown__countdown>
+                </model_save_before>
+            </admingws>
+        </enterprise>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <catalog>
+                            <children>
+                                <awcountdown module="awcountdown">
+                                    <title>Countdown Timers</title>
+                                    <sort_order>10</sort_order>
+                                    <children>
+                                        <new module="awcountdown">
+                                            <title>Add new</title>
+                                            <sort_order>10</sort_order>
+                                        </new>
+                                        <list module="awcountdown">
+                                            <title>Blocks List</title>
+                                            <sort_order>20</sort_order>
+                                        </list>
+                                    </children>
+                                </awcountdown>
+                            </children>
+                        </catalog>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <awcountdown>
+                                            <title>Countdown Timers section</title>
+                                        </awcountdown>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <awcountdown module="awcountdown">
+                    <file>aw_countdown.xml</file>
+                </awcountdown>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <AW_Countdown>
+                    <files>
+                        <default>AW_Countdown.csv</default>
+                    </files>
+                </AW_Countdown>
+            </modules>
+        </translate>
+    </adminhtml>
+    <phpunit>
+        <suite>
+            <modules>
+                <AW_Countdown />
+            </modules>
+        </suite>
+    </phpunit>
+</config>

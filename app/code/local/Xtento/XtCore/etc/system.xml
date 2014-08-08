@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <xtento translate="label">
+            <label><![CDATA[<img src="//www.xtento.com/media/images/extension_logo.png" alt="XTENTO" height="20" style="vertical-align:bottom;margin-left:-1px;"/> XTENTO Extensions]]></label>
+            <sort_order>650</sort_order>
+        </xtento>
+    </tabs>
+    <sections>
+        <xtcore translate="label" module="xtcore">
+            <label>General Configuration</label>
+            <tab>xtento</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <adminnotification translate="label">
+                    <label>Extensions and Notifications</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <comment>
+                        <![CDATA[
+                    <a href="http://www.xtento.com" target="_blank"><img src="//www.xtento.com/media/images/xtento_module.png" style="border:none;"></a>
+
+                    <div style="margin-top:0px 4px 8px; color: #666;">Extension and Notification Setup</div>
+                    <strong>Copyright © <script>var today=new Date(); document.write(today.getFullYear());</script> <a href="http://www.xtento.com" target="_blank">www.xtento.com</a> / <a href="mailto:support@xtento.com">support@xtento.com</a></strong><br /><br/>
+                    Got questions? Feel like you need help? Please check out our <a href="http://support.xtento.com/" target="_blank">support wiki</a> before contacting us.<br/><br/>
+                    <hr />
+                    ]]>
+                    </comment>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Notifications enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enabled>
+                        <follow translate="label">
+                            <label>I'd like to receive updates about</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>xtcore/feed_source_updates_type</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                            <comment>Hold down Ctrl to select multiple notifications.</comment>
+                        </follow>
+                    </fields>
+                </adminnotification>
+                <!--<extensions translate="label">
+                    <label>Installed Extensions</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>xtcore/system_config_form_xtento_extensions</frontend_model>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                </extensions>-->
+            </groups>
+        </xtcore>
+        <xtstore translate="label" module="xtcore">
+            <label>XTENTO Extension Store</label>
+            <tab>xtento</tab>
+            <sort_order>101</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <store translate="label">
+                    <label>XTENTO Extensions Store</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>xtcore/system_config_form_xtento_store</frontend_model>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                </store>
+            </groups>
+        </xtstore>
+    </sections>
+</config>
+<!--
+/**
+ * Product:       Xtento_XtCore (1.0.0)
+ * ID:            PFfyWdN87L18YuBkt8s4hyQ0GKm/8YlUX7OfWyzQ7VQ=
+ * Packaged:      2014-05-07T09:11:40+00:00
+ * Last Modified: 2012-12-29T16:05:33+01:00
+ * File:          app/code/local/Xtento/XtCore/etc/system.xml
+ * Copyright:     Copyright (c) 2014 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+-->

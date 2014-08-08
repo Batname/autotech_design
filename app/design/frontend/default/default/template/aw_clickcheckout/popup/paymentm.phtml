@@ -1,0 +1,63 @@
+<?php
+/**
+* aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * aheadWorks does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * aheadWorks does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Clickcheckout
+ * @version    1.1.2
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ */
+?>
+<?php
+	?>
+<div class="aw-clickcheckout-popup-payment">
+    <h4 style="text-align: left;"><?php echo $this->__('Payment method')?></h4>
+    <table>
+        <?php $defaultMethod = '';?>
+    <?php foreach ($this->getMethods() as $_method): $_code = $_method->getCode() ?>
+        <?php if($this->isEnabled($_code)): ?>
+            <?php if($defaultMethod=='') $defaultMethod=$_code;?>
+            <tr><td>
+            <?php if( sizeof($this->getMethods()) > 1 ): ?>
+                <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->htmlEscape($_method->getTitle()) ?>" onclick="payment.switchMethod('<?php echo $_code ?>'); oneClickCheckout.recalculateTotals('<?php echo Mage::getUrl('awclickcheckout/oneclick/validate');?>','<?php echo Mage::getUrl('checkout/onepage/saveOrder');?>'); oneClickCheckout.recalculateTotals('<?php echo Mage::getUrl('awclickcheckout/oneclick/validate');?>','<?php echo Mage::getUrl('checkout/onepage/saveOrder');?>');"<?php if($this->getSelectedMethodCode()==$_code): ?><?php $defaultMethod=$_code;?> checked="checked"<?php endif; ?> class="radio" />
+            <?php else: ?>
+                <span class="no-display"><input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" checked="checked" class="radio" /></span>
+            <?php endif; ?>
+                <label for="p_method_<?php echo $_code ?>"><?php echo $this->getMethodTitle($_method) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
+            </td></tr>
+            <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
+            <tr><td>
+                <?php echo $html; ?>
+            </td></tr>
+            <?php endif; ?>
+        <?php endif;?>
+    <?php endforeach; ?>
+        <?php if($defaultMethod==''):?>
+    <span class="no-display"><input id="p_method_free" value="free" type="radio" name="payment[method]" checked="checked" class="radio" /></span>
+        <label for="p_method_free"><?php echo $this->__('No Payment Information Required')?></label>
+        <?php endif;?>
+    </table>
+    <div class="tool-tip" id="payment-tool-tip" style="display:none;z-index: 999999;">
+        <div class="btn-close"><a href="#" id="payment-tool-tip-close" title="<?php echo $this->__('Close') ?>"><?php echo $this->__('Close') ?></a></div>
+        <div class="tool-tip-content"><img src="<?php echo $this->getSkinUrl('images/cvv.gif') ?>" alt="<?php echo $this->__('Card Verification Number Visual Reference') ?>" title="<?php echo $this->__('Card Verification Number Visual Reference') ?>" /></div>
+    </div>
+    <input type="hidden" name="default" value="<?php echo $defaultMethod;?>" id="aw_oneclick_default_method"/>
+</div>

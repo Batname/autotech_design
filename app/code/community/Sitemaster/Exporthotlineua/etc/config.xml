@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Sitemaster_Exporthotlineua>
+            <version>1.0.0</version>
+        </Sitemaster_Exporthotlineua>
+    </modules>
+
+	<adminhtml>
+		<translate>
+            <modules>
+                <mage_adminhtml>
+                    <files>
+                        <exporthotlineua>Sitemaster_Exporthotlineua.csv</exporthotlineua>
+                    </files>
+                </mage_adminhtml>
+            </modules>
+        </translate>
+	</adminhtml>
+
+	<default>
+        <exporthotlineua>
+            <settings>
+                <storename>4auto-service.com.ua</storename>
+                <storeid>22544</storeid>
+            </settings>
+        </exporthotlineua>
+    </default>
+	
+    <global>
+        <helpers>
+            <exporthotlineua>
+                <class>Sitemaster_Exporthotlineua_Helper</class>
+            </exporthotlineua>
+        </helpers>
+		<blocks>
+			<exporthotlineua>
+				<class>Sitemaster_Exporthotlineua_Block</class>
+			</exporthotlineua>
+		</blocks>
+    </global>
+	<admin>
+        <routers>
+            <exporthotlineua>
+                <use>admin</use>
+                <args>
+                    <module>Sitemaster_Exporthotlineua</module>
+                    <frontName>exporthotlineua</frontName>
+                </args>
+            </exporthotlineua>
+        </routers>
+    </admin>
+
+</config>
+ 

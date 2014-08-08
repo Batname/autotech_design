@@ -1,0 +1,44 @@
+<?php if(Mage::helper('jmquickview')->get('show',array())) { ?>
+<?php
+
+if(strpos($curenturl,"https") === False){
+            $baseurl = Mage::getBaseUrl();
+                    
+ }else{
+            $baseurl = Mage::getStoreConfig("web/secure/base_url");  
+ }
+?>
+
+<script type="text/javascript">
+  var baseurl = "<?php echo $baseurl; ?>"
+</script>
+
+<?php if(!defined('JM_ADD_JQUERY')): ?>
+	<?php $jquery_url= $this->getSkinUrl('js/jquery/jquery.js');?>
+	<?php if (@fopen($jquery_url,"r")==true):?>
+		<script type="text/javascript" src="<?php echo $jquery_url ?>"></script>
+	<?php define('JM_ADD_JQUERY', true); ?>
+<?php endif; ?>
+<?php endif; ?>
+<?php if(!defined('JM_ADD_COLORBOX')): ?>
+	<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery/plugins/colorbox/jquery.colorbox.js') ?>"></script>
+	<?php define('JM_ADD_COLORBOX', true); ?>
+<?php endif; ?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmquickview/js/jmquickview.js') ?>"></script>
+
+<script type="text/javascript">
+options= {
+		quickviewtext: "<?php echo $this->__("quickview"); ?>",
+		quickviewtexttitle: "<?php echo $this->__("Product quick view"); ?>",
+		currenttext: "<?php echo $this->__("Product {current} of {total}"); ?>",
+		previoustext: "<?php echo $this->__("previous"); ?>",
+		nexttext: "<?php echo $this->__("next"); ?>"
+}
+jQuery(window).load(function($) {
+    jQuery("ul.products-grid").jmquickview(options);
+    jQuery("div.products-grid").jmquickview(options);
+    jQuery("table.products-grid").jmquickview(options);
+    jQuery("ol.products-list").jmquickview(options);
+ });  
+</script> 
+<?php } ?>

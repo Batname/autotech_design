@@ -1,0 +1,26 @@
+{
+    "name": "joshribakoff/php-csv-utils",
+    "description": "php-csv-utils",
+    "license": "GNU Lesser General Public License",
+    "authors": [
+        {
+            "name": "Luke Visinoni"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Csv": "source/"
+        }
+    },
+    "include-path": [
+        "source/"
+    ],
+    "require-dev": {
+        "phpunit/phpunit": ">=3.7.19,<3.8.0",
+        "phpunit/php-invoker": "*",
+        "phpunit/phpunit-selenium": "*",
+        "phpunit/phpunit-story": "*",
+        "phpunit/dbunit": "*"
+    }
+}

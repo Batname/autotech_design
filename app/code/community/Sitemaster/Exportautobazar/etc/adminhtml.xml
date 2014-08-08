@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config>
+    <!--<menu>-->
+    <!--<catalog>-->
+    <!--<children>-->
+    <!--<exportautobazar translate="title" module="exportautobazar">-->
+    <!--<title>Export Products for avtobazar</title>-->
+    <!--<sort_order>400</sort_order>-->
+    <!--<action>exportautobazar/index</action>-->
+    <!--</exportautobazar>-->
+    <!--</children>-->
+    <!--</catalog>-->
+    <!--</menu>-->
+
+    <menu>
+        <catalog>
+            <children>
+                <exportautobazar translate="title" module="exportautobazar">
+                    <title>Export Products</title>
+                    <children>
+                        <exportautobazar translate="title" module="exportautobazar">
+                            <title>Export Products for avtobazar</title>
+                            <sort_order>400</sort_order>
+                            <action>exportautobazar/index</action>
+                        </exportautobazar>
+                    </children>
+                    <sort_order>400</sort_order>
+                </exportautobazar>
+            </children>
+        </catalog>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <exportautobazar translate="title" module="exportautobazar">
+                                <title>Export Products for avtobazar</title>
+                            </exportautobazar>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Sitemaster_Exportpriceua>
+            <version>1.0.0</version>
+        </Sitemaster_Exportpriceua>
+    </modules>
+
+	<adminhtml>
+		<translate>
+            <modules>
+                <mage_adminhtml>
+                    <files>
+                        <exportpriceua>Sitemaster_Exportpriceua.csv</exportpriceua>
+                    </files>
+                </mage_adminhtml>
+            </modules>
+        </translate>
+	</adminhtml>
+
+	<default>
+        <exportpriceua>
+            <settings>
+                <storename>http://4auto-service.com.ua/</storename>
+            </settings>
+        </exportpriceua>
+    </default>
+	
+    <global>
+        <helpers>
+            <exportpriceua>
+                <class>Sitemaster_Exportpriceua_Helper</class>
+            </exportpriceua>
+        </helpers>
+		<blocks>
+			<exportpriceua>
+				<class>Sitemaster_Exportpriceua_Block</class>
+			</exportpriceua>
+		</blocks>
+    </global>
+	<admin>
+        <routers>
+            <exportpriceua>
+                <use>admin</use>
+                <args>
+                    <module>Sitemaster_Exportpriceua</module>
+                    <frontName>exportpriceua</frontName>
+                </args>
+            </exportpriceua>
+        </routers>
+    </admin>
+
+</config>
+ 

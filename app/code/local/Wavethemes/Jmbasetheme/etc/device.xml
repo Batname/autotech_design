@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<config>
+   <sections>
+        <wavethemes_jmbasetheme>
+            <label>JM Base theme</label>
+            <tab>wavethemes</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>99999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+	        	<jmbasethemedevice translate="label">
+				    <label>JM Basetheme: settings for Tablet</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2001</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						 <title4 translate="label comment">
+                            <label>Product Grid Layout Settings (Tablet)</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>37</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title4>
+                        <productgridnumbercolumntablet translate="label">
+                            <label>Number of Items per Row: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>38</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productgridnumbercolumntablet>
+                        
+                         <quanlityperpagetablet translate="label">
+                            <label># Qty of products per page (pagination) </label>
+                            <sort_order>41</sort_order>
+                            <frontend_type>text</frontend_type>
+                            <comment>Empty to show by default</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </quanlityperpagetablet>
+                        
+                        <title5 translate="label comment">
+                            <label>Product List Layout Settings (Tablet)</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>43</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title5>
+                        <productlistdeslenghttablet translate="label">
+                            <label>Product Short Des Max Length: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show</comment>
+                            <sort_order>46</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productlistdeslenghttablet>
+                         <title6 translate="label comment">
+                            <label>Product Grid Layout Settings (Tablet Portrait)</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>47</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title6>
+                        <productgridnumbercolumntabletportrait translate="label">
+                            <label>Number of Items per Row: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>48</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productgridnumbercolumntabletportrait>
+                        
+					</fields>
+            	</jmbasethemedevice>
+            </groups>
+        </wavethemes_jmbasetheme>
+    </sections>       
+</config>

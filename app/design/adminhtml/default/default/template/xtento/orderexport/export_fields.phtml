@@ -1,0 +1,62 @@
+<?php
+if (!$this->getTestId()) {
+    echo "<strong>" . $this->__("No test ID specified. Please specify a test ID to export right next to the \"Show fields available for export\" button.") . "</strong>";
+    return;
+}
+$fieldJson = $this->getFieldJson();
+if (!$fieldJson) {
+    echo "<strong>" . $this->__("This test ID does NOT exist in Magento. Please specify an existing ID to export right next to the \"Show fields available for export\" button.") . "</strong>";
+    return;
+}
+?>
+<script type="text/javascript">
+    /**
+     * Fix ext compatibility with prototype 1.6
+     */
+    Ext.lib.Event.getTarget = function (e) {
+        var ee = e.browserEvent || e;
+        return ee.target ? Event.element(ee) : null;
+    };
+    var tree;
+    Ext.onReady(function () {
+        tree = new Ext.tree.TreePanel('tree-div', {
+            animate: true,
+            loader: new Ext.tree.TreeLoader(),
+            enableDD: false,
+            containerScroll: true,
+            rootVisible: true,
+            useAjax: false,
+            addNodeTo: false,
+            lines: true
+        });
+        var json = <?php echo $fieldJson ?>;
+        var root = new Ext.tree.AsyncTreeNode({
+            text: 'objects',
+            draggable: false,
+            id: 'objects',
+            cls: 'x-tree-noicon',
+            children: json
+        })
+        tree.setRootNode(root);
+        tree.render();
+        //tree.expandAll();,
+        tree.expandPath('/objects/');
+    });
+
+    function showRawXml() {
+        var url = '<?php echo Mage::helper('adminhtml')->getUrl('*/orderexport_profile/showFieldsXml', array('test_id' => $this->getRequest()->getParam('test_id'), 'profile_id' => $this->getRequest()->getParam('profile_id'))) ?>';
+        window.open(url, '_blank', 'toolbar=0,location=1,menubar=0,scrollbars=1');
+    }
+</script>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Fields available for export')?></h4>
+        <div class="form-buttons"></div>
+    </div>
+    <div class="fieldset fieldset-wide" id="base_fieldset">
+        <div class="hor-scroll">
+            <i>Data is based on <?php echo ucwords(Mage::registry('order_export_profile')->getEntity());?> #<?php echo $this->getTestId()?></i> [<a href="#" onclick="tree.expandAll(); return false;">Expand all fields</a>] [<a href="#" onclick="showRawXml(); return false;">Show raw XML</a>]
+            <div id="tree-div" style="width:99.4%; height:auto; border:1px solid #ccc; padding:2px; margin-top: 2px;"></div>
+        </div>
+    </div>
+</div>

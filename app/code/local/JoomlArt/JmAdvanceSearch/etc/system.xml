@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <joomlart translate="label">
+            <label>JoomlArt</label>
+            <sort_order>210</sort_order>
+        </joomlart>
+    </tabs>
+    <sections>
+        <joomlart_jmadvancesearch module="jmadvancesearch" translate="label">
+            <label>JM Advance Search</label>
+            <tab>joomlart</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+			<groups>
+                <joomlart_jmadvancesearch translate="label">
+                    <label>JM Advance Search: Config General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled JM Advance Search</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>						
+                        <autocomplete translate="label">
+							<label>Enable Auto Complete</label>
+							<sort_order>10</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends>
+								<active>1</active>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</autocomplete>		
+						<maxnumbers translate="label">
+							<label>Max numbers of select value</label>
+							<sort_order>20</sort_order>
+							<frontend_type>text</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<comment>Input 0 to show all</comment>
+							<depends>
+								<active>1</active>
+								<autocomplete>1</autocomplete>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</maxnumbers>			
+                    </fields>
+                </joomlart_jmadvancesearch>
+            </groups>
+        </joomlart_jmadvancesearch>
+    </sections>
+</config>

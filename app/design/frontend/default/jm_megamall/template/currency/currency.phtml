@@ -1,0 +1,14 @@
+<?php if($this->getCurrencyCount() > 1): ?>
+<div class="form-currency">
+	<label for="select-language">Your Currency:</label>
+	<ul id="select-currency" class="ul-dropdown">
+		<?php foreach ($this->getCurrencies() as $_code => $_name): ?>
+			<li <?php if($_code == $this->getCurrentCurrencyCode()): echo 'class="active"'; endif;?>>
+				<a class="currency-item active" href="<?php echo $this->getSwitchCurrencyUrl($_code)?>" >
+					<?php echo $_code ?>
+				</a>
+			</li>
+		<?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

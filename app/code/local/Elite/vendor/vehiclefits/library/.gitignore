@@ -1,0 +1,9 @@
+phpunit.xml
+/.idea/
+vendor/
+/composer.lock
+/cli/config.php
+/config.ini
+vfconfig.php
+test.csv
+vehicles-list-import.csv.log

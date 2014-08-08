@@ -1,0 +1,25 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Ajaxcartpro
+ * @copyright  Copyright (c) 2009-2010 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+ ?>
+<div class="ajaxcartpro_progress" style="display: none;">
+<?php if (Mage::getStoreConfig('ajaxcartpro/general/activityindicator')): ?>
+	<img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'ajaxcartpro/' . Mage::getStoreConfig('ajaxcartpro/general/activityindicator') ?>" alt=""/>
+<?php else: ?>
+	<img src="<?php echo $this->getSkinUrl('ajaxcartpro/images/al.gif'); ?>" alt=""/>
+<?php endif; ?>
+	<p><?php echo $this->__('Please wait...') ?></p>
+</div>

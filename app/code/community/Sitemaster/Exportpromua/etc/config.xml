@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Sitemaster_Exportpromua>
+            <version>1.0.0</version>
+        </Sitemaster_Exportpromua>
+    </modules>
+
+	<adminhtml>
+		<translate>
+            <modules>
+                <mage_adminhtml>
+                    <files>
+                        <exportpromua>Sitemaster_Exportpromua.csv</exportpromua>
+                    </files>
+                </mage_adminhtml>
+            </modules>
+        </translate>
+	</adminhtml>
+
+	<default>
+        <exportpromua>
+            <settings>
+                <storename>4auto-service.com.ua</storename>
+            </settings>
+        </exportpromua>
+    </default>
+
+    <default>
+        <exportpromua>
+            <settings>
+                <shopname>4autoto prom</shopname>
+            </settings>
+        </exportpromua>
+    </default>
+
+    <global>
+        <helpers>
+            <exportpromua>
+                <class>Sitemaster_Exportpromua_Helper</class>
+            </exportpromua>
+        </helpers>
+		<blocks>
+			<exportpromua>
+				<class>Sitemaster_Exportpromua_Block</class>
+			</exportpromua>
+		</blocks>
+    </global>
+	<admin>
+        <routers>
+            <exportpromua>
+                <use>admin</use>
+                <args>
+                    <module>Sitemaster_Exportpromua</module>
+                    <frontName>exportpromua</frontName>
+                </args>
+            </exportpromua>
+        </routers>
+    </admin>
+
+</config>
+ 

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!-- 
+ * Magento Webshopapps Order Export Module
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   Webshopapps
+ * @package    Webshopapps_OrderExport
+ * @copyright  Copyright (c) 2010 Zowta Ltd (http://www.webshopapps.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Genevieve Eddison <sales@webshopapps.com>
+ * 
+--> 
+<config>
+	<modules>
+		<Bluejalappeno_Orderexport>
+			<version>0.0.1</version>
+		</Bluejalappeno_Orderexport>
+	</modules>
+	 <global>
+        <models>
+            <bluejalappeno_orderexport>
+                <class>Bluejalappeno_Orderexport_Model</class>
+            </bluejalappeno_orderexport>
+        </models>
+        <helpers>
+        <bluejalappeno_orderexport>
+            <class>Bluejalappeno_Orderexport_Helper</class>
+        </bluejalappeno_orderexport>
+    	</helpers>
+    </global>
+    <admin>
+         <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Bluejalappeno_Orderexport before="Mage_Adminhtml">Bluejalappeno_Orderexport</Bluejalappeno_Orderexport>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+    	<events>
+	        <core_block_abstract_prepare_layout_before>
+	            <observers>
+	                <orderexport_block_abstract_prepare_layout_before>
+	                    <class>bluejalappeno_orderexport/observer</class>
+	                    <method>addMassAction</method>
+	                </orderexport_block_abstract_prepare_layout_before>
+	            </observers>
+	        </core_block_abstract_prepare_layout_before>
+    	</events>
+        <translate>
+            <modules>
+                <Bluejalappeno_Orderexport>
+                    <files>
+                        <default>Bluejalappeno_Orderexport.csv</default>
+                    </files>
+                </Bluejalappeno_Orderexport>
+            </modules>
+        </translate>
+        <default>
+        <orderexport>
+        <condition_name>order_export</condition_name>
+        </orderexport>
+        </default>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <order_export>
+                                            <title>Export Orders</title>
+                                        </order_export>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <zblocks_admin_adminhtml_zblocks_index>
+        <reference name="content">
+            <block type="zblocks/adminhtml_zblocks" name="zblocks" />
+        </reference>
+    </zblocks_admin_adminhtml_zblocks_index>
+    <zblocks_admin_adminhtml_zblocks_editcontent>
+        <update handle="editor" />
+    </zblocks_admin_adminhtml_zblocks_editcontent>
+</layout>

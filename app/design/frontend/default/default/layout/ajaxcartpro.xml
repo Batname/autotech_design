@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">			
+			
+			<action method="addJs"><script>aw_ajaxcartpro/ajaxcartpro-1.4.6.js</script></action>
+			<action method="addJs"><script>aw_ajaxcartpro/ajaxcartpro-community-1.4.6.js</script></action>			
+			<action method="addCss"><stylesheet>ajaxcartpro/css/styles.css</stylesheet></action>
+			<block type="core/template" template="ajaxcartpro/init.phtml" name="aw.ajaxcartpro.init" />
+		</reference>
+		<reference name="before_body_end">
+			<block type="core/template" template="ajaxcartpro/progress.phtml" name="aw.ajaxcartpro.progress" />
+			<block type="core/template" template="ajaxcartpro/confirm.phtml" name="aw.ajaxcartpro.confirm" />
+		</reference>
+	</default>
+	
+	
+	
+	<ajaxcartpro_cart>
+        <remove name="right"/>
+        <remove name="left"/>
+        <!-- Mage_Checkout -->
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="checkout/cart" name="checkout.cart">
+                <action method="setCartTemplate"><value>checkout/cart.phtml</value></action>
+                <action method="setEmptyTemplate"><value>checkout/cart/noItems.phtml</value></action>
+                <action method="chooseTemplate"/>
+                <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/item/default.phtml</template></action>
+
+                <block type="core/text_list" name="checkout.cart.top_methods" as="top_methods">
+                    <block type="checkout/onepage_link" name="checkout.cart.methods.onepage" template="checkout/onepage/link.phtml"/>
+                </block>
+
+                <block type="core/text_list" name="checkout.cart.methods" as="methods">
+                    <block type="checkout/onepage_link" name="checkout.cart.methods.onepage" template="checkout/onepage/link.phtml"/>
+                    <block type="checkout/multishipping_link" name="checkout.cart.methods.multishipping" template="checkout/multishipping/link.phtml"/>
+                </block>
+
+                <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/>
+                <block type="checkout/cart_shipping" name="checkout.cart.shipping" as="shipping" template="checkout/cart/shipping.phtml"/>
+                <block type="checkout/cart_crosssell" name="checkout.cart.crosssell" as="crosssell" template="checkout/cart/crosssell.phtml"/>
+
+                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
+            </block>
+        </reference>
+    </ajaxcartpro_cart>
+	
+	
+</layout>

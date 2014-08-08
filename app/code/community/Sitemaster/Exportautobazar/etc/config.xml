@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Sitemaster_Exportautobazar>
+            <version>1.0.0</version>
+        </Sitemaster_Exportautobazar>
+    </modules>
+
+	<adminhtml>
+		<translate>
+            <modules>
+                <mage_adminhtml>
+                    <files>
+                        <exportautobazar>Sitemaster_Exportautobazar.csv</exportautobazar>
+                    </files>
+                </mage_adminhtml>
+            </modules>
+        </translate>
+	</adminhtml>
+
+	<default>
+        <exportautobazar>
+            <settings>
+                <storename>4auto-service.com.ua</storename>
+                <storeid>1234</storeid>
+            </settings>
+        </exportautobazar>
+    </default>
+	
+    <global>
+        <helpers>
+            <exportautobazar>
+                <class>Sitemaster_Exportautobazar_Helper</class>
+            </exportautobazar>
+        </helpers>
+		<blocks>
+			<exportautobazar>
+				<class>Sitemaster_Exportautobazar_Block</class>
+			</exportautobazar>
+		</blocks>
+    </global>
+	<admin>
+        <routers>
+            <exportautobazar>
+                <use>admin</use>
+                <args>
+                    <module>Sitemaster_Exportautobazar</module>
+                    <frontName>exportautobazar</frontName>
+                </args>
+            </exportautobazar>
+        </routers>
+    </admin>
+
+</config>
+ 

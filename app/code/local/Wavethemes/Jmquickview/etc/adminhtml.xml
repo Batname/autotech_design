@@ -1,0 +1,31 @@
+<?xml version="1.0"?> 
+<config>
+          <acl>
+             <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <wavethemes_jmquickview>
+                                            <title>JM Quickview List</title>
+                                        </wavethemes_jmquickview>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+			<modules>
+				<Wavethemes_Jmquickview>
+					<files>
+						<default>Wavethemes_Jmmquickview.csv</default>
+					</files>
+				</Wavethemes_Jmquickview>
+			</modules>
+		</translate>
+</config>

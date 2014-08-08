@@ -1,0 +1,39 @@
+<?php
+/**
+* aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * aheadWorks does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * aheadWorks does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Clickcheckout
+ * @version    1.1.2
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ */
+?>
+<?php
+	?>
+<?php $i=0?>
+<?php foreach ($this->getAgreements() as $_a): ?>
+    <?php $i++?>
+    <input type="hidden" id="agreement-<?php echo $_a->getId()?>" name="agreement[<?php echo $_a->getId()?>]" value="1" disabled="true"/>
+<?php endforeach ?>
+<?php if($i!=0): ?>
+<input type="checkbox" id="aw_clickcheckout_agree" name="agreements" value="" onchange="setAgreements(this.checked,'<?php echo $i?>');"/><label for="aw_clickcheckout_agree"><?php echo $this->__('I agree with all')?> <a href="#" onclick="popWin('<?php echo $this->getUrl('awclickcheckout/oneclick/agreements') ?>', '', 'width=500,height=500,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;"><?php echo $this->__('terms and conditions')?></a></label>
+<?php endif;?>
+

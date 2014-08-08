@@ -1,0 +1,48 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Ajaxcartpro
+ * @copyright  Copyright (c) 2009-2010 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+
+ ?>
+ 
+ 
+<script type="text/javascript">
+//<![CDATA[
+	var aw_ajaxcartpro_proganim = '<?php echo Mage::getStoreConfig('ajaxcartpro/general/progressanimation') ?>';
+	var aw_ajaxcartpro_cartanim = '<?php echo Mage::getStoreConfig('ajaxcartpro/general/cartanimation') ?>';
+	var aw_base_url = '<?php echo Mage::getBaseUrl() ?>';
+	
+	AW_ACP = {
+		cartURL : '<?php echo Mage::getUrl('checkout/cart')?>',
+		useConfirmation : <?php echo intval(Mage::getStoreConfig('ajaxcartpro/general/confirmation')) ?>,
+		isCartPage :  <?php echo intval(strpos(Mage::app()->getFrontController()->getRequest()->getPathInfo(),'/checkout/') !== false )?>,
+		theme : '<?php echo Mage::getDesign()->getTheme('template')?>',
+		onRender : []
+	}
+	
+	if(window.location.href.match('https://') && !AW_ACP.cartURL.match('https://')){
+	    AW_ACP.cartURL = AW_ACP.cartURL.replace('http://', 'https://')
+	}
+
+    <?php 
+        @readfile(BP."/js/aw_ajaxcartpro/custom.js");
+        
+        $package = Mage::getDesign()->getPackageName();
+        $theme = Mage::getDesign()->getTheme('template');
+        @readfile(BP."/js/aw_ajaxcartpro/".$package."/".$theme."/custom.js");
+    ?>
+//]]>
+</script>
+

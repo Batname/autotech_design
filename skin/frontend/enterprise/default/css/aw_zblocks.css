@@ -1,0 +1,10 @@
+.zblock-checkout-content-top
+{
+    z-index: 100;
+    position: relative;
+}
+
+.zblock-sidebar-right-top, .zblock-sidebar-right-bottom
+{
+    text-align:right;
+}

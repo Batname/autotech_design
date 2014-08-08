@@ -1,0 +1,63 @@
+
+
+    <?php $isLoggedIn = $this->isCustomerLoggedIn() ?>
+    <div id="checkout-block" class="<?php echo $this->helper('sitemaster_checkout')->isLocationAsOneField() ? 'join-address' : 'split-address' ?> block block-totals totals">
+        <ul class="infos-menus nav nav-tabs block-title">
+            <li <?php if (!$isLoggedIn): ?> class="current one-current"<?php endif ?>><a href="#new-user"><?php echo $this->__('New User') ?></a></li>
+            <li <?php if ($isLoggedIn): ?> class="current two-current"<?php endif ?>><a href="#<?php echo $isLoggedIn ? 'registered-user' : 'login' ?>" data-toggle="tab"><?php echo $this->__('Registered') ?></a></li>
+            <li <?php if ($isLoggedIn): ?> class="current three-current"<?php endif ?>><a href="#new-quick"><?php echo $this->__('Quick Order') ?></a></li>
+            <li class="clear"></li>
+        </ul>
+
+        <div class="clear"></div>
+        <?php if (!$isLoggedIn): ?><div class="tab-cont new-user">
+            <?php echo $this->getLoginMessagesBlock()->getGroupedHtml() ?>
+            <?php echo $this->getChildHtml('sitemaster_checkout_user_block') ?>
+            </div><?php endif ?>
+
+
+
+        <div class="tab-cont login<?php $isLoggedIn && print ' registered-user'?>"<?php if (!$isLoggedIn): ?> style="display:none"<?php endif ?>>
+            <?php if ($isLoggedIn): ?>
+                <?php echo $this->getLoginMessagesBlock()->getGroupedHtml() ?>
+                <?php echo $this->getChild('sitemaster_checkout_user_block')->setFilled(true)->toHtml() ?>
+            <?php else: ?>
+                <form id="checkout-login-form" action="<?php echo $this->getLoginUrl() ?>" method="post">
+
+                    <div class="fieldset">
+                        <h2 class="legend"><?php echo $this->__('Contact Information') ?></h2>
+                        <ul class="form-list">
+                            <li>
+                            <div class="input-box">
+                                <input type="text" name="login[username]" placeholder="<?php echo $this->__('User Login') ?>"
+                                       class="input-text required-entry validate-email form-control"/>
+                            </div>
+                            </li>
+                            <li>
+                            <div class="input-box">
+
+                                <input type="password" name="login[password]"
+                                       placeholder="<?php echo $this->__('Password') ?>"
+                                       class="input-text required-entry validate-password form-control"/>
+                            </div>
+                            </li>
+                        </ul>
+
+
+                        <div class="buttons-set">
+                            <button type="submit" class="btn btn-default button">
+                                <span><span><?php echo $this->__('Log In') ?></span></span></button>
+                        </div>
+                        <a href="<?php echo $this->getUrl('customer/account/forgotpassword') ?>"><?php echo $this->__('Forgot your password?') ?></a>
+                    </div>
+
+
+                </form>
+            <?php endif ?>
+        </div>
+
+        <div class="overlay"></div>
+        <!-- sitemaster -->
+        <div class="tab-cont new-quick" style="display:none"><?php echo $this->getChildHtml('oneclickorder') ?></div>
+
+    </div>

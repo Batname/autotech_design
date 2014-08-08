@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author		Sashas
+ * @category    Sashas
+ * @package     Sashas_Callforprice
+ * @copyright   Copyright (c) 2013 Sashas IT Support Inc. (http://www.sashas.org)
+ * @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+
+ */
+-->
+<layout version="0.1.0">
+  <catalog_product_view>
+    <reference name="product.info">       
+    </reference>
+
+    <PRODUCT_TYPE_simple translate="label" module="catalog">
+ 			<remove name="product.info.simple"/>  			
+    </PRODUCT_TYPE_simple>
+ 
+    <PRODUCT_TYPE_configurable translate="label" module="catalog">
+ 		<remove name="product.info.configurable"/> 
+        <remove name="product.tierprices"/>
+        <remove name="product.clone_prices"/>
+        <reference name="product.info.options.wrapper.bottom">        	
+        	<remove name="product.info.addtocart"/>   >        	 
+        </reference>
+    </PRODUCT_TYPE_configurable>
+    
+    <PRODUCT_TYPE_grouped translate="label" module="catalog">
+    		<remove name="product.info.grouped"/>       
+    </PRODUCT_TYPE_grouped>
+    
+    <PRODUCT_TYPE_virtual translate="label" module="catalog">
+    	<remove name="product.info.virtual"/> 
+    </PRODUCT_TYPE_virtual>
+    
+  </catalog_product_view>  
+
+</layout>

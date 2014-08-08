@@ -1,0 +1,58 @@
+<?php
+/*!
+ * Theme Name: JM Team
+ * Theme URI: http://www.joomlart.com
+ * Version: 1.0
+ * Description: 
+ * Author: JM Team - Joomlart.com
+ * Author URI: http://www.joomlart.com
+ * 
+ * Powered by Magento
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Template for Mage_Page_Block_Html
+ */
+$baseconfig =  Mage::helper("jmbasetheme")->getactiveprofile();
+?>
+<title><?php echo $this->getTitle() ?></title>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<?php if($this->getCanLoadTinyMce()): ?>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<?php endif; ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"/>
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-touch-fullscreen" content="YES" />
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+<?php if(!defined('JM_ADD_JQUERY')): ?>
+	<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery/jquery.js') ?>"></script>
+	<?php define('JM_ADD_JQUERY', true); ?>
+<?php endif; ?>
+<script type="text/javascript">
+    //ie10 class
+    var doc = document.documentElement;
+    if(navigator.userAgent.indexOf("MSIE 10.0") > 0){
+      doc.className+=' ie10';
+    }
+   var Baseurl = '<?php echo str_replace("index.php/","",Mage::getBaseUrl()); ?>';
+</script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jm.script.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery/plugins/iscroll/iscroll.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery/jquery.noconflict.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/touchmenu.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.equalheights.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/off-canvas.js') ?>"></script>
+<!--[if IE]>
+<link type="text/css" href="<?php echo $this->getSkinUrl('css/pie.php') ?>" rel="stylesheet" />
+<![endif]-->
+
+<!--[if IE]>
+	<link type="text/css" href="<?php echo $this->getSkinUrl('css/styles-ie.css') ?>" rel="stylesheet" />
+<![endif]-->

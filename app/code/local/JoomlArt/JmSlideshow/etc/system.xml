@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <joomlart translate="label" module="joomlart_jmslideshow">
+            <label>JoomlArt</label>
+            <sort_order>210</sort_order>
+        </joomlart>
+    </tabs>
+	<sections>
+        <joomlart_jmslideshow>
+            <label>JM Slideshow</label>
+            <tab>joomlart</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<joomlart_jmslideshow translate="label">
+                    <label>JM Slideshow: Config General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>     
+                    	<show translate="label" module="core">
+							<label>Enabled</label>
+							<sort_order>1</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show>	
+						<title translate="label">
+                            <label>Module Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <comment>Empty for hide</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+						<loadjquery translate="label">
+							<label>Load jQuery</label>
+							<sort_order>3</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</loadjquery>
+						
+						<source translate="label">
+                            <label>From Source</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listSource</source_model>
+                            <sort_order>4</sort_order>
+                            <comment>Choose Source to render image and content in the slideshow</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </source>
+						<sourceProductsMode translate="label">
+                            <label>Show Products From: </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listType</source_model>
+							<comment>If you choose to show products from "Featured Product", please add new attribute with attribute code "featured" (if not available), then add it to attribute sets.</comment>
+							<depends>
+								<source>products</source>
+							</depends>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sourceProductsMode>
+                        <catsid translate="label">
+                            <label>Categories ID: </label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkInputCategory</backend_model>
+                            <sort_order>6</sort_order>
+                            <comment>Eg: 22,23. Empty for all categories.</comment>
+							<depends>
+								<source>products</source>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catsid>
+						<quanlity translate="label">
+							<label># Qty of products</label>
+							<sort_order>7</sort_order>
+							<frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkQty</backend_model>
+							<comment>0 for show all</comment>
+							<depends>
+								<source>products</source>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</quanlity>
+						<folder translate="label">
+                            <label>Images Folder </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <comment>Path to images folder. Eg: media/jmslideshow</comment>
+							<depends>
+								<source>images</source>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </folder>
+                        
+						<animation translate="label">
+                            <label>Animation Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listAnimationType</source_model>
+                            <sort_order>10</sort_order>
+                            <comment>Animation effect you want to display</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </animation>
+						
+                        <mainWidth translate="label">
+                            <label>Main Item width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+							<backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainWidth>
+						
+						<mainHeight translate="label">
+                            <label>Main Item height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+							<backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainHeight>
+						
+                         <mainWidthtablet translate="label">
+                            <label>Main Item width (tablet)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>13</sort_order>
+                            <backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainWidthtablet>
+                         <mainWidthtabletportrait translate="label">
+                            <label>Main Item width (tablet portrait)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>14</sort_order>
+                            <backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainWidthtabletportrait>
+                         <mainWidthmobile translate="label">
+                            <label>Main Item width (mobile)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainWidthmobile>
+                         <mainWidthmobileportrait translate="label">
+                            <label>Main Item width (mobile portrait)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>16</sort_order>
+                            <backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainWidthmobileportrait>
+                        
+						
+						<duration translate="label">
+                            <label>Animation Duration</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <comment>Main image animation duration (ms). Enter number.</comment>
+							<backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </duration>
+						
+						<autoPlay translate="label">
+                            <label>Auto play</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>21</sort_order>
+                            <comment>If yes, the slideshow will auto switch based on time interval?</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </autoPlay>
+						<repeat translate="label" module="core">
+							<label>Repeat</label>
+							<sort_order>22</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<autoPlay>1</autoPlay>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</repeat>	
+                        <interval translate="label">
+                            <label>Interval</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>23</sort_order>
+                            <comment>Time (in seconds) for next play/run</comment>
+							<backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<autoPlay>1</autoPlay>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </interval>
+						
+						<thumbType translate="label">
+                            <label>Thumbnail Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listThumbnailType</source_model>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+							</depends>
+                            <sort_order>30</sort_order>
+                            <comment>Choose navigation type?</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbType>
+						<thumbImgMode translate="label">
+                            <label>Thumbnail Image Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listThumbnailMode</source_model>
+                            <sort_order>31</sort_order>
+                            <comment>If you like use image thumbnail which render from the image source, then you choose ''Using Image Croping'' or ''Using Image Resizing''</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType>thumbs</thumbType>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbImgMode>
+						<useRatio translate="label">
+                            <label>Resize Thumbnail with the ratio</label>
+                            <frontend_type>select</frontend_type>
+                           	<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>32</sort_order>
+                            <comment>Only for the ''Using Image Resizing'' option choosed, If you choose ''yes'', then the extension will render a thumbnail with the ratio about dimension of the image source</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbnailMode>resize</thumbnailMode>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </useRatio>
+						<thumbImgWidth translate="label">
+                            <label>Thumbnail Image Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>33</sort_order>
+                            <comment>Thumbnail Width (If Navigation is Thumbnails)</comment>
+							<backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType>thumbs</thumbType>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbImgWidth>
+                        <thumbImgHeight translate="label">
+                            <label>Thumbnail Image Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>34</sort_order>
+                            <comment>Thumbnail Height (If Navigation is Thumbnails)</comment>
+							<backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType>thumbs</thumbType>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbImgHeight>                     
+						<thumbItems translate="label">
+                            <label>Number of thumbnails</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>35</sort_order>
+                            <comment>Number of displayed thumbnail items. Enter number</comment>
+							<backend_model>joomlart_jmslideshow/system_config_backend_jmSlideshow_checkvalue</backend_model>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType separator=",">
+									<value>number,thumbs</value>
+								</thumbType>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbItems>
+						<thumbWidth translate="label">
+							<label>Width of a Navigation Item</label>
+							<sort_order>36</sort_order>
+							<frontend_type>text</frontend_type>
+							<comment>Set width for a thumbnail item in the list</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType separator=",">
+									<value>number,thumbs</value>
+								</thumbType>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</thumbWidth>
+						<thumbHeight translate="label">
+							<label>Height of a Navigation Item </label>
+							<sort_order>37</sort_order>
+							<frontend_type>text</frontend_type>
+							<comment>Set Height for a thumbnail item in the list</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType separator=",">
+									<value>number,thumbs</value>
+								</thumbType>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</thumbHeight>
+						<thumbSpaces translate="label">
+                            <label>Thumbnail Spacing</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>38</sort_order>
+                            <comment>Space between each item and the border in format top:right:bottom:left</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType separator=",">
+									<value>number,thumbs</value>
+								</thumbType>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbSpaces>
+						<thumbDirection translate="label">
+                            <label>Thumbnail direction</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listDirection</source_model>
+                            <sort_order>39</sort_order>
+                            <comment>Choose navigation direction?</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType separator=",">
+									<value>number,thumbs</value>
+								</thumbType>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbDirection>			
+						<thumbPosition translate="label">
+                            <label>Thumbnail Position</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listThumbnailPosition</source_model>
+                            <sort_order>40</sort_order>
+                            <comment>Choose how the thumbnail block dock on the slideshow</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType separator=",">
+									<value>number,thumbs</value>
+								</thumbType>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbPosition>
+						<thumbTrigger translate="label">
+                            <label>Event to trigher a thumbnail</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listEventTriggerType</source_model>
+                            <sort_order>41</sort_order>
+                            <comment>How we interact with the thumbnail to trigger the slideshow</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<thumbType separator=",">
+									<value>number,thumbs</value>
+								</thumbType>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbTrigger>
+                        
+						<controlBox translate="label">
+                            <label>Show Control Box</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+							</depends>
+                            <sort_order>50</sort_order>
+                            <comment>Show control button?</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </controlBox>
+                        <controlPosition translate="label">
+                            <label>Control Box Position</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listThumbnailPosition</source_model>
+                            <sort_order>51</sort_order>
+                            <comment>Select how the control box dock on its parent</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<controlBox>1</controlBox>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </controlPosition>
+						
+						<navButtons translate="label">
+                            <label>Show navigation buttons</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<comment>Show the next/prev navigation buttons</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+							</depends>
+                            <sort_order>60</sort_order>
+                            <comment>Show control button?</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </navButtons>
+						
+						<showDesc translate="label">
+                            <label>Show Description</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listTypeShowDesc</source_model>
+                            <sort_order>70</sort_order>
+                            <comment>Show/hide description?</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </showDesc>  
+                        <descTrigger translate="label">
+                            <label>Show Description when</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listTypeShowDescwhen</source_model>
+                            <sort_order>71</sort_order>
+                            <comment>How to show description?</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<showDesc separator=",">
+									<value>desc,desc-readmore</value>
+								</showDesc>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </descTrigger>
+						<maskWidth translate="label">
+							<label>Description Width</label>
+							<sort_order>72</sort_order>
+							<frontend_type>text</frontend_type>
+							<comment>Set width of description block</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<showDesc separator=",">
+									<value>desc,desc-readmore</value>
+								</showDesc>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</maskWidth>
+						<maskHeight translate="label">
+							<label>Description Height</label>
+							<sort_order>73</sort_order>
+							<frontend_type>text</frontend_type>
+							<comment>Set height of description block</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<showDesc separator=",">
+									<value>desc,desc-readmore</value>
+								</showDesc>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</maskHeight>
+						<maskAnim translate="label">
+                            <label>Description Animation Type</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listMaskAnimation</source_model>
+                            <sort_order>74</sort_order>
+                            <comment>Animation type for the description block</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<showDesc separator=",">
+									<value>desc,desc-readmore</value>
+								</showDesc>						
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </maskAnim>
+                        <maskOpacity translate="label">
+                            <label>Description background opacity</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>75</sort_order>
+                            <comment>Opacity for the description</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<showDesc separator=",">
+									<value>desc,desc-readmore</value>
+								</showDesc>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </maskOpacity>
+						<maskPosition translate="label">
+                            <label>Description Position</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmslideshow/system_config_source_listThumbnailPosition</source_model>
+                            <sort_order>76</sort_order>
+                            <comment>Position of description block, depend of the Description Align value</comment>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+								<showDesc separator=",">
+									<value>desc,desc-readmore</value>
+								</showDesc>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </maskPosition>
+						<description translate="label">
+                            <label>Description for each Item</label>
+                            <frontend_type>textarea</frontend_type>
+							<validate>required-entry</validate>
+                            <cols>50</cols>
+                            <rows>20</rows>
+                            <comment>the description for each item</comment>
+							<depends>
+								<showDesc separator=",">
+									<value>desc,desc-readmore</value>
+								</showDesc>
+							</depends>
+                            <sort_order>77</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </description>
+                        <readMoreText translate="label">
+                            <label>Readmore Text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>78</sort_order>
+                            <comment>Text to display in Readmore button</comment>
+							<depends>
+								<showDesc>desc-readmore</showDesc>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </readMoreText>
+                        
+						<showProgress translate="label">
+                            <label>Progress Bar</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<depends>
+								<animation separator=",">
+									<value>fade,hrzslide,vrtslide,fullslide,slice</value>
+								</animation>
+							</depends>
+                            <sort_order>80</sort_order>
+                            <comment>Show progress bar?</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </showProgress>
+            		</fields>
+            	</joomlart_jmslideshow>
+            </groups>
+        </joomlart_jmslideshow>
+    </sections>    
+</config>

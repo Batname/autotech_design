@@ -1,0 +1,31 @@
+<?xml version="1.0"?> 
+<config>
+<acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <joomlart_jmmasshead>
+                                            <title>JM Masshead</title>
+                                        </joomlart_jmmasshead>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+			<modules>
+				<JoomlArt_JmMasshead>
+					<files>
+						<default>JoomlArt_JmMasshead.csv</default>
+					</files>
+				</JoomlArt_JmMasshead>
+			</modules>
+		</translate>
+</config>

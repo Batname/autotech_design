@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author		Sashas
+ * @category    Sashas
+ * @package     Sashas_Callforprice
+ * @copyright   Copyright (c) 2013 Sashas IT Support Inc. (http://www.sashas.org)
+ * @license    http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+ */
+-->
+<config>
+     <menu>
+     	<catalog>
+        	<children>
+        		<callforpriceupload translate="title" module="callforprice">
+                	<title>Callforprice Upload</title>
+                	<action>adminhtml/callforprice</action> 
+                	<sort_order>9999</sort_order>
+            	</callforpriceupload>
+        	</children>
+     	</catalog>            
+    </menu> 
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <catalog>
+                <children>                                                                            	
+                	<callforpriceupload translate="title">
+                    	<title>Callforprice Upload</title>
+               		</callforpriceupload>                                			
+                </children>
+            </catalog>
+        </resources>
+    </acl>
+</config>

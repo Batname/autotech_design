@@ -1,0 +1,21 @@
+<?php
+/**
+ * @author		Sashas
+ * @category    Sashas
+ * @package     Sashas_Callforprice
+ * @copyright   Copyright (c) 2013 Sashas IT Support Inc. (http://www.sashas.org)
+ * @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+
+ */
+$_product=$this->getProduct();
+$prefix=$this->getPrefix();
+$customer_group=$this->GetGroupId();
+ 
+$model=Mage::getModel('callforprice/callforprice')->loadByProductId($_product->getId());
+ 
+if ($model->getId() && $model->getStatus()==1 && !in_array($customer_group, explode(',',$model->getCustomerGroups()))) {
+	echo $this->__($model->getValue());	
+} else { 
+	echo $this->getPriceHtml($_product, true,$prefix);
+}
+?> 

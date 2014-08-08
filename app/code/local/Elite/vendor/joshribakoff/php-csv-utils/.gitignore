@@ -1,0 +1,6 @@
+# Files created by IDEs
+/.idea/
+
+# Composer related files & 3rd party libraries
+/vendor/
+composer.lock

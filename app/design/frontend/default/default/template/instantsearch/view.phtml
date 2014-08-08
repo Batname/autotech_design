@@ -1,0 +1,45 @@
+<script src="<?php echo $this->getJsUrl().'magestore/viewinstantsearch.js'; ?>" type="text/javascript"></script>
+<div id="instantsearch">
+<div id="mi_header">
+<input type="text" name="searchBox" id="searchBox" value="<?php echo(Mage::registry('keyword')); ?>"><span id="searchTermkeyword">Search Product Instantly</span>
+</div>
+	<div id="viewProduct">
+		<div id="productContainer">
+			<div id="mainViewProductWapper">
+				<div id="mainViewProduct">
+				
+				</div>
+			</div>
+			<div id="moreViewProductsWapper">
+				<div id="moreViewProducts">
+					
+				</div>
+			</div>
+			<div class="searchproduct-by-magestore" style="float: right; font-size: 10px">
+                <a href="http://www.magestore.com"><?php echo $this->__('By Magestore'); ?></a>
+				-
+                <a href="http://www.magestore.com/magento-extensions.html/"><?php echo $this->__('Magento extensions');?></a>
+            </div>
+		</div>	
+	</div>	
+</div>
+
+
+<script type="text/javascript">
+	var viewInstantsearch = new ViewInstantsearch(
+        '<?php echo $this->getUrl('instantsearch/index/search') ?>',
+		'<?php echo $this->getUrl('instantsearch/index/loadproductview') ?>',
+		'<?php echo Mage::getStoreConfig('instantsearch/general/more_product_num') ?>',
+		'searchBox'
+    );
+	
+	Event.observe('searchBox', 'keyup', function(event){ 			
+		viewInstantsearch.search();		
+	});
+	
+	
+	viewInstantsearch.search();
+	
+</script>
+
+

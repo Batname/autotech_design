@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<config>
+   <sections>
+        <wavethemes_jmbasetheme>
+            <label>JM Base theme</label>
+            <tab>wavethemes</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>99999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+	        	<jmbasethememobile translate="label">
+				    <label>JM Basetheme: settings for Mobile</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2001</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+		                 <title8 translate="label comment">
+                            <label>Product Grid Layout Settings (Mobile)</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title8>
+                        <productgridnumbercolumnmobile translate="label">
+                            <label>Number of Items per Row: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>56</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productgridnumbercolumnmobile>
+                        
+                         <quanlityperpagemobile translate="label">
+                            <label># Qty of products per page (pagination) </label>
+                            <sort_order>59</sort_order>
+                            <frontend_type>text</frontend_type>
+                            <comment>Empty to show by default</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </quanlityperpagemobile>
+                       
+                        
+                        <title9 translate="label comment">
+                            <label>Product List Layout Settings (Mobile)</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>61</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title9>
+                        
+                         <productlistdeslenghtmobile translate="label">
+                            <label>Product Short Des Max Length: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show</comment>
+                            <sort_order>64</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productlistdeslenghtmobile>
+                        <title10 translate="label comment">
+                            <label>Product Grid Layout Settings (Mobile Portrait)</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title10>
+                        <productgridnumbercolumnmobileportrait translate="label">
+                            <label>Number of Items per Row: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>66</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productgridnumbercolumnmobileportrait>
+                         
+					</fields>
+            	</jmbasethememobile>
+            </groups>
+        </wavethemes_jmbasetheme>
+    </sections>       
+</config>

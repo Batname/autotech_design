@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sitemaster_Exportpromua>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Sitemaster_Exportpromua>
+    </modules>
+</config>
+        <!-- Ok -->

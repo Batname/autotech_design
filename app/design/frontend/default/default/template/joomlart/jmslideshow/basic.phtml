@@ -1,0 +1,146 @@
+<?php $rand = time().rand().rand();?>
+
+<?php if($items){?>
+	<?php if(!defined('JM_ADD_JQUERY') && $config['loadjquery']): ?>
+		<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmslideshow/js/jquery-ui/jquery.min.js'); ?>"></script>
+	<?php define('JM_ADD_JQUERY', true); ?>
+	<?php endif?>
+	
+	<?php if(!defined('JM_ADD_SKIN_SILDESHOWS')): ?>
+		<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmslideshow/js/jm.slideshow.js') ?>"></script>
+	<?php  define('JM_ADD_SKIN_SILDESHOWS', true); ?>
+	<?php endif; ?>		
+	<?php
+	  /*Convert to array*/
+	  $config['thumbSpaces'] = preg_split ('/:/', $config['thumbSpaces']);
+	?>
+	<script type="text/javascript">
+		jQuery.noConflict();
+	    jQuery(document).ready(function($){	     
+	     	$('#jm-slide-<?php echo $rand;?>').jaslider({
+				animation: '<?php echo $config['animation']; ?>', 						//[slide, fade, slice], slide and fade for old compactible
+				
+				interval: <?php echo $config['interval']; ?>,								//interval - time for between animation	
+				duration: <?php echo $config['duration']; ?>,								//duration - time for animation
+
+				repeat: <?php echo $config['repeat']; ?>,								//animation repeat or not
+				autoPlay: <?php echo $config['autoPlay']; ?>,							//auto play
+
+				mainWidth: <?php echo $config['mainWidth']; ?>,								//width of main item
+				mainHeight: <?php echo $config['mainHeight']; ?>,							//height of main item
+
+				rtl: null,									//rtl
+
+				thumbType: '<?php echo $config['thumbType']; ?>', 						//false - no thumb, other [number, thumb], thumb will animate
+				thumbItems: <?php echo $config['thumbItems']; ?>,								//number of thumb item will be show
+				thumbWidth: <?php echo $config['thumbWidth']; ?>,								//width of thumbnail item
+				thumbHeight: <?php echo $config['thumbHeight']; ?>,							//width of thumbnail item
+				thumbSpaces: [<?php echo implode(',', $config['thumbSpaces']); ?>],					//space between thumbnails
+				thumbTrigger: '<?php echo $config['thumbTrigger']; ?>',						//thumb trigger event, [click, mouseenter]
+				thumbDirection: '<?php echo $config['thumbDirection']; ?>',				//thumb orientation
+				thumbPosition: '<?php echo $config['thumbPosition']; ?>',						//[0%, 50%, 100%]
+
+				showDesc: '<?php echo $config['showDesc']; ?>',								//show description or not
+				descTrigger: '<?php echo $config['descTrigger']; ?>',						//[always, mouseover, load]
+				maskAnim: '<?php echo $config['maskAnim']; ?>',						//mask transition style [fade, slide, slide-fade], slide - will use the maskAlign to slide
+				maskWidth: <?php echo $config['maskWidth']; ?>,								//mask - a div over the the main item - used to hold descriptions
+				maskHeight: <?php echo $config['maskHeight']; ?>,							//mask height
+				maskOpacity: <?php echo $config['maskOpacity']; ?>,							//mask opacity
+				maskPosition: '<?php echo $config['maskPosition']; ?>',						//[0%, 50%, 100%]
+
+				controlBox: <?php echo $config['controlBox']; ?>,							//show navigation controller [next, prev, play, playback] - JM does not have a config
+				controlPosition: '<?php echo $config['controlPosition']; ?>',							//show navigation controller [next, prev, play, playback] - JM does not have a config
+
+				navButtons: '<?php echo $config['navButtons']; ?>',							//main next/prev navigation buttons mode, [false, auto, fillspace]
+				
+				showProgress: <?php echo $config['showProgress']; ?>,							//show the progress bar
+
+				urls: ['<?php echo implode("','", $urls); ?>'], 								// [] array of url of main items
+				targets: false 								// [] same as urls, an array of target value such as, '_blank', 'parent', '' - default
+	        });
+	    });
+	</script>	
+<?php }?>
+
+
+<div class="block jm-slideshow jm-slideshow<?php echo '-'.$config['thumbDirection'];?>">
+<?php if($config['title']){?><div class="block-title"><strong><span><?php echo $config['title']; ?></span></strong></div><?php } ?>
+
+	<div class="jm-slidewrap" id="jm-slide-<?php echo $rand;?>" style="visibility:hidden;">
+	  <div class="jm-slide-main-wrap">
+		<div class="jm-slide-main">
+		
+		  <?php foreach ($items as $item) { ?>
+			  <div class="jm-slide-item"><?php echo $item['mainThumb']; ?>
+			  <?php if ($config['showDesc'] == 'always' && $item['caption']) : ?><span class="jm-slide-desc"><?php echo $item['caption']; ?></span><?php endif; ?>
+			  </div>
+		  <?php }?>
+		</div>
+		
+		<div class="jm-slide-loader"></div>
+		
+		<?php if ($config['showProgress']): ?>
+		<div class="jm-slide-progress"></div>
+		<?php endif; ?>
+		
+		<?php if ($config['navButtons']): ?>
+		<div class="jm-slide-buttons clearfix">
+			<span class="jm-slide-prev">&laquo; Previous</span>
+			<span class="jm-slide-next">Next &raquo;</span>
+		</div>
+		<?php endif; ?>
+		
+		<?php if ($config['thumbType']): ?>
+		<div class="jm-slide-thumbs-wrap <?php echo 'jm-'.$config['thumbDirection'];?> <?php if ($config['thumbType']=='thumbs') : echo "jm-slide-thumbnails"; else: echo "jm-slide-number"; endif; ?>">
+			<div class="jm-slide-thumbs">
+				<?php $i = 1; foreach ($items as $item) {?>
+				<div class="jm-slide-thumb">
+					<?php if ($config['thumbType']=='thumbs'){?><?php echo $item['thumb']; ?>
+					<?php }else{?><span><?php echo ($i++);?></span><?php } ?>
+				</div>
+				<?php }?>
+			</div>
+			
+			<div class="jm-slide-thumbs-mask">
+				<span class="jm-slide-thumbs-mask-left">&nbsp;</span>
+				<span class="jm-slide-thumbs-mask-center">&nbsp;</span>
+				<span class="jm-slide-thumbs-mask-right">&nbsp;</span>
+			</div>
+			
+			<p class="jm-slide-thumbs-handles">
+				<?php foreach ($items as $item) {?>
+					<span>&nbsp;</span>
+				<?php }?>						
+			</p>
+		</div>
+		<?php endif; ?>
+	  		
+	  </div>
+	  
+	  <?php if ($config['controlBox']): ?>
+		<div class="jm-slide-controls clearfix">
+			<span class="jm-slide-prev">&laquo; Previous</span>
+			<span class="jm-slide-playback">&laquo; Previous</span>
+			<span class="jm-slide-stop">Stop</span>
+			<span class="jm-slide-play">Next &raquo;</span>
+			<span class="jm-slide-next">Next &raquo;</span>
+		</div>
+	  <?php endif; ?>
+	  
+	  <?php if ($config['showDesc']): ?>
+	  <div class="jm-mask-desc">
+		<div class="jm-slide-desc"></div>
+		<div class="jm-slide-mask"></div>
+		<?php if ($config['showDesc']=='desc-readmore'){?><div class="readmore"><a class="readon" title=""><span><span><?php echo $config['readMoreText'];?></span></span></a></div><?php }?>
+	  </div>
+	 <?php endif; ?>
+	  
+	  <?php if($config['showDesc']){?>
+	  <div class="jm-slide-descs">
+		<?php foreach ($items as $item) {?>
+		  <div class="jm-slide-desc"><?php echo  $item['caption']; ?></div>
+		<?php }?>					
+	  </div>
+	  <?php }?>
+	</div>
+</div>

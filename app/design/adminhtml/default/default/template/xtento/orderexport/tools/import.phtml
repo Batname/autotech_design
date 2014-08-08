@@ -1,0 +1,29 @@
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Tools - Import Settings')?></h4>
+
+        <div class="form-buttons"></div>
+    </div>
+    <form id="import_form" name="import_form" method="post" enctype="multipart/form-data" action="<?php echo Mage::helper('adminhtml')->getUrl('*/*/importSettings')?>">
+        <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>"/>
+
+        <div class="fieldset fieldset-wide" id="import_fieldset">
+            <div class="hor-scroll">
+                <div style="padding-bottom:5px;">
+                    <?php echo Mage::helper('xtento_orderexport')->__('<b>Note:</b> You can upload previously exported settings and import them here. Passwords for destinations must be entered again, they won\'t be imported.')?>
+                    <div style="position: relative; border: 1px solid #a6a6a6; display:table; width:98.5%; margin-top: 5px; padding: 5px; padding-top: 3px;">
+                        <div style="padding-top:4px; padding-bottom: 4px;">
+                            <input type="file" title="File" name="settings_file" accept=".json">
+                        </div>
+                        <input id="update_by_name" type="checkbox" name="update_by_name" checked="checked" class="required-input">&nbsp;
+                        <label for="update_by_name">Update existing profiles if the profile/destination name matches</label>
+                        <br/>
+                    </div>
+                    <button class="scalable save" type="submit" onclick="$('import_form').submit();" style="margin-top:5px;">
+                        <span><?php echo $this->__('Import Settings')?></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

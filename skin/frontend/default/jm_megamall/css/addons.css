@@ -1,0 +1,173 @@
+/*!
+ * Theme Name: JM Team
+ * Theme URI: http://www.joomlart.com
+ * Version: 1.0
+ * Description: 
+ * Author: JM Team - Joomlart.com
+ * Author URI: http://www.joomlart.com
+ * 
+ * Powered by Magento
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	background: transparent;
+}
+
+body {
+	line-height: 1;
+}
+
+/* Clearfix
+-------------------------------------------------------------*/
+* html .clearfix {
+	height: 1%; /* IE5-6 */
+}
+
+.clearfix {
+	display: inline-block; /* IE7xhtml*/
+}
+
+html[xmlns] .clearfix { /* O */
+	display: block;  
+}
+
+.clearfix:after { /* FF, O, etc. */
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearer      { display: block; clear: both; font-size: 0; line-height: 0; height: 0; overflow: hidden; }
+
+/* Mis.
+-------------------------------------------------------------*/
+
+/* Forms */
+form          { display: inline; }
+fieldset      { border: 0; }
+legend        { display: none; }
+
+/* Content */
+p             { margin: 0 0 10px; }
+strong        { font-weight: bold; }
+address       { font-style: normal; line-height: 2.0;}
+cite          { font-style: normal; }
+q,
+blockquote    { quotes:none; }
+q:before,
+q:after       { content:''; }
+small         { font-size: 1em; }
+big           { font-size: 2em; }
+/* Tools */
+.hidden       { display:block !important; border:0 !important; margin:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important; width:0 !important; height:0 !important; overflow:hidden !important; }
+.nobr         { white-space: nowrap !important; }
+.wrap         { white-space: normal !important; }
+.a-left       { text-align: left !important; }
+.a-center     { text-align: center !important; }
+.a-right      { text-align: right !important; }
+.v-top        { vertical-align: top; }
+.v-middle     { vertical-align: middle; }
+.f-left,
+.left         { float: left !important; }
+.f-right,
+.right        { float: right !important; }
+.f-none       { float: none !important; }
+.f-fix        { float: left; width: 100%; }
+.no-display   { display: none; }
+.no-margin    { margin: 0 !important; }
+.no-padding   { padding: 0 !important; }
+.no-bg        { background: none !important; }
+
+/* Lists */
+ul,ol         { list-style:none; }
+
+/* remember to highlight inserts somehow! */
+ins           { text-decoration: none; }
+
+del           { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table         { border: 0; border-spacing: 0; empty-cells: show; }
+caption,th,td { vertical-align: top; text-align: left; font-weight: normal; }
+
+/*Various Clears---*/
+.clearer:after,
+.header-container:after,
+.header-container .top-container:after,
+.header:after,
+.header .quick-access:after,
+#nav:after,
+.main:after,
+.footer:after,
+.footer-container .bottom-container:after,
+.col-main:after,
+.col2-set:after,
+.col3-set:after,
+.col3-layout .product-options-bottom .price-box:after,
+.col4-set:after,
+.search-autocomplete li:after,
+.block .block-content:after,
+.block .actions:after,
+.block li.item:after,
+.block-poll li:after,
+.block-layered-nav .currently li:after,
+.page-title:after,
+.products-grid:after,
+.products-list li.item:after,
+.box-account .box-head:after,
+.dashboard .box .box-title:after,
+.box-reviews li.item:after,
+.box-tags li.item:after,
+.pager:after,
+.sorter:after,
+.ratings:after,
+.add-to-box:after,
+.add-to-cart:after,
+.product-essential:after,
+.product-collateral:after,
+.product-view .product-img-box .more-views ul:after,
+.product-view .box-tags .form-add:after,
+.product-view .product-shop .short-description:after,
+.product-view .box-description:after,
+.product-options .options-list li:after,
+.product-options-bottom:after,
+.product-review:after,
+.cart:after,
+.cart-collaterals:after,
+.cart .crosssell li.item:after,
+.opc .step-title:after,
+.checkout-progress:after,
+.multiple-checkout .place-order:after,
+.group-select li:after,
+.form-list li:after,
+.form-list .field:after,
+.buttons-set:after,
+.page-print .print-head:after,
+.advanced-search-summary:after,
+.gift-messages-form .item:after,
+.send-friend .form-list li p:after {
+	display: block;
+	content: ".";
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+	height: 0;
+	overflow: hidden;
+}

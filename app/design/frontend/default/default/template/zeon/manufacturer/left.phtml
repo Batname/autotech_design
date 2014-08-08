@@ -1,0 +1,23 @@
+<?php $_manufacturersCollection = $this->getManufacturersCollection(); ?>
+<div class="block block-layered-nav">
+<div class="block-title">
+    <strong><span><?php echo $this->__('Shop By Manufacturer') ?></span></strong>
+</div>
+    <div class="block-content">
+	    <dl id="narrow-by-list">
+	        <dd class="odd">
+	        <ol>
+		    <?php foreach ($_manufacturersCollection as $_manufacturer): ?>
+
+	            <li>
+	            <a href="<?php echo $this->getUrl('manufacturers' . '/' . $_manufacturer->getIdentifier()) ?>"><?php echo $this->__($_manufacturer->getManufacturer()) ?></a>
+	            <!-- To display name -->
+	            <h2><?php //echo Mage::getModel('zeon_manufacturer/manufacturer')->getManufacturerName($_manufacturer->getManufacturer(), Mage::app()->getStore()->getId()) ?></h2>
+	            </li>
+	        <?php endforeach; ?>
+	        </ol>    
+	        </dd>
+	    </dl>
+    </div>
+</div>
+

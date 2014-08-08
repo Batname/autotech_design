@@ -1,0 +1,12 @@
+paths:
+    migrations: %%PHINX_MIGRATIONS_DIR%%
+        
+environments:
+    default_migration_table: elite_phinxlog
+    main:
+        adapter: mysql
+        host: %%PHINX_HOST%%
+        name: %%PHINX_DBNAME%%
+        user: %%PHINX_USER%%
+        pass: %%PHINX_PASSWORD%%
+        port: %%PHINX_PORT%%

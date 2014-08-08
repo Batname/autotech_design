@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<checkout_onepage_shippingmethod>
+        <block type="checkout/onepage_shipping_method_available" name="root" output="toHtml" template="ig_flatshipping5/available.phtml"/>
+    </checkout_onepage_shippingmethod>
+</layout>

@@ -1,0 +1,73 @@
+<div class="jm-product-list <?php echo $config['mode']; ?> clearfix">	
+		<?php if($config['title']){?><div class="page-title category-title">
+			<h1><?php echo $config['title']; ?></h1>
+		</div><?php }; ?>
+		<div class="listing-type-grid category-products">
+			<?php $_collectionSize = $listall?$listall->count():0; ?>
+			
+			<?php $i = 0;
+				$width = 100;
+				// -- added by Duchh 15/12/2009
+				$thumbnailw = $config['width'];
+				$thumbnailh = $config['height'];
+				$numberchar = $config['max'];
+
+				if ($config['perrow']) $width = 100/$config['perrow'];
+				$width = "style=\"width:{$width}%;\"";    
+        $return = false;                
+			?>							
+			<?php if($_collectionSize){?>
+				<ul class="products-grid">
+				<?php foreach ($listall->getItems() as $_product){ 
+						$_rowCount = ceil($_collectionSize/$config['perrow']);
+						if ($i%$config['perrow']==0) : $j++; endif;
+						$i++;
+				?> 
+						<li class="item <?php if ($j==$_rowCount) : echo "item-row-last"; endif; ?> <?php if(($i-1)%$config['perrow']==0): ?> first<?php elseif($i%$config['perrow']==0): ?> last<?php endif; ?>" <?php echo $width;?>>
+							
+							<p class="product-image">
+								<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
+									<img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize($thumbnailw, $thumbnailh)->setWatermarkSize('30x10'); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>"/>
+								</a>
+							</p>
+							<div class="product-information">
+								<h5>
+									<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>"><?php echo $_product->getName() ?></a>
+								</h5>
+								<?php echo $this->getReviewsSummaryHtml($_product, true, true)?>
+								<?php echo $this->getPriceHtml($_product,true, '_jmproduct_' . rand()) ?>
+								
+								<?php if($numberchar) : ?>
+									<p class="pdescription"><?php echo substr(nl2br(strlen($_product->getDescription()) > 10 ? $_product->getDescription() : $_product->getShortDescription()), 0, $numberchar).'...';?></p>
+								<?php endif; ?>
+								<?php if($_product->getRatingSummary()): ?>
+					            	<?php echo $this->getReviewsSummaryHtml($_product) ?>
+					        <?php endif; ?>
+									
+									<?php if($_product->isSaleable()){ ?>
+									<button class="form-button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+										<span><?php echo $this->helper("catalog")->__('Add to Cart') ?></span>
+									</button>
+									<?php } else { ?>
+									<div class="out-of-stock"><?php echo $this->helper("catalog")->__('Out of stock') ?></div>
+									<?php } ?>
+									<ul class="add-to-links">
+									<?php if ($this->helper('wishlist')->isAllow()) : ?>
+									<li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist">
+										<?php echo $this->__('Add to Wishlist') ?>
+									</a></li>
+									<?php endif; ?>
+									<?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+									<li>
+										<a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+									<?php endif; ?>
+									</ul>
+							 </div>
+						</li>					
+				<?php }?>		
+				</ul>
+				<a href="<?php echo Mage::getBaseUrl()."jmproducts/viewall/index/type/".$config['mode']; ?>"> View more </a>
+				<script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+			<?php }?>	
+		</div>
+</div>

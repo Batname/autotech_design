@@ -1,0 +1,36 @@
+<?php
+/**
+ * @author		Sashas
+ * @category    Sashas
+ * @package     Sashas_Callforprice
+ * @copyright   Copyright (c) 2013 Sashas IT Support Inc. (http://www.sashas.org)
+ * @license     http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+
+ */
+
+$_product=$this->getProduct();
+$add_to_cart_url=$this->getAddUrl();
+$customer_group=$this->getGroupId();
+$sidebar=$this->getSidebar();
+$wishlist=$this->getWishlist();
+$model=Mage::getModel('callforprice/callforprice')->loadByProductId($_product->getId());
+ 
+$show_cart=0;
+
+if ($model->getId() && $model->getAddtocartEnabled()==1) {
+	$show_cart=1;
+}
+if (!$model->getId() || !$model->getStatus() ) {
+	$show_cart=1;
+}
+if (in_array($customer_group, explode(',',$model->getCustomerGroups()))) {
+	$show_cart=1;
+}
+if ($show_cart && $wishlist) { 
+?>
+	<button type="button" title="<?php echo $this->__('Add to Cart') ?>" onclick="addWItemToCart(<?php echo $add_to_cart_url ?>)" class="button btn-cart"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+<?php } elseif ($show_cart && $sidebar) {   ?>
+ 	<a href="<?php echo $add_to_cart_url ?>" class="link-cart"><?php echo $this->__('Add to Cart') ?></a>
+<?php }elseif ($show_cart) { ?>
+	<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $add_to_cart_url; ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>	
+<?php } ?>

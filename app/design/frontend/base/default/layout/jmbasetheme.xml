@@ -1,0 +1,20 @@
+<layout version="0.1.0">
+   <jmbasetheme_index_index>
+      <reference name="root">
+         <action method="setTemplate">
+            <template>page/2columns-left.phtml</template>
+         </action>
+      </reference>
+      <reference name="left">
+         <block type="jmbasetheme/left" name="jmbasetheme_left" template="jmbasetheme/left.phtml"/>
+      </reference>
+      <reference name="content">
+         <block type="jmbasetheme/index" name="jmbasetheme_index" template="jmbasetheme/index.phtml"/>
+      </reference>
+   </jmbasetheme_index_index>
+   <default>
+      <reference name="head">
+        <block  type="core/template"  template="joomlart/jmbasetheme/jmbasethemehead.html"  />
+	  </reference>
+   </default>
+ </layout>

@@ -1,0 +1,92 @@
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td><h3 class="icon-head"><?php echo Mage::helper('exportyandexua')->__('Export Products Tools for Yandex.ua') ?></h3></td>
+        </tr>
+    </table>
+</div>
+<div class="entry-edit">
+
+    <?php if (!$this->getIsReadonly()): ?>
+    <div class="box">
+        <form id="import_form" action="<?php echo $this->getUrl('*/*/exportPostYandexUa') ?>" method="post" enctype="multipart/form-data">
+            <?php echo $this->getBlockHtml('formkey')?>
+            <div class="entry-edit-head">
+                <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('exportpromua')->__('Create export file in XML-format') ?></h4>
+            </div>
+    
+
+            <table width="100%">
+                <tr>
+                    <td width="50%">
+                        <h3><?php echo Mage::helper('exportyandexua')->__('Browse by Category:'); ?></h3>
+                        <?php
+                        Mage::app()->loadArea(Mage_Core_Model_App_Area::AREA_FRONTEND, Mage_Core_Model_App_Area::PART_EVENTS);
+                        Mage::app()->setCurrentStore(1);
+
+                        $rootcatId = Mage::app()->getStore()->getRootCategoryId();
+                        
+                        //echo $rootcatId;
+                        $categories = Mage::getModel('catalog/category')->getCategories($rootcatId);
+                        $_helper = Mage::helper('catalog/category');
+                        
+                        $_categories1 = $_helper->getStoreCategories();
+                        
+                        
+                        //padding
+                        $i = 10;
+                        
+                        if (count($_categories1) > 0): ?>
+                        <ul>
+                            <?php foreach($_categories1 as $_category): ?>
+                            <li style="margin-left: <?php echo $i; ?>px">
+                                <input id="id<?php echo $_category->getId(); ?>"  type="checkbox" name="cats[]" value="<?php echo $_category->getId(); ?>_<?php echo $_category->getLevel(); ?>" > 
+                                <label for="id<?php echo $_category->getId(); ?>"><?php echo $_category->getName() ?></label>
+                                <?php $_category = Mage::getModel('catalog/category')->load($_category->getId());
+                                if (count($_category->getData('children_count')) > 0): $subCats = $_category->getChildren(); 
+                                if($subCats && $subCats!=''): $subCats = explode(',',$subCats);
+                                ?>
+                                <ul>
+                                    <?php $i2 = $i + 10; foreach($subCats as $_subcategory): $cat = Mage::getModel('catalog/category')->load($_subcategory); ?>
+                                    <li style="margin-left: <?php echo $i2; ?>px">
+                                        <input id="id<?php echo $cat->getId(); ?>"  type="checkbox" name="cats[]" value="<?php echo $cat->getId(); ?>_<?php echo $cat->getLevel(); ?>" >
+                                        <label for="id<?php echo $cat->getId(); ?>"><?php echo $cat->getName() ?></label>
+                                        <?php $_category2 = Mage::getModel('catalog/category')->load($cat->getId());
+                                        $_subcategories3 = $_category2->getChildrenCategories();
+                                        if (count($_subcategories3) > 0): ?>
+                                        <ul>
+                                            <?php $i3 = $i2 + 10; foreach($_subcategories3 as $_subcategory3):  ?>
+                                            <li style="margin-left: <?php echo $i3; ?>px">
+                                                <input id="id<?php echo $_subcategory3->getId(); ?>"  type="checkbox" name="cats[]" value="<?php echo $_subcategory3->getId(); ?>_<?php echo $_subcategory3->getLevel(); ?>" >
+                                                <label for="id<?php echo $_subcategory3->getId(); ?>"><?php echo $_subcategory3->getName() ?></label>
+                                            </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                        <?php endif; ?>
+                                    </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <?php 
+                                endif; 
+                                endif; ?>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php endif; 
+                        
+                        
+                        
+                        
+                        ?>
+                    </td>
+                    <td>
+                        <div style="float: right; margin-top: 5px;"><?php echo $this->getButtonHtml(Mage::helper('core')->__('Run'), "this.form.submit()") ?></div>
+                    </td>    
+                </tr>
+            </table>
+        </form> 
+    </div>
+    <?php endif; ?>
+
+    <div class="clear"></div>
+</div>

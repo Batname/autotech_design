@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <exportautobazar translate="title" module="exportautobazar">
+                    <title>Export Products</title>
+                    <children>
+                        <exportyandexua translate="title" module="exportyandexua">
+                            <title>Export Products for Yandex.Ua</title>
+                            <sort_order>300</sort_order>
+                            <action>exportyandexua/index</action>
+                        </exportyandexua>
+                    </children>
+                    <sort_order>400</sort_order>
+                </exportautobazar>
+            </children>
+        </catalog>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <exportyandexua translate="title" module="exportyandexua">
+                                <title>Export Products for Yandex.Ua</title>
+                            </exportyandexua>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

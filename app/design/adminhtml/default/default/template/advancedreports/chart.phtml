@@ -1,0 +1,23 @@
+<?php
+	/**
+	 * aheadWorks Co.
+	 *
+	 * NOTICE OF LICENSE
+	 *
+	 * This source file is subject to the EULA
+	 * that is bundled with this package in the file LICENSE.txt.
+	 * It is also available through the world-wide-web at this URL:
+	 * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+	 *
+	 * @category   AW
+	 * @package    AW_Advancedreports
+	 * @copyright  Copyright (c) 2009-2010 aheadWorks Co. (http://www.aheadworks.com)
+	 * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+	 */
+?>
+<?php if( $this->canShow() ): ?>
+        <?php $_containerStyle = "width:{$this->getWidth()}px;height:{$this->getHeight()}px; "; ?>
+        <p style="margin:0 auto; padding-bottom: 5px; text-align:center;"><img src="<?php echo $this->getChartUrl(false) ?>" alt="chart" title="chart" /></p>
+<?php else:  ?>       
+        <p class="switcher" style="margin:0 auto; padding-bottom: 5px; text-align:center; color: #666;"><?php echo $this->__('It is not possible to build the chart.').'<br />'.$this->__('Please use shorter period or decrease the granularity (use month instead of day for long periods).') ?></p>
+<?php endif; ?>

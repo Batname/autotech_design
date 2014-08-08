@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <joomlart translate="label" module="joomlart_jmmasshead">
+            <label>JoomlArt</label>
+            <sort_order>210</sort_order>
+        </joomlart>
+    </tabs>  
+	<sections>
+        <joomlart_jmmasshead>
+            <label>JM Masshead</label>
+            <tab>joomlart</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<joomlart_jmmasshead translate="label">
+                    <label>JM Masshead: Config General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>     
+                    	<show translate="label" module="core">
+							<label>Enabled</label>
+							<sort_order>10</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show>	
+		    		</fields>
+            	</joomlart_jmmasshead>
+            </groups>
+        </joomlart_jmmasshead>
+    </sections>    
+</config>

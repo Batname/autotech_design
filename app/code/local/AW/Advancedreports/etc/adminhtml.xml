@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	/**
+	 * aheadWorks Co.
+	 *
+	 * NOTICE OF LICENSE
+	 *
+	 * This source file is subject to the EULA
+	 * that is bundled with this package in the file LICENSE.txt.
+	 * It is also available through the world-wide-web at this URL:
+	 * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+	 *
+	 * @category   AW
+	 * @package    AW_Advancedreports
+	 * @copyright  Copyright (c) 2009-2010 aheadWorks Co. (http://www.aheadworks.com)
+	 * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+	 */
+-->
+<config>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <report>
+                        <children>
+                            <advancedreports>
+                                <title>Advanced</title>
+                                <children>
+                                    <standardsales>
+                                        <title>Sales</title>
+                                    </standardsales>
+                                    <bestsellers>
+                                        <title>Bestsellers</title>
+                                    </bestsellers>
+                                    <country>
+                                        <title>Sales by Country</title>
+                                    </country>
+                                    <hours>
+                                        <title>Sales by Hour</title>
+                                    </hours>
+                                    <dayofweek>
+                                        <title>Sales by Day of Week</title>
+                                    </dayofweek>
+                                    <product>
+                                        <title>Sales by Product</title>
+                                    </product>
+                                    <users>
+                                        <title>Users Activity Report</title>
+                                    </users>
+                                    <sales>
+                                        <title>Sales Report</title>
+                                    </sales>
+                                    <usergroups>
+                                        <title>Sales by Customer Group</title>
+                                    </usergroups>
+                                    <purchased>
+                                        <title>Products by Customer</title>
+                                    </purchased>
+                                </children>
+                            </advancedreports>
+                        </children>
+                    </report>
+
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <advancedreports>
+                                        <title>aheadWorks - Advanced Reports</title>
+                                    </advancedreports>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <report>
+            <children>
+                <advancedreports translate="title" module="advancedreports">
+                    <title>Advanced</title>
+                    <sort_order>100</sort_order>
+                    <children>
+                        <standardsales module="advancedreports" translate="title">
+                            <title>Sales</title>
+                            <action>advancedreports_admin/standardsales</action>
+                            <sort_order>0</sort_order>
+                        </standardsales>
+                        <bestsellers module="advancedreports" translate="title">
+                            <title>Bestsellers</title>
+                            <action>advancedreports_admin/bestsellers</action>
+                            <sort_order>1</sort_order>
+                        </bestsellers>
+                        <country module="advancedreports" translate="title">
+                            <title>Sales by Country</title>
+                            <action>advancedreports_admin/country</action>
+                            <sort_order>2</sort_order>
+                        </country>
+                        <hours module="advancedreports" translate="title">
+                            <title>Sales by Hour</title>
+                            <action>advancedreports_admin/hours</action>
+                            <sort_order>3</sort_order>
+                        </hours>
+                        <dayofweek module="advancedreports" translate="title">
+                            <title>Sales by Day of Week</title>
+                            <action>advancedreports_admin/dayofweek</action>
+                            <sort_order>4</sort_order>
+                        </dayofweek>
+                        <product module="advancedreports" translate="title">
+                            <title>Sales by Product</title>
+                            <action>advancedreports_admin/product</action>
+                            <sort_order>5</sort_order>
+                        </product>
+                        <users module="advancedreports" translate="title">
+                            <title>Users Activity Report</title>
+                            <action>advancedreports_admin/users</action>
+                            <sort_order>6</sort_order>
+                        </users>
+                        <sales module="advancedreports" translate="title">
+                            <title>Sales Report</title>
+                            <action>advancedreports_admin/sales</action>
+                            <sort_order>7</sort_order>
+                        </sales>
+                        <usergroups module="advancedreports" translate="title">
+                            <title>Sales by Customer Group</title>
+                            <action>advancedreports_admin/usergroups</action>
+                            <sort_order>8</sort_order>
+                        </usergroups>
+                        <purchased module="advancedreports" translate="title">
+                            <title>Products by Customer</title>
+                            <action>advancedreports_admin/purchased</action>
+                            <sort_order>9</sort_order>
+                        </purchased>
+                    </children>
+                </advancedreports>
+            </children>
+        </report>
+    </menu>
+</config>

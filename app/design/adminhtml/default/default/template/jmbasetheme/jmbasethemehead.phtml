@@ -1,0 +1,18 @@
+<?php
+$currentstore = Mage::app()->getRequest()->getParam("store");
+if(isset($currentstore) && $currentstore != "undefined") {
+$currentstoreid = Mage::app()->getStore($currentstore)->getId();
+?>
+<script type="text/javascript">
+
+var storeid = <?php echo $currentstoreid; ?>,storecode = '<?php echo $currentstore ?>';
+
+</script>
+<?php } ?>
+<script type="text/javascript">
+
+   var lg_profile_name_exist = '<?php echo Mage::helper('jmbasetheme')->__('lg_profile_name_exist'); ?>';
+   var lg_enter_profile_name = '<?php echo Mage::helper('jmbasetheme')->__('lg_enter_profile_name'); ?>';
+   var lg_select_profile = '<?php echo Mage::helper('jmbasetheme')->__('lg_select_profile'); ?>';
+   var lg_please_enter_profile_name = '<?php echo Mage::helper('jmbasetheme')->__('lg_please_enter_profile_name'); ?>';
+</script>

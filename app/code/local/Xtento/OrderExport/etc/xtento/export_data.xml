@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<config>
+    <data>
+        <!-- General order data -->
+        <general>
+            <class>xtento_orderexport/export_data_order_general</class>
+        </general>
+        <!-- Shared general data -->
+        <shared_general>
+            <class>xtento_orderexport/export_data_shared_general</class>
+        </shared_general>
+        <!-- General further data -->
+        <address>
+            <class>xtento_orderexport/export_data_order_address</class>
+        </address>
+        <payment>
+            <class>xtento_orderexport/export_data_order_payment</class>
+        </payment>
+        <!-- Payment -->
+        <cc>
+            <class>xtento_orderexport/export_data_order_payment_cc</class>
+        </cc>
+        <!-- Status History -->
+        <history>
+            <class>xtento_orderexport/export_data_order_history</class>
+        </history>
+        <!-- Invoice Comments -->
+        <invoice_comments>
+            <class>xtento_orderexport/export_data_invoice_comments</class>
+        </invoice_comments>
+        <!-- Shipment tracking data -->
+        <tracking>
+            <class>xtento_orderexport/export_data_shipment_tracking</class>
+        </tracking>
+        <shared_tracking>
+            <class>xtento_orderexport/export_data_shared_tracking</class>
+        </shared_tracking>
+        <!-- Salesrule information -->
+        <salesrule>
+            <class>xtento_orderexport/export_data_shared_salesRule</class>
+        </salesrule>
+        <!-- Customer -->
+        <customer>
+            <class>xtento_orderexport/export_data_shared_customer</class>
+        </customer>
+        <!-- Items -->
+        <items>
+            <class>xtento_orderexport/export_data_shared_items</class>
+        </items>
+        <!-- Third party -->
+        <aw_points>
+            <class>xtento_orderexport/export_data_custom_order_aWPoints</class>
+        </aw_points>
+        <aitoc_checkoutfields>
+            <class>xtento_orderexport/export_data_custom_order_aitocCheckoutFields</class>
+        </aitoc_checkoutfields>
+        <aitoc_customerfields>
+            <class>xtento_orderexport/export_data_custom_order_aitocCustomerFields</class>
+        </aitoc_customerfields>
+        <amasty_deliverydate>
+            <class>xtento_orderexport/export_data_custom_order_amastyDeliveryDate</class>
+        </amasty_deliverydate>
+        <amasty_orderattributes>
+            <class>xtento_orderexport/export_data_custom_order_amastyOrderAttributes</class>
+        </amasty_orderattributes>
+        <amasty_ordermemos>
+            <class>xtento_orderexport/export_data_custom_order_amastyOrderMemos</class>
+        </amasty_ordermemos>
+        <dh_shipnote>
+            <class>xtento_orderexport/export_data_custom_order_dhShipNote</class>
+        </dh_shipnote>
+        <fme_checkoutattributes>
+            <class>xtento_orderexport/export_data_custom_order_fmeCheckoutAttributes</class>
+        </fme_checkoutattributes>
+        <m2e_pro>
+            <class>xtento_orderexport/export_data_custom_order_m2ePro</class>
+        </m2e_pro>
+        <mage_epay>
+            <class>xtento_orderexport/export_data_custom_order_mageEpay</class>
+        </mage_epay>
+        <mageme_webformscrf>
+            <class>xtento_orderexport/export_data_custom_customer_mageMeWebFormsCrf</class>
+        </mageme_webformscrf>
+        <mageworld_onestepcheckoutpro>
+            <class>xtento_orderexport/export_data_custom_order_mageworldOSCPro</class>
+        </mageworld_onestepcheckoutpro>
+        <ebizmarts_sagepay>
+            <class>xtento_orderexport/export_data_custom_order_ebizmartsSagepay</class>
+        </ebizmarts_sagepay>
+        <itabs_debit>
+            <class>xtento_orderexport/export_data_custom_order_itabsDebitPayment</class>
+        </itabs_debit>
+        <kamtech_giftwrapper>
+            <class>xtento_orderexport/export_data_custom_order_kamtechGiftwrapper</class>
+        </kamtech_giftwrapper>
+    </data>
+</config>
+<!--
+/**
+ * Product:       Xtento_OrderExport (1.4.2)
+ * ID:            PFfyWdN87L18YuBkt8s4hyQ0GKm/8YlUX7OfWyzQ7VQ=
+ * Packaged:      2014-05-07T09:11:40+00:00
+ * Last Modified: 2014-02-15T16:38:00+01:00
+ * File:          app/code/local/Xtento/OrderExport/etc/xtento/export_data.xml
+ * Copyright:     Copyright (c) 2014 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+-->

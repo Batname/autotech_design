@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+
+    <tabs>
+        <pagayo translate="label">
+            <label>Pagayo Extensions</label>
+            <sort_order>300</sort_order>
+        </pagayo>
+    </tabs>
+	
+	<sections>
+		<pagayo_cdbp translate="label">
+		    <class>separator-top</class>
+			<label>Tiny Modules List</label>
+			<tab>pagayo</tab>
+			<sort_order>30</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+			    <global translate="label">
+			        <label>Extra Category Description Below Products</label>
+			        <comment>Extra Category Description Below Products is installed.</comment>
+			        <expanded>1</expanded>
+			        <sort_order>100</sort_order>
+			        <show_in_default>1</show_in_default>
+			        <show_in_website>1</show_in_website>
+			        <show_in_store>1</show_in_store>
+			    </global>
+			</groups>
+        </pagayo_cdbp>
+    </sections>
+    
+</config>

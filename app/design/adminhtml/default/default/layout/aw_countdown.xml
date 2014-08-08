@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <awcountdown_admin_adminhtml_countdown_edit>
+        <reference name="head">
+            <action method="addJs">
+                <script>extjs/ext-tree.js</script>
+            </action>
+            <action method="addJs">
+                <script>extjs/ext-tree-checkbox.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ext-all.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>extjs/resources/css/ytheme-magento.css</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>mage/adminhtml/rules.js</name>
+                <params/>
+            </action>
+        </reference>
+    </awcountdown_admin_adminhtml_countdown_edit>
+    <awcountdown_admin_adminhtml_countdown_index>
+        <reference name="content">
+            <block type="awcountdown/adminhtml_countdown" name="countdown_timers" />
+        </reference>
+    </awcountdown_admin_adminhtml_countdown_index>
+</layout>

@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) <2014>, <Rugento.ru>
+ * License URL http://www.rugento.ru/oferta.html
+ * Support URL http://support.rugento.ru
+ * Support EMAIL support@rugento.ru
+ */
+-->
+<config>
+    <sections>
+        <carriers>
+            <groups>
+                <novaposhta translate="label" module="novaposhta">
+                    <label>&#x41D;&#x43E;&#x432;&#x430; &#x41F;&#x43E;&#x448;&#x442;&#x430;</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>&#x412;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                        <title translate="label">
+                            <label>&#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <name translate="label">
+                            <label>&#x421;&#x43E;&#x43E;&#x431;&#x449;&#x435;&#x43D;&#x438;&#x435;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Чтобы указать срок доставки, вставьте {{period}}. Например, Срок доставки {{period}}. Чтобы указать стоимость доставки вставьте {{api_amount}}.]]></comment>
+                        </name>
+                        <api_key translate="label">
+                            <label>&#x41A;&#x43B;&#x44E;&#x447; API</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>required-entry</validate>
+                        </api_key>
+                        <sender_city translate="label">
+                            <label>&#x413;&#x43E;&#x440;&#x43E;&#x434; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F;</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>novaposhta/source_city</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment/>
+                        </sender_city>
+                        <deliverytype translate="label">
+                            <label>&#x422;&#x438;&#x43F; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x438;</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>novaposhta/source_deliverytype</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment/>
+                        </deliverytype>
+                        <pay_customer translate="label">
+                            <label>&#x414;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x430; &#x437;&#x430; &#x441;&#x447;&#x435;&#x442; &#x43F;&#x43E;&#x43A;&#x443;&#x43F;&#x430;&#x442;&#x435;&#x43B;&#x44F;</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>64</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pay_customer>
+                        <pay_customer_fee translate="label">
+                            <label>&#x421;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x438; &#x437;&#x430; &#x441;&#x447;&#x435;&#x442; &#x43F;&#x43E;&#x43A;&#x443;&#x43F;&#x430;&#x442;&#x435;&#x43B;&#x44F;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>&#x41E;&#x431;&#x44B;&#x447;&#x43D;&#x43E; 0. &#x420;&#x430;&#x441;&#x447;&#x435;&#x442; &#x447;&#x435;&#x440;&#x435;&#x437; API &#x438;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x443;&#x435;&#x442;&#x441;&#x44F;.</comment>
+                            <depends><pay_customer>1</pay_customer></depends>
+                        </pay_customer_fee>
+                        <height translate="label">
+                            <label>&#x412;&#x44B;&#x441;&#x43E;&#x442;&#x430; &#x43F;&#x43E;&#x441;&#x44B;&#x43B;&#x43A;&#x438; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </height>
+                        <width translate="label">
+                            <label>&#x428;&#x438;&#x440;&#x438;&#x43D;&#x430; &#x43F;&#x43E;&#x441;&#x44B;&#x43B;&#x43A;&#x438; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </width>
+                        <depth translate="label">
+                            <label>&#x413;&#x43B;&#x443;&#x431;&#x438;&#x43D;&#x430; &#x43F;&#x43E;&#x441;&#x44B;&#x43B;&#x43A;&#x438; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </depth>
+                        <weight_units translate="label">
+                            <label>&#x415;&#x434;&#x438;&#x43D;&#x438;&#x446;&#x430; &#x432;&#x435;&#x441;&#x430; &#x442;&#x43E;&#x432;&#x430;&#x440;&#x43E;&#x432;.</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>novaposhta/source_weightunits</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>&#x41C;&#x435;&#x440;&#x430; &#x432;&#x435;&#x441;&#x430; &#x432;&#x430;&#x448;&#x438;&#x445; &#x442;&#x43E;&#x432;&#x430;&#x440;&#x43E;&#x432; &#x432; &#x431;&#x430;&#x437;&#x435;.</comment>
+                        </weight_units>
+                        <handling_type translate="label">
+                            <label>&#x421;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C; &#x443;&#x43F;&#x430;&#x43A;&#x43E;&#x432;&#x43A;&#x438;</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>shipping/source_handlingType</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </handling_type>
+                        <handling_fee translate="label">
+                            <label>&#x41F;&#x43B;&#x430;&#x442;&#x430; &#x437;&#x430; &#x443;&#x43F;&#x430;&#x43A;&#x43E;&#x432;&#x43A;&#x443;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </handling_fee>
+                        <xtra translate="label">
+                            <label>&#x41D;&#x430;&#x434;&#x431;&#x430;&#x432;&#x43A;&#x430;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>&#x42D;&#x442;&#x430; &#x441;&#x443;&#x43C;&#x43C;&#x430; &#x431;&#x443;&#x434;&#x435;&#x442; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x430; &#x43A; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x438;.</comment>
+                        </xtra>
+                        <xtra_percent translate="label">
+                            <label>&#x41D;&#x430;&#x434;&#x431;&#x430;&#x432;&#x43A;&#x430;, &#x432; &#x43F;&#x440;&#x43E;&#x446;&#x435;&#x43D;&#x442;&#x430;&#x445; &#x43E;&#x442; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x442;&#x43E;&#x432;&#x430;&#x440;&#x430;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>131</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>&#x42D;&#x442;&#x430; &#x441;&#x443;&#x43C;&#x43C;&#x430; &#x431;&#x443;&#x434;&#x435;&#x442; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x430; &#x43A; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x438;.</comment>
+                        </xtra_percent>
+                        <min_order_value translate="label">
+                            <label>&#x41C;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x441;&#x443;&#x43C;&#x43C;&#x430; &#x437;&#x430;&#x43A;&#x430;&#x437;&#x430;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </min_order_value>
+                        <max_order_value translate="label">
+                            <label>&#x41C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x441;&#x443;&#x43C;&#x43C;&#x430; &#x437;&#x430;&#x43A;&#x430;&#x437;&#x430;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </max_order_value>
+                        <weight_value translate="label">
+                            <label>&#x412;&#x435;&#x441; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; (&#x435;&#x441;&#x43B;&#x438; &#x443; &#x442;&#x43E;&#x432;&#x430;&#x440;&#x43E;&#x432; &#x43D;&#x435;&#x442; &#x432;&#x435;&#x441;&#x430;)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>&#x412; &#x43A;&#x438;&#x43B;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x430;&#x445;.</comment>
+                        </weight_value>
+                        <ignore_free translate="label">
+                            <label>&#x418;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x431;&#x435;&#x441;&#x43F;&#x43B;&#x430;&#x442;&#x43D;&#x443;&#x44E; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x443;</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ignore_free>
+                        <valuation translate="label">
+                            <label>&#x41F;&#x440;&#x43E;&#x446;&#x435;&#x43D;&#x442; &#x43E;&#x431;&#x44A;&#x44F;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>&#x41E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x438;&#x432;&#x430;&#x435;&#x442; % &#x43E;&#x431;&#x44A;&#x44F;&#x432;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x438;. 100 - &#x43F;&#x43E;&#x43B;&#x43D;&#x430;&#x44F; &#x441;&#x442;&#x43E;&#x438;&#x43C;&#x43E;&#x441;&#x442;&#x44C;.</comment>
+                        </valuation>
+                        <extra_period>
+                            <label>&#x414;&#x43E;&#x431;&#x430;&#x432;&#x43E;&#x447;&#x43D;&#x44B;&#x435; &#x434;&#x43D;&#x438; &#x43A; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x435;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>&#x411;&#x443;&#x434;&#x443;&#x442; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x44B; &#x43A; &#x441;&#x440;&#x43E;&#x43A;&#x443; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x438; (&#x434;&#x43D;&#x438;).</comment>
+                        </extra_period>
+                        <desc translate="label">
+                            <label>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x43E;&#x442;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x438;&#x44F; (&#x441;&#x43A;&#x43B;&#x430;&#x434;&#x430;)</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </desc>
+                        <showmethod translate="label">
+                            <label>Show method if not applicable</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>210</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </showmethod>
+                        <specificerrmsg translate="label">
+                            <label>Displayed Error Message</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </specificerrmsg>
+                        <sort_order translate="label">
+                            <label>&#x41F;&#x43E;&#x440;&#x44F;&#x434;&#x43E;&#x43A; &#x440;&#x430;&#x441;&#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x435;&#x43D;&#x438;&#x44F;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>230</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sort_order>
+                        <debug>
+                            <label>&#x41E;&#x442;&#x43B;&#x430;&#x434;&#x43A;&#x430;</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>240</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>&#x417;&#x430;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442;&#x44B; &#x432; &#x43B;&#x43E;&#x433;.</comment>
+                        </debug>
+                        <version translate="label">
+                            <frontend_model>novaposhta/adminhtml_version</frontend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </version>
+                    </fields>
+                </novaposhta>
+            </groups>
+        </carriers>
+    </sections>
+</config>

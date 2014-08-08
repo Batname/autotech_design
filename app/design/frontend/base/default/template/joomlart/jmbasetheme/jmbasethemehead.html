@@ -1,0 +1,107 @@
+<?php
+$curenturl = Mage::helper('core/url')->getCurrentUrl();
+
+if(strpos($curenturl,"https") === False){
+                  $baseurl = Mage::getBaseUrl();
+                    
+         }else{
+                    $baseurl = Mage::getStoreConfig("web/secure/base_url");  
+         }
+?>
+<script type="text/javascript">
+  var baseurl = "<?php echo $baseurl; ?>"
+</script>
+
+<!--<?php if(!defined('JM_ADD_JQUERY')): ?>-->
+  <!--<?php $jquery_url= $this->getSkinUrl('wavethemes/jmbasetheme/js/jquery.js');?>-->
+  <!--<?php if (@fopen($jquery_url,"r")==true):?>-->
+      <!--<script type="text/javascript" src="<?php echo $jquery_url ?>"></script>-->
+  <!--<?php define('JM_ADD_JQUERY', true); ?>-->
+    <!--<?php endif;?>-->
+<!--<?php endif; ?>-->
+  
+  
+
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('wavethemes/jmbasetheme/js/jmbasetheme.js') ?>"></script>
+<?php 
+
+    $devicedetect = Mage::helper ('jmbasetheme/mobiledetect');
+
+    $ismobile = $devicedetect->isMobile()?1:0;
+    $istable = $devicedetect->isTablet()?1:0;
+
+    $baseconfig =  Mage::helper("jmbasetheme")->getactiveprofile();
+   
+    if ($baseconfig) : 
+            $productlistimagewidth = $baseconfig["productlistimagewidth"]?$baseconfig["productlistimagewidth"]:180;
+            $productlistimageheight = $baseconfig["productlistimageheight"]?$baseconfig["productlistimageheight"]:180;
+            $productgriddeslenght = $baseconfig["productgriddeslenght"];
+            $productgridimageheight = $baseconfig["productgridimageheight"]?$baseconfig["productgridimageheight"]:180;
+            $productgridimagewidth = $baseconfig["productgridimagewidth"]?$baseconfig["productgridimagewidth"]:180;
+            $productgridnumbercolumn = $baseconfig["productgridnumbercolumn"]?$baseconfig["productgridnumbercolumn"]:3;
+            if($istable){
+              $productlistimagewidth = $baseconfig["productlistimagewidthtablet"]?$baseconfig["productlistimagewidthtablet"]:298;
+              $productlistimageheight = $baseconfig["productlistimageheighttablet"]?$baseconfig["productlistimageheighttablet"]:298;
+              $productgriddeslenght = $baseconfig["productgriddeslenghttablet"];
+              $productgridimageheight = $baseconfig["productgridimageheighttablet"]?$baseconfig["productgridimageheighttablet"]:298;
+              $productgridimagewidth = $baseconfig["productgridimagewidthtablet"]?$baseconfig["productgridimagewidthtablet"]:298;
+              $productgridnumbercolumn = $baseconfig["productgridnumbercolumntablet"]?$baseconfig["productgridnumbercolumntablet"]:3;
+            }else if($ismobile){
+              $productlistimagewidth = $baseconfig["productlistimagewidthmobile"]?$baseconfig["productlistimagewidthmobile"]:298;
+              $productlistimageheight = $baseconfig["productlistimageheightmobile"]?$baseconfig["productlistimageheightmobile"]:298;
+              $productgriddeslenght = $baseconfig["productgriddeslenghtmobile"];
+              $productgridimageheight = $baseconfig["productgridimageheightmobile"]?$baseconfig["productgridimageheightmobile"]:298;
+              $productgridimagewidth = $baseconfig["productgridimagewidthmobile"]?$baseconfig["productgridimagewidthmobile"]:298;
+              $productgridnumbercolumn = $baseconfig["productgridnumbercolumnmobile"]?$baseconfig["productgridnumbercolumnmobile"]:1;
+            }
+            $productlistimagewidthtabletportrait = isset($baseconfig["productlistimagewidthtabletportrait"])&&$baseconfig["productlistimagewidthtabletportrait"]?$baseconfig["productlistimagewidthtabletportrait"]:298;
+            $productlistimageheighttabletportrait = isset($baseconfig["productlistimageheighttabletportrait"])&&$baseconfig["productlistimageheighttabletportrait"]?$baseconfig["productlistimageheighttabletportrait"]:298;
+            $productgridimageheighttabletportrait = isset($baseconfig["productgridimageheighttabletportrait"])&&$baseconfig["productgridimageheighttabletportrait"]?$baseconfig["productgridimageheighttabletportrait"]:298;
+            $productgridimagewidthtabletportrait = isset($baseconfig["productgridimagewidthtabletportrait"])&&$baseconfig["productgridimagewidthtabletportrait"]?$baseconfig["productgridimagewidthtabletportrait"]:298;
+            $productgridnumbercolumntabletportrait = isset($baseconfig["productgridnumbercolumntabletportrait"])&&$baseconfig["productgridnumbercolumntabletportrait"]?$baseconfig["productgridnumbercolumntabletportrait"]:2;
+            $productlistimagewidthmobileportrait = isset($baseconfig["productlistimagewidthmobileportrait"])&&$baseconfig["productlistimagewidthmobileportrait"]?$baseconfig["productlistimagewidthmobileportrait"]:298;
+            $productlistimageheightmobileportrait = isset($baseconfig["productlistimageheightmobileportrait"])&&$baseconfig["productlistimageheightmobileportrait"]?$baseconfig["productlistimageheightmobileportrait"]:298;
+            $productgridimageheightmobileportrait = isset($baseconfig["productgridimageheightmobileportrait"])&&$baseconfig["productgridimageheightmobileportrait"]?$baseconfig["productgridimageheightmobileportrait"]:298;
+            $productgridimagewidthmobileportrait = isset($baseconfig["productgridimagewidthmobileportrait"])&&$baseconfig["productgridimagewidthmobileportrait"]?$baseconfig["productgridimagewidthmobileportrait"]:298;
+            $productgridnumbercolumnmobileportrait = isset($baseconfig["productgridnumbercolumnmobileportrait"])&&$baseconfig["productgridnumbercolumnmobileportrait"]?$baseconfig["productgridnumbercolumnmobileportrait"]:1;
+           
+        else :
+            $productlistimagewidth = 180;
+            $productlistimageheight = 180;
+            $productgriddeslenght = 0;
+            $productgridimageheight = 180;
+            $productgridimagewidth = 180;
+            $showlabel = 0;
+    endif;
+      
+?>
+<?php if ($baseconfig) { ?>
+<script type="text/javascript">
+    var offcanvaseffect = '<?php echo$baseconfig['offcanvaseffect']; ?>';
+    ja = jQuery.noConflict();
+    ja(document).ready(function() {
+          var test = new ja.fn.jmbasetheme({
+              ismobile:<?php echo $ismobile;  ?>,
+              istable:<?php echo $istable; ?>,
+              productgridimagewidth:<?php echo $productgridimagewidth; ?>,
+              productgridimageheight:<?php echo $productgridimageheight; ?>,
+              productlistimageheight:<?php echo $productlistimageheight; ?>,
+              productlistimagewidth:<?php echo $productlistimagewidth; ?>,
+              productgridnumbercolumn:<?php echo $productgridnumbercolumn; ?>,
+              productgridimagewidthtabletportrait:<?php echo $productgridimagewidthtabletportrait; ?>,
+              productgridimageheighttabletportrait:<?php echo $productgridimageheighttabletportrait; ?>,
+              productlistimagewidthtabletportrait:<?php echo $productlistimagewidthtabletportrait; ?>,
+              productlistimageheighttabletportrait:<?php echo $productlistimageheighttabletportrait; ?>,
+              productgridnumbercolumntabletportrait:<?php echo $productgridnumbercolumntabletportrait; ?>,
+              productlistimagewidthmobileportrait:<?php echo $productlistimagewidthmobileportrait; ?>,
+              productlistimageheightmobileportrait:<?php echo $productlistimageheightmobileportrait; ?>,
+              productgridimageheightmobileportrait:<?php echo $productgridimageheightmobileportrait; ?>,
+              productgridimagewidthmobileportrait:<?php echo $productgridimagewidthmobileportrait; ?>,
+              productgridnumbercolumnmobileportrait:<?php echo $productgridnumbercolumnmobileportrait; ?>,
+
+          });
+  
+  });
+</script>
+<?php } ?>
+

@@ -1,0 +1,49 @@
+<?php
+/**
+* aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * aheadWorks does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * aheadWorks does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Countdown
+ * @version    1.0.3
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ */
+?>
+<?php
+?>
+<?php $containerId = rand(1, 100000); ?>
+<?php if ($this->_appliedCountdown) : ?>
+    <?php $countdown = $this->_appliedCountdown; ?>
+    <?php if ($countdown->getUrl() != '' && Mage::registry('current_product') == null): ?>
+        <a href="<?php echo $countdown->getUrl(); ?>" target="_blank" class="aw_countdown_timer_container_<?php echo $this->getDesign($countdown); ?>">
+        <?php endif; ?>
+        <div class="aw_countdown_timer_container_<?php echo $this->getDesign($countdown); ?>" id="aw_timer_<?php echo $containerId; ?>">
+            <?php $content = $this->getBlockHtml($countdown) ?>
+            <?php echo $content; ?>
+        </div>
+        <?php if ($countdown->getUrl() != '' && Mage::registry('current_product') == null): ?>
+        </a>
+    <?php endif; ?>
+    <script type="text/javascript">
+    <?php $currentPath = str_replace('/', '___', Mage::helper('core/url')->getCurrentUrl()); ?>
+            var controllerUrl = '<?php echo Mage::getUrl('awcountdown/countdown/index', array('returnurl' => $currentPath)); ?>';
+            timer<?php echo $containerId; ?> = new AwCountdown('<?php echo $this->getFormat($countdown) ?>','<?php echo $this->getTimeLeft($countdown) ?>','aw_timer_<?php echo $containerId; ?>');
+    </script>
+<?php endif; ?>

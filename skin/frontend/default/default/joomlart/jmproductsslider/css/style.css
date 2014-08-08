@@ -1,0 +1,196 @@
+img { border: none; }
+
+/* image replacement */
+.graphic {
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-indent: -8000px;
+}
+
+/* // image replacement */
+.jm-products-slider-listing {
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+}
+
+.jm-products-slider-content{ 
+	position: relative; 
+	padding: 15px 0;
+}
+
+/* Easy Slider */
+.jm-slider { overflow: hidden; width: 0px; float: left;}
+
+.jm-slider ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.jm-slider li {
+	overflow: hidden;
+	float: left;
+	margin: 0;
+	text-align: center;
+	display: block;
+}
+
+/*.jm-slider a { position: relative; } */
+
+.jm-prev {
+	position: absolute;
+	left: 10px;
+	width: 30px;
+}
+
+.jm-next {
+	position: absolute;
+	right: 10px;
+	width: 30px;
+}
+
+.jm-slide-left-img,
+.jm-slide-right-img {
+	position: absolute;
+	top: 70px;
+	cursor: pointer;
+	z-index:999;
+}
+
+
+/* scroller */
+.has-hscrollbar {
+	padding-bottom: 30px;
+}
+
+.customScrollerContainer {
+
+}
+.customScrollerContent {
+
+}
+
+/* SCROLLER STYLE */
+/* VERTICAL */
+.divVScrollerBar {
+	width: 18px;
+	margin-left: 1px;
+}
+
+/* ORIZONTAL */
+.divOScrollerBar {
+	height: 18px;
+	margin-top: 1px;
+}
+
+/* AREA UP */
+.divVScrollerBarUp {
+	cursor: pointer;
+	height: 17px;
+}
+/* AREA LEFT */
+.divOScrollerBarLeft {
+	cursor: pointer;
+	width: 17px;
+}
+/* AREA DOWN */
+.divVScrollerBarDown {
+	cursor: pointer;
+	height: 17px;
+}
+/* AREA RIGHT */
+.divOScrollerBarRight {
+	cursor: pointer;
+	width: 17px;
+}
+/* ARROW UP AND DOWN */
+.divVScrollerBarUp span,
+.divVScrollerBarDown span {
+	display: block;
+	border: 1px solid #dae4eb;
+	width: 16px;
+	height: 15px;
+	line-height: 0;
+	font-size: 0;
+}
+.divVScrollerBarUp span {
+	background: #baccda url(../images/vtop.gif) no-repeat center center;
+}
+.divVScrollerBarDown span {
+	background: #baccda url(../images/vbottom.gif) no-repeat center center;
+}
+/* ARROW LEFT AND RIGHT */
+.divOScrollerBarLeft span,
+.divOScrollerBarRight span {
+	display: block;
+	
+	height: 16px;
+	width: 15px;
+	line-height: 0;
+	font-size: 0;
+}
+.divOScrollerBarLeft span {
+	background: #ffffff url(../images/re-left.gif) no-repeat center center;
+}
+.divOScrollerBarRight span {
+	background: #ffffff url(../images/re-right.gif) no-repeat center center;
+}
+
+/* ARROWS HOVER */
+.divVScrollerBarUp span.hover,
+.divOScrollerBarLeft span.hover,
+.divVScrollerBarDown span.hover,
+.divOScrollerBarRight span.hover {
+	
+	background-color: #527fa2;
+}
+
+/* TRACE */
+.divVScrollerBarTrace, .divOScrollerBarTrace {
+	background: url(../images/line.gif) repeat-x left center;
+	line-height: 0;
+	font-size: 0;
+}
+
+/* CURSORS */
+.divVScrollerBarCursor {
+	cursor: pointer;
+}
+.divOScrollerBarCursor {
+	cursor: pointer;
+}
+.divVScrollerBarCursor span {
+	display: block;
+	border-left: 1px solid #dae4eb;
+	border-right: 1px solid #dae4eb;
+	height: 100%;
+	width: 16px;
+	background: #baccda url(../images/vcursor.gif) no-repeat center center;
+	line-height: 0;
+	font-size: 0;
+}
+.divOScrollerBarCursor span {
+	display: block;
+	border-top: 1px solid #dae4eb;
+	border-bottom: 1px solid #dae4eb;
+	height: 10px;
+	width: 100%;
+	background: #cccccc url(../images/ocursor.gif) no-repeat center center;
+	font-size: 0;
+	margin-top:3px;
+}
+/* CURSORS HOVER */
+.divVScrollerBarCursor span.hover {
+	border-left: 1px solid #a3bbce;
+	border-right: 1px solid #a3bbce;
+	background-color: #527fa2;
+}
+.divOScrollerBarCursor span.hover {
+	border-top: 1px solid #a3bbce;
+	border-bottom: 1px solid #a3bbce;
+	background-color: #cccccc;
+}

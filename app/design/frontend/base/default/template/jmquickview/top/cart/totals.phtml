@@ -1,0 +1,9 @@
+ 
+ <?php if ($this->canApplyMsrp()): ?>
+                    <span class="map-cart-sidebar-total"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></span>
+ <?php else: ?>
+    <span class="label"><?php echo $this->__('Total:') ?></span> <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?>
+    <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
+        <br />(<?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?> <?php echo Mage::helper('tax')->getIncExcText(true) ?>)
+    <?php endif; ?>
+ <?php endif; ?>

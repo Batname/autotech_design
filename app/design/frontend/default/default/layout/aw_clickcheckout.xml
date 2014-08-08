@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <catalog_product_view>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>aw_clickcheckout/css/style.css</stylesheet>
+            </action>
+            <action method="addJs">
+                <script>aw_clickcheckout/clickcheckout-pe.js</script>
+            </action>
+            <action method="addJs">
+                <script>varien/accordion.js</script>
+            </action>
+        </reference>
+        <reference name="product.info.addtocart">
+            <block type="page/html_wrapper" name="product.info.addtocart.oneclick.wrapper">
+                <block type="awclickcheckout/block" name="product.info.addtocart.oneclick" as="oneclick" template="aw_clickcheckout/block.phtml"/>
+            </block>
+        </reference>
+        <reference name = "before_body_end">
+            <block type="page/html_wrapper" name="product.info.addtocart.oneclick.wrapper">
+                   <block type="awclickcheckout/popup" name="aw.oneclick.popup" as="oneclick" template="aw_clickcheckout/popup.phtml"/>
+            </block>
+        </reference>
+    </catalog_product_view>
+    <review_product_list>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>aw_clickcheckout/css/style.css</stylesheet>
+            </action>
+            <action method="addJs">
+                <script>aw_clickcheckout/clickcheckout-pe.js</script>
+            </action>
+            <action method="addJs">
+                <script>varien/accordion.js</script>
+            </action>
+        </reference>
+        <reference name="product.info.addtocart">
+            <block type="page/html_wrapper" name="product.info.addtocart.oneclick.wrapper">
+                <block type="awclickcheckout/block" name="product.info.addtocart.oneclick" as="oneclick" template="aw_clickcheckout/block.phtml"/>
+            </block>
+        </reference>
+        <reference name = "before_body_end">
+            <block type="page/html_wrapper" name="product.info.addtocart.oneclick.wrapper">
+                   <block type="awclickcheckout/popup" name="aw.oneclick.popup" as="oneclick" template="aw_clickcheckout/popup.phtml"/>
+            </block>
+        </reference>
+    </review_product_list>
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addJs">
+                <script>aw_clickcheckout/submitter.js</script>
+            </action>
+        </reference>
+        <reference name = "before_body_end">
+            <block type="awclickcheckout/block" name="aw.oneclick.blocker" as="oneclick" template="aw_clickcheckout/background.phtml"/>
+        </reference>
+    </checkout_onepage_index>
+    <checkout_cart_index>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>aw_clickcheckout/css/style.css</stylesheet>
+            </action>
+            <action method="addJs">
+                <script>aw_clickcheckout/clickcheckout-pe.js</script>
+            </action>
+            <action method="addJs">
+                <script>varien/accordion.js</script>
+            </action>
+        </reference>
+        <reference name="checkout.cart.methods">
+            <block type="page/html_wrapper" name="checkout.cart.oneclick.wrapper" before="checkout.cart.methods.onepage.bottom">
+                <block type="awclickcheckout/cart_block" name="checkout.cart.methods.oneclick" as="oneclick" template="aw_clickcheckout/cart/block.phtml"/>
+            </block>
+        </reference>
+        <reference name = "before_body_end">
+            <block type="page/html_wrapper" name="checkout.cart.oneclick..end.wrapper">
+                   <block type="awclickcheckout/popup" name="aw.oneclick.popup" as="oneclick" template="aw_clickcheckout/popup.phtml"/>
+            </block>
+        </reference>
+    </checkout_cart_index>
+</layout>

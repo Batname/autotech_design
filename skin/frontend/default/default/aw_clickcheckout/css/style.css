@@ -1,0 +1,117 @@
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Clickcheckout
+ * @copyright  Copyright (c) 2011 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+
+.aw-one-click-checkout-container {
+    border: 1px solid #CFCFCF;
+    margin-top: 10px;
+    margin-right: 10px;
+    max-width: 370px;
+}
+
+.aw-one-click-checkout-container-cart {
+    max-width: 370px;
+}
+
+.aw-clickcheckout-adresses-table {
+    padding: 5px;
+}
+
+.aw-clickcheckout-button-td {
+    vertical-align: middle;
+}
+
+.aw-clickcheckout-address-select {
+    width: 100%;
+}
+
+.aw-clickcheckout-address-text {
+    font-size: 11px;
+}
+DIV.aw-clickcheckout-progress{
+	border: 1px #999999 solid;
+	display: block;
+	position: fixed;
+	text-align: center;
+	padding: 10px;
+	background-color: #ffffff;
+	z-index: 9999;
+    color: black;
+    width: 300px;
+    height: 40px;
+}
+
+DIV.aw-clickcheckout-popup{
+	border: 1px #999999 solid;
+	display: block;
+	position: fixed;
+	text-align: center;
+	padding: 10px;
+	background-color: #ffffff;
+	z-index: 9999;
+    color: black;
+    width: 400px;
+}
+.aw-clickcheckout-popup-background{
+    position: fixed;
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    z-index: 9990;
+    -moz-opacity:.50;
+    filter:alpha(opacity=50);
+    opacity:.50;
+}
+.aw-one-click-checkout-blocker{
+    display: none;
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    z-index: 9990;
+    -moz-opacity:.30;
+    filter:alpha(opacity=30);
+    opacity:.30;
+}
+select.year {
+    width: 96px;
+}
+select.month {
+    margin-right: 10px;
+    width: 154px;
+}
+input.cvv {
+    width: 4em !important;
+}
+a.cvv-what-is-this{
+    display: none;
+}
+
+.aw-clickcheckout-totals-table{
+    border-spacing: 3px;
+    border-collapse: separate;
+}
+.aw-one-click-checkout-anonimnous{
+border: 1px solid #C4C1BC;
+    margin-right: 100px;
+    margin-top: 10px;
+}
+
+.aw-one-click-checkout-anonimnous-cart{
+
+}
+.aw-clickcheckout-address-td{
+    padding: 0px;
+    font-size: 11px;
+}

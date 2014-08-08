@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- Rename this file to export_data.own.xml and add your custom export classes here. These will be used to fetch data and make them available in the export. For sample classes check export_data.xml -->
+<config>
+    <data>
+        <xyz>
+            <class>xtento_orderexport/export_data_custom_xyz</class>
+        </xyz>
+    </data>
+</config>
+<!--
+/**
+ * Product:       Xtento_OrderExport (1.4.2)
+ * ID:            PFfyWdN87L18YuBkt8s4hyQ0GKm/8YlUX7OfWyzQ7VQ=
+ * Packaged:      2014-05-07T09:11:40+00:00
+ * Last Modified: 2013-02-10T14:48:38+01:00
+ * File:          app/code/local/Xtento/OrderExport/etc/xtento/export_data.own.xml.sample
+ * Copyright:     Copyright (c) 2014 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+-->

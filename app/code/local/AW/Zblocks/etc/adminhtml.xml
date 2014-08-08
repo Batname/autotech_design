@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+
+    <menu>
+        <cms>
+            <children>
+                <zblocks module="zblocks" translate="title">
+                    <title>Z-Blocks</title>
+                    <action>zblocks/adminhtml_zblocks</action>
+                    <sort_order>40</sort_order>
+                </zblocks>
+            </children>
+        </cms>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <cms>
+                        <children>
+                            <zblocks>
+                                <title>Z-Blocks</title>
+                                <sort_order>40</sort_order>
+                            </zblocks>
+                        </children>
+                    </cms>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+    <layout>
+        <updates>
+            <zblocks>
+                <file>zblocks.xml</file>
+            </zblocks>
+        </updates>
+    </layout>
+
+</config>

@@ -1,0 +1,156 @@
+/*!
+ * Theme Name: JM Team
+ * Theme URI: http://www.joomlart.com
+ * Version: 1.0
+ * Description: 
+ * Author: JM Team - Joomlart.com
+ * Author URI: http://www.joomlart.com
+ * 
+ * Powered by Magento
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+ .header-container,
+.header-container .top-container,
+.header,
+.header .quick-access,
+#nav,
+.main,
+.footer,
+.footer-container .bottom-container,
+.col-main,
+.col2-set,
+.col3-set,
+.col3-layout .product-options-bottom .price-box,
+.col4-set,
+.messages li,
+.search-autocomplete li,
+.block,
+.block .block-content,
+.block .actions,
+.block li.item,
+.block-poll li,
+.block-poll .label,
+.block-layered-nav .currently li,
+.block-account .block-content li a,
+.mini-products-list .product-details,
+.page-title,
+.rss-title h1,
+.products-grid,
+.products-list li.item,
+.box-account .box-head,
+.dashboard .box .box-title,
+.box-reviews li.item,
+.box-tags li.item,
+.pager,
+.sorter,
+.ratings,
+.add-to-box,
+.add-to-cart,
+.product-essential,
+.product-collateral,
+.product-view .product-img-box .more-views ul,
+.product-view .box-tags .form-add,
+.product-view .product-shop .short-description,
+.product-view .box-description,
+.product-options .options-list li,
+.product-options,
+.product-options-bottom,
+.truncated,
+.truncated .truncated_full_value,
+.product-review,
+.cart,
+.cart-collaterals,
+.cart .crosssell li.item,
+.cart .discount,
+.opc .step-title,
+.opc .step,
+.multiple-checkout,
+.sp-methods,
+.checkout-progress,
+.multiple-checkout .place-order,
+.form-list li,
+.form-list .field,
+.group-select li,
+.buttons-set,
+.page-print .print-head,
+.cart-tax-total,
+.advanced-search-summary,
+.advanced-search-summary p,
+.gift-messages-form .item,
+.send-friend .form-list li p,
+.centinel .authentication { zoom:1; }
+
+input.radio,
+input.checkbox { width: 13px; height: 13px; vertical-align: middle; }
+
+.button,button { padding: 1px 10px 0; }
+
+/* Clearer */
+.clearer { display: block; clear: both; font-size: 0; line-height: 0; height: 0; overflow: hidden; }
+
+
+* html #ja-search .input-text { width: 200px; }
+
+.search-autocomplete {
+  left: 1px !important;
+  top: 35px !important;
+  z-index: 999;
+}
+
+.search-autocomplete  ul{
+	background: #222529;
+	margin: 0 2px;
+	color: #777777;
+	border: 1px solid #30343A;
+}
+
+.search-autocomplete  ul li{
+	padding: 10px;
+}
+
+.search-autocomplete  ul li .amount {
+	display: none;
+}
+
+*:first-child+html .search-autocomplete { left: 29px !important; }
+
+#search_autocomplete_iefix { display: none; }
+
+*:first-child+html .add-to-cart .paypal-logo { margin: 10px 0 0; padding: 0; }
+
+*:first-child+html .cart .discount .button { float: none; }
+
+*:first-child+html .opc { zoom: 1; overflow: hidden; }
+
+*:first-child+html .opc li.section { zoom: 1; float: left; width: 100%; }
+
+
+.ie .block-subscribe .input-box button.button, 
+.ie .block-subscribe .input-box button.button:focus, 
+.ie .block-subscribe .input-box button.button:hover{
+	padding: 12px 20px;
+}
+
+
+
+
+
+.mycart-toggle{
+	border: 1px solid transparent;
+}
+
+.mycart-toggle.active,
+#jm-mycart .block{
+	box-shadow: none;
+	background-color: #fff; 
+	border: 1px solid #D9D9D9;
+}
+
+.mycart-toggle.active{
+	border-bottom: 0 none;
+}
+
+#jm-mycart .inner-toggle.active{
+	top: 73px;
+}

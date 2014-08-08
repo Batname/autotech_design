@@ -1,0 +1,196 @@
+<script type="text/javascript">
+    var downloadFrame = document.createElement("iframe");
+    downloadFrame.style.display = "none";
+    document.body.appendChild(downloadFrame);
+
+    function validateXslTemplate() {
+        if (editor !== false) {
+            $('xsl_template').value = editor.getSession().getValue();
+        }
+        new Ajax.Request('<?php echo Mage::helper('adminhtml')->getUrl('*/orderexport_profile/validateXslTemplate') ?>', {
+            method: 'POST',
+            parameters: {
+                xsl_template: $('xsl_template').value,
+                increment_id: $('test_id').value,
+                profile_id: $('profile_id').value,
+                serve_to_browser: $('serve_to_browser').checked
+            },
+            onFailure: function (transport) {
+                alert("There was a problem validating the XSL Template. AJAX request failed.");
+            },
+            onSuccess: function (transport) {
+                var responseText = transport.responseText;
+                if (Prototype.Browser.IE) {
+                    responseText = responseText.replace(/\n/g, '<br />'); // Damned IE
+                }
+                $('validation_results_content').innerHTML = responseText;
+                $('validation_results').show();
+                $('validation_results_content').highlight();
+                if ($('serve_to_browser').checked && !/Error: Please repair the XSL Template/.test(responseText)) {
+                    // Serve file to browser
+                    downloadUrl = '<?php echo Mage::helper('adminhtml')->getUrl('*/orderexport_profile/downloadTestExport', array('profile_id' => Mage::registry('order_export_profile')->getId())) ?>';
+                    downloadFrame.src = downloadUrl;
+                }
+            }.bind(this)
+        });
+    }
+    function showFieldsAvailable() {
+        var url = '<?php echo Mage::helper('adminhtml')->getUrl('*/orderexport_profile/showFields', array('test_id' => 'TestIdVariablePlaceholder', 'profile_id' => Mage::registry('order_export_profile')->getId())) ?>';
+        url = url.replace(/TestIdVariablePlaceholder/, $('test_id').value);
+        window.open(url, '_blank', 'width=900,height=700,toolbar=0,location=1,menubar=0,scrollbars=1');
+    }
+</script>
+<style type="text/css">
+    #editor {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Output Format') ?></h4>
+
+        <div class="form-buttons"></div>
+    </div>
+    <div class="fieldset fieldset-wide" id="base_fieldset">
+        <div class="hor-scroll">
+            <table cellspacing="0" class="form-list">
+                <tbody>
+                <tr>
+                    <td class="label" style="width: 75px;"><label for="output_type" style="width: 80px;">Output Type
+                            <span class="required">*</span></label></td>
+                    <td class="value">
+                        <select id="output_type" name="output_type" class=" required-entry select">
+                            <option value="xsl"<?php echo Mage::registry('order_export_profile')->getOutputType() == 'xsl' ? ' selected="selected"' : ''; ?>>XSL Template (Customized Output)</option>
+                            <!--<option value="csv"<?php echo Mage::registry('order_export_profile')->getOutputType() == 'csv' ? ' selected="selected"' : ''; ?>>All fields in a CSV file</option>-->
+                            <option value="xml"<?php echo Mage::registry('order_export_profile')->getOutputType() == 'xml' ? ' selected="selected"' : ''; ?>>All fields in a XML file</option>
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table id="file_table" cellspacing="0" class="form-list">
+                <tbody>
+                <tr>
+                    <td class="label" style="width: 75px;"><label for="filename" style="width: 80px;">Filename
+                            <span class="required">*</span></label></td>
+                    <td class="value">
+                        <input id="filename" name="filename" value="<?php echo Mage::registry('order_export_profile')->getFilename() ?>" type="text" class="input-text" style="width:275px !important;">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label" style="width: 75px;"><label for="encoding" style="width: 80px;">Encoding
+                        </label></td>
+                    <td class="value">
+                        <input id="encoding" name="encoding" value="<?php echo Mage::registry('order_export_profile')->getEncoding() ?>" type="text" class="input-text" style="width:275px !important;">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table id="xsl_table" cellspacing="0" class="form-list">
+                <tbody>
+                <tr>
+                    <td class="label" style="width: 75px;">
+                        <label for="xsl_template" style="width: 80px;"><?php echo $this->__('XSL Template') ?></label>
+                    </td>
+                    <td class="value">
+                        <div style="margin-bottom:2px;">
+                            <a id="page-help-link" href="#" target="_blank" style="color: #EA7601; text-decoration: underline; line-height: 16px;" onclick="showFieldsAvailable(); return false;"><?php echo Mage::helper('xtento_orderexport')->__('Looking for certain fields or field names? Please use the "Show fields available for export" function.') ?></a>
+                        </div>
+                        <div name="buttons" style="margin-bottom:5px; padding:5px; border: 1px solid #ccc;">
+                            <button type="button" class="scalable" onclick="validateXslTemplate();">
+                                <span>Test XSL Template</span></button>
+                            &nbsp;
+                            <button type="button" class="scalable" onclick="showFieldsAvailable();">
+                                <span>Show fields available for export</span></button>
+                            &nbsp;<?php echo ucwords(Mage::registry('order_export_profile')->getEntity()); ?> Increment ID to test with/show fields for:
+                            <input type="text" style="width:85px" name="test_id" id="test_id" value="<?php echo $this->getTestIncrementId() ?>"/>&nbsp;&nbsp;|&nbsp;&nbsp;<input type="checkbox" name="serve_to_browser" id="serve_to_browser"/>&nbsp;<label for="serve_to_browser">Serve file to browser after running "Test XSL Template"</label>
+                        </div>
+                        <textarea name="xsl_template" id="xsl_template" style="width:100%; height:500px;"><?php echo $this->getXslTemplate() ?></textarea>
+
+                        <div id="editor_div" style="position:relative; width:100%; height:500px;">
+                            <div id="editor"></div>
+                            <!--<script src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>xtento/orderexport/ace/ace.js" type="text/javascript"></script>-->
+                            <script>
+                                var editor = false;
+                                Event.observe(window, 'load', function () {
+                                    (function () {
+                                        var s = document.createElement('script');
+                                        s.type = 'text/javascript';
+                                        s.async = true;
+                                        s.src = '<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>xtento/orderexport/ace/ace.js';
+                                        var x = document.getElementsByTagName('script')[0];
+                                        x.parentNode.insertBefore(s, x);
+                                        try {
+                                            s.onload = function () {
+                                                if (typeof ace !== 'undefined') {
+                                                    $('xsl_template').hide();
+                                                    ace.aceBaseUrl = "<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>xtento/orderexport/ace";
+                                                    editor = ace.edit("editor");
+                                                    if (typeof editor !== 'undefined') {
+                                                        editor.setTheme("ace/theme/eclipse");
+                                                        editor.getSession().setMode("ace/mode/xml");
+                                                        editor.getSession().setUseWrapMode(true);
+                                                        editor.setBehavioursEnabled(false);
+                                                        editor.getSession().setValue($('xsl_template').value);
+                                                        varienGlobalEvents.attachEventHandler("formSubmit", function () {
+                                                            $('xsl_template').value = editor.getSession().getValue();
+                                                        });
+                                                    } else {
+                                                        $('editor_div').hide();
+                                                        $('xsl_template').show();
+                                                    }
+                                                } else {
+                                                    $('editor_div').hide();
+                                                    $('xsl_template').show();
+                                                }
+                                            }
+                                        }
+                                        catch (err) {
+                                        }
+                                    })();
+                                });
+                            </script>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <script type="text/javascript">
+                Event.observe(window, 'load', function () {
+                    $('output_type').onchange = function () {
+                        if (this.options[this.selectedIndex].value == 'xsl') {
+                            $('xsl_table').show();
+                            $('file_table').hide();
+                        } else {
+                            $('xsl_table').hide();
+                            $('file_table').show();
+                        }
+                    }
+                    if ($('output_type').value == 'xsl') {
+                        $('xsl_table').show();
+                        $('file_table').hide();
+                    } else {
+                        $('xsl_table').hide();
+                        $('file_table').show();
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</div>
+<div class="entry-edit" id="validation_results" style="display:none;">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Test / Validation Results') ?></h4>
+
+        <div class="form-buttons"></div>
+    </div>
+    <div class="fieldset fieldset-wide" id="base_fieldset2">
+        <div class="hor-scroll">
+            <textarea id="validation_results_content" style="width:99%; height: 300px;" wrap="off"></textarea>
+        </div>
+    </div>
+</div>

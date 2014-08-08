@@ -1,0 +1,362 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <joomlart translate="label" module="jmbasetheme">
+            <label>JoomlArt</label>
+            <sort_order>210</sort_order>
+        </joomlart>
+    </tabs>  
+   <sections>
+        
+        <wavethemes_jmbasetheme>
+            <label>JM Base theme</label>
+            <tab>joomlart</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <jmbasethemegeneral translate="label">
+                    <label>JM Basetheme: Profile Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <profile translate="label comment">
+                            <label>Active profile: </label>
+                            <comment>Choosing the active profile for your site</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>jmbasetheme/config_profile</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </profile>
+                        <profilejson translate="label comment">
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>jmbasetheme/adminhtml_system_config_form_profile</frontend_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </profilejson>
+                    </fields>   
+                </jmbasethemegeneral>   
+                <jmbasethemebase translate="label">
+                    <label>JM Basetheme: General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>                        
+                        <title translate="label comment">
+                            <label>Theme Settings</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title>
+                        
+                        <color translate="label comment">
+                            <label>Theme Color: </label>
+                            <comment>This color will be used for buttons and links</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color>
+
+                        <bgolor translate="label comment">
+                            <label>Body Background Color: </label>
+                            <comment>To apply Body Background color, Background Image must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bgolor>
+                        
+                        <bgimage>
+                            <label>Body Background image </label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </bgimage>
+                        
+                        <headerolor translate="label comment">
+                            <label>Header Background Color: </label>
+                            <comment>To apply Header Background color, Header Image must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </headerolor>
+                        
+                        <headerimage>
+                            <label>Header Background image </label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </headerimage>
+                        
+                        <footerolor translate="label comment">
+                            <label>Footer Background Color: </label>
+                            <comment>To apply Footer Background color, Footer Image must be transparent or empty</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>jmbasetheme/adminhtml_system_config_form_colorpicker</frontend_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footerolor>
+                        
+                        <footerimage>
+                            <label>Footer Background image </label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>jmbasetheme/backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">images</upload_dir>
+                            <base_url type="media" scope_info="1">images</base_url>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footerimage>
+                         <showlabel translate="label">
+                            <label>Show Product Label</label>
+                            <sort_order>10</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <comment>If the mode is chosen, please add new attribute with attribute code "label" (if not available), then add it to attribute sets.</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </showlabel>
+                        <title2 translate="label comment">
+                            <label>Social Button Url:</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title2>
+                        <urlfacebook translate="label">
+                            <label>Facebook url: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show this button</comment>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </urlfacebook>
+                        <urltwitter translate="label">
+                            <label>Twitter url: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show this button</comment>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </urltwitter>
+                        <urlgoogleplus translate="label">
+                            <label>Google plus url: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show this button</comment>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </urlgoogleplus>
+                        <urlpinterest translate="label">
+                            <label>Pinterest url: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show this button</comment>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </urlpinterest>
+                        <urltumblr translate="label">
+                            <label>Tumblr url: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show this button</comment>
+                            <sort_order>17</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </urltumblr>
+                        <urlskype translate="label">
+                            <label>Skype url: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show this button</comment>
+                            <sort_order>18</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </urlskype>
+                        <title1 translate="label comment">
+                            <label>Product Grid Layout Settings (Desktop)</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title1>
+                        <productgridnumbercolumn translate="label">
+                            <label>Number of Items per Row: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productgridnumbercolumn>
+                        <productgridimageheight translate="label">
+                            <label>Product Image Height: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productgridimageheight>
+                        <productgridimagewidth translate="label">
+                            <label>Product Image Width: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productgridimagewidth>
+                       
+                        
+                        <title3 translate="label comment">
+                            <label>Product List Layout Settings (Desktop)</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title3>
+                        <productlistimageheight translate="label">
+                            <label>Product Image Height: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productlistimageheight>
+                        <productlistimagewidth translate="label">
+                            <label>Product Image Width: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productlistimagewidth>
+                        <productlistdeslenght translate="label">
+                            <label>Product Short Des Max Length: </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>empty for not show</comment>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productlistdeslenght>
+                        <title4 translate="label comment">
+                            <label>Product Detail Settings</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title4>
+                        <productlimageheight translate="label">
+                            <label>Product Image Height: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productlimageheight>
+                        <productlimagewidth translate="label">
+                            <label>Product Image Width: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </productlimagewidth>
+                        <showupsell translate="label">
+                            <label>Show Upsell Product</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>130</sort_order>
+                        </showupsell>
+                        <upsellnumber translate="label">
+                            <label>Number of Upsell Products : </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </upsellnumber>
+                        <upsellimageheight translate="label">
+                            <label>Upsell Image Height: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </upsellimageheight>
+                        <upsellimagewidth translate="label">
+                            <label>Upsell Image Width: </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </upsellimagewidth>
+                        <title5 translate="label comment">
+                            <label>Off-canvas Settings</label>
+                            <frontend_type>hidden</frontend_type>
+                            <sort_order>161</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title5>
+                        <offcanvaseffect>
+                            <label>Off-canvas effect</label>
+                            <sort_order>162</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>jmbasetheme/config_offcanvas_listEffect</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </offcanvaseffect>    
+                    </fields>
+                </jmbasethemebase>
+            </groups>
+        </wavethemes_jmbasetheme>
+    </sections>       
+</config>

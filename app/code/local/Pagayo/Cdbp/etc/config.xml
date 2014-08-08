@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config>
+
+	<modules>
+		<Pagayo_Cdbp>
+			<version>0.1.1</version>
+		</Pagayo_Cdbp>
+	</modules>
+	
+	 <global>
+	 	<blocks>
+    		<cdbp>
+				<class>Pagayo_Setup_Block</class>
+    		</cdbp>
+    	</blocks>
+    	<resources>
+    	    <cdbp_setup>
+    	        <setup>
+    	            <module>Pagayo_Cdbp</module>
+				  <class>Mage_Eav_Model_Entity_Setup</class>
+				</setup>
+				<connection>
+				  <use>default_setup</use>
+				</connection>
+    	    </cdbp_setup>
+    	</resources>
+     </global>
+     
+     <frontend>
+        <layout>
+            <updates>
+                <cdbp>
+                    <file>cdbp.xml</file>
+                </cdbp>
+            </updates>
+        </layout>
+    </frontend>
+    
+    <adminhtml>
+         <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <pagayo_cdbp>
+                                            <title>Pagayo Cdbp</title>
+                                        </pagayo_cdbp>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                   </children>
+               </admin>
+           </resources>
+        </acl>
+    </adminhtml>
+    		    
+</config>

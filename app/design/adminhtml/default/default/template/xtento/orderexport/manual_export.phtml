@@ -1,0 +1,364 @@
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td><h3><?php echo $this->__('Sales Export - Manual Export') ?></h3></td>
+        </tr>
+    </table>
+</div>
+<div class="entry-edit">
+    <form id="export_form" name="export_form" method="post" action="<?php echo Mage::helper('adminhtml')->getUrl('*/*/manualPost')?>">
+        <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>"/>
+
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Sales Export')?></h4>
+        </div>
+        <fieldset id="my-fieldset">
+            <table cellspacing="0" class="form-list">
+                <tr>
+                    <td class="label"><?php echo $this->__('Profile')?> <span class="required">*</span></td>
+                    <td class="input-ele">
+                        <?php echo $this->getProfileSelectorHtml() ?> <a href="#" id="edit_profile_a">[Edit Profile]</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Store Views')?></td>
+                    <td class="input-ele">
+                        <?php echo $this->getStoreViewSelectorHtml() ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Starting ID')?> <span class="required">*</span>
+                    </td>
+                    <td class="input-ele">
+                        <input class="input-text required-entry" name="increment_from" id="increment_from" value="1"/> (1 = <?php echo $this->__('from the beginning')?>)
+                    </td>
+                </tr>
+                <tr id="tr_last_id" style="display:none">
+                    <td class="label">&nbsp;</td>
+                    <td class="input-ele"><?php echo $this->__('Last <span id="last_entity"></span> id is <span id="last_id"></span> [<a href="#" onclick="$(\'increment_from\').value=$(\'last_id\').innerHTML; return false;">use</a>], last exported <span id="last_exported_entity"></span> id is <span id="last_exported_id"></span> [<a href="#" onclick="$(\'increment_from\').value=$(\'last_exported_id\').innerHTML; return false;">use</a>]')?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Ending ID')?> <span class="required">*</span></td>
+                    <td class="input-ele">
+                        <input class="input-text required-entry" name="increment_to" id="increment_to" value="0"/> (0 = <?php echo $this->__('until the last object created')?>)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><strong>Additional Filters</strong></td>
+                    <td class="input-ele"></td>
+                </tr>
+                <tr id="filter_status">
+                    <td class="label"><?php echo $this->__('Status')?></td>
+                    <td class="input-ele">
+                        <select type="select" multiple="multiple" class="select" name="status[]" id="status" style="width: 320px; height: 130px; margin-bottom: 10px;">
+                            <option value=""><?php echo $this->__('--- All Statuses ---')?></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Date Range from')?></td>
+                    <td class="input-ele"><?php echo $this->getCalendarHtml('daterange_from')?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Date Range to')?></td>
+                    <td class="input-ele"><?php echo $this->getCalendarHtml('daterange_to')?></td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Created during the last X days')?></td>
+                    <td class="input-ele">
+                        <input class="input-text" name="last_x_days" id="last_x_days" value="" maxlength="5" style="width: 50px !important;" min="0" type="number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Export only not yet exported objects')?></td>
+                    <td class="input-ele">
+                        <input type="checkbox" name="filter_new_only" id="filter_new_only" style="margin-top:7px;"/>
+                    </td>
+                </tr>
+                <tr id="change_order_status" style="display:none;">
+                    <td class="label"><?php echo $this->__('Change order status after export')?></td>
+                    <td class="input-ele">
+                        <select type="select" class="select" name="force_status" id="force_status" style="width: 320px; margin-top:4px">
+                            <option value="no_change"><?php echo $this->__('--- No Change ---')?></option>
+                            <?php
+                            foreach (Mage::getSingleton('xtento_orderexport/system_config_source_export_status')->toOptionArray(Xtento_OrderExport_Model_Export::ENTITY_ORDER) as $status) {
+                                echo sprintf('<option value="%s">%s</option>', $status['value'], $this->__($status['label']));
+                            }
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><?php echo $this->__('Serve files to browser after exporting')?></td>
+                    <td class="input-ele">
+                        <input type="checkbox" name="start_download" id="start_download" style="margin-top:7px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">&nbsp;</td>
+                    <td class="input-ele">
+                        <button class="scalable save" type="submit" id="export_button">
+                            <span><?php echo $this->__('Export')?></span></button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</div>
+<script type="text/javascript">
+    <?php echo $this->getSelectValues() ?>
+</script>
+<script type="text/javascript">
+    var selectedEntity = false;
+    var inputFields = ['store_id', 'increment_from', 'increment_to', 'status', 'daterange_from', 'daterange_to', 'last_x_days', 'start_download', 'export_button', 'filter_new_only'];
+    Event.observe(window, 'load', function () {
+    <?php
+    if ($this->getRequest()->getParam('profile_id', false)) {
+        ?>
+        $('profile_id').value = '<?php echo htmlspecialchars($this->getRequest()->getParam('profile_id')) ?>';
+        $$('select#profile_id option').each(function (o) {
+            if (o.readAttribute('value') == $('profile_id').value) {
+                o.selected = true;
+                throw $break;
+            }
+        });
+        <?php
+    } else {
+        ?>
+        // If there is just one profile, select it by default
+        if ($$('select#profile_id option').length <= 2) {
+            $$('select#profile_id option').each(function (o) {
+                if (o.readAttribute('value') !== '') {
+                    o.selected = true;
+                    throw $break;
+                }
+            });
+        }
+        <?php
+    }
+    ?>
+        if ($('profile_id').value == '') {
+            disableFields();
+        } else {
+            selectedEntity = $('profile_id').options[$('profile_id').selectedIndex].getAttribute('entity');
+            populateStatusSelect();
+            updateStartingIdField();
+            updatePredefinedSettings();
+        }
+        $('profile_id').onchange = function () {
+            if (this.options[this.selectedIndex].value !== '') {
+                selectedEntity = this.options[this.selectedIndex].getAttribute('entity');
+                populateStatusSelect();
+                updateStartingIdField();
+                enableFields();
+                updatePredefinedSettings();
+            } else {
+                selectedEntity = false;
+                disableFields();
+            }
+        }
+    });
+    function updatePredefinedSettings() {
+        if (typeof $H(profile_settings.get($('profile_id').value)).get('export_filter_datefrom') !== 'undefined') {
+            $('daterange_from').value = $H(profile_settings.get($('profile_id').value)).get('export_filter_datefrom');
+        }
+        if (typeof $H(profile_settings.get($('profile_id').value)).get('export_filter_dateto') !== 'undefined') {
+            $('daterange_to').value = $H(profile_settings.get($('profile_id').value)).get('export_filter_dateto');
+        }
+        if (typeof $H(profile_settings.get($('profile_id').value)).get('export_filter_last_x_days') !== 'undefined') {
+            $('last_x_days').value = $H(profile_settings.get($('profile_id').value)).get('export_filter_last_x_days');
+        }
+        if (typeof $H(profile_settings.get($('profile_id').value)).get('export_filter_new_only') !== 'undefined') {
+            if ($H(profile_settings.get($('profile_id').value)).get('export_filter_new_only') === "1") {
+                $('filter_new_only').checked = true;
+            } else {
+                $('filter_new_only').checked = false;
+            }
+        }
+        if (typeof $H(profile_settings.get($('profile_id').value)).get('start_download_manual_export') !== 'undefined') {
+            if ($H(profile_settings.get($('profile_id').value)).get('start_download_manual_export') === "1") {
+                $('start_download').checked = true;
+            } else {
+                $('start_download').checked = false;
+            }
+        }
+        if (typeof $H(profile_settings.get($('profile_id').value)).get('export_filter_status') !== 'undefined') {
+            var status = $H(profile_settings.get($('profile_id').value)).get('export_filter_status');
+            $('status').options[0].selected = false;
+            status.split(",").each(function (value) {
+                for (var i = 0, l = $('status').options.length, o; i < l; i++) {
+                    if (value == $('status').options[i].value) {
+                        $('status').options[i].selected = true;
+                        //valueSet = true;
+                    }
+                }
+            });
+        }
+        // Reset store_id field
+        for (var i = 0, l = $('store_id').options.length, o; i < l; i++) {
+            if (i == 0) {
+                $('store_id').options[i].selected = true;
+            } else {
+                $('store_id').options[i].selected = false;
+            }
+        }
+        if (typeof $H(profile_settings.get($('profile_id').value)).get('store_ids') !== 'undefined' && $H(profile_settings.get($('profile_id').value)).get('store_ids') != '') {
+            var store_id = $H(profile_settings.get($('profile_id').value)).get('store_ids');
+            $('store_id').options[0].selected = false;
+            store_id.split(",").each(function (value) {
+                for (var i = 0, l = $('store_id').options.length, o; i < l; i++) {
+                    if (value == $('store_id').options[i].value) {
+                        $('store_id').options[i].selected = true;
+                        //valueSet = true;
+                    }
+                }
+            });
+        }
+        // Update profile links
+        $('edit_profile_a').href = profile_edit_links.get($('profile_id').value);
+    }
+    function updateStartingIdField() {
+        $('last_entity').innerHTML = selectedEntity;
+        $('last_exported_entity').innerHTML = selectedEntity;
+        if (typeof last_increment_ids !== 'undefined') $('last_id').innerHTML = last_increment_ids.get(selectedEntity);
+        if (typeof last_exported_increment_ids !== 'undefined') $('last_exported_id').innerHTML = last_exported_increment_ids.get($('profile_id').value);
+        $('tr_last_id').show();
+    }
+    function populateStatusSelect() {
+        var selectObject = $('status');
+        // Remove current options
+        selectObject.innerHTML = '';
+        // Add "all status" option
+        option = document.createElement('option');
+        optionText = document.createTextNode('<?php echo $this->__('--- All Statuses ---')?>');
+        option.appendChild(optionText);
+        option.setAttribute('value', '');
+        option.setAttribute('selected', 'selected');
+        selectObject.appendChild(option);
+        // Add new options. If available.
+        var possibleValues = status_values.get(selectedEntity);
+        if (typeof possibleValues !== 'undefined') {
+            $H(possibleValues).each(function (pair) {
+                option = document.createElement('option');
+                optionText = document.createTextNode(pair.value);
+                option.appendChild(optionText);
+                option.setAttribute('value', pair.key);
+                selectObject.appendChild(option);
+            });
+        }
+        // Show/hide order status select
+        $('change_order_status').hide();
+        $('force_status').value = 'no_change';
+        if (selectedEntity == 'order') {
+            $('change_order_status').show();
+            if (typeof $H(profile_settings.get($('profile_id').value)).get('export_action_change_status') !== 'undefined' && $H(profile_settings.get($('profile_id').value)).get('export_action_change_status') !== '') {
+                $('force_status').value = $H(profile_settings.get($('profile_id').value)).get('export_action_change_status');
+            } else {
+                $('force_status').options[0].selected = true;
+            }
+        }
+        if (selectedEntity == 'quote' || selectedEntity == 'shipment' || selectedEntity == 'customer') {
+            $('filter_status').hide();
+        } else {
+            $('filter_status').show();
+        }
+    }
+    function disableFields() {
+        inputFields.forEach(function (element, index, array) {
+            if ($(element)) {
+                if (element != 'export_button') {
+                    $(element).disable();
+                }
+            }
+        });
+    }
+    function enableFields() {
+        inputFields.forEach(function (element, index, array) {
+            if ($(element)) {
+                if (element != 'export_button') {
+                    $(element).enable();
+                }
+            }
+        });
+    }
+</script>
+<!--<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("prototype", "1.6.0.3");</script>-->
+<!-- We are more important than other jquery versions/plugins on this page, so we load ours here. -->
+<script src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>xtento/orderexport/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>xtento/orderexport/jquery/jquery.fileDownload.js" type="text/javascript"></script>
+<script src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>xtento/orderexport/jquery/jquery.blockUI.js" type="text/javascript"></script>
+<script type="text/javascript">
+    Mage.Cookies.clear('fileDownload');
+    Mage.Cookies.clear('lastMessage');
+    Mage.Cookies.clear('lastErrorMessage');
+    Event.observe('export_form', 'submit', function (event) {
+        Mage.Cookies.clear('fileDownload');
+        Mage.Cookies.clear('lastMessage');
+        Mage.Cookies.clear('lastErrorMessage');
+        $('success-msg').hide();
+        $('warning-msg').hide();
+        jQuery.blockUI({
+            message:jQuery('#export_dialog'),
+            css:{
+                border:'none',
+                padding:'15px',
+                backgroundColor:'#000',
+                '-webkit-border-radius':'10px',
+                '-moz-border-radius':'10px',
+                opacity:.6,
+                color:'#fff'
+            }
+        });
+        jQuery('#close').click(function () {
+            jQuery.unblockUI();
+            return false;
+        });
+        jQuery.fileDownload(jQuery(this).attr('action'), {
+            successCallback:function (url) {
+                window.setTimeout(function () {
+                    jQuery.unblockUI({
+                        onUnblock:function () {
+                            Mage.Cookies.clear('fileDownload');
+                            $('messages').hide();
+                            $('success-msg').show();
+                            if (Mage.Cookies.get('lastMessage') != '') {
+                                $('success-msg-text').innerHTML = Mage.Cookies.get('lastMessage').replace(/\+/g, ' ');
+                                Mage.Cookies.clear('lastMessage');
+                            } else {
+                                $('success-msg-text').innerHTML = '<?php echo $this->__('Export completed successfully.')?>';
+                            }
+                            if (Mage.Cookies.get('lastErrorMessage') != '') {
+                                $('warning-msg-text').innerHTML = Mage.Cookies.get('lastErrorMessage').replace(/\+/g, ' ');
+                                $('warning-msg').show();
+                                Mage.Cookies.clear('lastErrorMessage');
+                            } else {
+                                $('warning-msg').hide();
+                            }
+                        }
+                    });
+                }, 100);
+                Event.stop(event);
+            },
+            failCallback:function (html, url) {
+                //window.setTimeout(function(){
+                //$('warning-msg-text').innerHTML = html;
+                //jQuery.unblockUI();
+                //$('warning-msg').show();
+                //if (html != '') {
+                //    $('warning-msg-text').innerHTML = html;
+                //    Mage.Cookies.clear('lastMessage');
+                //} else {
+                //    $('warning-msg-text').innerHTML = '<?php echo $this->__('Export returned no response. Please check export execution log.')?>';
+                //}
+                //}, 250);
+            },
+            httpMethod:'POST',
+            data:$(this).serialize()
+        });
+    });
+</script>
+<div id="export_dialog" style="display:none; cursor: default">
+    <h2><?php echo Mage::helper('xtento_orderexport')->__('Exporting... Please wait...')?></h2>
+    <input type="button" id="close" value="Close Progress Window" style="padding:5px;"/>
+</div>

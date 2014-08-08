@@ -1,0 +1,71 @@
+<?php
+/**
+* aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * aheadWorks does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * aheadWorks does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Clickcheckout
+ * @version    1.1.2
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ */
+?>
+<?php
+	?>
+<div class="aw-clickcheckout-popup-background" id="aw_background" style="display:none;" title="<?php echo $this->__('Click, to close');?>"></div>
+<div class="aw-clickcheckout-popup" id="aw_clickcheckout_popup" style="display: none;" onresize="repos();">
+<?php if($this->checkoutEnabled()): ?>
+<div id="aw_clickcheckout_checkout_block" style="text-align: right;"><a href="<?php echo Mage::getUrl('checkout/onepage');?>"><?php echo $this->__('Standard checkout');?></a></div>
+<?php endif;?>
+<div id="aw_clickcheckout_points" class="aw-clickcheckout-points"></div>
+<form id="co-payment-form" name="co-payment-form" method="post" action="<?php echo Mage::getUrl('awclickcheckout/order/saveOrder');?>">
+<div id="aw_clickcheckout_shipping_block" class="aw_clickcheckout_shipping_block" align="left"></div>
+<div id="aw_clickcheckout_paymentm_block" class="aw_clickcheckout_paymentm_block" align="left"></div>
+<div id="aw_clickcheckout_items_block" class="aw_clickcheckout_items_block" align="left"></div>
+<div id="aw_clickcheckout_totals_block" class="aw_clickcheckout_totals_block" align="right"></div>
+
+<div id="aw_clickcheckout_agreements_block" class="aw_clickcheckout_agreements_block" align="center"></div>
+
+<div id="aw_clickcheckout_placebuttom_block" class="aw_clickcheckout_placebuttom_block" align="center">
+
+    <input type="hidden" name="success" id="aw_oneclick_success" value="<?php echo Mage::getUrl('checkout/onepage/success');?>"/>
+    <input type="hidden" name="failure" id="aw_oneclick_failure" value="<?php echo Mage::getUrl('checkout/onepage/failure');?>"/>
+    <?php if(!$this->quoteHasErrors()): ?>
+    <button name="place" id="aw_clickcheckout_checkout_button" class="button btn-checkout" type="submit" onclick="oneClickCheckout.placeOrder('<?php echo Mage::getUrl('checkout/onepage/saveOrder')?>'); return false;" title="<?php echo $this->__('Place Order');?>"><span><span><?php echo $this->__('Place Order');?></span></span></button>
+    <?php else:?>
+    <hr>
+    <h4><?php echo $this->__('Some items in cart are currently out of stock')?></h4>
+    <a href="<?php echo Mage::getUrl('checkout/cart')?>"><?php echo $this->__('Edit cart items.')?></a>
+    <?php endif;?>
+</div>
+</form>
+    <script type="text/javascript">
+        var pointsAmountChanged = function(customerPoints,neededPoints)
+        {
+            try{
+            if (isNaN($('points_amount').value)) $('points_amount').value = 0;
+
+            $('points_amount').value = Math.abs($('points_amount').value);
+
+            if ($('points_amount').value > neededPoints) $('points_amount').value = neededPoints;
+            if ($('points_amount').value > customerPoints) $('points_amount').value = customerPoints;
+            }catch(e){}
+        }
+    </script>
+</div>

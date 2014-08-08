@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+		<ajaxcartpro translate="label" module="ajaxcartpro">
+			<label>Ajax Cart Pro</label>
+			<tab>awall</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>General</label>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<sort_order>10</sort_order>
+					<fields>
+						<progressanimation translate="label">
+							<label>Progress animation</label>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<frontend_type>select</frontend_type>
+							<source_model>ajaxcartpro/system_config_source_progressanimation</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</progressanimation>
+						<cartanimation translate="label">
+							<label>Cart animation</label>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<frontend_type>select</frontend_type>
+							<source_model>ajaxcartpro/system_config_source_cartanimation</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</cartanimation>
+						<activityindicator translate="label">
+							<label>AJAX activity indicator</label>
+							<frontend_type>image</frontend_type>
+							<backend_model>adminhtml/system_config_backend_image</backend_model>
+							<upload_dir config="system/filesystem/media" scope_info="1">ajaxcartpro</upload_dir>
+							<base_url type="media" scope_info="1">ajaxcartpro</base_url>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</activityindicator>
+						<confirmation>
+							<label>Show confirmation dialog</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</confirmation>
+                        <countdown>
+							<label>Confirmation dialog will be closed after, sec (set 0 to disable)</label>
+                            <frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</countdown>
+					</fields>
+				</general>
+			</groups>
+		</ajaxcartpro>
+	</sections>
+</config>

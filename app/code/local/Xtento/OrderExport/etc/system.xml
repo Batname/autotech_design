@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <xtento translate="label">
+            <label><![CDATA[<img src="//www.xtento.com/media/images/extension_logo.png" alt="XTENTO" height="20" style="vertical-align:bottom;margin-left:-1px;"/> XTENTO Extensions]]></label>
+            <sort_order>650</sort_order>
+        </xtento>
+    </tabs>
+    <sections>
+        <orderexport translate="label" module="xtento_orderexport">
+            <label>Sales Export Configuration</label>
+            <tab>xtento</tab>
+            <sort_order>102</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <!-- -->
+                    <frontend_model>xtcore/system_config_form_xtento_module</frontend_model>
+                    <data_model>xtento_orderexport/system_config_backend_export_server</data_model>
+                    <module_name>Xtento_OrderExport</module_name>
+                    <!-- -->
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>1</expanded>
+                    <comment>
+                        <![CDATA[
+                    <script>
+                    function setCommentHtml(message) {
+                        if (Prototype.Browser.IE) {
+                            $('orderexport_general_serial').next('p').outerHTML = message;
+                        } else {
+                            $('orderexport_general_serial').next('p').innerHTML = message;
+                        }
+                    }
+                    Event.observe(window, 'load', function() {
+                        if ($('orderexport_general_server_name')) {
+                            $('orderexport_general_server_name').style.backgroundColor='#f0f0f0';
+                            $('orderexport_general_server_name').disable();
+                            if ($('row_orderexport_general_server')) {
+                                $('row_orderexport_general_server').hide();
+                            }
+                        }
+                        if ($('orderexport_general_serial') && $('orderexport_general_serial').value !== '' && $('orderexport_general_server') && $('orderexport_general_server').value !== '') {
+                            if ($('orderexport_general_serial').value.length !== 40) {
+                                setCommentHtml('<a href="http://www.xtento.com" target="_blank"><img src="//www.xtento.com/license/check/?d='+$('orderexport_general_server').value+'" border="0" style="margin-top: 4px;"/></a>');
+                            } else {
+                                if (typeof $('orderexport_general_serial').nextSibling !== 'undefined' && typeof $('orderexport_general_serial').nextSibling.nextSibling !== 'undefined') {
+                                    setCommentHtml('<a href="http://www.xtento.com" target="_blank"><img src="//www.xtento.com/license/check/?d='+$('orderexport_general_server').value+'" border="0" style="margin-top: 4px;"/></a>');
+                                }
+                            }
+                        } else {
+                            setCommentHtml('<a href="http://www.xtento.com" target="_blank"><img src="//www.xtento.com/license/check/?d='+$('orderexport_general_server').value+'" border="0" style="margin-top: 4px;"/></a>');
+                        }
+                    });
+                    </script>
+                    ]]>
+                    </comment>
+                    <fields>
+                        <heading1 translate="label">
+                            <label>General Configuration</label>
+                            <frontend_model>xtcore/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </heading1>
+                        <server_name translate="label">
+                            <label>Server Name</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>xtento_orderexport/system_config_backend_export_servername</backend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </server_name>
+                        <serial translate="label">
+                            <label>License Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>License Key</comment>
+                        </serial>
+                        <server translate="label">
+                            <label/>
+                            <frontend_type>hidden</frontend_type>
+                            <backend_model>xtento_orderexport/system_config_backend_export_server</backend_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </server>
+                        <enabled translate="label">
+                            <label>Module Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>xtento_orderexport/system_config_backend_export_enabled</backend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>A valid license key is required in order to enable the module.</comment>
+                        </enabled>
+                        <debug_section translate="label">
+                            <label>Debug Section</label>
+                            <frontend_model>xtcore/system_config_form_field_heading</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </debug_section>
+                        <debug translate="label">
+                            <label>Debug Mode Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </debug>
+                        <debug_email translate="label">
+                            <label>Debug E-Mail</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Enter your email address if you want to be notified about failed exports.</comment>
+                        </debug_email>
+                        <disable_cron_warning translate="label">
+                            <label>Disable Cronjob Warning</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Set this to "Yes" if you don't want to be notified about problems with the cronjob</comment>
+                        </disable_cron_warning>
+                        <export_section translate="label">
+                            <label>Export Configuration</label>
+                            <frontend_model>xtcore/system_config_form_field_heading</frontend_model>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </export_section>
+                        <default_page translate="label">
+                            <label>Default Startup Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xtento_orderexport/system_config_source_export_startup</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Which site do you want to see as the startup page when clicking the Sales > Sales Export link?</comment>
+                        </default_page>
+                    </fields>
+                </general>
+            </groups>
+        </orderexport>
+    </sections>
+</config>
+
+
+
+<!--
+/**
+ * Product:       Xtento_OrderExport (1.4.2)
+ * ID:            PFfyWdN87L18YuBkt8s4hyQ0GKm/8YlUX7OfWyzQ7VQ=
+ * Packaged:      2014-05-07T09:11:40+00:00
+ * Last Modified: 2013-07-25T22:46:46+02:00
+ * File:          app/code/local/Xtento/OrderExport/etc/system.xml
+ * Copyright:     Copyright (c) 2014 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+-->

@@ -1,0 +1,52 @@
+.aw_countdown_timer_container_gray div.aw_countdown_timer{
+    color: #575757;
+}
+div.aw_countdown_timer_container_gray{
+    text-align: left;
+}
+a.aw_countdown_timer_container_gray{
+    text-decoration:none;
+    color: #000;
+}
+.aw_countdown_timer_container_gray div.aw_countdown_days_container,.aw_countdown_timer_container_gray div.aw_countdown_minutes_container,.aw_countdown_timer_container_gray div.aw_countdown_seconds_container,.aw_countdown_timer_container_gray div.aw_countdown_hours_container{
+    float:left;
+}
+
+.aw_countdown_timer_container_gray span.aw_countdown_days,.aw_countdown_timer_container_gray span.aw_countdown_hours,.aw_countdown_timer_container_gray span.aw_countdown_minutes,.aw_countdown_timer_container_gray span.aw_countdown_seconds{
+    padding-left: 5px;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.aw_countdown_timer_container_gray span.aw_countdown_days_label,.aw_countdown_timer_container_gray span.aw_countdown_minutes_label,.aw_countdown_timer_container_gray span.aw_countdown_hours_label,.aw_countdown_timer_container_gray span.aw_countdown_seconds_label{
+    font-size: 15px;
+    color: #D1D1D1;
+    padding: 0 3px;
+    font-variant: small-caps;
+}
+
+.aw_countdown_timer_container_gray div.aw_countdown_separator{
+    float:left;
+}
+
+.aw_countdown_timer_container_gray div.aw_countdown_separator_afterhours,.aw_countdown_timer_container_gray div.aw_countdown_separator_afterminutes{
+    font-size: 24px;
+    font-weight: bold;
+    color: #575757;
+    padding: 12px 0;
+    background: #D1D1D1;
+}
+
+.aw_countdown_timer_container_gray div.aw_countdown_days,.aw_countdown_timer_container_gray div.aw_countdown_seconds,.aw_countdown_timer_container_gray div.aw_countdown_hours,.aw_countdown_timer_container_gray div.aw_countdown_minutes{
+    background: #D1D1D1;
+    position: relative;
+    width: 44px;
+    padding: 12px;
+}
+.aw_countdown_timer_container_gray div.aw_countdown_spacer{
+    width:0px;
+    position: absolute;
+    left:50%;
+    background: none repeat scroll 0 0 #FFFFFF;
+    height:100%;
+}

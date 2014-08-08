@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <adminhtml_catalog_product_edit>
+        <reference name="product_tabs">
+            <action method="addTab">
+                <name>callforprice</name>
+                <block>callforprice/adminhtml_catalog_product_tab</block>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_edit>
+<!-- 	<callforprice_admintab_massupdate>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="callforprice/adminhtml_catalog_product_edit" name="editform"/>
+        </reference>
+    </callforprice_admintab_massupdate>     -->
+</layout>

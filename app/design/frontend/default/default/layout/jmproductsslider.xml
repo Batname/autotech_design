@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+        <reference name="head">	
+        	<action method="addCss"><stylesheet>joomlart/jmproductsslider/css/style.css</stylesheet></action>
+        </reference>
+    </default>     
+<!--
+    <default>
+        <reference name="left">
+			<block type="joomlart_jmproductsslider/list" name="jmproductsslider" >	
+		             <action method="set">                    
+		                    <show>1</show>
+		                    <mode>best_buy</mode>
+		                    <title>JM Products Slider</title>
+		                    <height>90</height>
+		                    <width>90</width>
+		                    <catsid></catsid>
+		                    <quanlity>10</quanlity>
+		                    <number_items>1</number_items>
+		                    <show_price>1</show_price>
+		                    <show_cart>0</show_cart>
+		                    <use_scrollerbar>0</use_scrollerbar>		                    
+		                    <autorun>0</autorun>		        
+		                    <delaytime>1000</delaytime>            
+		                    <animationtime>800</animationtime>                    
+		                    <attributename></attributename>
+		                    <attributevalue></attributevalue>
+		                    <template>joomlart/jmproductsslider/list.phtml</template>
+		                </action>
+		     </block>
+		</reference>
+    </default>
+    -->
+</layout>

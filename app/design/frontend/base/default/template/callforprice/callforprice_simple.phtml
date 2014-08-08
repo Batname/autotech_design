@@ -1,0 +1,18 @@
+<?php $_product = $this->getProduct() ?>
+
+<?php  if ($_product->isAvailable()): ?>
+    <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('In stock') ?></span></p>
+<?php else: ?>
+    <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
+<?php  endif; ?>
+<?php   echo $this->getChildHtml('product_type_data_extra') ?>
+
+<?php 
+$model=Mage::getModel('callforprice/callforprice')->loadByProductId($_product->getId());
+$customer_group=$this->GetGroupId();
+if ($model->getId() && $model->getStatus()==1 && !in_array($customer_group, explode(',',$model->getCustomerGroups())) ) {
+?>
+<div class="call-for-price"><?php echo $this->__($model->getValue());?></div>
+<?php } else { 
+		echo Mage_Catalog_Block_Product::getPriceHtml($_product);
+	 } ?>

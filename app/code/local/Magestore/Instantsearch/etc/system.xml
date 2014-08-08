@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <magestore translate="label">
+            <label>Magestore Extension</label>
+            <sort_order>400</sort_order>
+        </magestore>
+    </tabs>
+    <sections>
+        <instantsearch translate="label" module="instantsearch">
+            <class>separator-top</class>
+            <label>Instant Search</label>
+            <tab>magestore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>300</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>				<general translate="label">                    <label>instantsearch Configuration</label>                    <frontend_type>text</frontend_type>                    <sort_order>1</sort_order>                    <show_in_default>1</show_in_default>                    <show_in_website>1</show_in_website>                    <show_in_store>0</show_in_store>                    <fields>
+						<overwrite_quick_search>
+							<label>Overwrite Quick Search</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Overwrite quick search module</comment>
+						</overwrite_quick_search>						<more_product_num translate="label">                             <label>Product Limit</label>                            <frontend_type>text</frontend_type>                                                        <sort_order>1</sort_order>                            <show_in_default>1</show_in_default>                            <show_in_website>1</show_in_website>                            <show_in_store>1</show_in_store>							<comment>The maximum product in search result</comment>                        </more_product_num>												<thumb_image_width translate="label">                            <label>Width Of Thumbnail Image</label>                            <frontend_type>text</frontend_type>                                                        <sort_order>2</sort_order>                            <show_in_default>1</show_in_default>                            <show_in_website>1</show_in_website>                            <show_in_store>1</show_in_store>							<comment>Width Of Thumbnail Image</comment>                        </thumb_image_width>
+						
+						<search_in_name translate="label">
+                            <label>Enable to search in product name</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Enable to search in product name</comment>
+                        </search_in_name>
+						
+						<search_in_tag translate="label">
+                            <label>Enable to search in product tag</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Enable to search in product tag</comment>
+                        </search_in_tag>
+						
+						<search_in_description translate="label">
+                            <label>Enable to search in product description</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Enable to search in product description</comment>
+                        </search_in_description>
+						<search_description_type translate="label">
+                            <label>Search Description Type</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>instantsearch/descriptiontype</source_model>
+							<sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_description_type>
+																</fields>					</general>							
+            </groups>
+        </instantsearch>        
+    </sections>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Magestore_Instantsearch>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Magestore_Instantsearch>
+    </modules>
+</config>
+        <!-- Ok -->

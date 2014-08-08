@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets>
+    <awcountdown_block type="awcountdown/widget_countdown" translate="name description" module="awcountdown">
+        <name>Countdown Timer</name>
+        <is_email_compatible>0</is_email_compatible>
+        <show_in_default>1</show_in_default>
+        <show_in_website>1</show_in_website>
+        <show_in_store>1</show_in_store>
+        <parameters>
+            <countdownid type="complex" translate="label">
+                <visible>1</visible>
+                <label>Countdown ID</label>
+                <type>Text</type>
+                <required>true</required>
+                <sort_order>10</sort_order>
+            </countdownid>
+        </parameters>
+    </awcountdown_block>
+</widgets>

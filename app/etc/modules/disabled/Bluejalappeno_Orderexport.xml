@@ -1,0 +1,9 @@
+<config>
+    <modules>
+        <Bluejalappeno_Orderexport>
+            <active>false</active>
+            <codePool>community</codePool>
+        </Bluejalappeno_Orderexport>
+    </modules>
+</config>
+        <!-- OK -->

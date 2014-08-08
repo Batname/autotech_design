@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- /** * Magento 
+** NOTICE 
+** This source file a part of Ext4mage_Orders2csv extension 
+* all rights to this modul belongs to ext4mage.com 
+*
+* @category Ext4mage 
+* @package Ext4mage_Orders2csv 
+* @copyright Copyright (c) 2011 ext4mage (http://www.ext4mage.com) 
+*/ -->
+<config>
+	<menu>
+		<ext4mage>
+			<children>
+				<orders2csv translate="title" module="orders2csv">
+					<title>orders2csv</title>
+					<sort_order>900</sort_order>
+					<children>
+						<file translate="title" module="orders2csv">
+							<title>orders2csv file setup</title>
+							<sort_order>100</sort_order>
+							<action>orders2csv/adminhtml_file</action>
+						</file>
+					</children>
+				</orders2csv>
+			</children>
+		</ext4mage>
+	</menu>
+	<acl>
+		<resources>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<admin>
+				<children>
+					<ext4mage>
+						<children>
+							<orders2csv>
+								<title>orders2csv Module</title>
+								<children>
+									<file>
+										<title>orders2csv File setup</title>
+									</file>
+								</children>
+							</orders2csv>
+						</children>
+					</ext4mage>
+					<system>
+						<children>
+							<config>
+								<children>
+									<orders2csv translate="title" module="orders2csv">
+										<title>ext4mage orders2pdf section</title>
+									</orders2csv>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>
+

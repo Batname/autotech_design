@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JoomlArt_JmAdvanceSearch>
+            <active>true</active>
+            <codePool>local</codePool>
+        </JoomlArt_JmAdvanceSearch>
+    </modules>
+</config>
+        <!-- OK -->

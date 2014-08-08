@@ -1,0 +1,230 @@
+Xtento_OrderExport
+
+-------------
+  CHANGELOG
+-------------
+
+===== 1.1.0 =====
+ * Initial stable release of the completely new, revamped Magento Order Export Module!
+
+===== 1.1.1 =====
+ * Renamed events to avoid conflicts (XML is merged)
+ + Added three more pre-defined cron job expressions
+
+===== 1.1.2 =====
+ * Fixed bug in grid serializer
+
+===== 1.1.3 =====
+ * Fixed bug in payment data export model
+
+===== 1.1.4 =====
+ + Added option to hide certain product types from the export
+ * Fixed bug for authorize.net payment information export
+
+===== 1.1.5 =====
+ + Added ability to export quotes. Contact us if you're interested.
+ * Cronjob export bug fixed
+ * Fixed a bug that selected too much fields when adding the "exportOnlyNew" collection join
+
+===== 1.1.6 =====
+ + Added ability to export the order status history including comments
+
+===== 1.1.7 =====
+ + Added ability to export customers
+
+===== 1.1.8 =====
+ + Added ability to export each object into a separate file
+ + Added ability to replace certain characters in fields, e.g. replace all commas with spaces.
+ + Added ability to export invoice comments ($invoice->getCommentsCollection() -> invoice_comments in XML)
+ * Fixed a bug in the cronjob configuration injector
+
+===== 1.1.9 =====
+ * Fixed a bug in the cronjob configuration injector
+
+===== 1.1.10 =====
+ + Added ability to invoice or ship order upon exporting
+
+===== 1.1.11 =====
+ + Added export filter: Export only objects created during the last X days
+
+===== 1.1.12 =====
+ + Added ability to export "master" XML files with all fields that can be exported
+ + Added ability to filter exported objects by item attributes. Additionally make sure to check on the items/item loop in the XSL Template whether the item should be exported.
+ + Added ability to specify whether files should be attached to the email sent or not for email destinations
+ + Added ability to filter by increment_id in the export history
+ + Added ability to export custom option SKU
+ + Showing all product attributes for object filters now
+ * Fixed a bug in the destination model
+ * Fixed a bug in the health check function that checks whether the module has been properly installed, XSL is installed and so on. Could have lead to messages showing up twice.
+ * ZIP creation handler did not delete created files
+
+===== 1.1.13 =====
+ + Added ability to export sales rules
+ + Added ability to export invoice/packingslip PDF in the XSL Template as a "file type". Example: <file filename="test_%realorderid%.pdf" type="invoice_pdf"></file> (Possible types: invoice_pdf, packingslip_pdf)
+ + For manual exports the store view select now pre-selects the set store view filters
+ * Fixed a bug in the destination importer that wouldn't assign destination IDs to profiles again
+ * Fixed a bug that would not assign proper keys for iterating objects
+ * Fixed a bug in the general event observer that could prevent objects from exporting with multiple profiles of the same entity enabled
+ * Fixed a bug that prevented the "created during the last X days" filter from being used for automatic exports
+ * Fixed some date/locale inconsistencies when exporting manually/automated
+ * Fixed typos, wrong labels in the backend
+ * Compatibility with Magento version 1.3 has been added again
+
+===== 1.1.14 =====
+ + Added ability to export different tax rates on a summed up per-order base under the /tax node.
+ + Added ability to export last invoice/shipment/creditmemo ID for orders
+ + Added ability to export order ID independent of type exported in the filename.
+ + Added ability to export fields from "Aitoc Checkout Fields Manager" extension
+ + Added ability to mass download files from the execution log for multiple different exports
+ + Added ability do download test export file directly after pressing "Test XSL Template"
+ + Implemented lazy loading for XSL template editor to speed up loading of profile edit page
+ + If <xsl:output> method is set to "xml" or "html" ampersand and other special characters will be escaped
+ + Showing custom class function in destinations grid
+ * Fixed a bug in the cron tester located in the XtCore module
+ * Fixed a bug that prevented the "Export only new filter" from working for event exports
+ * Fixed a bug that lead to the wrong timezone being used in filename variables
+ * Fixed the iteratingKeys array where some entries were commented by accident
+ * Fixed date/time timezone issues
+
+===== 1.2.0 =====
+ + Implemented intelligent field loading mechanism. Only the fields actually used in the XSL Template will get fetched from the DB. Huge speed increase.
+ + Increased max_execution_time
+ + Added ability to export customer addresses
+ * Important bug fix for "customer changed" event exports
+ * Sorting by increment_id was not possible in Export History
+
+===== 1.2.1 =====
+ + Added ability to specify whether download should start automatically for manual exports
+ + Added ability to export Aitoc Checkout Fields Manager "Customer" fields
+ * Fixed exported files filename date/time (timezone)
+ * Qty* fields on item level do not get rounded anymore (decimal qtys)
+
+===== 1.2.2 =====
+ + Added support for WebForms extension
+ + Added ability to export full product image urls
+ + Added ability to use the %exportid% variable in local directory names
+ + Added ability to replace the following characters using search/replace in <file> node: " (use "quote" in the search parameter), < (use "lt"), > (use "gt")
+ + Added notice when trying to test the "Show fields available for export function" with a not existing object ID
+ * Removed "Export Fields" (not necessary anymore with intelligent field loading mechanism introduced in version 1.2.0)
+ * Fixed a bug for customer export not returning any values in certain conditions
+
+===== 1.2.3 =====
+ + Added support for Itabs_Debit extension (Debit Payment)
+ + Added filename variable %exportCountForObject% which is the number of exports made for the exported object by the exporting profile ever.
+   If an object was exported for the fourth time, this variable would output 4
+ + Added filename variable %dailyExportCounter% which increments for each export made by a profile on that same day
+ + Added filename variable %profileExportCounter% which increments for each export made ever by that profile
+ * Enhanced compatibility with SweetTooth (TBT_Testsweet)
+ * Export history entry for exported objects is only created if "Export only new objects" is selected when exported or if "Export only new objects" is turned on for the profile in general
+
+===== 1.2.4 =====
+ + Added support for export event 'sales_order_payment_place_end'
+ * More fields can now be exported when exporting by event for not already to database committed objects
+ * Enhanced tracking number export
+
+===== 1.2.5 =====
+ + Added ability to select whether a profile should show up at the "Manual Export" screen or not
+ + Added ability to export links/titles of links purchased with downloadable products
+ + Added ability to export GUID using $guid variable in XSL Template
+ + Added ability to export category names of exported products
+ * Fixed a bug that would not export tax_rates for invoice exports
+ * Fixed a bug that prevents invoice/packingslip PDFs from being exported for non-order exports (e.g. invoice exports)
+
+===== 1.2.6 =====
+ + Added ability to export fields of MageWorld OneStepCheckoutPro
+ + Added ability to export fields of the ePay payment gateway
+ + Added ability to export $timestamp variable which contains the current timestamp in correct timezone
+ * Fixed a bug for event based exports that could lead to store/status filters not being applied
+ * Fixed a bug in class X tento_OrderExport_Model_Export_Data_Order_General for hasShipments & hasCreditmemos
+
+===== 1.2.7 =====
+ + Added ability to export only objects older than X minutes
+ + Added XSL variables $exportCountForObject, $dailyExportCounter, $profileExportCounter (Attention: Contains these values for the last item of the exported objects. This means you should use "One file per object" export)
+ + The field is_subscribed represents newsletter subscription state for guests as well now
+
+===== 1.2.8 =====
+ + Customer export: Added ability to export the field "has_purchased" (0/1) and "order_count" which represent whether the customer has placed orders yet
+ + Customer export: Street addresses can be accessed individually using street1/street2/...
+ + Customer export: Added address_type field to denote billing/shipping address
+ + Customer export: Added ability to filter by website the customer signed up in
+ * Customer export: Fixed a bug that could lead to the "Export only new customers" feature failing
+ * Removed obsolete cart item attributes from "Export only if the following conditions are met..." filter
+
+===== 1.2.9 =====
+ + Added ability to export dropdown values of custom "address attributes" added using the native Magento Enterprise Edition functionality
+ + Added ability to export gift message stored on item level
+ + Added ability to export qty_in_stock field on item level
+ * Cronjob export: Enhanced cronjob export method to deal with other cronjobs better
+ * Invoice export: The PDF export for standalone invoice exports has been fixed
+ * Fixed test_id field in the profile table so alphanumeric order numbers can be remembered in the Test XSL Template "Test ID" field as well
+ * Fixed MageWorld OSC Pro checkout data export
+
+===== 1.3.0 =====
+ + Added support for "Kamtech Giftwrapper" gift wrap message export
+ * Enhanced compatibility with Magento 1.4.0.1
+
+===== 1.3.1 =====
+ + Added ability to export individual bundle products price using the bundle_price field, to detect use "is_bundle" on item level
+ + Added profile_ids node in export_data.xml and export_data.own.xml files, using which the profile ids on which profile the class should apply can be defined
+ + Added "Export fields" tab into the export profile screen again. Disabled out of the box, can be enabled by renaming the etc/fields_tab.feature.disabled file to etc/fields_tab.feature
+ * Fixed a potential problem with the product type filter that could cause the filter not to apply for non-order exports
+ * For invoice/credit memo exports, the tax amount is NOT retrieved from the order item but the invoice/credit memo item.
+
+===== 1.3.2 =====
+ + Added support for "FME Additional Checkout Attributes" extension
+ + Applied general export class to customer exports as well, adding the line_number etc. fields for customer exports, too
+ + Added ability to export Enterprise Gift Wrapping design information on item level
+ * Improved "Export only if.." filters for "Product subselections"
+ * Fixed item-level qty_in_stock field, could contain wrong values
+ * Improved check whether database tables have been initialized or not, and if not, show an error message (but no exception)
+
+===== 1.3.3 =====
+ + Added IBAN/BIC export for "DebitPayment" extension
+ * Fixed "Export only new" filter for direct model exports, i.e. for specific event exports
+ * Fixed a bug that could lead to the "export conditions" (only export if) filters being lost/removed when exporting
+ * Enhanced backwards compatibility of "export conditions" filters for older Magento versions, especially the "product found" filter
+
+===== 1.3.4 =====
+ * Important bugfix for a problem that could cause data/fields to be missing if several profiles are exported in the same execution, for example that's the case with cronjob exports
+
+===== 1.3.5 =====
+ + Added ability to export dropdown values of custom customer attributes added using the native Enterprise Edition functionality
+
+===== 1.3.6 =====
+ + Added $maxItemCount variable, contains the number of products ordered in the order with the most products ordered
+ + Added Xtento_Order Export_Helper_Xsl class which contains static helper functions which can be called from the XSL Template
+ + Added "Export Orders" action to "MDN_OrderPreparation" (Embedded ERP) grid
+ + Added first_order_timestamp and last_order_timestamp fields on customer level that show when the customer placed his first/last order
+ + Added support for Dh_ShipNote note export
+ + Internally generated XML is loaded with LIBXML_PARSEHUGE enabled to support huge exports
+
+===== 1.3.7 =====
+ * Important bug fix update that could lead to failing exports because of wrong class name. Only affects you if you used 1.3.6 before.
+ + Added support for M2ePro order data export
+ + Added created_at/created_at_timestamp to order status history entries
+
+===== 1.3.8 =====
+ + Added support for Amasty Delivery Date data export
+ + Added support for Amasty Order Memos data export
+ + Added support for Aitoc Checkout Fields Manager "customer data" export when exporting customers
+ + Added support for aheadWorks "Points" customer point balance export
+
+===== 1.3.9 =====
+ + Added ability to export parent_item when exporting invoices/shipments/credit memos
+ * Fixed custom option export for multiple values selected and no SKUs set for the custom options
+
+===== 1.4.0 =====
+ + Added ability to override "Created during the last X days" filter when exporting from Sales Export > Manual Export
+ + Added "info_buyrequest" on item level
+ * Fixed error: Mage registry key "_singleton/" already exists
+
+===== 1.4.1 =====
+ + Added ability to export country_name when doing "Customer" exports
+ + Added ability to cancel orders after exporting - can be enabled in "Filters / Actions" tab.
+ + Added ability to export Enterprise Edition gift_cards serialized array on order level as giftcards/giftcard
+ * Fixed item level gift message export when doing non-order exports
+
+===== 1.4.2 =====
+ * Fixed custom option SKU export for "textarea" and "field" custom options
+ * Fixed "Additional filters" not validating the conditions set up for direct-event exports in certain stores/setups
+ * Fixed/improved date related export filters: "Only last X days", "Older than X minutes" now check date in UTC properly

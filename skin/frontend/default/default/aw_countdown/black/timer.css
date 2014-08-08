@@ -1,0 +1,61 @@
+.aw_countdown_timer_container_black div.aw_countdown_timer{
+    color: #ffffff;
+}
+div.aw_countdown_timer_container_black{
+    text-align: left;
+}
+a.aw_countdown_timer_container_black{
+    text-decoration:none;
+    color: #000;
+}
+.aw_countdown_timer_container_black div.aw_countdown_days_container,.aw_countdown_timer_container_black div.aw_countdown_minutes_container,.aw_countdown_timer_container_black div.aw_countdown_seconds_container,.aw_countdown_timer_container_black div.aw_countdown_hours_container{
+    float:left;
+    background: #D6D6D6;
+}
+
+.aw_countdown_timer_container_black span.aw_countdown_days,.aw_countdown_timer_container_black span.aw_countdown_hours,.aw_countdown_timer_container_black span.aw_countdown_minutes,.aw_countdown_timer_container_black span.aw_countdown_seconds{
+    padding-left: 5px;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.aw_countdown_timer_container_black span.aw_countdown_days_label,.aw_countdown_timer_container_black span.aw_countdown_minutes_label,.aw_countdown_timer_container_black span.aw_countdown_hours_label,.aw_countdown_timer_container_black span.aw_countdown_seconds_label{
+    font-size: 12px;
+    color: #4D4D4D;
+    padding: 0 3px;
+    font-variant: small-caps;
+}
+
+.aw_countdown_timer_container_black div.aw_countdown_separator{
+    float:left;
+    background: #D6D6D6;
+    height: 69.5px;
+}
+
+.aw_countdown_timer_container_black div.aw_countdown_separator_afterhours,.aw_countdown_timer_container_black div.aw_countdown_separator_afterminutes{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px 0;
+    background: #4D4D4D;
+}
+.aw_countdown_timer_container_black div.aw_countdown_days{
+    background: #292929;
+    position: relative;
+    width: 44px;
+    padding: 10px 0;
+}
+
+.aw_countdown_timer_container_black div.aw_countdown_seconds,.aw_countdown_timer_container_black div.aw_countdown_hours,.aw_countdown_timer_container_black div.aw_countdown_minutes{
+    background: #4D4D4D;
+    position: relative;
+    width: 44px;
+    padding: 10px 0;
+}
+.aw_countdown_timer_container_black div.aw_countdown_spacer{
+    width:0px;
+    position: absolute;
+    left:50%;
+    background: none repeat scroll 0 0 #FFFFFF;
+    height:100%;
+}

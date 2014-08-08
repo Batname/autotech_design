@@ -1,0 +1,147 @@
+<?xml version="1.0"?>  
+<config>  
+	<modules>  
+		<JoomlArt_JmSlideshow>  
+			<version>1.1.0</version>  
+		</JoomlArt_JmSlideshow>  
+	</modules>  
+	<frontend>
+		<translate>
+			<modules>
+				<JoomlArt_JmSlideshow>
+					<files>
+						<default>JoomlArt_JmSlideshow.csv</default>
+					</files>
+				</JoomlArt_JmSlideshow>
+			</modules>
+		</translate>
+		<layout>
+			<updates>
+				<jmslideshow>
+					<file>jmslideshow.xml</file>
+				</jmslideshow>
+			</updates>
+		</layout>
+	</frontend>	
+	<global>  		     
+		<blocks>  
+			<joomlart_jmslideshow>  
+				<class>JoomlArt_JmSlideshow_Block</class>  
+			</joomlart_jmslideshow>  
+		</blocks> 		
+		<models>  
+			<joomlart_jmslideshow>  
+				<class>JoomlArt_JmSlideshow_Model</class>  
+			</joomlart_jmslideshow>  
+		</models>
+		<helpers>  
+			<joomlart_jmslideshow>  
+				<class>JoomlArt_JmSlideshow_Helper</class>  
+			</joomlart_jmslideshow>  
+		</helpers>	
+	</global>  
+	
+	<adminhtml>
+		<menu>
+            <joomlart>
+                <title>Joomlart</title>
+                <sort_order>100</sort_order>
+                <children>
+                    <jmslideshow>
+                        <title>JM SlideShow</title>
+                        <sort_order>3</sort_order>
+                        <action>adminhtml/system_config/edit/section/joomlart_jmslideshow</action>
+                    </jmslideshow>
+                </children>
+            </joomlart>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <joomlart_jmslideshow>
+                                            <title>JM Products List</title>
+                                        </joomlart_jmslideshow>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+			<modules>
+				<JoomlArt_JmSlideshow>
+					<files>
+						<default>JoomlArt_JmSlideshow.csv</default>
+					</files>
+				</JoomlArt_JmSlideshow>
+			</modules>
+		</translate>
+    </adminhtml>	
+		
+	<default>
+        <joomlart_jmslideshow>
+            <joomlart_jmslideshow>
+                <show>1</show>                
+                <title>JM Slideshow</title>                
+				<loadjquery>0</loadjquery>
+				
+				<source>images</source>
+				<sourceProductsMode>latest</sourceProductsMode>
+				<catsid></catsid>
+				<quanlity>10</quanlity>
+                <folder></folder>
+				
+				<animation>fade</animation> 
+				
+				<mainWidth>360</mainWidth>
+                <mainHeight>240</mainHeight>
+
+				<duration>500</duration>
+				
+				<autoPlay>1</autoPlay>                
+                <repeat>1</repeat>   
+				<interval>5000</interval>          
+				
+                <thumbType>false</thumbType>
+				<thumbImgMode>crop</thumbImgMode>
+				<thumbImgWidth>100</thumbImgWidth>
+				<thumbImgHeight>100</thumbImgHeight>				
+				<useRatio>1</useRatio>
+                <thumbItems>4</thumbItems>                
+                <thumbWidth>60</thumbWidth>                
+                <thumbHeight>60</thumbHeight>                
+                <thumbSpaces>3:3:3:3</thumbSpaces>
+                <thumbDirection>horizontal</thumbDirection>
+                <thumbPosition>br</thumbPosition>
+                <thumbTrigger>click</thumbTrigger>           
+				
+				<controlBox>0</controlBox>
+				<controlPosition>tr</controlPosition>
+				
+				<navButtons>0</navButtons> 
+				
+                <showDesc>desc</showDesc>
+                <descTrigger>always</descTrigger>
+                <maskWidth>300</maskWidth>
+                <maskHeight>200</maskHeight>
+                <maskAnim>fade</maskAnim>
+                <maskOpacity>0.8</maskOpacity>
+                <maskPosition>bl</maskPosition>
+				<description>[desc img="sl-1.jpg" url="#"] <h3>EndWar Exclusive Theater of War Hands-On </h3> <p>Augue neque rutrum elit vitae nec in pretium et faucibus In. Felis non sit Phasellus hac dictumst Pellentesque Proin eu leo Phasellus. Magna eros consequat eu eu dui vel consequat ipsum dolor ipsum. Tempus quis id massa nisl ac.</p> [/desc]</description>
+				<readMoreText>Read more</readMoreText>
+                
+				<showProgress>0</showProgress>
+				
+                <urls></urls>
+                <targets></targets>
+            </joomlart_jmslideshow>
+        </joomlart_jmslideshow>
+    </default>
+</config>  

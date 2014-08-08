@@ -1,0 +1,19 @@
+V2.4.1    - Community release version
+
+v2.4.2	- Resolved minor issue with Highrise export
+
+v2.5 	- altered export to use Shipping Description when available
+
+v2.6    - added credit card type to export
+
+v2.7	- resolved issue with exporting street address and currency symbols
+
+v2.8	- Rebranded to Blue Jalappeno, Resolved issue with compilation, Sage export includes shipping and payment entry
+
+v2.9	- Resovled issue with SSL
+
+v2.10	- Altered test for block type in Observer
+
+v2.11	- Added support for Enterprise
+
+

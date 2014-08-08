@@ -1,0 +1,176 @@
+<?php
+/**
+* aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * aheadWorks does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * aheadWorks does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Countdown
+ * @version    1.0.3
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ */
+?>
+<?php
+?>
+<div style="display: none;">
+    <span id="sales_rules">
+        <select id="sales_rules_selector" style="min-width: 200px;" onblur="trigger.blured(this)">
+            <?php $saleRules = $this->getSaleRules(); ?>
+            <?php if ($saleRules): ?>
+                <?php foreach ($saleRules as $rule): ?>
+                    <option value="<?php echo $rule->getId(); ?>" onclick="trigger.selected(this)"><?php echo $rule->getName(); ?></option>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <option><?php echo htmlentities($this->__('Shopping Cart Rules not founded')); ?></option>
+            <?php endif; ?>
+        </select>
+    </span>
+    <span id="catalog_rules">
+        <select id="catalog_rules_selector" style="min-width: 200px;" onblur="trigger.blured(this)">
+            <?php $catalogRules = $this->getCatalogRules(); ?>
+            <?php if ($catalogRules): ?>
+                <?php foreach ($catalogRules as $rule): ?>
+                    <option value="<?php echo $rule->getId(); ?>" onclick="trigger.selected(this)"><?php echo $rule->getName(); ?></option>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <option><?php echo htmlentities($this->__('Catalog Rules not founded')); ?></option>
+            <?php endif; ?>
+        </select>
+    </span>
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var lastId = 0;
+    var trigger = function() {
+        return {
+            del : function(obj) {
+                if( confirm('<?php echo $this->__('Are you sure you want to delete it?') ?>') ) {
+                    fieldSet = obj.up('div.fieldset');
+                    if( $('id_' + fieldSet.id) ) {
+                        var itemId = $('id_' + fieldSet.id).value;
+                        var newElement = document.createElement('input');
+                        newElement.type = 'hidden';
+                        newElement.value = itemId;
+                        newElement.name = 'deleteAnswer[]';
+                        $('awcountdown_trigger_fieldset_button').appendChild(newElement);
+                    }
+                    fieldSet.remove();
+                }
+            },
+            selectRule : function(obj) {
+                if($('rule_type_'+obj).value == '0'){
+                    selectr = 'sales_rules';
+                }else{
+                    selectr = 'catalog_rules';
+                }
+                $('rule_id_'+obj).innerHTML = $(selectr).innerHTML;
+                $('rule_id_'+obj).innerHTML.evalScripts();
+                $('rule_id_'+obj+'_selected').value = $(selectr).down(0).value;
+            },
+            selected: function (obj){
+                $(obj.up(1).id+'_selected').value = obj.value;
+                $(obj.up(1).id).innerHTML = '<b>'+obj.innerHTML+'<\/b>';
+            },
+            blured: function (obj){
+                $(obj.up(0).id+'_selected').value = obj.value;
+                $(obj.up(0).id).innerHTML = '<b>'+obj[obj.selectedIndex].innerHTML+'<\/b>';
+            },
+            clearselector: function(obj){
+                $('rule_id_'+obj).innerHTML ='';
+                $('rule_id_'+obj+'_selected').value = '';
+            },
+
+            add : function(obj) {
+                var newElement = document.createElement('div');
+                newElement.innerHTML = this.getTemplate();
+                $('awcountdown_trigger_fieldset_button').appendChild(newElement);
+            },
+            getTemplate : function() {
+                var id = this.createId();
+                return  '<div class="fieldset fieldset-wide" id="poll_trigger_fieldset_' + id + '">'
+                    +    '<label for="on_' + id + '"><?php echo htmlentities($this->__('On:')); ?> </label>'
+                    +    '<select id="on_' + id + '" name="trigger[' + id + '][action_type]" style="min-width: 200px;"  /><option value="<?php echo AW_Countdown_Model_Trigger::ON_START; ?>"><?php echo htmlentities($this->__('countdown start')); ?><\/option><option value="<?php echo AW_Countdown_Model_Trigger::ON_END; ?>"><?php echo htmlentities($this->__('countdown end')); ?><\/option><\/select>'
+                    +    '<label for="action_' + id + '"> </label>'
+                    +    '<select id="action_' + id + '" name="trigger[' + id + '][action]" style="min-width: 100px; margin-left:10px;"  /><option value="<?php echo AW_Countdown_Model_Trigger::ACTION_ENABLE; ?>"><?php echo htmlentities($this->__('Enable')); ?><\/option><option value="<?php echo AW_Countdown_Model_Trigger::ACTION_DISABLE; ?>"><?php echo htmlentities($this->__('Disable')); ?><\/option><\/select>'
+                    +    '<label for="rule_type_' + id + '"> </label>'
+                    +    '<select id="rule_type_' + id + '" name="trigger[' + id + '][rule_type]" style="min-width: 150px; margin-left:10px;"  /><option value="1" onclick="trigger.clearselector('+id+')"><?php echo htmlentities($this->__('Catalog Rule')); ?><\/option><option value="0"  onclick="trigger.clearselector('+id+')"><?php echo htmlentities($this->__('Shopping Rule')); ?><\/option><\/select>'
+                    +    '<a href="#" style="margin-left:50px;" onclick="trigger.selectRule('+ id +'); return false;"><?php echo htmlentities($this->__('select')); ?><\/a>'
+                    +    '<span id="rule_id_' + id +'" style="margin-left: 10px;"><\/span>'
+                    +    '<input type="hidden" id="rule_id_' + id + '_selected" name="trigger[' + id + '][rule_id]" value="" />'
+                    +    '<input type="hidden" id="id_awcountdown_trigger_fieldset_' + id + '" value="' + id + '" />'
+                    +    '  <?php echo $this->getDeleteButtonHtml() ?>'
+                    +'<\/div>';
+            },
+
+            createId : function () {
+                return lastId++;
+            }
+        }
+    }();
+    //]]>
+</script>
+<div id="triggers_container">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Triggers') ?></h4>
+    </div>
+    <div class="fieldset fieldset-wide" id="awcountdown_trigger_fieldset_button">
+        <p class="a-right" style="margin:7px 0 0;"><?php echo $this->getAddButtonHtml(); ?></p><br>
+        <?php if (!$triggers): ?>
+        <?php else: ?>
+            <?php foreach ($triggers->getItems() as $_item): ?>
+                <div class="fieldset fieldset-wide" id="awcountdown_trigger_fieldset_<?php echo $_item->getTriggerId() ?>">
+                    <label for="on_<?php echo $_item->getTriggerId() ?>"><?php echo htmlentities($this->__('On:')); ?></label>
+                    <select id="on_<?php echo $_item->getTriggerId() ?>" name="trigger[<?php echo $_item->getTriggerId() ?>][action_type]" value="<?php echo $_item->getActionType() ?>"  style="min-width: 200px;">
+                        <option value="<?php echo AW_Countdown_Model_Trigger::ON_START; ?>"><?php echo htmlentities($this->__('countdown start')); ?></option>
+                        <?php if ($_item->getActionType() == AW_Countdown_Model_Trigger::ON_END): ?>
+                            <option value="<?php echo AW_Countdown_Model_Trigger::ON_END; ?>" selected="selected"><?php echo htmlentities($this->__('countdown end')); ?></option>
+                        <?php else: ?>
+                            <option value="<?php echo AW_Countdown_Model_Trigger::ON_END; ?>"><?php echo htmlentities($this->__('countdown end')); ?></option>
+                        <?php endif; ?>
+                    </select>
+                    <label for="action_<?php echo $_item->getTriggerId() ?>"></label>
+                    <select id="action_<?php echo $_item->getTriggerId() ?>" name="trigger[<?php echo $_item->getTriggerId() ?>][action]" value="<?php echo $_item->getAction() ?>" style="min-width: 100px; margin-left:10px;" >
+                        <option value="<?php echo AW_Countdown_Model_Trigger::ACTION_ENABLE; ?>"><?php echo htmlentities($this->__('Enable')); ?></option>
+                        <?php if ($_item->getAction() == AW_Countdown_Model_Trigger::ACTION_DISABLE): ?>
+                            <option value="<?php echo AW_Countdown_Model_Trigger::ACTION_DISABLE; ?>" selected="selected"><?php echo htmlentities($this->__('Disable')); ?></option>
+                        <?php else: ?>
+                            <option value="<?php echo AW_Countdown_Model_Trigger::ACTION_DISABLE; ?>"><?php echo htmlentities($this->__('Disable')); ?></option>
+                        <?php endif; ?>
+                    </select>
+                    <label for="rule_type_<?php echo $_item->getTriggerId() ?>"></label>
+                    <select id="rule_type_<?php echo $_item->getTriggerId() ?>" name="trigger[<?php echo $_item->getTriggerId() ?>][rule_type]" value="<?php echo $_item->getRuleType() ?>" style="min-width: 150px; margin-left:10px;">
+                        <option value="1" onclick="trigger.clearselector(<?php echo $_item->getTriggerId() ?>)"><?php echo htmlentities($this->__('Catalog Rule')); ?></option>
+                        <?php if ($_item->getRuleType() === '0'): ?>
+                            <option value="0" selected="selected" onclick="trigger.clearselector(<?php echo $_item->getTriggerId() ?>)"><?php echo htmlentities($this->__('Shopping Rule')); ?></option>
+                        <?php else: ?>
+                            <option value="0" onclick="trigger.clearselector(<?php echo $_item->getTriggerId() ?>)"><?php echo htmlentities($this->__('Shopping Rule')); ?></option>
+                        <?php endif; ?>
+                    </select>
+                    <a href="#" style="margin-left:50px;" onclick="trigger.selectRule(<?php echo $_item->getTriggerId() ?>); return false;"><?php echo htmlentities($this->__('select')); ?></a>
+                    <span id="rule_id_<?php echo $_item->getTriggerId() ?>" style="margin-left: 10px;"><b><?php echo $this->getRuleName($_item->getTriggerId()); ?></b></span>
+                    <input type="hidden" id="rule_id_<?php echo $_item->getTriggerId() ?>_selected" name="trigger[<?php echo $_item->getTriggerId() ?>][rule_id]" value="<?php echo $_item->getRuleId() ?>" />
+                    <?php echo $this->getDeleteButtonHtml() ?>
+                    <input type="hidden" id="id_poll_trigger_fieldset_<?php echo $_item->getTriggerId() ?>" value="<?php echo $_item->getTriggerId() ?>" />
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</div>
+

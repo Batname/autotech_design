@@ -1,0 +1,443 @@
+[
+    {
+        "name": "symfony/yaml",
+        "version": "v2.2.9",
+        "version_normalized": "2.2.9.0",
+        "target-dir": "Symfony/Component/Yaml",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Yaml.git",
+            "reference": "bb697b6617b90c91b2a65d24ce32035afe5e3418"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Yaml/zipball/bb697b6617b90c91b2a65d24ce32035afe5e3418",
+            "reference": "bb697b6617b90c91b2a65d24ce32035afe5e3418",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-09-22 17:30:19",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Yaml\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/console",
+        "version": "v2.3.6",
+        "version_normalized": "2.3.6.0",
+        "target-dir": "Symfony/Component/Console",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Console.git",
+            "reference": "f880062d56edefb25b36f2defa65aafe65959dc7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Console/zipball/f880062d56edefb25b36f2defa65aafe65959dc7",
+            "reference": "f880062d56edefb25b36f2defa65aafe65959dc7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/event-dispatcher": "~2.1"
+        },
+        "suggest": {
+            "symfony/event-dispatcher": ""
+        },
+        "time": "2013-09-25 06:04:15",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Console\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/filesystem",
+        "version": "v2.3.6",
+        "version_normalized": "2.3.6.0",
+        "target-dir": "Symfony/Component/Filesystem",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Filesystem.git",
+            "reference": "2b8995042086c5552c94d33b5553c492e9cfc00e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Filesystem/zipball/2b8995042086c5552c94d33b5553c492e9cfc00e",
+            "reference": "2b8995042086c5552c94d33b5553c492e9cfc00e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-09-19 09:45:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Filesystem\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Filesystem Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/config",
+        "version": "v2.3.6",
+        "version_normalized": "2.3.6.0",
+        "target-dir": "Symfony/Component/Config",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Config.git",
+            "reference": "1ced3d6c88b22df8cd1fe5209dbd6a89df362a29"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Config/zipball/1ced3d6c88b22df8cd1fe5209dbd6a89df362a29",
+            "reference": "1ced3d6c88b22df8cd1fe5209dbd6a89df362a29",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/filesystem": "~2.3"
+        },
+        "time": "2013-09-19 09:45:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Config\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Config Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/class-loader",
+        "version": "v2.3.6",
+        "version_normalized": "2.3.6.0",
+        "target-dir": "Symfony/Component/ClassLoader",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/ClassLoader.git",
+            "reference": "e5f3ef7ebd965a12699984df06b2a5bd439bd2a0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/e5f3ef7ebd965a12699984df06b2a5bd439bd2a0",
+            "reference": "e5f3ef7ebd965a12699984df06b2a5bd439bd2a0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/finder": "~2.0"
+        },
+        "time": "2013-09-19 09:45:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\ClassLoader\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony ClassLoader Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "robmorgan/phinx",
+        "version": "v0.2.8",
+        "version_normalized": "0.2.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/robmorgan/phinx.git",
+            "reference": "6fe8fb428e96a567333fe6af4286c328ef8baada"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/robmorgan/phinx/zipball/6fe8fb428e96a567333fe6af4286c328ef8baada",
+            "reference": "6fe8fb428e96a567333fe6af4286c328ef8baada",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "symfony/class-loader": "2.*",
+            "symfony/config": "2.*",
+            "symfony/console": "2.*",
+            "symfony/yaml": "2.*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2013-08-25 10:17:27",
+        "bin": [
+            "bin/phinx"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Phinx": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rob Morgan",
+                "email": "robbym@gmail.com",
+                "homepage": "http://robmorgan.id.au"
+            }
+        ],
+        "description": "Phinx makes it ridiculously easy to manage the database migrations for your PHP app.",
+        "homepage": "http://phinx.org",
+        "keywords": [
+            "database",
+            "database migrations",
+            "db",
+            "migrations",
+            "phinx"
+        ]
+    },
+    {
+        "name": "joshribakoff/zf1-empty",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/joshribakoff/zf1-empty.git",
+            "reference": "d5fb6acd10902ce6b44551fbc70495d49e415714"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/joshribakoff/zf1-empty/zipball/d5fb6acd10902ce6b44551fbc70495d49e415714",
+            "reference": "d5fb6acd10902ce6b44551fbc70495d49e415714",
+            "shasum": ""
+        },
+        "replace": {
+            "zendframework/zendframework1": "*"
+        },
+        "time": "2013-07-16 00:19:09",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/"
+    },
+    {
+        "name": "joshribakoff/php-csv-utils",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/joshribakoff/php-csv-utils.git",
+            "reference": "d90ab5528427e891a4407dd0f2f23523c3103c99"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/joshribakoff/php-csv-utils/zipball/d90ab5528427e891a4407dd0f2f23523c3103c99",
+            "reference": "d90ab5528427e891a4407dd0f2f23523c3103c99",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/dbunit": "*",
+            "phpunit/php-invoker": "*",
+            "phpunit/phpunit": ">=3.7.19,<3.8.0",
+            "phpunit/phpunit-selenium": "*",
+            "phpunit/phpunit-story": "*"
+        },
+        "time": "2013-07-03 00:48:05",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Csv": "source/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            "source/"
+        ],
+        "license": [
+            "GNU Lesser General Public License"
+        ],
+        "authors": [
+            {
+                "name": "Luke Visinoni"
+            }
+        ],
+        "description": "php-csv-utils"
+    },
+    {
+        "name": "vehiclefits/library",
+        "version": "0.3.1",
+        "version_normalized": "0.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vehiclefits/library.git",
+            "reference": "1314d0969ecbd5fdc91066e12189797cef05749b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/vehiclefits/library/zipball/1314d0969ecbd5fdc91066e12189797cef05749b",
+            "reference": "1314d0969ecbd5fdc91066e12189797cef05749b",
+            "shasum": ""
+        },
+        "require": {
+            "joshribakoff/php-csv-utils": "1.*",
+            "zendframework/zendframework1": "*"
+        },
+        "require-dev": {
+            "phpunit/dbunit": "*",
+            "phpunit/php-invoker": "*",
+            "phpunit/phpunit": "3.7.19",
+            "phpunit/phpunit-selenium": "*",
+            "phpunit/phpunit-story": "*",
+            "robmorgan/phinx": "*"
+        },
+        "time": "2013-10-13 14:30:14",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "VF": [
+                    "library/",
+                    "tests/"
+                ]
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            "library/"
+        ],
+        "license": [
+            "OSL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Cannon",
+                "email": "kyle.d.cannon@gmail.com"
+            },
+            {
+                "name": "Josh Ribakoff",
+                "email": "sales@vehiclefits.com"
+            }
+        ],
+        "description": "Vehiclefits Core Library."
+    }
+]

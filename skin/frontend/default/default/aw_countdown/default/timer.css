@@ -1,0 +1,58 @@
+.aw_countdown_timer_container_default div.aw_countdown_timer{
+    color: #ffffff;
+}
+div.aw_countdown_timer_container_default{
+    text-align: left;
+}
+a.aw_countdown_timer_container_default{
+    text-decoration:none;
+    color: #000;
+}
+.aw_countdown_timer_container_default div.aw_countdown_days_container{
+    float:left;
+}
+
+.aw_countdown_timer_container_default div.aw_countdown_hours_container{
+    float:left;
+    margin-left: 10px;
+}
+
+.aw_countdown_timer_container_default div.aw_countdown_minutes_container, .aw_countdown_timer_container_default div.aw_countdown_seconds_container{
+    float:left;
+}
+
+.aw_countdown_timer_container_default span.aw_countdown_days,.aw_countdown_timer_container_default span.aw_countdown_hours,.aw_countdown_timer_container_default span.aw_countdown_minutes,.aw_countdown_timer_container_default span.aw_countdown_seconds{
+    padding-left: 5px;
+    font-size: 20px;
+    letter-spacing: 12px;
+}
+
+.aw_countdown_timer_container_default span.aw_countdown_days_label,.aw_countdown_timer_container_default span.aw_countdown_minutes_label,.aw_countdown_timer_container_default span.aw_countdown_hours_label,.aw_countdown_timer_container_default span.aw_countdown_seconds_label{
+    font-size: 12px;
+    color: #07AFF7;
+    padding: 0 3px;
+}
+
+.aw_countdown_timer_container_default div.aw_countdown_separator{
+    float:left;
+}
+
+.aw_countdown_timer_container_default div.aw_countdown_separator_afterhours,.aw_countdown_timer_container_default div.aw_countdown_separator_afterminutes{
+    font-size: 19px;
+    font-weight: bold;
+    color: #07AFF7;
+    padding: 0 3px;
+}
+
+.aw_countdown_timer_container_default div.aw_countdown_days,.aw_countdown_timer_container_default div.aw_countdown_seconds,.aw_countdown_timer_container_default div.aw_countdown_hours,.aw_countdown_timer_container_default div.aw_countdown_minutes{
+    background: #07AFF7;
+    position: relative;
+    width: 44px;
+}
+.aw_countdown_timer_container_default div.aw_countdown_spacer{
+    width:1px;
+    position: absolute;
+    left:50%;
+    background: none repeat scroll 0 0 #FFFFFF;
+    height:100%;
+}

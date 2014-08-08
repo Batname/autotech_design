@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <promo>
+            <children>
+                <awcountdown module="awcountdown">
+                    <title>Countdown Timers</title>
+                    <sort_order>10</sort_order>
+                    <children>
+                        <new module="awcountdown">
+                            <title>Add new</title>
+                            <sort_order>10</sort_order>
+                            <action>awcountdown_admin/adminhtml_countdown/new</action>
+                        </new>
+                        <list module="awcountdown">
+                            <title>Blocks List</title>
+                            <sort_order>20</sort_order>
+                            <action>awcountdown_admin/adminhtml_countdown/list</action>
+                        </list>
+                    </children>
+                </awcountdown>
+            </children>
+        </promo>
+    </menu>
+    <enterprise>
+        <admingws>
+            <collection_load_before>
+                <awcountdown__countdown_collection>addStoreFilter</awcountdown__countdown_collection>
+            </collection_load_before>
+        </admingws>
+    </enterprise>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow everything</title>
+            </all>
+            <admin>
+                <children>
+                    <promo>
+                        <children>
+                            <awcountdown module="awcountdown">
+                                <title>Countdown Timers</title>
+                                <sort_order>10</sort_order>
+                                <children>
+                                    <new module="awcountdown">
+                                        <title>Add new</title>
+                                        <sort_order>10</sort_order>
+                                    </new>
+                                    <list module="awcountdown">
+                                        <title>Blocks List</title>
+                                        <sort_order>20</sort_order>
+                                    </list>
+                                </children>
+                            </awcountdown>
+                        </children>
+                    </promo>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <awcountdown>
+                                        <title>Countdown Timers section</title>
+                                    </awcountdown>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <layout>
+        <updates>
+            <awcountdown module="awcountdown">
+                <file>aw_countdown.xml</file>
+            </awcountdown>
+        </updates>
+    </layout>
+</config>

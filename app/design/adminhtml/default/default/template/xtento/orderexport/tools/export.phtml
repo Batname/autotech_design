@@ -1,0 +1,65 @@
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Tools - Export Settings')?></h4>
+
+        <div class="form-buttons"></div>
+    </div>
+    <form id="export_form" name="export_form" method="post" action="<?php echo Mage::helper('adminhtml')->getUrl('*/*/exportSettings')?>">
+        <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>"/>
+
+        <div class="fieldset fieldset-wide" id="base_fieldset">
+            <div class="hor-scroll">
+                    <?php echo Mage::helper('xtento_orderexport')->__('<b>Note:</b> You can select profiles and destinations to export here, and later on import them into another Magento installation for example.')?>
+                <div style="position: relative; border: 1px solid #a6a6a6; display:table; width:99.5%; margin-top: 5px;">
+                    <div style="width:48%; float: left; clear: both; padding-left: 10px; border-right: 1px solid #a6a6a6; padding-top: 3px; display:table-row;">
+                        <strong>Select Profiles</strong>
+                        <?php
+                        $profileCollection = $this->getProfiles();
+                        ?>
+                        <ul class="checkboxes" style="padding: 8px; padding-top:2px; padding-bottom:0px;">
+                            <?php
+                            foreach ($profileCollection as $profile) {
+                                ?>
+                                <li>
+                                    <input id="profile_<?php echo $profile->getId()?>" type="checkbox" name="profile_ids[]" value="<?php echo $profile->getId()?>">
+                                    <label for="profile_<?php echo $profile->getId()?>"><b><?php echo $profile->getName()?></b> (<?php echo Mage::helper('xtento_orderexport')->__('Entity: %s', ucwords($profile->getEntity()))?>)</label>
+                                </li>
+                                <?php
+                            }
+                            if ($profileCollection->count() == 0) {
+                                echo "<li>".Mage::helper('xtento_orderexport')->__('No export profiles found.')."</li>";
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <div style="width:48%; float: left; padding-left:9px; padding-top: 5px;">
+                        <strong>Select Destinations</strong>
+                        <?php
+                        $destinationCollection = $this->getDestinations();
+                        ?>
+                        <ul class="checkboxes" style="padding: 8px; padding-top:2px; padding-bottom:0px;">
+                            <?php
+                            foreach ($destinationCollection as $destination) {
+                                ?>
+                                <li>
+                                    <input id="destination_<?php echo $destination->getId()?>" type="checkbox" name="destination_ids[]" value="<?php echo $destination->getId()?>">
+                                    <label for="destination_<?php echo $destination->getId()?>"><b><?php echo $destination->getName()?></b> (<?php echo Mage::helper('xtento_orderexport')->__('Type: %s', ucwords($destination->getType()))?>)</label>
+                                </li>
+                                <?php
+                            }
+                            if ($destinationCollection->count() == 0) {
+                                echo "<li>".Mage::helper('xtento_orderexport')->__('No export destinations found.')."</li>";
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding-top:5px; clear:both;">
+                    <button class="scalable save" type="submit" onclick="$('export_form').submit();">
+                        <span><?php echo $this->__('Export Settings')?></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

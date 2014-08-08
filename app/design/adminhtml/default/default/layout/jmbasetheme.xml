@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <jmbasetheme_adminhtml_jmbasethemebackend_index>
+    <reference name="head">
+	  <action method="addCss"><stylesheet>basetheme.css</stylesheet></action> 
+	</reference>
+	<reference name="content">
+	  <block type="jmbasetheme/adminhtml_jmbasethemebackend" name="jmbasethemebackend" template="jmbasetheme/jmbasethemebackend.phtml"/>
+	</reference>
+  </jmbasetheme_adminhtml_jmbasethemebackend_index>
+   <default>
+        <reference name="content">
+	        <block type="core/template" name="jmbasethemehead" template="jmbasetheme/jmbasethemehead.phtml"/>
+	   </reference>
+        <reference name="head">
+            <action method="addCss"><name>jmbasetheme.css</name></action>
+			  </reference>
+   </default>
+</layout>

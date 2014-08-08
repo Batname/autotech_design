@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author		Sashas
+ * @category    Sashas
+ * @package     Sashas_Callforprice
+ * @copyright   Copyright (c) 2013 Sashas IT Support Inc. (http://www.sashas.org)
+ * @license    http://opensource.org/licenses/GPL-3.0  GNU General Public License, version 3 (GPL-3.0)
+ */
+-->
+<config>
+    <modules>
+        <Sashas_Callforprice>
+            <version>0.1.4</version>
+        </Sashas_Callforprice>
+    </modules>
+    <frontend>
+        <routers>
+            <callforprice>
+                <use>standard</use>
+                <args>
+                    <module>Sashas_Callforprice</module>
+                    <frontName>callforprice</frontName>
+                </args>
+            </callforprice>
+        </routers>
+        <layout>
+            <updates>
+                <callforprice>
+                    <file>callforprice.xml</file>
+                </callforprice>
+            </updates>
+        </layout> 
+    </frontend>
+ <global>
+        <blocks>
+            <callforprice>
+                <class>Sashas_Callforprice_Block</class>
+            </callforprice>                    	
+        </blocks>   
+        <models>
+        	<callforprice>
+        		<class>Sashas_Callforprice_Model</class>
+        		<resourceModel>callforprice_mysql4</resourceModel>
+        	</callforprice>
+        	<callforprice_mysql4>
+                <class>Sashas_Callforprice_Model_Mysql4</class>
+                <entities>
+                    <callforprice>
+                        <table>sashas_callforprice_product</table>
+                    </callforprice>
+                </entities>
+            </callforprice_mysql4>
+        </models>  
+        <helpers>
+        	<callforprice>
+        		<class>Sashas_Callforprice_Helper</class>        		
+        	</callforprice>
+        </helpers> 
+        <resources>
+            <callforprice_setup>
+                <setup>
+                    <module>Sashas_Callforprice</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </callforprice_setup>
+            <callforprice_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </callforprice_write>
+            <callforprice_read>
+                <connection> 
+                    <use>core_read</use>
+                </connection>
+            </callforprice_read>
+       </resources>   
+	   <events>
+  		<catalog_product_save_after>
+  			<observers>
+  				<callforprice_save_product_data>
+  					<type>singleton</type>
+  					<class>callforprice/observer</class>
+  					<method>saveProductTabData</method>
+  				</callforprice_save_product_data>
+  			</observers>
+  		</catalog_product_save_after>
+  		<core_block_abstract_prepare_layout_before>
+  			<observers>
+  				<callforprice_core_block_abstract_prepare_layout_before>
+  					<class>callforprice/observer</class>
+  					<method>addMassAction</method>
+  				</callforprice_core_block_abstract_prepare_layout_before>
+  			</observers>
+  		</core_block_abstract_prepare_layout_before>
+  	   </events>          
+  </global>
+  <admin>
+	 <routers>
+		 <callforprice>
+			 <use>admin</use>
+			 <args>
+			 	<module>Sashas_Callforprice</module>
+			 	<frontName>callforprice</frontName>
+			 </args>
+		 </callforprice>
+ 
+            <adminhtml>                 
+                <args>
+                    <modules> 
+                    	<Sashas_Callforprice before="Mage_Adminhtml">Sashas_Callforprice</Sashas_Callforprice>
+                    </modules>
+                </args>
+            </adminhtml>
+       	 
+	 </routers>
+  </admin>
+  <adminhtml>
+  	<layout>
+  		<updates>
+  			<callforprice>
+  				<file>callforprice.xml</file>
+  			</callforprice>
+  		</updates>
+  	</layout>
+        <menu>
+        	<catalog>
+        		<children>
+        			<callforpriceupload translate="title" module="callforprice">
+                		<title>Callforprice Upload</title>
+                		<action>adminhtml/adminhtml_callforprice</action> 
+                		<sort_order>9999</sort_order>
+            		</callforpriceupload>
+        		</children>
+        	</catalog>            
+        </menu>   	
+  </adminhtml>
+</config>
+
+

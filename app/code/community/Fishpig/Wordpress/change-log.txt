@@ -1,0 +1,217 @@
+##
+# Magento / WordPress Integration
+#
+# Author:  Ben Tideswell
+# URL:  http://fishpig.co.uk/magento/wordpress-integration/
+##
+
+13/02/2014 - 3.0.29.0
+- Added better legacy support
+
+10/02/2014 - 3.0.27.0
+- Added better support for non-latin characters
+
+10/02/2014 - 3.0.26.0
+- Improved OG tags
+
+04/02/2014 - 3.0.23.0
+- Version fix
+
+03/02/2014 - 3.0.22.0
+- Fixes for product shortcode
+
+27/01/2014 - 3.0.21.0
+- Add setOrder and serOrderDir to associated posts tab
+- Fixed LightboxGallery for posts that don't have galleries but have single images
+- Impoved OpenGraph integration
+
+20/01/2014 - 3.0.20.0
+- Improved Gravatar system
+- Improved SEO title. Title is now trimmed with %sep%
+- Added support for Cyrillic URL's
+
+13/01/2014 - 3.0.18.0
+- Improved auto-login details system by moving to System Configuration
+
+06/01/2014 - 3.0.16.0
+- Added support for the Facebook extension: http://fishpig.co.uk/magento/wordpress-integration/facebook/
+
+03/01/2014 - 3.0.15.0
+- Add better HTML filters for comments. Safe HTML tags are now allowed and you can enable/disable nl2br
+- Fixed Feed title so that if no 'blogname' is set, a default feed title is used
+
+31/12/2013 - 3.0.14.0
+- Added support for WordPress calendar widget
+
+17/12/2013 - 3.0.12.0
+- Added support for Simple Page Sidebars plugin
+- Fixed issue with router for Root
+
+16/12/2013 - 3.0.10.0
+- Added AJAX block and routes to request other blog's data from different store
+- Added tag filter to recent posts block
+
+14/12/2013 - 3.0.8.0
+- Added support for Lightbox Gallery plugin
+
+13/12/2013 - 3.0.5.0
+- Fixed RSS Feed issue when no title was set for post
+
+06/12/2013 - v3.0.4.9
+- Fixed auto-login issue for legacy Magento installations
+- Added store specific layout handles (STORE__{{code}}_handle)
+
+04/12/2013 - v3.0.4.6
+- Fixed canonical URL issue
+
+27/11/2013 - v3.0.4.4
+- Fixed Extend issue
+
+23/11/2013 - v3.0.4.0
+- Added support for FPAdmin
+
+18/11/2013 - v3.0.3.14
+- Improved update system
+
+16/11/2013 - v3.0.3.12
+- Added support for ACF fields and Page models
+
+14/11/2013 - v3.0.3.11
+- Fixed compiler support for Magento 1.4.2.0 - 1.5
+
+14/11/2013 - v3.0.3.10
+- Fixed bug that stopped default config values from being used for integration tests
+- Fixed issue that broke URL's when not using custom permalinks
+- Fixed Google XML Sitemaps test error
+
+08/11/2013 - v3.0.3.9
+- Removed 'directory exists' error message when using Root
+
+07/11/2013 - v3.0.3.8
+- Fixed Admin issue with undefined $extra
+
+30/10/2013 - v3.0.3.7
+- Fixed '+' signs appearing in search results
+
+28/10/2013 - v3.0.3.6
+- Updated auto-login to work with WordPress 3.7
+
+23/10/2013 - v3.0.3.5
+- Added change so that associated products show when using 'sidebar' rather than 'left' reference name for the left column
+
+22/10/2013 - v3.0.3.4
+- Added Twitter Card support to WordPress SEO add-on
+
+19/10/2013 - v3.0.3.3
+- Added AddThis change so that custom buttons work
+
+17/10/2013 - v3.0.3.2
+- Added fix so that private posts work when using Customer Synchronisation
+
+16/10/2013 - v3.0.3.1
+- Small AddThis fix
+
+15/10/2013 - v3.0.3.0
+- Made changes to work with root add-on (http://fishpig.co.uk/magento/wordpress-integration/root/) This allows you to run your blog from the root of Magento and still be integrated.
+
+11/10/2013 - v3.0.2.9
+- Improved for ReCaptcha extension
+
+07/10/2013 - v3.0.2.8
+- Fixed custom front page issue
+
+04/10/2013 - v3.0.2.7
+- Fixed custom post types pagination
+- Fixed some pager URLs
+
+01/10/2013 - v3.0.2.6
+- Improved extension update notificiation system
+
+27/09/2013 - v3.0.2.5
+- Fixed xHTML validation error
+
+24/09/2013 - v3.0.2.4
+- Fixed getTable method in post collection model
+
+24/09/2013 - v3.0.2.3
+- Fixed undefined $join in post collection model
+
+23/09/2013 - v3.0.2.2
+- Removed widget areas for homepage and footer
+
+??/09/2013 - v3.0.2.1
+- Fixed gallery shortcode CSS
+
+20/09/2013 - v3.0.2.0
+- Added Recent Posts block to Magento widget list
+- Improved AddThis CSS and fixed AddThis bug that stopped correct post details being submitted
+- Removed support for All In One SEO and ShareThis. You should now use WordPress SEO and AddThis
+- Rewritten post URI generation and route lookup
+
+17/09/2013 - v3.0.1.4
+- Removed exit() from Router
+
+16/09/2013 - v3.0.1.3
+- Fixed post excerpt issue
+
+13/09/2013 - v3.0.1.2
+- Removed CPT message
+- Added legacy auto-login system
+
+03/08/2013 - v3.0.1.0
+- Updated extension to work with Integrated Search extension (http://fishpig.co.uk/magento/wordpress-integration/integrated-search/)
+
+23/07/2013 - v3.0.0.21
+- Fixed associations error
+- Added Yarpp block with no output for legacy
+
+22/07/2013 - v3.0.0.20
+- Added RSS Feed support back in
+
+14/07/2013 - v3.0.0.19
+- Improved Google XML Sitemap integration
+
+14/07/2013 - v3.0.0.16
+- Fixed page comments
+
+11/07/2013 - v3.0.0.14
+- Hide integration success message when update available
+
+11/07/2013 - v3.0.0.12
+- Added fix for comment form
+
+10/07/2013 - v3.0.0.11
+- Added support for Magento 1.4.2.0
+
+10/07/2013 - v3.0.0.7
+- Added support for Magento 1.5.0.0
+
+10/07/2013 - v3.0.0.6
+- Added support for Magento 1.6.0.0
+
+10/07/2013 - v3.0.0.5
+- Improved the upgrade notification system
+
+10/07/2013 - v3.0.0.3
+- Fixed auto login issue
+
+10/07/2013 - v3.0.0.2
+- Changed version checker from === to >
+- Added support for Magento 1.6.2.0
+
+10/07/2013 - v3.0.0.0
+- Added support for the Instragram shortcode (http://en.support.wordpress.com/images/instagram/)
+- Added support for Vimeo videos (http://en.support.wordpress.com/videos/vimeo/)
+- Added support for the Dailymotion shortcode (http://en.support.wordpress.com/videos/dailymotion/)
+- Added support for the Scribd shortcode (http://en.support.wordpress.com/scribd/)
+- Added support for the Gist shortcode (http://en.support.wordpress.com/gist/)
+- Added moderation message for comments
+- Added replying to comments
+- Added support for custom menu item title
+- Cleaned up configuration
+- Added support for sticky posts
+- Added simple WordPress like pager (uncomment line in wordpress.xml to activate)
+- Added better category URL's and breadcrumbs for posts with %category% permalinks
+- You can now use '/' in your blog route
+- Redirect requests for RSS feeds to raw WP installation. This means rss, rss2, atom and rdf are now supported
+- Added support for Google XML Sitemaps plugin

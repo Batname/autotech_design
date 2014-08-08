@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_Advancedreports
+ * @copyright  Copyright (c) 2009-2010 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+-->
+<config>
+    <modules>
+        <AW_Advancedreports>
+            <version>2.1</version><platform>ce</platform>
+        </AW_Advancedreports>
+    </modules>
+    <global>
+        <models>
+            <advanсedreports>
+                <class>AW_Advancedreports_Model</class>
+                <resourceModel>advancedreports_mysql4</resourceModel>
+            </advanсedreports>
+            <advancedreports_mysql4>
+                <class>AW_Advancedreports_Model_Mysql4</class>
+            </advancedreports_mysql4>
+        </models>
+        <blocks>
+            <advancedreports>
+                <class>AW_Advancedreports_Block</class>
+            </advancedreports>
+            <adminhtml>
+                <rewrite>                	
+                    <!-- Sales menu 
+                    <report_sales_sales_grid>AW_Advancedreports_Block_Report_Sales_Sales_Grid</report_sales_sales_grid>
+                    <report_sales_coupons_grid>AW_Advancedreports_Block_Report_Sales_Coupons_Grid</report_sales_coupons_grid>
+                    <report_sales_invoiced_grid>AW_Advancedreports_Block_Report_Sales_Invoiced_Grid</report_sales_invoiced_grid>
+                    <report_sales_refunded_grid>AW_Advancedreports_Block_Report_Sales_Refunded_Grid</report_sales_refunded_grid>
+                    <report_sales_shipping_grid>AW_Advancedreports_Block_Report_Sales_Shipping_Grid</report_sales_shipping_grid>
+                    <report_sales_tax_grid>AW_Advancedreports_Block_Report_Sales_Tax_Grid</report_sales_tax_grid>
+                    <report_product_sold_grid>AW_Advancedreports_Block_Report_Product_Sold_Grid</report_product_sold_grid>
+                    <report_product_ordered_grid>AW_Advancedreports_Block_Report_Product_Ordered_Grid</report_product_ordered_grid>
+                    <report_product_viewed_grid>AW_Advancedreports_Block_Report_Product_Viewed_Grid</report_product_viewed_grid>
+                    <report_customer_totals_grid>AW_Advancedreports_Block_Report_Customer_Totals_Grid</report_customer_totals_grid>
+                    <report_customer_accounts_grid>AW_Advancedreports_Block_Report_Customer_Accounts_Grid</report_customer_accounts_grid>
+                    <report_customer_orders_grid>AW_Advancedreports_Block_Report_Customer_Orders_Grid</report_customer_orders_grid>-->
+					<!-- Store Switcher Correction -->
+					<store_switcher>AW_Advancedreports_Block_Store_Switcher</store_switcher>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <advancedreports>
+                    <class>AW_Advancedreports_Helper</class>
+            </advancedreports>
+        </helpers>
+        <models>
+	    <advancedreports>
+		<class>AW_Advancedreports_Model</class>
+	    </advancedreports>
+            <reports_mysql4>
+                <rewrite>
+                    <product_ordered_collection>AW_Advancedreports_Model_Mysql4_Ordered_Collection</product_ordered_collection>
+                    <report_collection>AW_Advancedreports_Model_Mysql4_Report_Collection</report_collection>
+                </rewrite>
+            </reports_mysql4>
+			<admin>
+				<rewrite>
+					<config>AW_Advancedreports_Model_Admin_Config</config>
+				</rewrite>
+			</admin>
+        </models>
+        <resources>
+            <advancedreports_setup>
+                <setup>
+                    <module>AW_Advancedreports</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </advancedreports_setup>
+            <advancedreports_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </advancedreports_write>
+            <advancedreports_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </advancedreports_read>
+        </resources>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <AW_Advancedreports>
+                    <files>
+                        <default>AW_Advancedreports.csv</default>
+                    </files>
+                </AW_Advancedreports>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <advancedreports>
+                    <file>advancedreports.xml</file>
+                </advancedreports>
+            </updates>
+        </layout>
+        <acl>
+            <resources>
+				<all>
+				    <title>Allow Everything</title>
+				</all>
+	            <admin>
+	                <children>
+						<report>
+						    <children>
+								<advancedreports>
+								    <title>Advanced</title>
+								    <children>
+								    	<standardsales>
+										    <title>Sales</title>
+										</standardsales>
+										<bestsellers>
+										    <title>Bestsellers</title>
+										</bestsellers>
+										<country>
+										    <title>Sales by Country</title>
+										</country>
+										<hours>
+										    <title>Sales by Hour</title>
+										</hours>
+										<dayofweek>
+										    <title>Sales by Day of Week</title>
+										</dayofweek>
+										<product>
+										    <title>Sales by Product</title>
+										</product>
+										<users>
+										    <title>Users Activity Report</title>
+										</users>
+										<sales>
+										    <title>Sales Report</title>
+										</sales>
+										<usergroups>
+										    <title>Sales by Customer Group</title>
+										</usergroups>
+										<purchased>
+										    <title>Products by Customer</title>
+										</purchased>							
+								    </children>
+								</advancedreports>
+						    </children>
+						</report>
+
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <advancedreports>
+                                            <title>aheadWorks - Advanced Reports</title>
+                                        </advancedreports>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <menu>
+            <report>
+                <children>
+                    <advancedreports translate="title" module="advancedreports">
+                        <title>Advanced</title>
+                        <sort_order>100</sort_order>
+						<children>
+                            <standardsales module="advancedreports" translate="title">
+                                <title>Sales</title>
+                                <action>advancedreports_admin/standardsales</action>
+                                <sort_order>0</sort_order>
+                            </standardsales>							
+                            <bestsellers module="advancedreports" translate="title">
+                                <title>Bestsellers</title>
+                                <action>advancedreports_admin/bestsellers</action>
+                                <sort_order>1</sort_order>
+                            </bestsellers>
+                            <country module="advancedreports" translate="title">
+                                <title>Sales by Country</title>
+                                <action>advancedreports_admin/country</action>
+                                <sort_order>2</sort_order>
+                            </country>
+                            <hours module="advancedreports" translate="title">
+                                <title>Sales by Hour</title>
+                                <action>advancedreports_admin/hours</action>
+                                <sort_order>3</sort_order>
+                            </hours>
+                            <dayofweek module="advancedreports" translate="title">
+                                <title>Sales by Day of Week</title>
+                                <action>advancedreports_admin/dayofweek</action>
+                                <sort_order>4</sort_order>
+                            </dayofweek>
+                            <product module="advancedreports" translate="title">
+                                <title>Sales by Product</title>
+                                <action>advancedreports_admin/product</action>
+                                <sort_order>5</sort_order>
+                            </product>
+                            <users module="advancedreports" translate="title">
+                                <title>Users Activity Report</title>
+                                <action>advancedreports_admin/users</action>
+                                <sort_order>6</sort_order>
+                            </users>
+                            <sales module="advancedreports" translate="title">
+                                <title>Sales Report</title>
+                                <action>advancedreports_admin/sales</action>
+                                <sort_order>7</sort_order>
+                            </sales>
+                            <usergroups module="advancedreports" translate="title">
+                                <title>Sales by Customer Group</title>
+                                <action>advancedreports_admin/usergroups</action>
+                                <sort_order>8</sort_order>
+                            </usergroups>
+                            <purchased module="advancedreports" translate="title">
+                                <title>Products by Customer</title>
+                                <action>advancedreports_admin/purchased</action>
+                                <sort_order>9</sort_order>
+                            </purchased>							
+                        </children>
+                    </advancedreports>
+                </children>
+            </report>
+        </menu>
+		<events>
+            <controller_action_predispatch>
+                <observers>
+                    <advancedreports>
+                        <type>singleton</type>
+                        <class>advancedreports/observer</class>
+                        <method>execute</method>
+                    </advancedreports>
+                </observers>
+            </controller_action_predispatch>
+        </events>		
+    </adminhtml>
+    <frontend>
+        <translate>
+            <modules>
+                <AW_Advancedreports>
+                    <files>
+                        <default>AW_Advancedreports.csv</default>
+                    </files>
+                </AW_Advancedreports>
+            </modules>
+        </translate>
+    </frontend>
+    <admin>
+        <routers>
+            <advancedreports_admin>
+                <use>admin</use>
+                <args>
+                    <module>AW_Advancedreports</module>
+                    <frontName>advancedreports_admin</frontName>
+                </args>
+            </advancedreports_admin>
+        </routers>
+    </admin>
+    <default>
+        <advancedreports>
+            <chart_options>
+                <show_chart>1</show_chart>
+                <height>200</height>
+                <chart_color>ff9900</chart_color>
+                <font_color>676767</font_color>
+                <font_size>12</font_size>
+                <background_color>ffffff</background_color>
+            </chart_options>
+            <bestsellers_options>
+                <bestsellers_count>10</bestsellers_count>
+            </bestsellers_options>
+	    <configuration>
+			<process_orders>complete</process_orders>
+	    </configuration>
+        </advancedreports>
+    </default>
+</config>

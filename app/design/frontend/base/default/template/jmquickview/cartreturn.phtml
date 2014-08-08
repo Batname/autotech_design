@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        if(jQuery("#colorbox").find("#cart-quickview-mess")){
+            jQuery("#colorbox").addClass("remove-tool");
+			jQuery("#colorbox").show();
+        }
+        jQuery("button.jm-continue").click(function(){
+            jQuery.colorbox.close();
+            return false;
+        });
+		window.setTimeout(function(){
+           jQuery.colorbox.close();
+        }, 5000);
+    });
+</script>
+<div id="cart-quickview-mess" class="cartmessage">
+    <div class="message">
+        <h2>
+            <?php echo $cartreturn['status'].":".$cartreturn['message']; ?>
+        </h2>
+    </div>
+   <div class="button">
+        <button class="button btn-continue jm-continue" title="Continue Shopping" type="button">
+            <span>
+                <span><?php echo $this->__('Continue Shopping') ?></span>
+            </span>
+        </button>
+        <button class="button jm-gocart" onclick="setLocation('<?php echo $this->getUrl('checkout/cart') ?>')" title="Go Cart" type="button">
+            <span>
+                <span><?php echo $this->__('Go To Cart') ?></span>
+            </span>
+        </button>
+   </div>
+</div>

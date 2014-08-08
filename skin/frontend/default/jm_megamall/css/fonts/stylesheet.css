@@ -1,0 +1,23 @@
+
+@font-face {
+    font-family: 'Helvetica';
+	src: url('helr45w.eot');
+    src: url('helr45w.eot') format('embedded-opentype'),
+         url('helr45w.woff') format('woff'),
+         url('helr45w.ttf') format('truetype'),
+         url('helr45w.svg#Helvetica') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'HelveticaBold';
+    src: url('helr65w.eot');
+    src: url('helr65w.eot') format('embedded-opentype'),
+         url('helr65w.woff') format('woff'),
+         url('helr65w.ttf') format('truetype'),
+         url('helr65w.svg#HelveticaBold') format('svg');
+	font-weight: normal;
+    font-style: normal;
+}

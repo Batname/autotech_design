@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Sitemaster_Exportyandexua>
+            <version>1.0.0</version>
+        </Sitemaster_Exportyandexua>
+    </modules>
+
+	<adminhtml>
+		<translate>
+            <modules>
+                <mage_adminhtml>
+                    <files>
+                        <exportyandexua>Sitemaster_Exportyandexua.csv</exportyandexua>
+                    </files>
+                </mage_adminhtml>
+            </modules>
+        </translate>
+	</adminhtml>
+
+	<default>
+        <exportyandexua>
+            <settings>
+                <storename>4auto-service.com.ua</storename>
+            </settings>
+        </exportyandexua>
+    </default>
+
+    <default>
+        <exportyandexua>
+            <settings>
+                <shopname>4autoto YANDEX</shopname>
+            </settings>
+        </exportyandexua>
+    </default>
+
+    <global>
+        <helpers>
+            <exportyandexua>
+                <class>Sitemaster_Exportyandexua_Helper</class>
+            </exportyandexua>
+        </helpers>
+		<blocks>
+			<exportyandexua>
+				<class>Sitemaster_Exportyandexua_Block</class>
+			</exportyandexua>
+		</blocks>
+    </global>
+	<admin>
+        <routers>
+            <exportyandexua>
+                <use>admin</use>
+                <args>
+                    <module>Sitemaster_Exportyandexua</module>
+                    <frontName>exportyandexua</frontName>
+                </args>
+            </exportyandexua>
+        </routers>
+    </admin>
+
+</config>
+ 

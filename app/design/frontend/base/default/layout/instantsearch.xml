@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+		<reference name="head">
+			<action method="addCss"><stylesheet>css/magestore/instantsearch.css</stylesheet></action>
+        </reference>
+        <reference name="top.search">
+			<block type="instantsearch/instantsearch" name="instantsearch.top">
+				<action method="setTopSearchTemplate"><template>instantsearch/instantsearch.phtml</template></action>
+			</block>
+        </reference>
+    </default>
+    <instantsearch_index_index>
+		<reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>            
+        </reference>
+        <reference name="content">
+            <block type="instantsearch/instantsearch" name="instantsearch" template="instantsearch/view.phtml" />
+        </reference>
+    </instantsearch_index_index>
+</layout> 

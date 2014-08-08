@@ -1,0 +1,134 @@
+/*!
+ * Theme Name: JM Team
+ * Theme URI: http://www.joomlart.com
+ * Version: 1.0
+ * Description: 
+ * Author: JM Team - Joomlart.com
+ * Author URI: http://www.joomlart.com
+ * 
+ * Powered by Magento
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+#jm-wrapper {}
+
+.wrap { clear: both; min-width: 1100px; white-space: normal!important }
+
+.main { width: 1100px; margin: 0 auto; text-align: left; }
+
+.main .inner { margin: 0 10px; }
+
+/* HEADER
+--------------------------------------------------------- */
+#jm-header {}
+
+/* CONTAINER
+--------------------------------------------------------- */
+#jm-container { }
+
+#jm-mainbody { float: left; width: 75%; }
+
+#jm-mainbody { padding : 20px 0 40px; }
+
+.not-breadcrumbs #jm-mainbody { padding : 40px 0; }
+
+/*main content---*/
+#jm-main { clear: both; display: block; float: right; width: 66.6%; }
+
+#jm-current-content { min-height: 200px; background: #fff; }
+
+.checkout-multishipping-success #jm-current-content,
+.checkout-multishipping-overview #jm-current-content,
+.checkout-multishipping-shipping #jm-current-content,
+.checkout-multishipping-address-newshipping #jm-current-content,
+.checkout-cart-index #jm-current-content,
+.checkout-multishipping-addresses #jm-current-content { background: none; }
+
+/*columns---*/
+#jm-col1 { float: left; width: 33.3%; }
+
+#jm-col2 { float: right; width: 25%; }
+
+/* FOOTER
+--------------------------------------------------------- */
+#jm-footerwrap {}
+#jm-footer { }
+
+/* EXTENSIBLE LAYOUT
+--------------------------------------------------------- */
+/*1 Column---*/
+.jm-col1-layout #jm-current-content { margin: 0; }
+.jm-col1-layout #jm-mainbody,
+.jm-col1-layout #jm-main { float: none; width: 100%; }
+
+.jm-col-right #jm-main {
+  float : left;
+}
+.jm-col-right .col-right{
+  float : right;
+}
+
+
+/*2 Columns Right---*/
+.jm-col2-right-layout #jm-mainbody { float: none; width: 100%; }
+.jm-col2-right-layout #jm-main { width: 75%; float: left;}
+.jm-col2-right-layout #jm-current-content { margin-right: 0; }
+.jm-col2-right-layout #jm-col2 { width: 25%; }
+
+/*2 Columns Left---*/
+.jm-col2-left-layout #jm-mainbody { float: none; width: 100%; }
+.jm-col2-left-layout #jm-main { width: 75%; }
+.jm-col2-left-layout #jm-current-content { margin-right: 0; }
+.jm-col2-left-layout #jm-col1 { width: 25%; }
+
+
+/* IN PAGE LAYOUTS
+--------------------------------------------------------- */
+.page {}
+.page-print { padding: 25px 30px; text-align: left; }
+.page-empty { padding: 20px; text-align: left; }
+.page-popup { padding: 25px 30px; text-align: left; }
+
+/* Base Columns */
+.col-left { float: left; width: 195px; padding: 0; }
+.col-main { float: left; width: 685px; padding: 0; }
+.col-right { float: right; width: 195px; padding: 0; }
+
+/* 1 Column Layout */
+.col1-layout .col-main { float: none; width: auto; }
+
+/* 2 Columns Layout */
+.col2-left-layout .col-main { float: right; }
+.col2-right-layout .col-main {}
+
+/* 3 Columns Layout */
+.col3-layout .col-main { width: 475px; margin-left: 17px; }
+.col3-layout .col-wrapper { float: left; width: 687px; }
+.col3-layout .col-wrapper .col-main { float: right; }
+
+/* Content Columns */
+.col2-set .col-1 { float: left; width: 48.5%; }
+.col2-set .col-2 { float: right; width: 48.5%; }
+.col2-set .col-narrow { width: 32%; }
+.col2-set .col-wide { width: 65%; }
+
+.col3-set .col-1 { float: left; width: 32%; }
+.col3-set .col-2 { float: left; width: 32%; margin-left: 2%; }
+.col3-set .col-3 { float: right; width: 32%; }
+
+.col4-set .col-1 { float: left; width: 25%; }
+.col4-set .col-2 { float: left; width: 25%; }
+.col4-set .col-3 { float: left; width: 25%; }
+.col4-set .col-4 { float: left; width: 25%;}
+
+.col5-set .col-1 { float: left; width: 20%; }
+.col5-set .col-2 { float: left; width: 20%; }
+.col5-set .col-3 { float: left; width: 20%; }
+.col5-set .col-4 { float: left; width: 20%; }
+.col5-set .col-5 { float: left; width: 20%; }
+.col5-set .col-wide { width: 40%; }
+
+/*Table Columns---*/
+table .col-1, table .col-2, table .col-3, table .col-4 { float: none !important; margin: 0 !important; }
+.col3-set td.spacer { width: 3%; }
+.col4-set td.spacer { width: 4%; }

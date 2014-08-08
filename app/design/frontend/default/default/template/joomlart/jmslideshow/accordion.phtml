@@ -1,0 +1,127 @@
+<?php $rand = time().rand().rand();?>
+
+<?php if(!defined('JM_ADD_JQUERY') && $config['loadjquery']){?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmslideshow/js/jquery-ui/jquery.min.js') ?>"></script>
+<?php define('JM_ADD_JQUERY', true); ?>
+<?php }?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmslideshow/js/jquery-ui/jquery-ui.min.js') ?>"></script>
+
+<!-- Vertical Accordion -->
+<?php if($config['animation'] == 'vrtaccordion'): ?>
+	<script type="text/javascript">
+	jQuery.noConflict();
+	jQuery(document).ready(function() {
+		jQuery("#jm-slide-<?php echo $rand; ?>").accordion(
+			{
+				event: 'mouseover',
+				animated: "bounceslide"
+			}
+		);
+	  });
+	</script>
+	<?php if($items): ?>
+	<div class="block jm-slideshow jm-slideshow-vertical">
+		<?php if($config['title']){?><div class="block-title"><strong><span><?php echo $config['title']; ?></span></strong></div><?php } ?>
+		
+		<div class="jm-slidewrap">
+			<div class="jm-slide-main-wrap">
+				<ul id="jm-slide-<?php echo $rand; ?>" class="clearfix">
+					<?php $i = 0; foreach ($items as $item): ?>
+					<?php
+					preg_match('/(<h3>).*(<\/h3>)/i', $item['caption'], $matches);
+					if ($matches) {
+						$itemTitle = $matches[0];
+					}
+					else {
+						$itemTitle = $item['caption'];
+					}
+					?>
+					<li class="clearfix">
+						<div class="handle" style="width:<?php echo $config['mainWidth'];?>px;">
+							<div class="handle-title"><?php echo $itemTitle;?></div>
+							<a href="#" class="jm-slide-number"><?php echo str_pad($i + 1, 2, '0', STR_PAD_LEFT); ?></a>
+						</div>
+						<div class="jm-slide-desc">
+							<div class="jm-slide-container">
+								<?php echo $item['mainThumb']; ?>
+								<?php if ($config['showDesc'] != '' && $item['caption']):?>
+								<div class="maskDesc" style="display:block;visibility:visible;width:<?php echo $config['mainWidth'];?>px;height:<?php echo $config['mainHeight'];?>px;opacity:<?php echo $config['descOpacity'];?>;">
+									<div class="jm-slide-desc"><div class="jm-slide-desc-inner"><?php echo $item['caption'];?></div></div>
+								</div>
+								<?php endif; ?>
+								<?php if ($config['showDesc']=='desc-readmore'){?>
+									<a class="readon" title="" href="<?php echo $urls[$i]; ?>"><span><?php echo $config['readMoreText'];?></span></a>
+								<?php }?>
+							</div>
+						</div>
+					</li>
+					<?php $i++; endforeach; ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="jm-slideshow-mask">&nbsp;</div>
+	<?php endif; // end if ($items) ?>
+
+<!-- Horizontal Accordion -->
+<?php elseif($config['animation']=='hrzaccordion'): ?>
+	<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmslideshow/js/jquery-ui/jquery.hrzAccordion.js')?>"></script>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		jQuery(document).ready(function(){
+			jQuery("#jm-slide-<?php echo $rand; ?>").hrzAccordion(
+				{
+					containerClass     				: "container",
+					listItemClass      				: "listItem",
+					contentWrapper     				: "contentWrapper",
+					contentInnerWrapper				: "contentInnerWrapper",
+					contentContainerClass  			: "contentContainer",
+					contentContainerClassSelected  	: "contentContainerSelected",
+					handleClass       	 			: "handle",
+					handleClassOver    				: "handleOver",
+					handleClassSelected				: "handleSelected",
+					handlePosition     				: "left",
+					openOnLoad		   				: 1
+				}
+			);
+		}
+		);
+	</script>
+	<?php if($items): ?>
+	<div class="block jm-slideshow jm-slideshow-horizontal">
+		<?php if($config['title']){?><div class="block-title"><strong><span><?php echo $config['title']; ?></span></strong></div><?php } ?>
+		
+		<div class="jm-slidewrap">
+			<div class="jm-slide-main-wrap">
+				<ul id="jm-slide-<?php echo $rand; ?>" class="clearfix">
+					<?php $i = 0; foreach ($items as $item): ?>
+					<?php
+					preg_match('/(<h3>).*(<\/h3>)/i', $item['caption'], $matches);
+					if ($matches) {
+						$itemTitle = $matches[0];
+					}
+					else {
+						$itemTitle = $item['caption'];
+					}
+					?>
+						<li class="clearfix">
+							<div class="handle" style="height: <?php echo $config['mainHeight'];?>px;">
+								<div class="handle-title"><?php echo $itemTitle;?></div>
+								<a href="#" class="jm-slide-number"><?php echo str_pad($i + 1, 2, '0', STR_PAD_LEFT); ?></a>
+								<div class="handle-mask">&nbsp;</div>
+							</div>
+							<div class="jm-slide-thumb"><?php echo $item['mainThumb']; ?></div>
+							<div class="jm-slide-desc">
+								<?php if ($config['showDesc'] != '' && $item['caption']):?><div class="jm-slide-desc-inner clearfix"><?php echo $item['caption'];?></div><?php endif; ?>
+								<?php if ($config['showDesc']=='desc-readmore'){?><a class="readon" title="" href="<?php echo $urls[$i]; ?>"><span><?php echo $config['readMoreText'];?></span></a><?php }?>
+							</div>
+						</li>
+					<?php $i++; endforeach;?>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="jm-slideshow-mask">&nbsp;</div>
+	<?php endif; // end if ($items) ?>
+
+<?php endif; // end if $config['animation'] ?>

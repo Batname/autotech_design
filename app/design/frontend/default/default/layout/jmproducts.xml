@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<layout version="0.1.0">
+	<jmproducts_viewall_index>
+		<reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+		<reference name="content">
+		   <block  type="joomlart_jmproducts/list"  name="viewall.jmproducts.list"  template="joomlart/jmproducts/viewall.phtml"   >
+		   	   <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                  <block type="page/html_pager" name="product_list_toolbar_pager" />
+               </block>
+                <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+				<action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+		   </block>
+		</reference>
+	</jmproducts_viewall_index>
+	<jmproducts_filter_index>
+		<reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+		<reference name="content">
+		   <block  type="joomlart_jmproducts/filter"  name="filter.jmproducts.list"  template="joomlart/jmproducts/filter.phtml"   >
+		   	   <action method="setData"><name>title</name><value>Filtered Products</value></action>
+		   	   <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                  <block type="page/html_pager" name="product_list_toolbar_pager" />
+               </block>
+                <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+				<action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+		   </block>
+		</reference>
+	</jmproducts_filter_index>
+	<default>
+        <reference name="head">
+        	<action method="addCss"><stylesheet>joomlart/jmproducts/css/jmproduct.css</stylesheet></action>
+        </reference>
+    </default>
+</layout>

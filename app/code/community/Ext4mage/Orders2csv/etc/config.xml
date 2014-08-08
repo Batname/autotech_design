@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!-- 
+ * Ext4mage Orders2csv Module
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to Henrik Kier <info@ext4mage.com> so we can send you a copy immediately.
+ *
+ * @category   Ext4mage
+ * @package    Ext4mage_Orders2csv
+ * @copyright  Copyright (c) 2012 Ext4mage (http://ext4mage.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Henrik Kier <info@ext4mage.com>
+ * 
+--> 
+<config>
+	<modules>
+		<Ext4mage_Orders2csv>
+			<version>0.9.0</version>
+		</Ext4mage_Orders2csv>
+	</modules>
+    <admin>
+         <routers>
+            <orders2csv>
+				<use>admin</use>
+				<args>
+					<module>Ext4mage_Orders2csv</module>
+					<frontName>orders2csv</frontName>
+				</args>
+			</orders2csv>
+			<adminhtml>
+                <args>
+                    <modules>
+                        <Ext4mage_Orders2csv before="Mage_Adminhtml">Ext4mage_Orders2csv</Ext4mage_Orders2csv>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+    	<layout>
+			<updates>
+				<orders2csv>
+					<file>orders2csv.xml</file>
+				</orders2csv>
+			</updates>
+		</layout>
+    	<translate>
+            <modules>
+                <Ext4mage_Orders2csv>
+                    <files>
+                        <default>Ext4mage_Orders2csv.csv</default>
+                    </files>
+                </Ext4mage_Orders2csv>
+            </modules>
+        </translate>
+    </adminhtml>
+	<global>
+        <models>
+            <orders2csv>
+                <class>Ext4mage_Orders2csv_Model</class>
+				<resourceModel>orders2csv_mysql4</resourceModel>
+            </orders2csv>
+	        <orders2csv_mysql4>
+				<class>Ext4mage_Orders2csv_Model_Mysql4</class>
+				<entities>
+					<file>
+						<table>orders2csv_file</table>
+					</file>
+					<column>
+						<table>orders2csv_column</table>
+					</column>
+				</entities>
+			</orders2csv_mysql4>
+	    </models>
+	    <helpers>
+        	<orders2csv>
+            	<class>Ext4mage_Orders2csv_Helper</class>
+        	</orders2csv>
+    	</helpers>
+    	<resources>
+			<orders2csv_setup>
+				<setup>
+					<module>Ext4mage_Orders2csv</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</orders2csv_setup>
+			<orders2csv_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</orders2csv_write>
+			<orders2csv_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</orders2csv_read>
+		</resources>
+         <blocks>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>Ext4mage_Orders2csv_Block_Sales_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
+            <orders2csv>
+				<class>Ext4mage_Orders2csv_Block</class>
+			</orders2csv>
+            
+        </blocks>
+    </global>
+    <default>
+       	<orders2csv>
+       		<settings>
+				<is_active>0</is_active>
+			</settings>
+       	</orders2csv>
+    </default>
+</config>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Platon_Connector>
+            <!-- declare module's version information for database updates -->
+            <version>0.1.0</version>
+        </Platon_Connector>
+    </modules>
+     
+    <global>
+        <!-- IMPORTANT: if you use your own namespace (i.e. Platon) you also have to declare blocks group for new module. See topic: http://www.magentocommerce.com/boards/viewthread/22416/#t102732 -->
+        <blocks>
+            <platon>
+                <class>Platon_Connector_Block</class>
+            </platon>
+        </blocks>
+     
+        <!-- declare model group for new module -->
+        <models>
+            <!-- model group alias to be used in Mage::getModel('platon/...') -->
+            <platon>
+                <!-- base class name for the model group -->
+                <class>Platon_Connector_Model</class>
+            </platon>
+        </models>
+     
+        <!-- declare resource setup for new module -->
+        <resources>
+            <!-- resource identifier -->
+            <platon_setup>
+                <!-- specify that this resource is a setup resource and used for upgrades -->
+                <setup>
+                    <!-- which module to look for install/upgrade files in -->
+                    <module>Platon_Connector</module>
+                </setup>
+                <!-- specify database connection for this resource -->
+                <connection>
+                    <!-- do not create new connection, use predefined core setup connection -->
+                    <use>core_setup</use>
+                </connection>
+            </platon_setup>
+            <platon_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </platon_write>
+            <platon_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </platon_read>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <platon>
+                <use>standard</use>
+                <args>
+                    <module>Platon_Connector</module>
+                    <frontName>platon</frontName>
+                </args>
+            </platon>
+        </routers>
+        <translate>
+            <modules>
+                <Platon_Connector>
+                    <files>
+                        <default>Platon_Connector.csv</default>
+                    </files>
+                </Platon_Connector>
+            </modules>
+        </translate>
+    </frontend>
+    <!-- declare default configuration values for this module -->
+    <default>
+        <!-- 'payment' configuration section (tab) -->
+        <payment>
+            <!-- 'platon' configuration group (fieldset) -->
+            <platon>
+                <!-- by default this payment method is inactive -->
+                <active>0</active>
+                <!-- model to handle logic for this payment method -->
+                <model>platon/main</model>
+                <!-- order status for new orders paid by this payment method -->
+                <order_status>pending</order_status>
+                <!-- default title for payment checkout page and order view page -->
+                <title>Platon</title>
+                
+                <gw_url>https://secure.platononline.com/payment/auth</gw_url>
+     
+                <payment_action>Sale</payment_action>
+                <allowspecific>0</allowspecific>
+            </platon>
+        </payment>
+    </default>
+</config>

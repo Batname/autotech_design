@@ -1,0 +1,28 @@
+<?php $warehouse = $this->getWarehouseCollection();?>
+<?php if(count($warehouse)):?>
+    <script>
+    jQuery(document).ready(function() {
+        showNovaposhta();
+        jQuery(document).on('click', "input[name='shipping_method']", function() {
+            showNovaposhta();
+        });
+        jQuery(document).on('change keydown', "#change_novaposhta select", function() {
+            showNovaposhta();
+        });
+    });
+    function showNovaposhta() {
+        if(jQuery('#s_method_novaposhta_novaposhta').is(':checked')) {
+            jQuery('#change_novaposhta').show();
+            current = jQuery('#change_novaposhta select :selected');
+        } else {
+            jQuery('#change_novaposhta').hide();
+        }
+    }
+    </script>
+    <div id="change_novaposhta" style="display: none;">
+        <div style="padding-bottom: 3px;">Пожалуйста, выберите пункт самовывоза:</div>
+        <div style="padding-bottom: 3px;">
+           <?php echo $this->getSelect();?>
+        </div>
+    </div>
+<?php endif;?>

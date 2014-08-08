@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <EM_DeleteOrder>
+            <active>false</active>
+            <codePool>community</codePool>
+        </EM_DeleteOrder>
+    </modules>
+</config>
+<!-- Rewrite sales_order_grid
+<sales_order_grid>Ext4mage_Orders2csv_Block_Sales_Order_Grid</sales_order_grid>
+-->

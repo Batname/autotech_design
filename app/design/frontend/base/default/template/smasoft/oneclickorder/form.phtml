@@ -1,0 +1,116 @@
+<?php
+/** @var $this Smasoft_Oneclickorder_Block_Form */
+/** @var $helper Smasoft_Oneclickorder_Helper_Data */
+$helper = Mage::helper('smasoft_oneclickorder');
+$action = $this->getAction()->getFullActionName();
+
+?>
+
+<div id="oneclickorder-form-wrapper" class="fieldset <?php echo $this->getAction()->getFullActionName()?>">
+    <h2 class="legend"><?php echo $this->__('1 Click Order')?></h2>
+    <div class="">
+        <h5><?php echo $this->__('Manager will call you, knows all details and will help place your order.')?></h5>
+    </div>
+    <form id="oneclickorder-form" action="<?php echo $this->getUrl('oneclickorder/index/saveOrder')?>" method="post">
+        <ul class="form-list">
+            <li>
+                <label class="required" for="email"> <img class="phone-icon" src="<?php echo $this->getSkinUrl('images/oneclickorder/telephone.png') ?>"/>
+                    <?php echo $this->getPhoneCodeHtml('oneclickorder[country]', 'validate-select oneclickorder-country', true, $helper->__('Code'))?>
+                </label>
+                <br>
+                <div class="input-box">
+            <input type="text" name="oneclickorder[phone]" class="input-text required-entry oneclickorder-phone"  placeholder="<?php echo $this->__('phone number')?>"/>
+                </div>
+
+            <?php if ($this->isShowEmailField()): ?>
+            <li>
+                <div class="input-box">
+            <input type="text" name="oneclickorder[email]" class="input-text required-entry validate-email oneclickorder-email"  placeholder="<?php echo $this->__('email')?>"/>
+                </div>
+            </li>
+            <?php endif; ?>
+            <li>
+            <div class="input-box comment-wrapper" id="oneclickorder-comment-wrapper" style="display: none;">
+                <label class="required"><?php echo $helper->__('Comment:')?></label>
+                <textarea name="oneclickorder[comment]"></textarea>
+
+        </div>
+            </li>
+        </ul>
+        <div class="buttons-set button-wrapper" id="oneclickorder-buttons-container">
+            <div class="comment-toggle" title="<?php echo $this->__('Add comment')?>">&nbsp;</div>
+            <button type="button" class="button <?php echo $action=='checkout_cart_index' ? 'btn-proceed-checkout btn-checkout' : ''?>" name="submitOneclickOrder" onclick="oneClickOrder.saveOrder()"/>
+                <span><span><?php echo $this->__('Order Now')?></span></span>
+            </button>
+        </div>
+        <span class="please-wait" id="oneclickorder-please-wait" style="display:none;">
+            <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $helper->__('Submit Order...') ?>" title="<?php echo $helper->__('Submit Order...') ?>" class="v-middle" /> <?php echo $helper->__('Submit Order...') ?>
+        </span>
+    </form>
+
+</div>
+<script type="text/javascript">
+
+    var oneClickOrder = {
+        formInstance:new VarienForm('oneclickorder-form'),
+
+        _processResponse:function (response) {
+            if (response.error) {
+                Element.hide('oneclickorder-please-wait');
+                Element.show('oneclickorder-buttons-container');
+                $('oneclickorder-buttons-container').descendants().each(function(s) {
+                    s.disabled = false;
+                });
+                alert(response.error);
+                return false;
+            }
+            if (response.success) {
+                if (response.message) {
+                    alert(response.message)
+                }
+                if (response.redirect) {
+                    window.location.href = response.redirect;
+                }
+            }
+            return true;
+        },
+        _afterSaveOrder:function (transport) {
+            var response = {};
+            try {
+                response = transport.responseText.evalJSON();
+            } catch (e) {
+                response = transport.responseText;
+            }
+            if (this._processResponse(response)) {
+
+            }
+        },
+        saveOrder:function () {
+            if (this.formInstance.validator && this.formInstance.validator.validate()) {
+
+                Element.show('oneclickorder-please-wait');
+                Element.hide('oneclickorder-buttons-container');
+                $('oneclickorder-buttons-container').descendants().each(function(s) {
+                    s.disabled = true;
+                });
+
+                new Ajax.Request(this.formInstance.form.getAttribute('action'), {
+                    method:'post',
+                    parameters:this.formInstance.form.serialize(),
+                    onComplete:this._afterSaveOrder.bind(this),
+                    onFailure:function () {
+                        location.href = BASE_URL;
+                    }
+                });
+            }
+        },
+        toggleCommentBlock:function (event) {
+            Element.toggle('oneclickorder-comment-wrapper');
+        }
+    };
+
+    $$("#oneclickorder-form-wrapper .comment-toggle").invoke('observe', 'click', function () {
+        oneClickOrder.toggleCommentBlock(this)
+    });
+
+</script>

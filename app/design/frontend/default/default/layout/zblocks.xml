@@ -1,0 +1,689 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+      <!-- DEFAULT SEETINGS - ALL PAGES -->
+      <default>
+            <reference name="head">
+            	<action method="addCss"><stylesheet>css/aw_zblocks.css</stylesheet></action>
+            </reference>
+            <reference name="right">
+                  <block type="zblocks/block" name="sidebar.right.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>sidebar-right-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="sidebar.right.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>sidebar-right-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="left">
+                  <block type="zblocks/block" name="sidebar.left.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>sidebar-left-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="sidebar.left.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>sidebar-left-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="top.menu">
+                  <block type="zblocks/block" name="menu.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>menu-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="menu.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>menu-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="before_body_end" >
+                  <block type="zblocks/block" name="page.bottom" >
+                        <action method="setBlockPosition">
+                              <block_position>page-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </default>
+      <catalog_product_view>
+            <reference name="right">
+                  <action method="unsetChild">
+                        <name>sidebar.right.top</name>
+                  </action>
+                  <action method="unsetChild">
+                        <name>sidebar.right.bottom</name>
+                  </action>
+            </reference>
+            <reference name="right">
+                  <block type="zblocks/block" name="sidebar.right.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>sidebar-right-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="sidebar.right.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>sidebar-right-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </catalog_product_view>
+      <customer_account>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="left">
+                  <action method="unsetChild">
+                        <name>sidebar.left.bottom</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>customer-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="left">
+                  <block type="zblocks/block" name="sidebar.left.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>sidebar-left-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </customer_account>
+      <customer_address_index>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>customer-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </customer_address_index>
+      <checkout_cart_index>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>cart-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_cart_index>
+      <!--Multi address shipping checkout main layout,will be rendered on all checkout pages-->
+      <checkout_multishipping>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping>
+      <checkout_multishipping_login>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_login>
+      <checkout_multishipping_register>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_register>
+      <!--Multi address shipping checkout selection of address per item page-->
+      <checkout_multishipping_address_select>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_address_select>
+      <checkout_multishipping_address_selectbilling>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_address_selectbilling>
+      <checkout_multishipping_address_newshipping>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_address_newshipping>
+      <checkout_multishipping_address_newbilling>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_address_newbilling>
+      <checkout_multishipping_address_editshipping>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_address_editshipping>
+      <checkout_multishipping_address_editaddress>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_address_editaddress>
+      <checkout_multishipping_address_editbilling>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_address_editbilling>
+      <checkout_multishipping_customer_address>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_customer_address>
+      <!--Multi address shipping checkout address page-->
+      <checkout_multishipping_addresses>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_addresses>
+      <!--Multi address shipping checkout shipping information-->
+      <checkout_multishipping_shipping>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_shipping>
+      <!--Multi address shipping checkout billing information-->
+      <checkout_multishipping_billing>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_billing>
+      <!--Multi address shipping checkout overview-->
+      <checkout_multishipping_overview>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_overview>
+      <!--Multi address shipping checkout success-->
+      <checkout_multishipping_success>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_multishipping_success>
+      <!--One page checkout main layout-->
+      <checkout_onepage_index>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_onepage_index>
+      <!--One page checkout progress block-->
+      <checkout_onepage_progress>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_onepage_progress>
+      <!--One page checkout payment methods block-->
+      <checkout_onepage_paymentmethod>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_onepage_paymentmethod>
+      <!--One page checkout shipping methods block-->
+      <checkout_onepage_shippingmethod>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_onepage_shippingmethod>
+      <checkout_onepage_additional>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_onepage_additional>
+      <!--One page checkout order review block-->
+      <checkout_onepage_review>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_onepage_review>
+      <checkout_onepage_success>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_onepage_success>
+      <checkout_onepage_failure>
+            <reference name="content">
+                  <action method="unsetChild">
+                        <name>content.top</name>
+                  </action>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>checkout-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </checkout_onepage_failure>
+      <!-- CATALOG CATEGORIES ONLY PAGES -->
+      <catalog_category_default>
+            <reference name="right">
+                  <block type="zblocks/block" name="catalog.sidebar.right.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-right-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.sidebar.right.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-right-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="left">
+                  <block type="zblocks/block" name="catalog.sidebar.left.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-left-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.sidebar.left.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-left-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="catalog.content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="top.menu">
+                  <block type="zblocks/block" name="catalog.menu.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-menu-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.menu.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-menu-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="before_body_end" >
+                  <block type="zblocks/block" name="catalog.page.bottom" >
+                        <action method="setBlockPosition">
+                              <block_position>catalog-page-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </catalog_category_default>
+	  <catalog_category_layered>
+            <reference name="right">
+                  <block type="zblocks/block" name="catalog.sidebar.right.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-right-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.sidebar.right.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-right-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="left">
+                  <block type="zblocks/block" name="catalog.sidebar.left.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-left-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.sidebar.left.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-left-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="catalog.content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="top.menu">
+                  <block type="zblocks/block" name="catalog.menu.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-menu-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.menu.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-menu-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="before_body_end" >
+                  <block type="zblocks/block" name="catalog.page.bottom" >
+                        <action method="setBlockPosition">
+                              <block_position>catalog-page-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>	  
+	  </catalog_category_layered>
+      <!-- CATALOG PRODUCT ONLY PAGES -->
+      <catalog_product_view>
+            <reference name="right">
+                  <block type="zblocks/block" name="catalog.sidebar.right.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-right-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.sidebar.right.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-right-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="left">
+                  <block type="zblocks/block" name="catalog.sidebar.left.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-left-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.sidebar.left.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-sidebar-left-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="catalog.content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="top.menu">
+                  <block type="zblocks/block" name="catalog.menu.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-menu-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="catalog.menu.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>catalog-menu-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="before_body_end" >
+                  <block type="zblocks/block" name="catalog.page.bottom" >
+                        <action method="setBlockPosition">
+                              <block_position>catalog-page-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>	  
+            <reference name="right">
+                  <block type="zblocks/block" name="product.sidebar.right.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>product-sidebar-right-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="product.sidebar.right.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>product-sidebar-right-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="left">
+                  <block type="zblocks/block" name="product.sidebar.left.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>product-sidebar-left-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="product.sidebar.left.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>product-sidebar-left-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="content">
+                  <block type="zblocks/block" name="product.content.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>product-content-top</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="top.menu">
+                  <block type="zblocks/block" name="product.menu.top" before="-">
+                        <action method="setBlockPosition">
+                              <block_position>product-menu-top</block_position>
+                        </action>
+                  </block>
+                  <block type="zblocks/block" name="product.menu.bottom">
+                        <action method="setBlockPosition">
+                              <block_position>product-menu-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+            <reference name="before_body_end" >
+                  <block type="zblocks/block" name="product.page.bottom" >
+                        <action method="setBlockPosition">
+                              <block_position>product-page-bottom</block_position>
+                        </action>
+                  </block>
+            </reference>
+      </catalog_product_view>
+</layout>

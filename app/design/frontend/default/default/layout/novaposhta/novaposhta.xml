@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) <2014>, <Rugento.ru>
+ * License URL http://www.rugento.ru/oferta.html
+ * Support URL http://support.rugento.ru
+ * Support EMAIL support@rugento.ru
+ */
+-->
+<layout version="0.1.0">
+    <checkout_onepage_index>
+        <reference name="checkout.onepage.shipping_method.available">
+            <action method="setTemplate"><template>novaposhta/checkout/shipping_method/available.phtml</template></action>
+        </reference>
+    </checkout_onepage_index>
+    <checkout_onepage_shippingmethod>
+         <reference name="root">
+            <action method="setTemplate"><template>novaposhta/checkout/shipping_method/available.phtml</template></action>
+        </reference>
+    </checkout_onepage_shippingmethod>
+</layout>

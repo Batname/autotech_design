@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    	<reference name="top.search">
+    		<action method="setTemplate" ifconfig="joomlart_jmadvancesearch/joomlart_jmadvancesearch/active">
+			    <template>jmadvancesearch/form.mini.phtml</template>
+			</action>
+        </reference>
+    </default>
+    <catalogsearch_advanced_index translate="label">
+        <reference name="catalogsearch_advanced_form">
+            <action method="setTemplate" ifconfig="joomlart_jmadvancesearch/joomlart_jmadvancesearch/active">
+			    <template>jmadvancesearch/advanced/form.phtml</template>
+			</action>
+        </reference>
+    </catalogsearch_advanced_index>
+    <jmadvancesearch_index_index>
+        <reference name="content">
+            <block type="jmadvancesearch/jmadvancesearch" name="jmadvancesearch" template="jmadvancesearch/jmadvancesearch.phtml" />
+        </reference>
+    </jmadvancesearch_index_index>
+</layout> 

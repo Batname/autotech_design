@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <default>
+        <reference name="top.links">
+            <block type="sitemaster_checkout/links" after="checkout_cart_link" />
+        </reference>
+    </default>
+
+    <checkout_cart_index>
+        <remove name="checkout.cart.top_methods" />
+        <remove name="checkout.cart.methods.onepage" />
+        <remove name="checkout.cart.shipping" />
+
+        <reference name="head">
+            <action method="addCss"><css>css/sitemaster_checkout.css</css></action>
+            <action method="addItem"><type>skin_js</type><name>js/sitemaster_checkout.dev.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/sitemaster_checkout.dev.js</name></action>
+            <action method="removeItem"><type>skin_js</type><name>js/script.js</name></action>
+            <action method="removeItem"><type>skin_js</type><name>js/jquery.min.js</name></action>
+        </reference>
+
+        <reference name="content">
+        </reference>
+
+        <reference name="sitemaster_checkout.user_block">
+            <block type="core/template" name="sitemaster_checkout.payment" as="sitemaster_checkout.payment" template="sitemaster/checkout/payment.phtml">
+                <block type="sitemaster_checkout/payment_methods" name="sitemaster_checkout.payment_methods" as="methods" template="sitemaster/checkout/payment_methods.phtml" >
+                    <action method="setMethodFormTemplate"><method>purchaseorder</method><template>payment/form/purchaseorder.phtml</template></action>
+            </block>
+        </block>
+        </reference>
+
+        <reference name="checkout.cart">
+            <reference name="checkout.cart.coupon">
+                <block type="checkout/cart_crosssell" name="checkout.cart.crosssell" as="crosssell" template="checkout/cart/crosssell.phtml"/>
+                <action method="setTemplate"><template>sitemaster/checkout/coupon.phtml</template></action>
+            </reference>
+
+        </reference>
+
+
+        <reference name="checkout.cart.methods">
+            <block type="sitemaster_checkout/newsletter" name="sitemaster_checkout.newsletter" template="sitemaster/checkout/newsletter.phtml" after="checkout.onepage.agreements" />
+            <block type="checkout/agreements" name="checkout.onepage.agreements" as="agreements" template="sitemaster/checkout/agreements.phtml" before="checkout.cart.methods.multishipping" />
+            <block type="core/template" name="sitemaster_checkout.place_order" template="sitemaster/checkout/link.phtml" after="checkout.onepage.agreements" />
+
+        </reference>
+    </checkout_cart_index>
+
+    <sitemaster_checkout_update>
+        <reference name="content">
+            <block type="checkout/onepage_shipping_method_available" name="sitemaster_checkout.shipping_method.available" as="available_shipping_methods" template="sitemaster/checkout/shipping/available.phtml"/>
+            <block type="checkout/onepage_shipping_method_additional" name="sitemaster_checkout.shipping_method.additional" as="additional_shipping_methods" template="checkout/onepage/shipping_method/additional.phtml"/>
+            <block type="sitemaster_checkout/payment_methods" name="sitemaster_checkout.payment_methods" as="methods" template="sitemaster/checkout/payment_methods.phtml">
+                <action method="setMethodFormTemplate"><method>purchaseorder</method><template>payment/form/purchaseorder.phtml</template></action>
+            </block>
+            <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
+        </reference>
+    </sitemaster_checkout_update>
+
+    <sitemaster_checkout_checkout_success>
+        <update handle="checkout_onepage_success" />
+    </sitemaster_checkout_checkout_success>
+
+    <centinel_index_authenticationcomplete>
+        <reference name="root">
+            <action method="setTemplate"><template>sitemaster/checkout/centinel/complete.phtml</template></action>
+        </reference>
+    </centinel_index_authenticationcomplete>
+</layout>

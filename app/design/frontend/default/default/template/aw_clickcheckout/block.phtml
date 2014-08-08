@@ -1,0 +1,100 @@
+<?php
+/**
+* aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * aheadWorks does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * aheadWorks does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Clickcheckout
+ * @version    1.1.2
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE-COMMUNITY.txt
+ */
+?>
+<?php
+?>
+<?php $helper = Mage::helper('awclickcheckout');?>
+<?php if($this->canShow()):?>
+<br>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/opcheckout.js') ?>"></script>
+<script type="text/javascript">countryRegions = <?php echo $this->helper('directory')->getRegionJson() ?></script>
+
+<div id="aw_clickcheckout" class="aw-one-click-checkout-container" align="center">
+    <table class="aw-clickcheckout-adresses-table"><tr><td>
+       <div id="aw_clickcheckout_adresses"><table>
+        <tr><td>
+        <?php if($this->getBillingAddresses()):?>
+            <?php echo $this->__('Bill&nbsp;to:&nbsp;')?></td><td><?php echo $this->getBillingAddresses()?>
+        <?php else:?>
+            <?php echo $this->__('Billing address was not found')?>
+            <input type="hidden" name="billing_address_id" id="billing_address_id" value="0"/>
+        <?php endif;?>
+        </td></tr>
+           <?php if(!$this->checkVirtual()):?>
+           <tr><td>
+           <?php if($this->getShippingAddresses()):?>
+               <?php echo $this->__('Ship&nbsp;to:&nbsp;')?></td><td><?php echo $this->getShippingAddresses()?>
+           <?php else:?>
+               <?php echo $this->__('Shipping address was not found')?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="hidden" name="shipping_address_id" id="shipping_address_id" value="0"/>
+           <?php endif;?>
+           </td></tr>
+           <?php endif;?>
+    </table></div><td class="aw-clickcheckout-button-td">
+    <input type="image" id="aw_clickcheckout_button" src="<?php echo $this->getSkinUrl();?>aw_clickcheckout/images/but1.png" alt="1-Click Checkout" class="buton oneclick" onclick="callPopup(); return false;" title="<?php echo $this->__('One Click Checkout')?>"/></td></tr></table>
+</div>
+    <div class="aw-clickcheckout-progress" id="aw_clickcheckout_progress" style="display: none;">
+	<img src="<?php echo $this->getSkinUrl('aw_clickcheckout/images/al.gif'); ?>" alt=" "/>
+	<p><?php echo $this->__('Please wait...') ?></p>
+</div>
+<script type="text/javascript">
+    oneClickCheckout = new AwclickCheckout();
+    oneClickCheckout.maxQty = <?php echo $this->maxQty();?>;
+    <?php if($this->currentProductType() == 'bookable'):?>
+    oneClickCheckout.productQty=oneClickCheckout.maxQty;
+    <?php else:?>
+    oneClickCheckout.productQty = <?php echo $this->currentProductQty();?>;
+    <?php endif;?>
+    oneClickCheckout.cont = '<?php echo Mage::getUrl('awclickcheckout/oneclick/addToCart');?>';
+    validcont = '<?php echo Mage::getUrl('awclickcheckout/oneclick/validate');?>';
+    placecont = '<?php echo Mage::getUrl('checkout/onepage/saveOrder');?>';
+    var callPopup = function()
+    {
+        var addForm = new VarienForm($('product_addtocart_form'));
+        addFormcheck = addForm.validator.validate();
+        if(!addFormcheck){
+            return;
+        }
+        try{
+        if($('qty').value>oneClickCheckout.maxQty || $('qty').value>oneClickCheckout.productQty){
+            alert('Required qty is not available.');
+        }else{
+            oneClickCheckout.callController();
+        }
+        }catch(e){oneClickCheckout.callController();}
+    }
+    var callNgo = function(addressType){
+        $(addressType).value='0';
+        callPopup();
+   }
+    var buttonwait = "<span><span><?php echo $this->__('Please wait...')?></span></span>";
+    var buttonready = "<span><span><?php echo $this->__('Place order')?></span></span>";
+    var productUrl = '<?php echo $this->getProductUrl()?>';
+    var payment = new Payment('co-payment-form', '<?php echo Mage::getUrl('awclickcheckout/order/saveOrder');?>');
+</script>
+<?php endif; ?>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?> 
+<config>
+		<acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <joomlart_jmslideshow>
+                                            <title>JM Products List</title>
+                                        </joomlart_jmslideshow>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+			<modules>
+				<JoomlArt_JmSlideshow>
+					<files>
+						<default>JoomlArt_JmSlideshow.csv</default>
+					</files>
+				</JoomlArt_JmSlideshow>
+			</modules>
+		</translate>
+</config>

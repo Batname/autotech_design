@@ -1,0 +1,68 @@
+<div class="jm-product-list <?php echo $config['mode']; ?> clearfix">	
+		<div class="listing-type-grid category-products">
+			<?php $_collectionSize = $listall?$listall->count():0 ?>
+			<?php $i = 0;
+				$width = 100;
+				// -- added by Duchh 15/12/2009
+				$thumbnailw = $config['width'];
+				$thumbnailh = $config['height'];
+				$numberchar = $config['max'];
+
+				if ($config['perrow']) $width = 99/$config['perrow'];
+				$width = "style=\"width:{$width}%;\"";    
+        $return = false;
+                
+			?>							
+			<?php if($_collectionSize){?>
+				<?php foreach ($listall->getItems() as $_product){ 
+								 $product = Mage::getModel('catalog/product')->load($_product->getId());
+				         $attribute = $product->getResource()->getAttribute('label');
+						 if(is_object($attribute)){
+							 $attdefaultvalue = $attribute->getDefaultValue();
+				             $attributeValue = Mage::getModel('catalog/product')->load($_product->getId())->getlabel();
+				             $attributeValueName = Mage::getModel('catalog/product')->load($_product->getId())->getAttributeText('label');
+					     }
+						     if(strlen($attributeValue) &&  ($attdefaultvalue !== $attributeValue)) { 
+							   	 $labeltype = $attributeValueName;        
+							 	 } 
+								 else {
+						   		 $labeltype = "";
+				         } 
+				?> 
+						
+						<?php if($i++%$config['perrow']==0): ?>
+				        <div class="products-grid">
+				      <?php endif; ?>
+						<div class="item"><div class="item-inner">
+							<?php if ($labeltype): ?>
+							<span class="<?php echo $labeltype; ?>-label"><?php echo $labeltype;	?></span>		
+							<?php endif; ?>			
+							<p class="product-image">
+								<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
+									<img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize($thumbnailw, $thumbnailh)->setWatermarkSize('30x10'); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>"/>
+								</a>
+							</p>
+							<div class="product-information">
+								<h2 class="product-name">
+									<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>"><?php echo $_product->getName() ?></a>
+								</h2>
+								<?php echo $this->getPriceHtml($_product,true, '_jmproduct') ?>
+								
+								<?php if($numberchar) : ?>
+									<p class="pdescription"><?php echo substr(nl2br($_product->getShortDescription()), 0, $numberchar).'...';?></p>
+								<?php endif; ?>
+								
+								<?php if($_product->getRatingSummary()): ?>
+					          <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+					      <?php endif; ?>
+						 </div>
+						</div></div>
+						
+						<?php if($i%$config['perrow']==0 || $i==$_collectionSize): ?>
+				        </div>
+				        <?php endif; ?>		
+						
+				<?php }?>		
+			<?php }?>	
+		</div>
+</div>

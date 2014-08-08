@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <joomlart translate="label" module="joomlart_jmproductsslider">
+            <label>JoomlArt</label>
+            <sort_order>210</sort_order>
+        </joomlart>
+    </tabs>
+	<sections>
+        <joomlart_jmproductsslider>
+            <label>JM Products Slider</label>
+            <tab>joomlart</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<joomlart_jmproductsslider translate="label">
+                    <label>JM Products Slider: Config General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>     
+                    	<show translate="label" module="core">
+							<label>Enabled</label>
+							<sort_order>10</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show>	
+						
+						<title translate="label">
+                            <label>Module Title </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>    	
+						
+						<height translate="label">
+                            <label>Height of Thumbnail </label>
+                            <frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputHeight</backend_model>
+                            <comment>Empty for auto resize.</comment>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </height>   
+						
+                        <width translate="label">
+                            <label>Width of Thumbnail </label>
+                            <frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputWidth</backend_model>
+                            <comment>Empty for auto resize.</comment>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </width>     
+						
+						<itemheight translate="label">
+                            <label>Height of Item </label>
+                            <frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputItemheight</backend_model>
+                            <comment>Empty for auto resize.</comment>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </itemheight>  
+						
+                        <itemwidth translate="label">
+                            <label>Width of Item </label>
+                            <frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputItemwidth</backend_model>
+                            <comment>Empty for auto resize.</comment>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </itemwidth>  
+						
+                        <mode translate="label">
+                            <label>Type of product display </label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>joomlart_jmproductsslider/system_config_source_listType</source_model>
+							<comment>If you choose to show products from "Featured Product", please add new attribute with attribute code "featured" (if not available), then add it to attribute sets.</comment>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mode>
+                        <catsid translate="label">
+                            <label>Categories ID: </label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputCategory</backend_model>
+                            <comment>Eg: 22,23. Empty for all categories.</comment>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </catsid>                             							
+                        <quanlity translate="label">
+							<label># Qty of Products</label>
+							<sort_order>90</sort_order>
+							<frontend_type>text</frontend_type>							
+                            <backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputQty</backend_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</quanlity>    
+						
+						<number_items translate="label">
+							<label># Number Element</label>
+							<sort_order>75</sort_order>
+							<frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputNumelement</backend_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</number_items>
+						
+						<show_price translate="label">
+                            <label>Show Product Price? </label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_price>  
+						
+                        <show_cart translate="label">
+                            <label>Show Add to cart? </label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>98</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_cart>
+						
+						<show_desc translate="label">
+                            <label>Show Description? </label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>97</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_desc>
+						
+						<max translate="label">
+							<label>Description Max Length</label>
+							<sort_order>97</sort_order>
+							<frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkMax</backend_model>
+							<comment>Active only if 'Show Description' is set to 'Yes'</comment>
+							<depends>
+								<show_desc>1</show_desc>
+							</depends>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max>
+						
+                        <show_readmore translate="label">
+                            <label>Show Read more? </label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>98</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_readmore>
+						
+						<use_scrollerbar translate="label">
+                            <label>Use scroller bar? </label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>99</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </use_scrollerbar>	
+						
+                        <autorun translate="label">
+                            <label>Auto run slide </label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </autorun>                            
+                       <!-- <direction translate="label">
+                            <label>Direction </label>
+                            <frontend_type>select</frontend_type>        
+                            <source_model>joomlart_jmproductsslider/system_config_source_listDirection</source_model>                    
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </direction>   -->
+						
+                        <delaytime translate="label">
+                            <label>Rolling delay time</label>
+                            <frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputRollingtime</backend_model>
+                            <sort_order>130</sort_order>
+							<depends>
+								<autorun>1</autorun>
+							</depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </delaytime> 
+						
+                        <animationtime translate="label">
+                            <label>Animation time</label>
+                            <frontend_type>text</frontend_type>
+							<backend_model>joomlart_jmproductsslider/system_config_backend_jmProductsSlider_checkInputAnimationtime</backend_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </animationtime> 
+                           
+                        <hover translate="label">
+                            <label>Enable hover button</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </hover>       
+            		</fields>
+            	</joomlart_jmproductsslider>
+            </groups>
+        </joomlart_jmproductsslider>
+    </sections>    
+</config>
