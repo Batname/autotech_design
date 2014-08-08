@@ -1,0 +1,74 @@
+#wrapper {
+    width: 1260px;
+    height: 500px;
+
+    margin: 0 auto;
+    background-image: url(img/background.jpg);
+}
+
+#top_line {
+    height: 5px;
+    background-color: #7e7e7e;
+}
+
+#top {
+    margin: 10px 0px 0px 150px;
+    height: 40px;
+    width: 960px;
+
+}
+
+#logo {
+    width: 161px;
+    height: 38px;
+    background-image: url(img/logo.png);
+}
+
+#menu {
+    width: 960px;
+    margin: 10px 0px 0px 150px;
+    background-color: #f3f3f3;
+
+}
+
+#menu ul {
+    display: table; /* Делаем таблицу */
+    width: 100%; /* Делаем на всю ширину */
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    display: table-cell; /* делаем ячейки таблицы */
+}
+
+#menu ul li a {
+    float: left;
+    text-decoration: none;
+    color: #b7b7b7;
+    padding: 10.5px 11px;
+    background-color: #f3f3f3;
+}
+
+#menu ul li a:visited {
+    color: #b7b7b7;
+}
+
+#menu ul li a:hover, .menu ul li .current {
+    color: #fff;
+    background-color: #29c5e6;
+}
+
+#banner {
+    width: 960px;
+    height: 280px;
+    margin: 30px 0px 0px 150px;
+    background-color: #e2e2e2;
+}
+
+#banner_nav {
+    width: 960px;
+    height: 50px;
+    margin: 0px 0px 0px 150px;
+    background-color: #f3f3f3;
+}

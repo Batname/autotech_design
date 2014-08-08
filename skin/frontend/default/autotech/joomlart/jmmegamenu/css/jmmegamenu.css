@@ -254,8 +254,10 @@ ul.megamenu ul ul {
 -----------------------------------*/
 /* Styling ---*/
 .jm-megamenu ul.level0 {
+    display: table; /* Делаем таблицу sitemaster*/
 	margin: 0;
-	padding: 0
+	padding: 0;
+    width: 100%;
 }
 
 .jm-megamenu ul.level0 li.active {
@@ -276,9 +278,9 @@ ul.megamenu ul ul {
 }
 
 .jm-megamenu ul.level0 li.mega {
-	background: none;
-	display: block;
-	float: left;
+    display: table-cell; /* делаем ячейки таблицы */
+    background: none;
+	/* float: left;  делаем ячейки таблицы -sitemaster */
 	margin: 0;
 	padding: 0 0;
 	position: relative;
@@ -308,7 +310,7 @@ ul.megamenu ul ul {
 	border-right: 1px solid transparent;
 	color: #fff;
 	display: block;
-	font-size: 112%;
+	font-size: 95%; /* sitemaster */
 	height: 44px;
 	line-height: 47px;
 	padding: 0 20px;
