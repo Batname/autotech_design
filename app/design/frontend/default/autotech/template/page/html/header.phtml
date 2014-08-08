@@ -1,0 +1,46 @@
+<?php
+/*!
+ * Theme Name: JM Team
+ * Theme URI: http://www.joomlart.com
+ * Version: 1.0
+ * Description: 
+ * Author: JM Team - Joomlart.com
+ * Author URI: http://www.joomlart.com
+ * 
+ * Powered by Magento
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Template for Mage_Page_Block_Html
+ */
+?>	
+<div class="main">
+	<div class="inner clearfix">
+		<h1 id="logo"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" style="background-image: url(<?php echo $this->getLogoSrc() ?>);"><?php echo $this->getLogoAlt() ?></a></h1>
+		<p class="no-display"><a href="#main"><strong><?php echo $this->__('Skip to Main Content') ?> &raquo;</strong></a></p>
+	
+		<!-- BEGIN: SITE SEARCH -->
+			<div id="jm-search" class="has-toggle">
+				<div class="btn-toggle search-toggle">
+					<i class="fa fa-search"></i>
+				</div>
+				<div class="inner-toggle">
+					<?php echo $this->getChildHtml('topSearch') ?>
+				</div>
+			</div>
+		<!-- END: SITE SEARCH -->
+		
+		<div id="mainnav-inner">
+			<!-- BEGIN: NAV -->
+			<div id="jm-mainnav" class="has-toggle">
+				<div class="btn-toggle menu-toggle" style="width: 119px">
+					 <i class="fa fa-bars">&nbsp;</i>
+				</div>				
+				<div class="inner-toggle" id="jm-mainnav-inner">
+					<?php echo $this->getChildHtml('topMenu') ?>
+				</div>
+			</div>
+			<!-- END: NAV -->
+		</div>
+		
+	</div>
+</div>

@@ -1,0 +1,141 @@
+<?php 
+
+$divid = 'jm-contain-'.rand().rand().time();
+$classid = 'jm-products-slider-content'.rand().rand().time();
+$_collectionSize = 0;
+if($listall) $_collectionSize = $listall->count() ;
+if($configs['autorun']){
+	$configs['autorun'] = $configs['delaytime'];
+}
+
+
+?>
+
+<?php if($_collectionSize){?>
+
+
+<?php if(!defined('JM_ADD_SKIN_PRODUCTS_SILDER')){?>
+
+<?php if ($configs['use_scrollerbar']){ ?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmproductsslider/js/jquery.customScroller-1.2.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmproductsslider/js/jquery.mousewheel.js') ?>"></script>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmproductsslider/js/jquery.wresize.js') ?>"></script>
+<?php }else{ ?>
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('joomlart/jmproductsslider/js/jcarousellite_1.0.1_custom.js') ?>"></script>
+<?php } ?>
+
+<?php  define('JM_ADD_SKIN_PRODUCTS_SILDER', true); ?>
+<?php }?>
+
+<script type="text/javascript">
+	jQuery.noConflict();
+<?php if ($configs['use_scrollerbar']){ ?>
+	jQuery(window).bind("load", function(){
+		//jQuery(".<?php echo $classid; ?>").customScroller({width: <?php echo ($configs['itemwidth'])*($configs['number_items']);?>, height: <?php echo ($configs['itemheight']);?>});
+	});
+<?php }else{ ?>
+	jQuery(document).ready(function($){
+	    jQuery("#<?php echo $divid?>").jCarouselLite({
+			auto: <?php echo $configs['autorun']?>,
+			speed: 			<?php echo $configs['animationtime']?>,
+			visible: 		<?php echo $configs['number_items']?>,
+			btnNext: "#jmmainwrap-<?php echo $divid?> .jm-next",
+			btnPrev: "#jmmainwrap-<?php echo $divid?> .jm-prev"
+		});
+	});
+	
+<?php } ?>	
+</script>
+<?php }?>
+
+<div class="block jm-products-slider-listing jm-products-slider-horizon" id="jmmainwrap-<?php echo $divid?>">
+	<?php if(isset($configs['title']) && $configs['title']!=''){?>
+	<div class="block-title"><strong><span><?php echo $configs['title']?> </span></strong>
+		<?php if (!$configs['use_scrollerbar']){ ?>
+		<div class="jm-prev">
+			<i class="fa fa-caret-left"></i>
+		</div>
+		<div class="jm-next">
+			<i class="fa fa-caret-right"></i>
+		</div>
+		<?php }?>
+	</div>
+	<?php }?>	
+
+	<?php if($_collectionSize){?>
+	
+		  <div class="jm-products-slider-content clearfix block-content <?php echo $classid; ?>" > 
+		  
+		  	
+		    <div id="<?php echo $divid?>" class="jm-slider" style="overflow: hidden; width: <?php echo $_collectionSize*($configs['itemwidth']);?>px; float: left; left: 0 !important;">		    		    	
+		    	
+		      	<ul class="products-grid jm-slider-ul">
+		      					
+						<?php foreach ($listall->getItems() as $_product){ ?>
+		        			<li class="jm-slider-li" style="float: left;width:<?php echo $configs['itemwidth']; ?>px;height:<?php echo $configs['itemheight']; ?>px">
+								<div class="item-slider" style="float: left;width:<?php echo $configs['itemwidth']; ?>px;height:<?php echo $configs['itemheight']; ?>px">
+									<div class="product-image">
+										<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
+											<img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->keepAspectRatio(TRUE)->resize($configs['width'], $configs['height'])->setWatermarkSize('30x10'); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>"/> 
+										</a>
+										<?php if($configs['show_cart']){ ?>
+											<?php if($_product->isSaleable()){ ?>
+											<br class="clear" />
+											<button class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+												<span><?php echo $this->helper("catalog")->__('Add to Cart') ?></span>
+											</button>
+											<?php } else { ?>
+												<div class="out-of-stock"><?php echo $this->helper("catalog")->__('Out of stock') ?></div>
+												<?php } ?>
+										<?php } ?>
+										<?php if (($this->helper('wishlist')->isAllow()) || ($this->getAddToCompareUrl($_product))) : ?>
+											<div class="add-to-links">
+												<?php if ($this->helper('wishlist')->isAllow()) : ?>
+												<a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist">
+													<?php echo $this->__('Wishlist') ?>
+												</a>
+												<?php endif; ?>
+												<?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+													<a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Compare') ?></a>
+												<?php endif; ?>
+											</div>
+										<?php endif;?>
+									</div>
+									<div class="product-information">
+										<p class="product-name">
+											<a class="product-title" title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
+												<span>
+													<?php 
+													if (strlen($_product->getName()) > 18) :
+                                                        echo (strip_tags(mb_substr($_product->getName(), 0, 16, 'UTF-8'))).'...'; // sitemaster
+													else : 
+														echo $_product->getName();
+													endif;
+													?>
+												</span>
+											</a>
+										</p>										
+										<?php echo $this->getReviewsSummaryHtml($_product, true, true)?>
+										<?php if ($configs['show_price']) : ?>
+											<?php echo $this->getPriceHtml($_product,true, '_jmslider') ?>
+										<?php endif; ?>
+																			
+										<?php if(($configs['show_desc']) && ($configs['max'])):?>
+											<div class="jm-slider-desc">
+												<?php echo substr($_product->getShortDescription(),0, ($configs['max']));?>
+											</div>                                  
+										<?php endif;?>
+										<?php if ($configs['show_readmore']) : ?>
+											<a class="product-title" title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
+												<?php echo $this->__("Read more") ?>
+											</a>
+										<?php endif; ?>
+									</div>
+								</div>
+		        			</li> 
+					<?php } ?> 
+		      </ul>
+		    </div>
+		   </div>
+	<?php } ?>
+</div>

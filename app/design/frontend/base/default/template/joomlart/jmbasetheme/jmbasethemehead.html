@@ -3,9 +3,9 @@ $curenturl = Mage::helper('core/url')->getCurrentUrl();
 
 if(strpos($curenturl,"https") === False){
                   $baseurl = Mage::getBaseUrl();
-                    
+
          }else{
-                    $baseurl = Mage::getStoreConfig("web/secure/base_url");  
+                    $baseurl = Mage::getStoreConfig("web/secure/base_url");
          }
 ?>
 <script type="text/javascript">
@@ -19,11 +19,11 @@ if(strpos($curenturl,"https") === False){
   <!--<?php define('JM_ADD_JQUERY', true); ?>-->
     <!--<?php endif;?>-->
 <!--<?php endif; ?>-->
-  
-  
+
+
 
 <script type="text/javascript" src="<?php echo $this->getSkinUrl('wavethemes/jmbasetheme/js/jmbasetheme.js') ?>"></script>
-<?php 
+<?php
 
     $devicedetect = Mage::helper ('jmbasetheme/mobiledetect');
 
@@ -31,8 +31,8 @@ if(strpos($curenturl,"https") === False){
     $istable = $devicedetect->isTablet()?1:0;
 
     $baseconfig =  Mage::helper("jmbasetheme")->getactiveprofile();
-   
-    if ($baseconfig) : 
+
+    if ($baseconfig) :
             $productlistimagewidth = $baseconfig["productlistimagewidth"]?$baseconfig["productlistimagewidth"]:180;
             $productlistimageheight = $baseconfig["productlistimageheight"]?$baseconfig["productlistimageheight"]:180;
             $productgriddeslenght = $baseconfig["productgriddeslenght"];
@@ -64,7 +64,7 @@ if(strpos($curenturl,"https") === False){
             $productgridimageheightmobileportrait = isset($baseconfig["productgridimageheightmobileportrait"])&&$baseconfig["productgridimageheightmobileportrait"]?$baseconfig["productgridimageheightmobileportrait"]:298;
             $productgridimagewidthmobileportrait = isset($baseconfig["productgridimagewidthmobileportrait"])&&$baseconfig["productgridimagewidthmobileportrait"]?$baseconfig["productgridimagewidthmobileportrait"]:298;
             $productgridnumbercolumnmobileportrait = isset($baseconfig["productgridnumbercolumnmobileportrait"])&&$baseconfig["productgridnumbercolumnmobileportrait"]?$baseconfig["productgridnumbercolumnmobileportrait"]:1;
-           
+
         else :
             $productlistimagewidth = 180;
             $productlistimageheight = 180;
@@ -73,7 +73,7 @@ if(strpos($curenturl,"https") === False){
             $productgridimagewidth = 180;
             $showlabel = 0;
     endif;
-      
+
 ?>
 <?php if ($baseconfig) { ?>
 <script type="text/javascript">
@@ -100,7 +100,7 @@ if(strpos($curenturl,"https") === False){
               productgridnumbercolumnmobileportrait:<?php echo $productgridnumbercolumnmobileportrait; ?>,
 
           });
-  
+
   });
 </script>
 <?php } ?>
