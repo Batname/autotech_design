@@ -10,7 +10,7 @@
 <config>
     <modules>
         <Rugento_Novaposhta>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Rugento_Novaposhta>
     </modules>

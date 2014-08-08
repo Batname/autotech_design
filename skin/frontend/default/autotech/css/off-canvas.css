@@ -12,7 +12,9 @@
  */
 #off-canvas-nav{display:none;}
 #off-canvas-right{display:none;}
-@media (max-width:985px){
+@media (max-width:1px)
+/*sitemaster - invisible off-canvas styles*/
+{
 	.off-canvas{width:100%;position:relative;overflow-x:hidden;}
 	.off-canvas body{width:100%;overflow-x:hidden;-o-box-sizing:border-box;-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
 	.off-canvas body #jm-wrapper > *{left:0;-webkit-transform:translateX(0);-moz-transform:translateX(0);-o-transform:translateX(0);transform:translateX(0);-webkit-transition:-webkit-transform 500ms ease;-moz-transition:-moz-transform 500ms ease;-o-transition:-o-transform 500ms ease;transition:transform 500ms ease;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-o-backface-visibility:hidden;backface-visibility:hidden;}

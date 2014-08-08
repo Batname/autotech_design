@@ -62,13 +62,13 @@ Default layout, loads most of the pages
 				<action method="addCss"><stylesheet>css/layout.css</stylesheet></action>
 				<action method="addCss"><stylesheet>css/fonts/stylesheet.css</stylesheet></action>
 				<!--<action method="addItem"><type>skin_css</type><name>css/styles-ie.css</name><params/></action>-->
-				<action method="addCss"><stylesheet>css/layout-hd.css</stylesheet><params>media="only screen and (min-width:1891px)"</params></action>
-				<action method="addCss"><stylesheet>css/layout-wide.css</stylesheet><params>media="only screen and (min-width:1236px) and (max-width: 1585px)"</params></action>
-				<action method="addCss"><stylesheet>css/layout-wide-extra.css</stylesheet><params>media="only screen and (min-width:1586px) and (max-width: 1890px)"</params></action>
-				<action method="addCss"><stylesheet>css/layout-normal.css</stylesheet><params>media="only screen and (min-width:986px) and (max-width: 1235px)"</params></action>
-				<action method="addCss"><stylesheet>css/layout-tablet.css</stylesheet><params>media="only screen and (min-width:720px) and (max-width: 985px)"</params></action>
-				<action method="addCss"><stylesheet>css/layout-mobile.css</stylesheet><params>media="only screen and (max-width:719px)"</params></action>
-				<action method="addCss"><stylesheet>css/layout-mobile-portrait.css</stylesheet><params>media="only screen and (max-width:480px)"</params></action>
+				<!--<action method="addCss"><stylesheet>css/layout-hd.css</stylesheet><params>media="only screen and (min-width:1891px)"</params></action>-->
+				<!--<action method="addCss"><stylesheet>css/layout-wide.css</stylesheet><params>media="only screen and (min-width:1236px) and (max-width: 1585px)"</params></action>-->
+				<!--<action method="addCss"><stylesheet>css/layout-wide-extra.css</stylesheet><params>media="only screen and (min-width:1586px) and (max-width: 1890px)"</params></action>-->
+				<!--<action method="addCss"><stylesheet>css/layout-normal.css</stylesheet><params>media="only screen and (min-width:986px) and (max-width: 1235px)"</params></action>-->
+				<!--<action method="addCss"><stylesheet>css/layout-tablet.css</stylesheet><params>media="only screen and (min-width:720px) and (max-width: 985px)"</params></action>-->
+				<!--<action method="addCss"><stylesheet>css/layout-mobile.css</stylesheet><params>media="only screen and (max-width:719px)"</params></action>-->
+				<!--<action method="addCss"><stylesheet>css/layout-mobile-portrait.css</stylesheet><params>media="only screen and (max-width:480px)"</params></action>-->
 				<action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>
 				<action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
 				<action method="addCss"><stylesheet>css/awesome/font-awesome.css</stylesheet></action>
