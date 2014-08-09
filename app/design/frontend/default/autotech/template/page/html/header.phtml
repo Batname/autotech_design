@@ -17,7 +17,11 @@
 	<div class="inner clearfix">
 		<h1 id="logo"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" style="background-image: url(<?php echo $this->getLogoSrc() ?>);"><?php echo $this->getLogoAlt() ?></a></h1>
 		<p class="no-display"><a href="#main"><strong><?php echo $this->__('Skip to Main Content') ?> &raquo;</strong></a></p>
-	
+
+        <div id="search-contacts">
+                <!-- TOP CONTACTS  -->
+            <div id="top-contacts"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('position-1')->toHtml(); ?></div>
+                <!-- //TOP CONTACTS  -->
 		<!-- BEGIN: SITE SEARCH -->
 			<div id="jm-search" class="has-toggle">
 				<div class="btn-toggle search-toggle">
@@ -28,7 +32,8 @@
 				</div>
 			</div>
 		<!-- END: SITE SEARCH -->
-		
+            </div>
+
 		<div id="mainnav-inner">
 			<!-- BEGIN: NAV -->
 			<div id="jm-mainnav" class="has-toggle">

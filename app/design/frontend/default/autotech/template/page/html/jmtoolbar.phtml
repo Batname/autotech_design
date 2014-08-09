@@ -17,7 +17,7 @@
 	<div class="inner clearfix">
 		<!-- BEGIN: WELCOME -->
 		<div class="jm-tl-head">
-			<div class="jm-datetime">
+			<div class="jm-datetime" style="display: none">
 				<i class="fa fa-clock-o"></i>
 				<script>
 					var date= new Date();
@@ -28,6 +28,8 @@
 				</script>
 
 			</div>
+
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('top-menu-left')->toHtml(); ?>
 			<div class="welcome-msg">
 				<?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?>
 			</div>

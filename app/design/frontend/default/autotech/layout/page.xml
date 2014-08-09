@@ -89,6 +89,10 @@ Default layout, loads most of the pages
                     <action method="setElementClass"><value>top-container</value></action>
                 </block>
 
+                <block type="core/text_list" name="tops0" as="tops0" translate="label">
+                    <label>Top-Contacts</label>
+                </block>
+
 				<block type="core/text_list" name="top.menu" as="topMenu" translate="label">
 					<label>Navigation Bar</label>
 					<block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml"/>
@@ -128,9 +132,7 @@ Default layout, loads most of the pages
                 <remove name="global_messages"/>
             </block>
 
-			<block type="core/text_list" name="tops0" as="tops0" translate="label">
-                <label>Content Top 0</label>
-            </block>
+
 
 			<block type="core/text_list" name="tops1" as="tops1" translate="label">
                 <label>Content Top 1</label>

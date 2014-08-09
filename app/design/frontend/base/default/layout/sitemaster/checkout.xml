@@ -2,9 +2,10 @@
 
 <layout version="0.1.0">
     <default>
-        <reference name="top.links">
-            <block type="sitemaster_checkout/links" after="checkout_cart_link" />
-        </reference>
+        <remove name="checkout_cart_link" />
+        <!--<reference name="top.links">-->
+            <!--<block type="sitemaster_checkout/links" after="checkout_cart_link" />-->
+        <!--</reference>-->
     </default>
 
     <checkout_cart_index>
