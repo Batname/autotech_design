@@ -1878,7 +1878,7 @@ tr.summary-details-excluded {
   line-height: 40px;
   margin: 0 0 0 10px;
   height: 40px;
-  margin: 0 0 0 10px;
+  padding: 0 15px 0;
 }
 
 
@@ -1918,7 +1918,7 @@ tr.summary-details-excluded {
 
 .inner-toggle {
 	background: #fff;
-	border: 1px solid #ddd;
+	/*border: 1px solid #ddd;*/
 	display: none;
 	list-style: none outside none;
 	margin: 0;
@@ -1984,7 +1984,7 @@ tr.summary-details-excluded {
   font-size: 11px;
   height: 10px;
   line-height: 100%;
-  padding: 15px 0;
+  padding: 15px 15px;
 }
 
 .jm-datetime{
@@ -2087,7 +2087,7 @@ tr.summary-details-excluded {
 }
 
 #jm-header .main {
-	margin: 10px auto 0 auto
+	margin: 0 auto 0 auto
 }
 
 /*--- Logo*/
@@ -2480,8 +2480,8 @@ ul.ul-dropdown li a:hover img{
 #mainnav-inner{
 	clear: both;
 	float: left;
-	margin: 10px 0 0;
-	width: 1080px
+    margin: 10px 1px 0;
+    width: 1076px;
 }
 
 #mainnav-inner .btn-toggle {
@@ -7696,7 +7696,7 @@ ul.list-socials li a:hover{
 
 #jm-tops2 .col3-set .col-2{
 	margin: 0 0;
-	width: 760px
+	width: 725px
 }
 
 .jm-products-slider-listing .block-title{
@@ -8240,16 +8240,27 @@ and (orientation : landscape) {
 }
 
 /* Autotech new styles */
+/* Body */
+.skin-boxes {
+    padding: 15px 0px;
+}
+
 
 /* header style */
-#search-contacts {float: left; margin: 0 69px;}
+#all-header {padding: 15px 0 0;}
+#search-contacts {float: left; margin: 0 60px;}
 #top-contacts {padding: 0 70px;}
-#jm-mycart {margin: -71px 0 0 181px;}
-/*#jm-head .main,#jm-header .main {border-style: solid;border-width: 1px;}*/
-/*box-shadow: 0 0 3px #333*/
+#jm-mycart {margin: -71px 3px 0 181px;}
+.fixed-main-menu {position: fixed;top: 0; z-index: 1000; border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB;}
 
-.fixed-main-menu {
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
+#jm-header .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB;border-bottom: 1px solid #EBEBEB;}
+#jm-head .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB;border-top: 1px solid #EBEBEB;}
+.top-logo {padding: 0 15px;}
+
+/*Main home content*/
+/*promo-blocks*/
+#jm-tops2, #jm-tops6 {padding: 15px 0;}
+#jm-tops2 .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 15px 15px 5px 15px;}
+
+#jm-tops4 .main .inner .block {padding: 0 15px;}
+#jm-tops6 .main .list-categories {height: 300px;}
