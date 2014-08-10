@@ -93,6 +93,15 @@ Default layout, loads most of the pages
                     <label>Top-Contacts</label>
                 </block>
 
+                <block type="checkout/cart_sidebar" name="mycart" template="checkout/cart/sidebar2.phtml" before="-">
+                    <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                    <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                    <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+                    <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+                        <label>Shopping Cart Sidebar Extra Actions</label>
+                    </block>
+                </block>
+
 				<block type="core/text_list" name="top.menu" as="topMenu" translate="label">
 					<label>Navigation Bar</label>
 					<block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml"/>
@@ -106,14 +115,6 @@ Default layout, loads most of the pages
 				<block type="page/template_links" name="top.links" as="topLinks"/>
                 <block type="page/switch" name="store_language" as="store_language" template="page/switch/flags.phtml"/>
 				<block type="directory/currency" name="custom_currency_selector" template="currency/currency.phtml"/>
-				<block type="checkout/cart_sidebar" name="mycart" template="checkout/cart/sidebar2.phtml" before="-">
-                    <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
-                    <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
-                    <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
-                    <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
-                        <label>Shopping Cart Sidebar Extra Actions</label>
-                    </block>
-                </block>
             </block>
 
 

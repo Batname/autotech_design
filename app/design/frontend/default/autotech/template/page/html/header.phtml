@@ -15,14 +15,17 @@
 ?>	
 <div class="main">
 	<div class="inner clearfix">
+
+        <!-- BEGIN: 1-COL LOGO-->
+        <div class="top-logo">
 		<h1 id="logo"><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" style="background-image: url(<?php echo $this->getLogoSrc() ?>);"><?php echo $this->getLogoAlt() ?></a></h1>
 		<p class="no-display"><a href="#main"><strong><?php echo $this->__('Skip to Main Content') ?> &raquo;</strong></a></p>
+        </div>
+        <!-- BEGIN: 1-COL LOGO-->
 
+        <!-- BEGIN: 2-COL SITE SEARCH & CONTACTS-->
         <div id="search-contacts">
-                <!-- TOP CONTACTS  -->
             <div id="top-contacts"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('position-1')->toHtml(); ?></div>
-                <!-- //TOP CONTACTS  -->
-		<!-- BEGIN: SITE SEARCH -->
 			<div id="jm-search" class="has-toggle">
 				<div class="btn-toggle search-toggle">
 					<i class="fa fa-search"></i>
@@ -31,11 +34,41 @@
 					<?php echo $this->getChildHtml('topSearch') ?>
 				</div>
 			</div>
-		<!-- END: SITE SEARCH -->
             </div>
 
+        <!-- END: 2-COL SITE SEARCH & CONTACTS -->
+
+        <!-- BEGIN: 3-COL MY CART-->
+        <div id="jm-mycart" class="has-toggle" >
+            <div class="jmajmxloading">&nbsp;</div>
+            <div class="btn-toggle mycart-toggle">
+                <?php if(Mage::getSingleton('checkout/session')->getQuote()->getSubtotal() > 0 || Mage::getSingleton('checkout/session')->getQuote()->getSubtotal() > 1 ) { ?>
+                    <i class="fa fa-shopping-cart"></i>
+                    <a class="ico-shopping-cart" href="<?php echo Mage::getUrl("checkout/cart") ?>">
+                        <span><?php echo $this->__("My Cart 1") ?></span>
+                        <strong><?php echo Mage::getSingleton('checkout/session')->getQuote()->getItemsSummaryQty(); ?><?php echo $this->__(" items") ?></strong>
+                    </a>
+                <?php	} else { ?>
+                    <i class="fa fa-shopping-cart"></i>
+                    <a class="ico-shopping-cart" href="<?php echo Mage::getUrl("checkout/cart") ?>">
+                        <span><?php echo $this->__("My Cart 1") ?></span>
+                        <strong><?php echo Mage::getSingleton('checkout/session')->getQuote()->getItemsSummaryQty(); ?><?php echo $this->__(" item") ?></strong>
+                    </a>
+                <?php	} ?>
+            </div>
+            <div class="inner-toggle">
+                <?php echo $this->getChildHtml('mycart') ?>
+            </div>
+        </div>
+        <!-- END: 3-COL MY CART -->
+
+
+
+
+
+
+        <!-- BEGIN: NAV -->
 		<div id="mainnav-inner">
-			<!-- BEGIN: NAV -->
 			<div id="jm-mainnav" class="has-toggle">
 				<div class="btn-toggle menu-toggle" style="width: 119px">
 					 <i class="fa fa-bars">&nbsp;</i>
@@ -44,8 +77,20 @@
 					<?php echo $this->getChildHtml('topMenu') ?>
 				</div>
 			</div>
-			<!-- END: NAV -->
 		</div>
-		
+        <!-- END: NAV -->
+
+
+
+
+
+
+
+
+
+
 	</div>
 </div>
+
+
+
