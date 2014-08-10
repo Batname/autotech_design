@@ -1847,7 +1847,7 @@ tr.summary-details-excluded {
 #jm-head {
 	background: #fff;
 	left: 0;
-	position: fixed;
+	/*position: absolute;*/
 	top: 0;
 	min-height: 40px;
 	width: 100%;
@@ -1883,7 +1883,7 @@ tr.summary-details-excluded {
 
 
 .btn-toggle {
-  background: #fff;
+  /*background: #fff;*/
   border: 1px solid #fff;
   cursor: pointer;
   display: block;
@@ -1976,7 +1976,7 @@ tr.summary-details-excluded {
 }
 
 .headscroll {
-	box-shadow: 0 0 3px #333
+	/*box-shadow: 0 0 3px #333*/
 }
 
 .jm-tl-head {
@@ -2087,7 +2087,7 @@ tr.summary-details-excluded {
 }
 
 #jm-header .main {
-	margin: 40px auto 0 auto
+	margin: 10px auto 0 auto
 }
 
 /*--- Logo*/
@@ -2481,7 +2481,7 @@ ul.ul-dropdown li a:hover img{
 	clear: both;
 	float: left;
 	margin: 10px 0 0;
-	width: 100%
+	width: 1080px
 }
 
 #mainnav-inner .btn-toggle {
@@ -8242,7 +8242,14 @@ and (orientation : landscape) {
 /* Autotech new styles */
 
 /* header style */
-#search-contacts {float: left}
+#search-contacts {float: left; margin: 0 69px;}
 #top-contacts {padding: 0 70px;}
 #jm-mycart {margin: -71px 0 0 181px;}
-#jm-head .main,#jm-header .main {border-style: solid;border-width: 1px;}
+/*#jm-head .main,#jm-header .main {border-style: solid;border-width: 1px;}*/
+/*box-shadow: 0 0 3px #333*/
+
+.fixed-main-menu {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}

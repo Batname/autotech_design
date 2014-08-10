@@ -15,122 +15,62 @@
 ?>
 <div class="main">
 	<div class="inner clearfix">
-		<!-- BEGIN: left MENU -->
-		<div class="jm-tl-head top-left-menu">
+		<!-- BEGIN: WELCOME -->
+		<div class="jm-tl-head">
+			<div class="jm-datetime" style="display: none">
+				<i class="fa fa-clock-o"></i>
+				<script>
+					var date= new Date();
+					var dayweek =["Воскресенье","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"][date.getDay()];
+					var month =["Ян","Фв","Мар","Ап","Май","Июнь","Июль","Ав","Сен","Ок","Ноя","Дек"][date.getMonth()];
+					var day = date.getDate();
+					document.write(dayweek+", "+month+" "+day);
+				</script>
+
+			</div>
+
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('top-menu-left')->toHtml(); ?>
+			<div class="welcome-msg">
+				<?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?>
+			</div>
 		</div>
-		<!-- END: LEFT MENU -->
-        <!-- BEGIN: RIGHT MENU -->
-        <div id="jm-quickaccess" class="quick-access has-toggle top-right-menu">
-            <div class="btn-toggle quickaccess-toggle">
-                <i class="fa fa-user"></i><strong><?php echo $this->__('My Account') ?></strong>
-            </div>
-            <div class="inner-toggle">
-                <div class="shop-access">
-                    <?php
-                    if($this->getChildHtml('customer_account_navigation')):
-                        echo $this->getChildHtml('customer_account_navigation');
-                    endif;
-                    ?>
-                    <?php echo $this->getChildHtml('topLinks');  ?>
+		<!-- END: WELCOME -->
 
-                </div>
-                <?php
-                $devicedetect = Mage::helper ('jmbasetheme/mobiledetect');
+		<!-- BEGIN: QUICK ACCESS -->
+		<div id="jm-quickaccess" class="quick-access has-toggle">
+			<div class="btn-toggle quickaccess-toggle">
+				<i class="fa fa-user"></i><strong><?php echo $this->__('My Account') ?></strong>
+			</div>
+			<div class="inner-toggle">
+				<div class="shop-access">
+					<?php
+					if($this->getChildHtml('customer_account_navigation')):
+						echo $this->getChildHtml('customer_account_navigation');
+					endif;
+					?>
+					<?php echo $this->getChildHtml('topLinks');  ?>
 
-                ?>
-            </div>
-        </div>
-        <!-- END: left nenu-->
+				</div>
+				<?php
+				$devicedetect = Mage::helper ('jmbasetheme/mobiledetect');
+
+				?>
+			</div>
+		</div>
+		<!-- END: QUICK ACCESS -->
+		<!-- BEGIN: QUICK ACCESS -->
+		<div id="jm-setting" class="quick-setting has-toggle">
+			<div class="btn-toggle setting-toggle">
+				<i class="fa fa-globe"></i><strong><?php echo $this->__('Setting') ?></strong>
+			</div>
+			<div class="inner-toggle">
+				<?php echo $this->getChildHtml('store_language') ?>
+				<?php echo $this->getChildHtml('custom_currency_selector') ?>
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('colors')->toHtml() ?>
+			</div>
+		</div>
+		<!-- END: QUICK ACCESS -->
 
 	</div>
 </div>
-<script type="text/javascript">
-//<![CDATA[
-(function($) {
-	jQuery( document ).ready(function( $ ) {
-		if (($('#jm-col1 .block-account').length > 0)&($(window).width()<968)){
-			$('#jm-quickaccess .shop-access').hide();
-			$('#jm-col1 .block-account').clone().prependTo($('#jm-quickaccess .inner-toggle'));
-		}
-		$(window).resize(function(){
-			if (!$('#jm-quickaccess .block-account').length){
-				if (($('#jm-col1 .block-account').length > 0)&($(window).width()<968)){
-					$('#jm-quickaccess .shop-access').hide();
-					$('#jm-col1 .block-account').clone().prependTo($('#jm-quickaccess .inner-toggle'));
-				}
-			}
-		});
-	});
 
-	$("#jm-head #jm-quickaccess,#jm-setting").mouseenter(function (){
-		$(this).children().addClass("active");
-		if ($(window).width()<462){
-			//$("#jm-header").css("z-index",1000); //this code effect to mobile
-		}
-
-	}).mouseleave(function (){
-		//$("#jm-header").css("z-index",""); //this code effect to mobile
-		$(this).children().removeClass("active");
-
-	});
-	$("#jm-search,#jm-mycart").mouseenter(function(){
-		if(!$(this).siblings(".inner-toggle").hasClass("active")) {
-			//$("#jm-header").css("z-index",1000);
-			$(this).children().addClass("active");
-		}
-
-	}).mouseleave(function(){
-		if($(this).children(".inner-toggle").hasClass("active")) {
-			$("#jm-header").css("z-index","");
-			$(this).children().removeClass("active")
-		}
-
-	});
-
-	$("#jm-quickaccess .btn-toggle").hover(function(e){
-		$("#jm-quickaccess").toggleClass("active");
-		if($("#jm-quickaccess").hasClass("active")){
-				if(window.myaccountIScrol !== undefined && window.myaccountIScrol !== null){
-					 window.myaccountIScrol.destroy();
-					 window.myaccountIScrol  = null;
-				}
-				 if($("#myaccountscroll").length){
-				  windowheight = $(window).height()-$("#jm-head").height();
-				  windowheight = windowheight - parseInt($("#jm-quickaccess .inner-toggle").css("padding-top"));
-				  if($("#jm-quickaccess .inner-toggle").height() > windowheight){
-					 $("#myaccountscroll").css("height",windowheight);
-				  }
-				  setTimeout(function(){
-					  window.myaccountIScrol = new iScroll("myaccountscroll",{vScrollbar: true, useTransform: true,hScrollbar: false});
-				  },100);
-				 }else{
-					quickaccess = $("#jm-quickaccess .inner-toggle").html();
-					myaccount = $('<div class="inner-togglecontent" />').append($("#jm-quickaccess .inner-toggle").html());
-					myaccount.css({float:"left",height:"auto"});
-					$("#jm-quickaccess .inner-toggle").html("");
-					myaccountscroll = $('<div id="myaccountscroll" />');
-					myaccount.appendTo(myaccountscroll);
-
-					windowheight = $(window).height()-$("#jm-head").height();
-					windowheight = windowheight - parseInt($("#jm-quickaccess .inner-toggle").css("padding-top"));
-					myaccountscroll.appendTo($("#jm-quickaccess .inner-toggle"));
-
-						setTimeout(function(){
-							  if($("#jm-quickaccess .inner-toggle").height() > windowheight){
-								myaccountscroll.css("height",windowheight);
-								window.myaccountIScrol = new iScroll("myaccountscroll",{vScrollbar: true, useTransform: true,hScrollbar: false});
-								 window.myaccountIScrol.refresh();
-							  }
-
-						},100);
-
-				   }
-
-
-		}
-
-	});
-})(jQuery);
-//]]>
-</script>
