@@ -10,7 +10,7 @@
 }
 
 #menu_masla ul li a{
-	color: #000;
+	color: #3f3d3d;
 }
 
 #menu_masla ul li a:hover{
@@ -54,7 +54,7 @@
 #item_menu a{
     padding-left: 70px;
     line-height: 40px;
-	color: #000;
+	color: #3f3d3d;
 }
 
 #item_menu a:hover{

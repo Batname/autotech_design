@@ -30,14 +30,14 @@ img {
 
 a,
 a:visited {
-	color: #f04e46;
+	color: #e31e24;
 	text-decoration: none
 }
 
 a:active,
 a:focus,
 a:hover {
-	color: #f04e46
+	color: #e31e24
 }
 
 :focus {
@@ -437,9 +437,9 @@ input,select,textarea,button {
 input.input-text, select, textarea {
 	background: #fff;
 	border: 1px solid #ebebeb;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0
 }
 
 input.input-text,textarea {
@@ -501,9 +501,9 @@ button.button {
 	padding: 13px 20px;
 	text-transform: uppercase;
 	width: auto;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
 }
 
 button.button span {
@@ -1855,8 +1855,10 @@ tr.summary-details-excluded {
 }
 
 #jm-head a{
-	color: #8d8d8d;
-	text-decoration: none
+	color: #3F3D3D;
+	text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 #jm-head a:active,
@@ -1884,7 +1886,7 @@ tr.summary-details-excluded {
 
 .btn-toggle {
   /*background: #fff;*/
-  border: 1px solid #fff;
+  border: 0 solid #fff;
   cursor: pointer;
   display: block;
   height: 35px;
@@ -1908,16 +1910,15 @@ tr.summary-details-excluded {
 .btn-toggle:focus,
 .btn-toggle:hover{
 	height: 37px;
-  line-height: 33px;
-	border: 1px solid #ddd;
-	border-bottom: 1px solid #fff;
+    line-height: 33px;
+	/*border: 1px solid #ddd;*/
+	/*border-bottom: 1px solid #fff;*/
 	border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 }
 
 .inner-toggle {
-	background: #fff;
 	/*border: 1px solid #ddd;*/
 	display: none;
 	list-style: none outside none;
@@ -2102,7 +2103,7 @@ tr.summary-details-excluded {
 	color: #555;
 	display: block;
 	font-size: 26px;
-	min-height: 94px;
+	min-height: 0;
 	min-width: 271px;
 	padding: 0;
 	text-decoration: none;
@@ -2152,7 +2153,7 @@ tr.summary-details-excluded {
 	background: #fff;
 	border: 0 none;
 	float: left;
-	padding: 11px 10px 12px;
+	padding: 12px 10px 8px;
 	width: 253px;
 	border-radius: 0;
 	-webkit-border-radius: 0;
@@ -2309,7 +2310,7 @@ ul.ul-dropdown li a:hover img{
 
 /*--- top links */
 .shop-access .links {
-	float: right;
+	/*float: right;*/
 	margin: 0
 }
 
@@ -2351,7 +2352,7 @@ ul.ul-dropdown li a:hover img{
 
 #jm-mycart .btn-toggle {
   display: block;
-  margin: 0 10px;
+  margin: 0 11px;
   min-height: 40px;
   min-width: 120px;
   padding: 10px;
@@ -2372,11 +2373,13 @@ ul.ul-dropdown li a:hover img{
 }
 
 #jm-mycart .btn-toggle strong {
-	font-weight: normal;
+	font-weight: bold;
+    color: #3F3D3D;
+    font-style: normal;
 }
 
 #jm-mycart .btn-toggle span {
-	color: #F04E46;
+	color: #e31e24;
 	font-size: 14px;
 	text-transform: uppercase;
 	width: 100%;
@@ -2400,22 +2403,24 @@ ul.ul-dropdown li a:hover img{
 
 
 #jm-mycart .btn-toggle.active {
+    background-color: #fff;
 	box-shadow: 0 -1px 1px 0 #d9d9d9;
 	-moz-box-shadow: 0 -1px 1px 0 #d9d9d9;
-	border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
 	-webkit-border-radius: 5px 5px 0 0
 }
 
 #jm-mycart .inner-toggle.active{
+    background-color: #fff;
 	display: block;
 	min-width: 250px;
 	position: absolute;
 	right: 0;
-	top: 70px;
+	top: 68px;
 	z-index: 1;
-	border-radius: 0 0 5px 5px;
-	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
 	-webkit-border-radius: 0 0 5px 5px;
 	box-shadow: 0 0 2px 0 #e5e5e5;
 	-webkit-box-shadow: 0 0 2px 0 #e5e5e5;
@@ -2480,8 +2485,8 @@ ul.ul-dropdown li a:hover img{
 #mainnav-inner{
 	clear: both;
 	float: left;
-    margin: 10px 1px 0;
-    width: 1076px;
+    margin: 10px 0 0;
+    width: 1078px;
 }
 
 #mainnav-inner .btn-toggle {
@@ -2524,7 +2529,6 @@ ul.ul-dropdown li a:hover img{
 .block .block-title {
 	border-bottom: 1px solid #ebebeb;
 	color: #f04e46;
-	font-size: 135%;
 	line-height: 100%;
 	margin: 0 0 10px;
 	padding: 7px 0 13px;
@@ -2534,7 +2538,6 @@ ul.ul-dropdown li a:hover img{
 #jm-bots1 .block .block-title {
 	border-bottom: 0;
 	color: #333;
-	font-size: 135%;
 	line-height: 100%;
 	margin: 0;
 	padding: 0 0 22px;
@@ -2543,14 +2546,14 @@ ul.ul-dropdown li a:hover img{
 
 
 .block .block-title strong {
-	font-weight: normal
+	font-weight: bold;
 }
 
 .block .block-title strong span {
 }
 
 #jm-bots1 .block .block-title {
-	color: #fff
+	color: #3f3d3d
 }
 
 .block .block-title a {
@@ -5210,7 +5213,8 @@ ul.ja-tab-navigator li.active a{
 }
 
 .product-name a {
-	color: #555
+	color: #3f3d3d;
+    font-weight: bold;
 }
 
 .product-name a:active,
@@ -7347,13 +7351,13 @@ ul.ja-tab-navigator li.active a{
 
 /* Footer  */
 #jm-bots1{
-	background: #282828;
-	color: #979797;
+	background: #d8d8d8;
+	color: #3f3d3d;
 	font-size: 100%
 }
 
 #jm-bots1 .inner{
-	border-bottom: 1px solid #3c3c3c
+	border-bottom: 1px solid #EBEBEB
 }
 
 /*-- block: information*/
@@ -7370,7 +7374,7 @@ ul.ja-tab-navigator li.active a{
 }
 
 #jm-bots1 ul li a{
-	color: #979797;
+	color: #3f3d3d;
 	line-height: 28px;
 	text-decoration: none
 }
@@ -7378,7 +7382,7 @@ ul.ja-tab-navigator li.active a{
 #jm-bots1 ul li a:active,
 #jm-bots1 ul li a:focus,
 #jm-bots1 ul li a:hover {
-	color: #fff
+	color: #e31e24
 }
 
 /*-- about-follow-us */
@@ -7468,7 +7472,7 @@ ul.list-socials li a:hover{
 	margin: 0 0 0 0;
 	padding: 0 0 0 15px;
 	width: 31%;
-    border-left: 1px solid #3C3C3C;
+    border-left: 1px solid #EBEBEB;
 }
 
 .block-subscribe #advice-validate-email-newsletter.validation-advice {
@@ -7488,17 +7492,17 @@ ul.list-socials li a:hover{
 }
 
 .block-subscribe .input-box .input-text {
-	background: #3c3c3c;
-	border: 1px solid #3c3c3c;
-	color: #fff;
+	background: #ffffff;
+	border: 0px solid #3c3c3c;
+	color: #3f3d3d;
 	float: left;
 	font-size: 100%;
 	margin: 0 120px 0 0;
 	min-width: 190px;
-	padding: 13px 10px 12px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px
+	padding: 12px 10px 10px;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0
 }
 
 .block-subscribe .input-box button.button,
@@ -7514,9 +7518,9 @@ ul.list-socials li a:hover{
 	right: 0;
 	text-transform: uppercase;
 	top: 0;
-	border-radius: 0 5px 5px 0;
-	-moz-border-radius: 0 5px 5px 0;
-	-webkit-border-radius: 0 5px 5px 0
+	border-radius: 0 0 0 0;
+	-moz-border-radius: 0 0 0 0;
+	-webkit-border-radius: 0 0 0 0
 }
 
 .block-subscribe .validation-advice {
@@ -7701,7 +7705,7 @@ ul.list-socials li a:hover{
 .jm-products-slider-listing .block-title{
 	background: #f5f5f5;
 	border-bottom: 0 none;
-	color: #555 !important;
+	color: #3f3d3d !important;
 	margin: 0 0 20px;
 	padding: 13px 20px
 }
@@ -7756,7 +7760,7 @@ ul.list-socials li a:hover{
 }
 
 .block-cate ul li a{
-	color: #646464
+    color: #3F3D3D;text-transform: uppercase;font-style: normal; font-weight: bold;
 }
 
 .block-cate ul li a:active,
@@ -7796,7 +7800,7 @@ ul.list-socials li a:hover{
 
 .list-categories .block-title span span,
 .list-categories .category-title span{
-	color: #969696;
+	color: #3F3D3D;
 	display: block;
 	font-size: 11px;
 	padding: 3px 0;
@@ -7937,7 +7941,6 @@ ul.list-socials li a:hover{
 .vertical-mega-menu .jm-megamenu .mega-item-des,
 .jm-megamenu ul.level2 li.mega li.mega a.mega,
 .jm-megamenu ul.level2 li.mega li a,
-.product-name a,
 .ul-dropdown,
 #jm-bots1,
 .jm-legal,
@@ -7953,7 +7956,7 @@ ul.list-socials li a:hover{
 .block-cart .product-details .product-name a,
 .products-grid button.jmquickview,
 #button-btt{
-	font-family: 'Helvetica', Arial;
+	/*font-family: 'Helvetica', Arial;*/
 	font-style: normal;
 	font-weight: normal
 }
@@ -8249,12 +8252,43 @@ and (orientation : landscape) {
 #all-header {padding: 15px 0 0;}
 #search-contacts {float: left; margin: 0 60px;}
 #top-contacts {padding: 0 70px;}
-#jm-mycart {margin: -71px 3px 0 181px;}
-.fixed-main-menu {position: fixed;top: 0; z-index: 1000; border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB;}
+#jm-mycart {margin: -65px 3px -6px 181px;}
+.fixed-main-menu {position: fixed;top: -10px; z-index: 1000; box-shadow: 0 4px 6px -4px #111;}
 
-#jm-header .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB;border-bottom: 1px solid #EBEBEB;}
-#jm-head .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB;border-top: 1px solid #EBEBEB;}
+#jm-header .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB;border-bottom: 1px solid #EBEBEB; background-color: #fbfbfb;padding: 15px 0 0;}
+#jm-head .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB;border-top: 1px solid #EBEBEB;background-color: #eeeeee;}
 .top-logo {padding: 0 15px;}
+.button-main-search {
+    background: #e31e24 url(../wavethemes/jmbasetheme/profiles/boxes/images/default/search-icon.png) 50% no-repeat;
+    border: 1px solid #e31e24;
+    color: #FFF;
+    float: right;
+    margin: -1px 0 0;
+    padding: 20px 20px 12px;
+    text-transform: uppercase;
+    border-radius: 0 0 0 0;
+}
+.subscribe-button {
+    background: #E31E24;
+    border: 1px solid #E31E24;
+    color: #FFF;
+    margin: 0;
+    padding: 9px 9px;
+    position: absolute;
+    right: 3px;
+    text-transform: uppercase;
+    top: 0;
+    border-radius: 0;
+}
+
+
+.top-logo #logo {margin: 28px 0 0;}
+
+.button-main-search span {display: none;}
+#top-contacts p {color: #3F3D3D;text-transform: uppercase;font-style: normal; font-weight: bold; margin: 0 0 5px;}
+
+
+
 
 /*Main home content*/
 /*promo-blocks*/
@@ -8266,6 +8300,7 @@ and (orientation : landscape) {
 
 /*universal*/
 .content-block{border: 1px solid #EBEBEB; padding: 15px 15px;height: 300px;}
+
 
 
 /*Product slider*/

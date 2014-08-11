@@ -1,0 +1,110 @@
+<script src="<?php echo $this->getJsUrl().'magestore/instantsearch.js'; ?>" type="text/javascript"></script>
+<form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
+    <div class="jm-search-category">
+        <div class="select-box lits-category">
+            <select name="category" id="category_search_field">
+                <option value="all"> <?php echo $this->__('All Categories');?></option>
+                <?php
+                $helper = Mage::helper('catalog/category');
+                $StoreCategories= $helper->getStoreCategories();
+                ?>
+                <?php foreach ($StoreCategories as $_category): ?>
+                    <?php if($_category->getData('is_active')): ?>
+                        <option value="<?php echo $_category->getId(); ?>"><?php echo $_category->getName();?></option>
+                    <?php endif; ?>
+                <?php endforeach ?>
+            </select>
+        </div>
+<!--        sitemaster-->
+        <div class="form-search">
+            <input id="search" type="text" name="<?php echo $this->helper('catalogsearch')->getQueryParamName() ?>" value="<?php echo(Mage::registry('keyword')); ?>" class="input-text" />
+            <button type="submit" title="<?php echo $this->__('Search') ?>" class="button-main-search"><span><span><?php echo $this->__('Search') ?></span></span></button>
+        </div>
+
+        <?php
+        $enable= Mage::getStoreConfig("joomlart_jmadvancesearch/joomlart_jmadvancesearch/maxnumbers");
+        if (isset($enable)&&$enable):
+            ?>
+            <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery/jquery.autocomplete.js');?>"></script>
+            <script type="text/javascript">
+
+                (function($) {
+                    var options, a,params;
+                    params= 'cate='+$('#search_mini_form #category_search_field').val();
+                    options = {
+                        serviceUrl:'<?php echo(mage::getBaseUrl())?>jmadvancesearch/ajax/auto',
+                        params: params,
+                        noCache: true,
+                        dataType: 'jsonp',
+                        addfeild: '#search_mini_form #category_search_field',
+                    };
+                    a = $('#search_mini_form #name').autocomplete(options);
+                    $('#search_mini_form #category_search_field').change(function(){
+                        params= 'cate='+$('#search_mini_form #category_search_field').val();
+                        a.autocomplete().disable();
+                        a.autocomplete().setOptions({params: params});
+                        a.autocomplete().enable();
+                    });
+                })(jQuery);
+            </script>
+        <?php endif;?>
+
+<!--old stile-->
+<!--		<div id="instantsearch">-->
+<!--			<label for="search">--><?php //echo $this->__('Search:') ?><!--</label>-->
+<!--			<div id="mi_header">-->
+<!--			<input id="search" type="text" name="--><?php //echo $this->helper('catalogsearch')->getQueryParamName() ?><!--" value="--><?php //echo(Mage::registry('keyword')); ?><!--" class="input-text" />-->
+<!--			</div>-->
+<!--			<button type="submit" title="--><?php //echo $this->__('Search') ?><!--" class="button"><span><span>--><?php //echo $this->__('Search') ?><!--</span></span></button>-->
+<!--			<div id="search_autocomplete" class="search-autocomplete"></div>-->
+<!--			<script type="text/javascript">-->
+<!--			//<![CDATA[-->
+<!--				var searchForm = new Varien.searchForm('search_mini_form', 'search', '');-->
+<!--				searchForm.initAutocomplete('--><?php //echo $this->helper('catalogsearch')->getSuggestUrl() ?><!--', 'search_autocomplete');-->
+<!--			//]]>-->
+<!--			</script>-->
+<!--		</div>-->
+    </div>
+</form>
+<div id="showProduct" style="display:none;">
+	<div id="productContainer">
+		<div class="head-notice">
+			<h3 class="title left"><span id="searchTermkeyword">Search Product Instantly</span></h3>
+			<a class="instantsearch-close right" href="javascript:void(0);" onclick="$('showProduct').hide(); return false;"><?php echo $this->__('Close'); ?></a>
+		</div>
+		<div id="mainProductWapper">
+			<div id="mainProduct">
+
+			</div>
+		</div>
+		<div id="moreProductsWapper">
+			<div id="moreProducts">
+
+			</div>
+		</div>
+		<div class="searchproduct-by-magestore" style="font-size: 10px">
+              <!--<a href="http://www.magestore.com">--><?php //echo $this->__('By Magestore'); ?><!--</a>-->
+
+              <!-- <a href="http://www.magestore.com/magento-extensions.html/">--><?php //echo $this->__('Magento extensions');?><!--</a>-->
+        </div>
+	</div>
+</div>
+<script type="text/javascript">
+	var instantsearch = new Instantsearch(
+        '<?php echo $this->getUrl('instantsearch/index/search') ?>',
+		'<?php echo $this->getUrl('instantsearch/index/loadproduct') ?>',
+		'<?php echo Mage::getStoreConfig('instantsearch/general/more_product_num') ?>',
+		'search'
+    );
+
+	Event.observe('search', 'keyup', function(event){
+		instantsearch.search();
+	});
+	//instantsearch.search();
+
+
+
+
+</script>
+
+

@@ -51,7 +51,7 @@ ul.megamenu ul ul {
 }
 
 .jm-megamenu {
-	background: #009bcb;
+	/*background: #009bcb;*/
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -265,7 +265,6 @@ ul.megamenu ul ul {
 
 .jm-megamenu ul.level0 li.active a.mega{
 	background: #0086af;
-	border-right: 1px solid #009bcb;
 	color: #fff
 }
 
@@ -308,7 +307,7 @@ ul.megamenu ul ul {
 
 .jm-megamenu ul.level0 li.mega a.mega {
 	border-right: 1px solid transparent;
-	color: #fff;
+	color: #3f3d3d;
 	display: block;
 	font-size: 95%; /* sitemaster */
 	height: 44px;
@@ -321,7 +320,6 @@ ul.megamenu ul ul {
 .jm-megamenu ul.level0 li.mega a.mega:hover,
 .jm-megamenu ul.level0 li.mega:hover > a.mega {
 	background: #0086af;
-	border-right: 1px solid #009bcb;
 	color: #fff
 }
 

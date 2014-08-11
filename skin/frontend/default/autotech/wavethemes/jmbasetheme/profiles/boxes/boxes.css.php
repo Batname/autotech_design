@@ -84,7 +84,6 @@ ul.ul-dropdown li a:hover,
 .block-cate ul li a:focus, 
 .block-cate ul li a:hover,
 .block-cate h2,
-.block .block-title,
 .page-title.category-title h1,
 .jm-contacts .page-title h1,
 #jm-head a:active, 
@@ -217,7 +216,7 @@ ul.list-info li a,
 .jm-megamenu,
 .opc .active .step-title .number,
 #mainnav-inner{
-	background-color: <?php echo $baseconfig["color"] ?>;
+	background-color: <?php echo $baseconfig["menubg"] ?>;
 }
 
 #jm-header #jm-mainnav .btn-toggle,
