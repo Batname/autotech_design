@@ -2517,7 +2517,7 @@ ul.ul-dropdown li a:hover img{
 
 #jm-bots1 .block {
 	border: 0;
-	margin: 0 0 15px;
+	margin: 0 0 0;
 	padding: 0
 }
 
@@ -3505,7 +3505,7 @@ ul.ul-dropdown li a:hover img{
 	clear: both;
 	float: left;
 	position: relative;
-	width: 100%
+	width: 103.6%
 }
 
 .jm-slider .products-grid{
@@ -3538,7 +3538,7 @@ ul.ul-dropdown li a:hover img{
 
 .jm-product-list .products-grid li.item .inner,
 .jm-product-list .products-grid li.item.last .inner {
-	margin: 0 8px
+	margin: 0 0
 }
 
 .products-grid li.item:hover img,
@@ -7383,11 +7383,10 @@ ul.ja-tab-navigator li.active a{
 
 /*-- about-follow-us */
 .about-follow-us{
-	border-right: 1px solid #3c3c3c;
 	float: left;
 	margin: 0 20px 0 0;
-	padding: 55px 0;
-	width: 25.5%
+	padding: 0 0;
+	width: 18%
 }
 
 .about-follow-us .block{
@@ -7400,9 +7399,9 @@ ul.ja-tab-navigator li.active a{
 }
 
 #jm-bots1 .block-aboutus{
-	border-bottom: 1px solid #3c3c3c;
-	margin: 0 20px 40px 0;
-	padding: 0 0 10px 0
+	/*border-bottom: 1px solid #3c3c3c;*/
+	margin: 0 0 0 0;
+	padding: 0 0 0 0
 }
 
 
@@ -7465,11 +7464,11 @@ ul.list-socials li a:hover{
 
 /* Block: Subscribe */
 #jm-bots1 .block-subscribe {
-	border-bottom: 1px solid #333;
 	float: left;
-	margin: 0 0 35px 0;
-	padding: 55px 0 20px 0;
-	width: 72%
+	margin: 0 0 0 0;
+	padding: 0 0 0 15px;
+	width: 31%;
+    border-left: 1px solid #3C3C3C;
 }
 
 .block-subscribe #advice-validate-email-newsletter.validation-advice {
@@ -7495,7 +7494,7 @@ ul.list-socials li a:hover{
 	float: left;
 	font-size: 100%;
 	margin: 0 120px 0 0;
-	min-width: 360px;
+	min-width: 190px;
 	padding: 13px 10px 12px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -7529,13 +7528,13 @@ ul.list-socials li a:hover{
 	display: inline-block;
 	line-height: 20px;
 	margin-bottom: 10px;
-	width: 40%
+	width: 100%
 }
 
 /*-- footer*/
 #jm-footer{
 	background: #282828;
-	padding: 40px 0
+	padding: 0 0
 }
 
 #button-btt {
@@ -7696,7 +7695,7 @@ ul.list-socials li a:hover{
 
 #jm-tops2 .col3-set .col-2{
 	margin: 0 0;
-	width: 725px
+	width: 730px
 }
 
 .jm-products-slider-listing .block-title{
@@ -7768,7 +7767,7 @@ ul.list-socials li a:hover{
 
 .list-categories{
 	border: 1px solid #ebebeb;
-	padding: 0 20px
+	padding: 0 15px 0 15px;
 }
 
 .list-categories .col-1{
@@ -7792,7 +7791,7 @@ ul.list-socials li a:hover{
 	background: none;
 	border-bottom: 1px solid #ebebeb;
 	margin: 0 0 20px 0;
-	padding: 30px 0 10px
+	padding: 15px 0 10px
 }
 
 .list-categories .block-title span span,
@@ -8259,8 +8258,25 @@ and (orientation : landscape) {
 
 /*Main home content*/
 /*promo-blocks*/
-#jm-tops2, #jm-tops6 {padding: 15px 0;}
-#jm-tops2 .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 15px 15px 5px 15px;}
+#jm-tops2, #jm-tops6 {padding: 15px 0 0;}
+#jm-tops2 .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 15px 15px 0;}
 
 #jm-tops4 .main .inner .block {padding: 0 15px;}
 #jm-tops6 .main .list-categories {height: 300px;}
+
+/*universal*/
+.content-block{border: 1px solid #EBEBEB; padding: 15px 15px;height: 300px;}
+
+
+/*Product slider*/
+.inner .product-information {width: 180px;}
+
+/*footer*/
+#jm-container {height: 15px;}
+#jm-bots1 .main .inner {padding: 15px 15px 15px;}
+#jm-footer .main .inner .inner2 {padding: 15px 15px 15px;}
+#jm-bots1 .main .inner .block-subscribe {margin: 0 0 0 121px; height: 206px;}
+.jm-legal .footer-col-1{float: left;width: 69%; padding: 44px 0 0;}
+.jm-legal .footer-col-2{float: left;width: 15%;}
+.jm-legal .footer-col-3{float: left;width: 15%;}
+.list-socials, .jm-legal .block-content p {text-align: center;}

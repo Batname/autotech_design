@@ -278,13 +278,13 @@ img { border: none; }
 
 /*product vertical slide*/
 .jm-products-slider-vertical{
-	margin: 0 0 0 20px !important;
+	margin: 0 0 0 5px !important;
 }
 
 .jm-products-slider-vertical .jm-prev, 
 .jm-products-slider-vertical .jm-next{
 	font-size: 133%;
-	top: 32px;
+	top: 17px;
 	right: 0px;
 }
 

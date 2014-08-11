@@ -13,12 +13,14 @@
  * Template for Mage_Page_Block_Html
  */
 ?>
-<div class="jm-info clearfix">
-  <?php echo $this->getChildHtml() ?>
-</div>
 <div class="jm-legal">
-	<?php echo "&copy;" . " " . date("Y") . " " .$this->getCopyright()  ?>
+	<div class="footer-col-1"><?php echo "&copy;" . " " . date("Y") . " " .$this->getCopyright()  ?></div>
+    <div class="footer-col-2"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('position-21')->toHtml(); ?></div>
+    <div class="footer-col-3"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('position-22')->toHtml(); ?></div>
 </div>
+
+
+
 
 
 <!-- page loader test -->

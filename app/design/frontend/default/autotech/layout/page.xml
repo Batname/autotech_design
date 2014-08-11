@@ -210,24 +210,21 @@ Default layout, loads most of the pages
             </block>
 
 			<reference name="bots1">
+				<block type="cms/block" name="position-19">
+					<action method="setBlockId"><block_id>position-19</block_id></action>
+				</block>
 				<block type="cms/block" name="position-15">
 					<action method="setBlockId"><block_id>position-15</block_id></action>
-				</block>
-				<block type="cms/block" name="position-16">
-					<block type="newsletter/subscribe" name="position-16" template="newsletter/subscribe.phtml"/>
-				</block>
-				<block type="cms/block" name="position-17">
-					<action method="setBlockId"><block_id>position-17</block_id></action>
 				</block>
 				<block type="cms/block" name="position-18">
 					<action method="setBlockId"><block_id>position-18</block_id></action>
 				</block>
-				<block type="cms/block" name="position-19">
-					<action method="setBlockId"><block_id>position-19</block_id></action>
-				</block>
 				<block type="cms/block" name="position-20">
 					<action method="setBlockId"><block_id>position-20</block_id></action>
 				</block>
+                <block type="cms/block" name="position-16">
+                    <block type="newsletter/subscribe" name="position-16" template="newsletter/subscribe.phtml"/>
+                </block>
 			</reference>
 
             <block type="core/text_list" name="right" as="right" translate="label">
