@@ -67,7 +67,7 @@ body#bd {
 #jm-bots1 {
 	background-image:url("images/<?php echo $baseconfig["bots1bg"]; ?>");
 	background-color: <?php echo $baseconfig["bots1color"] ?>;
-	margin: 0 -10px;
+	margin: -65px -10px;
 }
 
 #logo a{

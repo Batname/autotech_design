@@ -48,7 +48,10 @@
 		<?php if($config['title']){?><div class="page-title category-title">
 		<h1><?php echo $config['title']; ?></h1>
 		<a href="<?php echo Mage::getBaseUrl()."jmproducts/viewall/index/type/".$config['mode']; ?>"><?php echo $this->__('view all') ?></a>
-		</div><?php }; ?>
+            <div class="promo-block-line"></div>
+            </div>
+
+        <?php }; ?>
 		
 		<div class="listing-type-grid category-products">
 			<?php $_collectionSize = $listall?$listall->count():0; ?>

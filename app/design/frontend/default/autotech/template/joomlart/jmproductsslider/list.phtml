@@ -86,7 +86,7 @@ if ($configs['autorun']) {
                                     <a title="<?php echo $this->htmlEscape($_product->getName()) ?>"
                                        href="<?php echo $_product->getProductUrl() ?>">
                                         <img
-                                            src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->keepAspectRatio(TRUE)->resize($configs['width'], $configs['height'])->setWatermarkSize('30x10'); ?>"
+                                            src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->keepAspectRatio(TRUE)->resize($configs['width']=170, $configs['height']=170)->setWatermarkSize('30x10'); ?>"
                                             alt="<?php echo $this->htmlEscape($_product->getName()) ?>"/>
                                     </a>
                                 </div>

@@ -7357,7 +7357,7 @@ ul.ja-tab-navigator li.active a{
 }
 
 #jm-bots1 .inner{
-	border-bottom: 1px solid #EBEBEB
+	border-bottom: 0px solid #EBEBEB
 }
 
 /*-- block: information*/
@@ -7366,7 +7366,7 @@ ul.ja-tab-navigator li.active a{
 #jm-bots1 .col-3,
 #jm-bots1 .col-4 {
 	float: left;
-	width: 18%
+	width: 15%
 }
 
 #jm-bots1 .block .col-inner{
@@ -7390,7 +7390,7 @@ ul.ja-tab-navigator li.active a{
 	float: left;
 	margin: 0 20px 0 0;
 	padding: 0 0;
-	width: 18%
+	width: 15%
 }
 
 .about-follow-us .block{
@@ -7472,7 +7472,7 @@ ul.list-socials li a:hover{
 	margin: 0 0 0 0;
 	padding: 0 0 0 15px;
 	width: 31%;
-    border-left: 1px solid #EBEBEB;
+    border-left: 0 solid #EBEBEB;
 }
 
 .block-subscribe #advice-validate-email-newsletter.validation-advice {
@@ -7703,7 +7703,7 @@ ul.list-socials li a:hover{
 }
 
 .jm-products-slider-listing .block-title{
-	background: #f5f5f5;
+	background: #D8D8D8;
 	border-bottom: 0 none;
 	color: #3f3d3d !important;
 	margin: 0 0 20px;
@@ -7742,7 +7742,7 @@ ul.list-socials li a:hover{
 }
 
 .block-cate ul{
-	margin: 23px 0 0 0
+	margin: 4px 0 0 0
 }
 
 .block-cate ul li{
@@ -7770,7 +7770,7 @@ ul.list-socials li a:hover{
 }
 
 .list-categories{
-	border: 1px solid #ebebeb;
+	border: 15px solid #ebebeb;
 	padding: 0 15px 0 15px;
 }
 
@@ -7793,7 +7793,7 @@ ul.list-socials li a:hover{
 .list-categories .block-title,
 .list-categories .category-title{
 	background: none;
-	border-bottom: 1px solid #ebebeb;
+	border-bottom: 0 solid #ebebeb;
 	margin: 0 0 20px 0;
 	padding: 15px 0 10px
 }
@@ -7839,7 +7839,7 @@ ul.list-socials li a:hover{
 
 .list-cate-colr .jm-product-list{
 	border-left: 0 none;
-	border-right: 1px solid #ebebeb;
+	border-right: 15px solid #ebebeb;
 	min-height: 380px;
 	padding: 0 20px 20px 0
 }
@@ -8293,13 +8293,17 @@ and (orientation : landscape) {
 /*Main home content*/
 /*promo-blocks*/
 #jm-tops2, #jm-tops6 {padding: 15px 0 0;}
-#jm-tops2 .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 15px 15px 0;}
+#jm-tops2 .main .inner{border-left: 1px solid #EBEBEB;border-right: 1px solid #EBEBEB; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB; padding: 15px 15px 5px;background: #EEE;}
 
 #jm-tops4 .main .inner .block {padding: 0 15px;}
 #jm-tops6 .main .list-categories {height: 300px;}
+.block-cate-title a {text-transform: uppercase; font-style: normal; font-size: 16px; float: left; font-weight: bold; margin: 2px 0 0;}
+#jm-tops4 .col-1 .block .block-title {padding: 15px 0 19px;}
+.promo-block-line {border-bottom: 15px solid #EBEBEB; margin: 16px -308px 0 -16px;}
+
 
 /*universal*/
-.content-block{border: 1px solid #EBEBEB; padding: 15px 15px;height: 300px;}
+.content-block{border: 15px solid #EBEBEB; padding: 15px 15px;height: 300px;}
 
 
 
@@ -8307,10 +8311,10 @@ and (orientation : landscape) {
 .inner .product-information {width: 180px;}
 
 /*footer*/
-#jm-container {height: 15px;}
+/*#jm-container {height: 15px;}*/ /* Особое внимание ошибка в Хроме */
 #jm-bots1 .main .inner {padding: 15px 15px 15px;}
 #jm-footer .main .inner .inner2 {padding: 15px 15px 15px;}
-#jm-bots1 .main .inner .block-subscribe {margin: 0 0 0 121px; height: 206px;}
+#jm-bots1 .main .inner .block-subscribe {margin: 0 0 0 58px; height: 206px;}
 .jm-legal .footer-col-1{float: left;width: 69%; padding: 44px 0 0;}
 .jm-legal .footer-col-2{float: left;width: 15%;}
 .jm-legal .footer-col-3{float: left;width: 15%;}
