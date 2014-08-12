@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Multi-Borders</title>
+    <style>
+        body { background: #d2d1d0; }
+
+        #box {
+            background: #f4f4f4;
+            border: 10px solid #bbbbbb;
+            width: 200px;
+            height: 200px;
+            margin: 60px auto;
+            position: relative;
+        }
+
+        #box:before {
+            border: 10px solid white;
+            content: '';
+            width: 198px;
+            height: 198px;
+            position: absolute;
+        }
+
+        #box:after {
+            content: '';
+            position: absolute;
+            width: 196px;
+            height: 196px;
+            border: 10px solid #bbbbbb;
+            left: 1px; top: 1px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+
+<div class="block block-cate">
+    <div class="block-cate-title"><a href="{{store direct_url=""}}gifts.html">Масла</a></div>
+    <ul>
+        <li><a href="{{store direct_url=""}}all.html">Масла</a></li>
+        <li><a href="{{store direct_url=""}}saleoff.html">Смазки</a></li>
+        <li><a href="{{store direct_url=""}}feature-products.html">Автокосметика</a></li>
+        <li><a href="{{store direct_url=""}}bestselling.html">Автохимия</a></li>
+        <li><a href="{{store direct_url=""}}gifts/beauty-health/lotion.html">Фильтра</a></li>
+        <li><a href="{{store direct_url=""}}gifts/skatings.html">Шины</a></li>
+        <li><a href="{{store direct_url=""}}gifts/puppy.html">Запчасти</a></li>
+    </ul>
+</div>
+<div class="external-border">
+    <div class="col2-set list-categories list-cate-colr">
+        <div class="c3-col3-set">
+            <div class="c1-col">A</div>
+            <div class="c2-col">B</div>
+            <div class="c3-col">C</div>
+        </div>
+        <div class="c4-col3-set">&nbsp;</div>
+        <div class="c5-col3-set">&nbsp;</div>
+        <div class="c6-col3-set">
+            <div class="c1-col">A</div>
+            <div class="c2-col">B</div>
+            <div class="c3-col">C</div>
+        </div>
+        <div class="col-1">{{block type="joomlart_jmproductsslider/list" name="cate.jmproductsslider2" template="joomlart/jmproductsslider/verticallist.phtml" title="Распродажа" mode="latest" perrow="1" number_items="3" itemwidth="240" itemheight="90"}}</div>
+        <div class="col-2">{{block type="joomlart_jmproducts/list" name="home.jmproducts.list" title="Лучшие цены" mode="latest" template="joomlart/jmproducts/list.phtml" catsid="32"}}</div>
+        <div class="col-3-border">&nbsp;</div>
+        <div class="col-4-border">&nbsp;</div>
+    </div>
+</div>
