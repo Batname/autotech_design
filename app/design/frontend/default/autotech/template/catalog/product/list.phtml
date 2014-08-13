@@ -58,7 +58,10 @@
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
 <div class="category-products">
+    <div class="toolbar-top">
     <?php echo $this->getToolbarHtml() ?>
+        <div class="toolbar-line"></div>
+    </div>
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
 		<?php $_iterator = 0; ?>
@@ -176,7 +179,7 @@
 
 						</div>
 
-
+                        <div class="grid-catalog-content">
 						<h5 class="product-name">
 							<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
 							<?php 
@@ -189,6 +192,7 @@
 							</a>
 						</h5>
 						<?php echo $this->getReviewsSummaryHtml($_product, true, true)?>
+                        <div class="oil-availability">Емкость 1 л.</div>
                         <div class="ratings">
                             <div class="price-box-bat">
                                 <div class="rating"><?php echo $this->getPriceHtml($_product, true) ?></div>
@@ -208,6 +212,7 @@
                             </div>
                             </p>
                         </div>
+                        </div>
                     </div>
 				</li>
 			<?php endforeach ?>
@@ -216,6 +221,7 @@
     <?php endif; ?>
 	<div class="toolbar-bottom">
         <?php echo $this->getToolbarHtml() ?>
+        <div class="toolbar-line"></div>
     </div>
 </div>
 <?php endif; ?>

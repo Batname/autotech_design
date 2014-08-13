@@ -31,62 +31,76 @@
  * @see Mage_Catalog_Block_Product_List_Toolbar
  */
 ?>
-<?php if($this->getCollection()->getSize()): ?>
-<div class="toolbar">
-	<?php if( $this->isExpanded() ): ?>
-		 <?php if( $this->isEnabledViewSwitcher() ): ?>
-        <div class="view-mode">
-            <?php $_modes = $this->getModes(); ?>
-            <?php if($_modes && count($_modes)>1): ?>
-				<label><?php echo $this->__('View as:') ?></label>
-				<?php foreach ($this->getModes() as $_code=>$_label): ?>
-					<?php if($this->isModeActive($_code)): ?>
-						<?php if($_code =="grid") :?>
-							<span class="ico-outer active"><i class="fa fa-th"></i></span>
-						<?php else: ?>
-							<span class="ico-outer active"><i class="fa fa-th-list"></i></span>
-						<?php endif; ?>
-					<?php else: ?>
-						<?php if($_code =="grid") :?>
-							<a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><span class="ico-outer"><i class="fa fa-th"></i></span></a>
-						<?php else: ?>
-							<a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>" class="<?php echo strtolower($_code); ?>"><span class="ico-outer"><i class="fa fa-th-list"></i></span></a>
-						<?php endif; ?>
-						
-					<?php endif; ?>
-				<?php endforeach; ?>
+<?php if ($this->getCollection()->getSize()): ?>
+    <div class="toolbar">
+
+        <?php if ($this->isExpanded()): ?>
+        <?php if ($this->isEnabledViewSwitcher()): ?>
+        <div class="category-name">
+            <label><?php echo Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName() ?></label></div>
+        <div class="toolbar-right">
+            <div class="view-mode">
+                <?php $_modes = $this->getModes(); ?>
+                <?php if ($_modes && count($_modes) > 1): ?>
+                    <label><?php echo $this->__('View as:') ?></label>
+                    <?php foreach ($this->getModes() as $_code => $_label): ?>
+                        <?php if ($this->isModeActive($_code)): ?>
+                            <?php if ($_code == "grid") : ?>
+                                <span class="ico-outer active"><i class="fa fa-th"></i></span>
+                            <?php else: ?>
+                                <span class="ico-outer active"><i class="fa fa-th-list"></i></span>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <?php if ($_code == "grid") : ?>
+                                <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>"
+                                   class="<?php echo strtolower($_code); ?>"><span class="ico-outer"><i
+                                            class="fa fa-th"></i></span></a>
+                            <?php else: ?>
+                                <a href="<?php echo $this->getModeUrl($_code) ?>" title="<?php echo $_label ?>"
+                                   class="<?php echo strtolower($_code); ?>"><span class="ico-outer"><i
+                                            class="fa fa-th-list"></i></span></a>
+                            <?php endif; ?>
+
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
             <?php endif; ?>
-        </div>
-        <?php endif; ?>
-	<?php endif; ?>
-    <?php echo $this->getPagerHtml() ?>
-	
-	<?php if( $this->isExpanded() ): ?>	
-        <div class="sort-by">
-            <label><?php echo $this->__('Sort By:') ?></label>
-            <div class="select-box2">
-                <select onchange="setLocation(this.value)">
-                <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
-                    <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
-                        <?php echo $this->__($_order) ?>
-                    </option>
-                <?php endforeach; ?>
-                </select>
+            <?php endif; ?>
+            <?php echo $this->getPagerHtml() ?>
+
+            <?php if ($this->isExpanded()): ?>
+                <div class="sort-by">
+                    <label><?php echo $this->__('Sort By:') ?></label>
+
+                    <div class="select-box2">
+                        <select onchange="setLocation(this.value)">
+                            <?php foreach ($this->getAvailableOrders() as $_key => $_order): ?>
+                                <option
+                                    value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if ($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
+                                    <?php echo $this->__($_order) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="limiter">
+                <label><?php echo $this->__('Show:') ?></label>
+
+                <div class="select-box2">
+                    <select onchange="setLocation(this.value)">
+                        <?php foreach ($this->getAvailableLimit() as $_key => $_limit): ?>
+                            <option
+                                value="<?php echo $this->getLimitUrl($_key) ?>"<?php if ($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                                <?php echo $_limit ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <label><?php echo $this->__('per page') ?></label>
             </div>
         </div>
-    <?php endif; ?>
-    <div class="limiter">
-        <label><?php echo $this->__('Show:') ?></label>
-        <div class="select-box2">
-            <select onchange="setLocation(this.value)">
-            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
-                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
-                    <?php echo $_limit ?>
-                </option>
-            <?php endforeach; ?>
-            </select> 
-        </div>
-        <label><?php echo $this->__('per page') ?></label>
+
     </div>
-</div>
 <?php endif ?>

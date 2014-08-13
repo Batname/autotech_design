@@ -1141,10 +1141,10 @@ p.required {
 
 /* Toolbar */
 .toolbar {
-	border-bottom: 1px solid #ebebeb;
+	border-bottom: 1px solid #BDBDBD;
 	clear: both;
 	float: left;
-	padding: 0 0 10px;
+	padding: 0 0 5px;
 	width: 100%
 }
 
@@ -1163,9 +1163,9 @@ p.required {
  
 
 .toolbar-bottom {
-	border-top: 1px solid #ebebeb;
+	border-top: 1px solid #BDBDBD;
 	float: left;
-	padding: 10px 0 0;
+	padding: 5px 0 0;
 	width: 100%
 }
 
@@ -1175,17 +1175,17 @@ p.required {
 }
 
 .sort-by {
-	border-left: 1px solid #ebebeb;
-	float: right;
-	padding: 0 0 0 20px;
-	width: 162px
+    border-left: 1px solid #BDBDBD;
+    float: left;
+    padding: 0 15px 0 15px;
+	/*width: 162px*/
 }
 
 .limiter {
-	border-left: 1px solid #ebebeb;
-	float: right;
-	padding: 0 20px;
-	width: 169px
+	border-left: 1px solid #BDBDBD;
+	float: left;
+    padding: 0px 0px 0 15px;
+	/*width: 169px*/
 }
 
 .limiter .select-box2 {
@@ -1196,10 +1196,11 @@ p.required {
 }
 
 .view-mode {
-	border-right: 1px solid #ebebeb;
+	border-right: 1px solid #BDBDBD;
 	float: left;
 	line-height: 39px;
-	width: 120px
+	/*width: 120px*/
+    padding: 0px 15px;
 }
 
 .view-mode a{
@@ -1225,7 +1226,7 @@ p.required {
 
 .pages {
 	float: left;
-	padding: 0 20px
+	padding: 0 15px
 }
 
 .pages ol {
@@ -2512,9 +2513,9 @@ ul.ul-dropdown li a:hover img{
 
 /* Sidebar ====== */
 .block {
-	border: 1px solid #ebebeb;
+	border: 1px solid #BDBDBD;
 	margin: 0 0 20px;
-	padding: 20px
+	/*padding: 20px*/
 }
 
 .jm-position .block{
@@ -2529,11 +2530,11 @@ ul.ul-dropdown li a:hover img{
 }
 
 .block .block-title {
-	border-bottom: 1px solid #ebebeb;
+	border-bottom: 1px solid #BDBDBD;
 	color: #f04e46;
 	line-height: 100%;
 	margin: 0 0 10px;
-	padding: 7px 0 13px;
+    padding: 20px;
 	text-transform: uppercase
 }
 
@@ -2724,15 +2725,15 @@ ul.ul-dropdown li a:hover img{
 
 /*Layered Navigation---*/
 .block-layered-nav {
-	background: #3b3b3b;
+	background: #EBEBEB;
 	border: 0;
 	padding: 0
 }
 
 .block-layered-nav .block-title{
-	background: #f04e46;
+	background: #EBEBEB;
 	border-bottom: 0;
-	color: #fff !important;
+	color: #646464 !important;
 	padding: 13px 20px
 }
 
@@ -3170,7 +3171,7 @@ ul.ul-dropdown li a:hover img{
 
 /* Block: Compare Products */
 .block-compare .block-content{
-	padding: 0
+	padding: 20px;
 }
 
 .block-compare .empty{
@@ -3472,10 +3473,11 @@ ul.ul-dropdown li a:hover img{
 /* Category Page  */
 
 .category-products {
-	border: 1px solid #ebebeb;
+	border: 1px solid #BDBDBD;
 	clear: both;
 	float: left;
-	padding: 10px 20px
+	padding: 10px 20px;
+    background-color: #EEE;
 }
 
 .jm-product-list .category-products {
@@ -3510,7 +3512,7 @@ ul.ul-dropdown li a:hover img{
 	clear: both;
 	float: left;
 	position: relative;
-	width: 103.6%
+	width: 103%
 }
 
 .jm-slider .products-grid{
@@ -3534,11 +3536,14 @@ ul.ul-dropdown li a:hover img{
 .products-grid li.item .inner {
 	border: 0 none !important;
 	margin: 20px 20px 20px 0;
-	padding: 0 !important
+	padding: 0 !important;
+    outline: 1px solid #BDBDBD;
+    background-color: #ffffff;
 }
 
 .products-grid li.item.last .inner {
-	margin: 20px 0
+	/*margin: 20px 0;*/
+    margin: 20px 20px 20px 0;
 }
 
 .jm-product-list .products-grid li.item .inner,
@@ -7580,7 +7585,7 @@ ul.list-socials li a:hover{
 
 /*mass head*/
 #jm-mass-head {
-	margin: 0 0 25px;
+	margin: 0 0 15px;
 	min-height: 220px;
 	width: 100%
 }
@@ -8006,7 +8011,9 @@ button.btn-checkout,
 .cart-table .product-name,
 .jm-megamenu .product-name a,
 .product-view .product-shop .price-box,
-#jm-error ul.none-disc li a{
+#jm-error ul.none-disc li a,
+.category-name label
+{
     font-family: "Arial",  Gadget, sans-serif;
 	font-style: normal;
 	font-weight: bold;
@@ -8254,6 +8261,8 @@ and (orientation : landscape) {
 }
 
 
+/*-----------------------------Home page Header Footer Styles--------------------------------------*/
+
 /* header style */
 #all-header {padding: 15px 0 0;}
 #search-contacts {float: left; margin: 0 74px;}
@@ -8268,18 +8277,6 @@ and (orientation : landscape) {
     border-bottom: 1px solid #bdbdbd;
     padding: 15px 0 0;
 
-    /*background-image: -webkit-gradient(*/
-        /*linear,*/
-        /*left top,*/
-        /*left bottom,*/
-        /*color-stop(0, #EEEEEE),*/
-        /*color-stop(1, #FEFEFE)*/
-    /*);*/
-    /*background-image: -o-linear-gradient(bottom, #EEEEEE 0%, #FEFEFE 100%);*/
-    /*background-image: -moz-linear-gradient(bottom, #EEEEEE 0%, #FEFEFE 100%);*/
-    /*background-image: -webkit-linear-gradient(bottom, #EEEEEE 0%, #FEFEFE 100%);*/
-    /*background-image: -ms-linear-gradient(bottom, #EEEEEE 0%, #FEFEFE 100%);*/
-    /*background-image: linear-gradient(to bottom, #EEEEEE 0%, #FEFEFE 100%);*/
 
     background: rgb(238,238,238); /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -8480,9 +8477,46 @@ and (orientation : landscape) {
 }
 
 
+/* Show home page banners*/
+.cms-index-index #jm-tops2 {display: block}
+#jm-tops2 {display: none}
 
-    /*background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); *//*Safari 5.1-6*/
-    /*background: -o-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); *//*Opera 11.1-12*/
-    /*background: -moz-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); *//*Fx 3.6-15*/
-    /*background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); *//*Standard*/
-/*https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Mozilla_Extensions*/
+
+/*-----------------------------Catalog Styles--------------------------------------*/
+
+/*Main navigation styles*/
+
+.category-name {border-right: 1px solid #BDBDBD; float: left; line-height: 39px;padding: 0 15px 0 0;}
+.toolbar-right {float: right;}
+.toolbar-bottom .toolbar-line
+{
+    background-color: #BDBDBD;
+    height: 1px;
+    padding: 0px;
+    position: absolute;
+    width: 805px;
+    margin: -6px -21px;
+}
+.toolbar-top .toolbar-line
+{
+    background-color: #BDBDBD;
+    height: 1px;
+    padding: 0px;
+    position: absolute;
+    width: 805px;
+    margin: 44px -21px;
+}
+
+
+
+#jm-mass-head .jm-masshead
+{
+    box-shadow: 0px 0px 0px 13px #EBEBEB inset, 0px 0px 0px 14px #BDBDBD inset;
+    border: 1px solid #BDBDBD;
+}
+
+#jm-col1 .mb-left .catalog-block,
+#jm-col1 .mb-left .block-compare
+{min-height: 200px; background-color: #EBEBEB;}
+.catalog-block .block-content {padding: 20px}
+.grid-catalog-content {padding: 0px 5px;}

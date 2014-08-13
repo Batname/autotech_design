@@ -16,7 +16,7 @@
 /*--------skiff comms-------------*/
 
 .block-layered-nav dt {
-color: #F04E46;
+color: #646464;
 font-size: 135%;
 font-weight: bold;
 text-transform: uppercase;
@@ -27,7 +27,7 @@ left: 20px;
 
 .mb-mana-catalog-leftnav li {
 border-bottom: 1px solid #505050;
-color: #fff;
+color: #646464;
 font-size: 100%;
 font-family: Arial;
 padding: 10px 0;
@@ -37,8 +37,19 @@ text-indent: 20px;
 }
 
 .block-content li  a{
-color: #fff;
+color: #646464;
 font-size: 100%;
 font-family: Arial;
 }
 
+a.m-show-more-action {
+    color: #646464;
+}
+
+.mb-mana-catalog-leftnav .block-layered-nav {
+    border: 1px solid #BDBDBD;
+}
+
+.mb-mana-catalog-leftnav .block-layered-nav .block-title{
+    border-bottom: 1px solid #BDBDBD;
+}
