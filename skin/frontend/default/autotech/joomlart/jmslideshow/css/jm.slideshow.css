@@ -89,8 +89,8 @@
 .jm-slide-thumbs-handles span:hover,
 .jm-slide-thumbs-handles span:focus,
 .jm-slide-thumbs-handles span.active{
-	background: url(../images/blank.png) left top no-repeat #f04e46;
-	color: #f04e46;
+	background: url(../images/blank.png) left top no-repeat #E31E24;
+	color: #E31E24;
 }
 
 .jm-slide-thumbs-mask-left,

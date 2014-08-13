@@ -37,7 +37,7 @@ body#bd {
 #jm-footer {
 	background-image:url("images/<?php echo $baseconfig["footerimage"]; ?>");
 	background-color: <?php echo $baseconfig["footerolor"] ?>;
-	margin: 0 -10px;
+	margin: -15px -10px;
 }
 
 
@@ -67,7 +67,7 @@ body#bd {
 #jm-bots1 {
 	background-image:url("images/<?php echo $baseconfig["bots1bg"]; ?>");
 	background-color: <?php echo $baseconfig["bots1color"] ?>;
-	margin: -65px -10px;
+	margin: 15px -10px;
 }
 
 #logo a{

@@ -309,10 +309,10 @@ ul.megamenu ul ul {
 	border-right: 1px solid transparent;
 	color: #3f3d3d;
 	display: block;
-	font-size: 95%; /* sitemaster */
+	font-size: 101%; /* sitemaster */
 	height: 44px;
 	line-height: 47px;
-	padding: 0 20px;
+	padding: 0 19px;
 	text-decoration: none;
 	text-transform: uppercase
 }
