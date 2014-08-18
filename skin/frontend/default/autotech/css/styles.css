@@ -498,7 +498,7 @@ button.button {
 	line-height: 100%;
 	margin: 0;
 	overflow: visible;
-	padding: 13px 20px;
+	padding: 10px 10px;
 	text-transform: uppercase;
 	width: auto;
 	border-radius: 0;
@@ -3768,11 +3768,13 @@ Linear
 
 .products-list li.item {
 	border-bottom: 1px solid #ebebeb;
-	padding: 30px 0
+	padding: 10px 0
 }
 
 .products-list li.item .inner{ 
-	position: relative
+	position: relative;
+    outline: 1px solid #BDBDBD;
+    margin: 0;
 }
 
 .products-list li.item:hover .product-image,
@@ -3795,11 +3797,14 @@ Linear
 }
 
 .products-list .product-image {
-	float: left
+	float: left;
+    /*width: 30%;*/
 }
 
 .products-list .product-shop {
-	margin-left: 242px;
+	margin-left: 222px;
+    /*float: left;*/
+    /*width: 70%;*/
 }
 
 
@@ -8543,3 +8548,23 @@ button.button:hover, button.button:focus {
 }
 
 .oil-availability {min-height: 19px;}
+
+/*list version*/
+.products-list .product-shop .f-fix{background-color: #fff;height: 222px;}
+
+.products-list li:first-child.item {
+    padding: 20px 0 10px;
+}
+
+.products-list li:last-child.item {
+    padding: 10px 0 0;
+}
+
+.f-fix .list-content {padding: 10px 20px;}
+.list-content .old-price,.list-content .special-price {display: inline;padding-right: 10px;}
+.list-content .link-compare {position: absolute;display: inline-block;font-size: 12px;font-weight: normal !important;text-transform: uppercase;padding: 5px 0;}
+.list-content a.link-compare  {color: #646464;}
+.list-content a:focus.link-compare,.list-content a:hover.link-compare  {color: #E31E24;}
+.list-content .product-name {display: inline;}
+.list-content .oil-availability {float: right;}
+.products-list .inner {height: 222px}

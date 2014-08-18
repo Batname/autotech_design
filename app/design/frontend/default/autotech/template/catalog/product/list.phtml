@@ -83,12 +83,20 @@
                                 <?php // Product description ?>
                                 <div class="product-shop">
                                     <div class="f-fix">
+                                        <div class="list-content">
                                         <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
                                         <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>"
                                                                     title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a>
                                         </h2>
-                                        <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
+                                            <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') ." ". $_product->getAttributeText('emkost') ." ". $this->__('l.') ?><?php endif; ?></div>
+                                            <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
                                         <?php echo $this->getPriceHtml($_product, true) ?>
+                                            <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
+                                               <a
+                                                        href="<?php echo $_compareUrl ?>"
+                                                        class="link-compare"><?php echo $this->__('Add to Compare') ?></a>
+
+                                            <?php endif; ?>
                                         <div class="short-description">
                                             <?php $sdesc = $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
                                             <?php
@@ -108,6 +116,11 @@
                                                             onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
                                                         <span><?php echo $this->__('Add to Cart') ?></span>
                                                     </button>
+                                                    <button type="button" title="<?php echo $this->__('Read more') ?>"
+                                                            class="button btn-cart"
+                                                            onclick="setLocation('<?php echo $_product->getProductUrl() ?>')">
+                                                        <span><?php echo $this->__('Read more') ?></span>
+                                                    </button>
                                                 <?php else: ?>
                                                     <p class="availability out-of-stock">
                                                         <span><?php echo $this->__('Out of stock') ?></span></p>
@@ -119,13 +132,35 @@
                                                        class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
                                                 </li>
                                             <?php endif; ?>
-                                            <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
-                                                <li><span class="separator">|</span> <a
-                                                        href="<?php echo $_compareUrl ?>"
-                                                        class="link-compare"><?php echo $this->__('Add to Compare') ?></a>
-                                                </li>
-                                            <?php endif; ?>
+
+
+
+                                            <?php // echo $this->getChildHtml('additional-catalog') ?>
+
+                                            <?php
+                                            $productAttrs = Mage::getResourceModel('catalog/product_attribute_collection');
+                                            foreach ($productAttrs as $productAttr) {
+                                                /** $productAttr Mage_Catalog_Model_Resource_Eav_Attribute */
+
+                                                if ($productAttr->getData()["is_visible_on_front"]){
+                                                    //print_r($productAttr->getData());
+                                                }
+                                                if($productAttr->getData()["is_visible_on_front"] ){
+                                                    if (($_product->getAttributeText($productAttr->getData()["attribute_code"])) || ($_product->getData($productAttr->getData()["attribute_code"]))){
+                                                        echo ($productAttr->getData()["frontend_label"]) . " ";
+                                                       echo ($_product->getResource()->getAttribute($productAttr->getData()["attribute_code"])->getFrontend()->getValue($_product)) . " ";
+
+                                                    }
+                                                }
+                                            }
+
+                                            ?>
+
+
+
+
                                         </ul>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -224,8 +259,7 @@
                                     </h5>
                                     <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
 
-                                        <div
-                                            class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') ." ". $_product->getAttributeText('emkost') ." ". $this->__('l.') ?><?php endif; ?></div>
+                                        <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') ." ". $_product->getAttributeText('emkost') ." ". $this->__('l.') ?><?php endif; ?></div>
 
                                     <div class="ratings">
                                         <div class="price-box-bat">
