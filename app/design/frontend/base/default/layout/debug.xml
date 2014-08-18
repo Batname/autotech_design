@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
     <default>
+        <reference name="head">
+            <block type="page/html" name="debug_head" as="debug.head" template="debug/head.phtml"/>
+        </reference>
         <reference name="before_body_end">
             <block type="debug/debug" name="debug_panels" template="debug/debug.phtml">
                 <block type="debug/versions" name="debug_versions_panel" template="debug/versions.phtml"/>

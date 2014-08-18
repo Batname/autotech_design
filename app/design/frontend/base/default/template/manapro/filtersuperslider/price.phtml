@@ -21,8 +21,8 @@
 <?php $_id = $_helper->getFilterName($this, $_filter); ?>
 <div id="<?php echo $_id ?>-track" class="m-filter-slider <?php echo Mage::getStoreConfig('mana_filters/slider/style') ?>">
 	<div id="<?php echo $_id ?>-span" class="m-slider-span"></div>
-	<div id="<?php echo $_id ?>-from" class="m-slider-from"></div>
-	<div id="<?php echo $_id ?>-to" class="m-slider-to"></div>
+	<div id="<?php echo $_id ?>-from" class="m-slider-from fa fa-caret-right"></div>
+	<div id="<?php echo $_id ?>-to" class="m-slider-to fa fa-caret-left"></div>
 </div>
 	<div class="m-slider-values">
 		<span id="<?php echo $_id ?>-range-from" class="m-slider-min-value"><?php echo $_superHelper->formatNumber($_filter->getLowestPossibleValue(), $_filter->getFilterOptions()) ?></span>

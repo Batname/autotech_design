@@ -430,7 +430,7 @@ ul,ol {
 /* Form Elements */
 input,select,textarea,button {
 	color: #2f2f2f;
-	font: 12px/15px Arial, Helvetica, sans-serif;
+	/*font: 12px/15px Arial, Helvetica, sans-serif;*/
 	vertical-align: middle
 }
 
@@ -490,7 +490,7 @@ button.button {
 }
 
 button.button {
-	background: #646464;
+	background: #E31E24;
 	border: 0;
 	color: #fff;
 	cursor: pointer;
@@ -969,7 +969,7 @@ p.required {
 
 /* BreadCrumbs */
 #jm-breadcrumbs {
-	padding: 20px 0 0
+	padding: 10px 0 0
 }
 
 .breadcrumbs {
@@ -978,7 +978,7 @@ p.required {
 }
 
 .breadcrumbs li {
-	color: #b4b4b4;
+	color: #646464;
 	display: inline;
 	padding: 0 10px 0 0
 }
@@ -1163,9 +1163,9 @@ p.required {
  
 
 .toolbar-bottom {
-	border-top: 1px solid #BDBDBD;
+	border-top: 0 solid #BDBDBD;
 	float: left;
-	padding: 5px 0 0;
+	padding: 25px 0 0;
 	width: 100%
 }
 
@@ -1204,7 +1204,7 @@ p.required {
 }
 
 .view-mode a{
-	color: #ebebeb
+	color: #646464
 }
 
 .view-mode span {
@@ -1278,9 +1278,9 @@ p.required {
 	height: 29px;
 	margin: 5px 5px 0;
 	width: 29px;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
 }
 
 .pages ol li.next a {
@@ -1308,15 +1308,15 @@ p.required {
 	margin: 5px 0 0;
 	vertical-align: middle;
 	width: 104px;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
 }
 
 .select-box2 select{
 	background: transparent;
 	border: none;
-	color: #555;
+	color: #ffffff;
 	cursor: pointer;
 	float: left;
 	font-size: 11px;
@@ -1335,7 +1335,7 @@ p.required {
 }
 
 .select-box2 select option{
-	color: #000
+	color: #646464
 }
 
 /* Data Table */
@@ -2396,7 +2396,7 @@ ul.ul-dropdown li a:hover img{
 	display: block;
 	height: 32px;
 	line-height: 100%;
-	padding: 3px 55px 0 0;
+	padding: 3px 48px 0 0;
 }
 
 
@@ -2759,7 +2759,7 @@ ul.ul-dropdown li a:hover img{
 }
 
 .block-layered-nav ol{
-	margin: 5px 10px
+	margin: 5px 0;
 }
 
 .block-layered-nav ol.narrowed-category{
@@ -2976,8 +2976,8 @@ ul.ul-dropdown li a:hover img{
 
 .block-layered-nav .currently li{
 	border: 0;
-	color: #fff;
-	font-size: 125%;
+	/*color: #fff;*/
+	/*font-size: 125%;*/
 	font-weight: 300;
 	padding: 5px 0
 }
@@ -3524,9 +3524,10 @@ ul.ul-dropdown li a:hover img{
 }
 
 .products-grid li.item {
-	border-bottom: 1px solid #ebebeb;
+	border-bottom: 0 solid #ebebeb;
 	float: left;
-	padding: 0
+	padding: 0;
+    margin: 0 0 -20px !important;
 }
 
 .products-grid li.item.item-row-last {
@@ -3537,8 +3538,12 @@ ul.ul-dropdown li a:hover img{
 	border: 0 none !important;
 	margin: 20px 20px 20px 0;
 	padding: 0 !important;
-    outline: 1px solid #BDBDBD;
     background-color: #ffffff;
+    min-height: 310px;
+}
+
+.category-page .products-grid li.item .inner {
+    outline: 1px solid #BDBDBD;
 }
 
 .products-grid li.item.last .inner {
@@ -3718,7 +3723,7 @@ Linear
 
 .products-grid .old-price{
 	float: left;
-	margin: 5px 5px 0 0
+	margin: -5px 5px 0 0
 }
 
 .products-grid .price-label{
@@ -3730,7 +3735,7 @@ Linear
 }
 
 .products-grid span.price{
-	font-size: 133%
+	font-size: 127%
 }
 
 .products-grid .old-price span.price{
@@ -3864,7 +3869,7 @@ Linear
 .ratings {
 	font-size: 11px;
 	line-height: 1.25;
-	margin: 7px 0
+	margin: 0 0 4px;
 }
 
 .ratings strong {
@@ -7493,12 +7498,13 @@ ul.list-socials li a:hover{
 
 .block-subscribe .input-box {
 	float: left;
-	min-height: 35px;
+	min-height: 32px;
 	position: relative;
 	width: auto
 }
 
 .block-subscribe .input-box .input-text {
+    height: 10px;
 	background: #ffffff;
 	border: 1px solid #BDBDBD;
 	color: #3f3d3d;
@@ -7510,6 +7516,7 @@ ul.list-socials li a:hover{
 	border-radius: 0;
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0
+
 }
 
 .block-subscribe .input-box button.button,
@@ -8301,14 +8308,14 @@ and (orientation : landscape) {
     border-left: 1px solid #bdbdbd;
     color: #FFF;
     float: right;
-    margin: 0px 0 0;
-    padding: 16px 20px 12px;
+    margin: 0 0 0;
+    padding: 16px 16px 12px;
     text-transform: uppercase;
     border-radius: 0 0 0 0;
     height: 32px;
 }
 .subscribe-button {
-    height: 36px;
+    height: 32px;
     background: #E31E24;
     border-width: 1px;
     border-style: solid;
@@ -8463,9 +8470,9 @@ and (orientation : landscape) {
 /*#jm-container {height: 15px;}*/ /* Особое внимание ошибка в Хроме */
 
 
-#jm-bots1 .main .inner {padding: 15px 15px 15px;}
-#jm-footer .main .inner .inner2 {padding: 15px 15px 15px;}
-#jm-bots1 .main .inner .block-subscribe {margin: 0 0 0 58px; height: 206px;}
+#jm-bots1 .main .inner {padding: 15px 15px 0;}
+#jm-footer .main .inner .inner2 {padding: 0 12px 15px;}
+#jm-bots1 .main .inner .block-subscribe {margin: 0 0 0 58px; height: 178px;}
 .jm-legal .footer-col-1{float: left;width: 69%; padding: 44px 0 0;}
 .jm-legal .footer-col-2{float: left;width: 15%;}
 .jm-legal .footer-col-3{float: left;width: 15%;}
@@ -8476,6 +8483,8 @@ and (orientation : landscape) {
     background: none repeat scroll 0% 0% #3F3D3D;
 }
 
+#jm-bots1 {border-right: 1px solid #BDBDBD;border-left: 1px solid #BDBDBD;border-top: 1px solid #BDBDBD;}
+#jm-footer {border-right: 1px solid #BDBDBD;border-left: 1px solid #BDBDBD;border-bottom: 1px solid #BDBDBD;}
 
 /* Show home page banners*/
 .cms-index-index #jm-tops2 {display: block}
@@ -8520,3 +8529,17 @@ and (orientation : landscape) {
 {min-height: 200px; background-color: #EBEBEB;}
 .catalog-block .block-content {padding: 20px}
 .grid-catalog-content {padding: 0px 5px;}
+
+
+/* sitebar */
+.mb-mana-catalog-leftnav .block .block-title  {text-align: center;}
+
+.category-products .products-grid .grid-catalog-content .product-name {height: 38px;overflow: hidden;}
+.catalog-grid-button {float: right; padding: 0 5px 0 0;}
+
+button.button:hover, button.button:focus {
+    background: none repeat scroll 0% 0% #3F3D3D;
+    border-color: #3F3D3D;
+}
+
+.oil-availability {min-height: 19px;}

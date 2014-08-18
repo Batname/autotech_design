@@ -14,10 +14,10 @@
 
 /* Default style - style1 */
 .m-filter-slider { height: 17px; position: relative; background: transparent url(../images/manapro_filterslider/bkg_slider.png) 0 0 repeat-x; }
-.m-filter-slider > .m-slider-from, .m-filter-slider > .m-slider-to { height: 17px; width: 17px; position: absolute; }
-.m-filter-slider > .m-slider-span { height: 8px; position: absolute; background: none; border-bottom: 2px solid #969696; margin: 0; }
-.m-filter-slider > .m-slider-from { background: transparent url(../images/manapro_filterslider/slider.png) 0 0 no-repeat; cursor: e-resize; }
-.m-filter-slider > .m-slider-to { background: transparent url(../images/manapro_filterslider/slider.png) -19px 0 no-repeat; cursor: w-resize; }
+.m-filter-slider > .m-slider-from, .m-filter-slider > .m-slider-to { height: 6px; width: 6px; position: absolute; font-size: 25px;margin: -3px 0 0;}
+.m-filter-slider > .m-slider-span { height: 8px; position: absolute; background: none; border-bottom: 2px solid #BDBDBD; margin: 0; }
+.m-filter-slider > .m-slider-from { /*background: transparent url(../images/manapro_filterslider/slider.png) 0 0 no-repeat;*/ cursor: e-resize; }
+.m-filter-slider > .m-slider-to { /*background: transparent url(../images/manapro_filterslider/slider.png) -19px 0 no-repeat;*/ cursor: w-resize; }
 
 .m-slider-values {text-align: center; margin-top: 3px; } 
 .m-slider-values .m-slider-min-value { float: left; }
@@ -120,7 +120,7 @@ top:-10px;
 }
 /* Sitemaster */
 .m-slider-values,#left_price-track {
-margin: 5px 11px;
+margin: 5px 20px;
 }
 
 

@@ -70,7 +70,7 @@ ul.infos-menus li {
 .price-box-bat  {
     float: left;
     margin: 2px 3px 0px 0px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     width: 60px;
 
 }

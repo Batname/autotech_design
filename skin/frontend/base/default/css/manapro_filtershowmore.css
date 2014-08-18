@@ -4,7 +4,7 @@
  * @copyright   Copyright (c) http://www.manadev.com
  * @license     http://www.manadev.com/license  Proprietary License
  */
-.m-more-less { font-size: 11px; text-align: left; margin-left: 160px;}   /*----skiff comms-------*/
+.m-more-less { text-align: left; margin-left: 123px;}   /*----skiff comms-------*/
 .m-expandable-filter { overflow: hidden; }
 .m-scrollable-filter { overflow-x: hidden !important; overflow-y: scroll !important; border: 1px solid #ccc; padding: 2px 0 2px 5px; background: rgba(255,255,255,0.5); }
 .m-scrollable-filter li { white-space: nowrap; }
@@ -18,10 +18,17 @@
 .m-filter-popup .m-filter-colors { margin: 0; }
 .m-showmore-popup-container { box-shadow : 15px 15px 25px 5px rgba( 0, 0, 0, 0.4 ); }
 
-.m-option-search { padding: 4px 0; }
-.m-option-search input { width: 75%; height: 25px; margin: 10px 0 0 20px; }  /*----skiff comms-------*/
+.m-option-search { padding: 5px 0 0; }
+.m-option-search input { width: 75%; height: 25px; margin: 0 0 0 20px; border: 1px solid #BDBDBD; border-radius: 0; padding: 0 10px;}  /*----skiff comms-------*/
 .m-option-search input.m-empty { color: #c0c0c0; }
 .m-no-match { display: none; }
+
+.m-show-more-action .fa-caret-down,
+.m-show-less-action .fa-caret-up {
+    position: absolute;
+    padding: 3px;
+    font-size: 18px;
+}
 
 
 /*-------skiff comms-----*/

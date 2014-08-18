@@ -55,8 +55,8 @@
     </div>
     <?php else : ?>
     <div class="m-more-less" id="m-more-less-<?php echo Mage::helper('mana_filters')->getFilterName($block, $_filter) ?>">
-        <a class="m-show-less-action" href="#"><?php echo $block->__('Show Less') ?></a>
-        <a class="m-show-more-action" href="#"><?php echo $block->__('Show More') ?></a>
+        <a class="m-show-less-action" href="#"><?php echo $block->__('Show Less') ?><span><i class="fa fa-caret-up"></span></i></a>
+        <a class="m-show-more-action" href="#"><?php echo $block->__('Show More') ?><span><i class="fa fa-caret-down"></span></i></a>
         <script type="text/javascript">(function ($) {
                 $(document).trigger('m-show-more-reset', [
                     '<?php echo Mage::helper('mana_filters')->getFilterName($block, $_filter) ?>',

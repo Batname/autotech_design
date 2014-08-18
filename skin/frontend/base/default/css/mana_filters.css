@@ -7,7 +7,7 @@
 /*.m-filter-item-list .m-selected-filter-item { color: red; }*/
 .m-filter-popup .m-selected-ln-item > a { font-weight: bold; text-decoration: none; }
 .block-layered-nav .btn-remove { margin-top: 3px; }
-.block-layered-nav .currently li { position: relative; padding: 6px 24px 6px 10px; }
+.block-layered-nav .currently li { position: relative; padding: 0; }
 .block-layered-nav .currently .btn-remove { margin-top: 0; position: absolute; right: 44px; top: 9px; margin-left: 0; } /*----skiff comms (right)----*/
 .block-layered-nav dt { position: relative; zoom: 1; left: 0; top: 0; }
 
@@ -16,21 +16,20 @@
 /*--------skiff comms-------------*/
 
 .block-layered-nav dt {
-color: #646464;
-font-size: 135%;
 font-weight: bold;
-text-transform: uppercase;
-margin: 15px 0 0;
-font-family: Arial;
+margin: 0 0 -5px;
 left: 20px;
 }
 
+.block-layered-nav dd {
+    padding: 0 0 10px;
+}
+
 .mb-mana-catalog-leftnav li {
-border-bottom: 1px solid #505050;
 color: #646464;
 font-size: 100%;
 font-family: Arial;
-padding: 10px 0;
+padding: 0 0;
 display: inline-block;
 width: 100%;
 text-indent: 20px;

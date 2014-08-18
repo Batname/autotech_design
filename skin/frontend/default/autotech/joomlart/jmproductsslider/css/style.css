@@ -75,6 +75,7 @@ img { border: none; }
 	text-align: center;
 	width: 30px;
 	-webkit-border-radius:0;
+    font-size: 18px;
 }
 
 .jm-prev:hover ,
