@@ -54,7 +54,7 @@ Default layout, loads most of the pages
                 <action method="setLinkUrl"><url>checkout/cart</url></action>
             </block>-->
             <block type="catalog/product_compare_sidebar" before="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
-            <block type="core/template" after="-" name="catalog.static.blocks" template="catalog/staticblocks/block.phtml"/>
+            <block type="core/template" after="-" name="catalog.static.blocks" as="catalog.static.blocks" template="catalog/staticblocks/block.phtml"/>
         </reference>
         <reference name="footer_links">
             <action method="addLink" translate="label title" module="catalog" ifconfig="catalog/seo/site_map"><label>Site Map</label><url helper="catalog/map/getCategoryUrl" /><title>Site Map</title></action>
@@ -74,6 +74,7 @@ Category default layout
         </reference>
         <reference name="left">
             <block type="catalog/navigation" name="catalog.leftnav" before="-" template="catalog/navigation/left.phtml"/>
+
         </reference>
         <reference name="content">
             <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
@@ -194,6 +195,7 @@ Product view
         </reference>
         <reference name="content">
             <block type="catalog/product_view" name="product.info" template="catalog/product/view.phtml">
+                <block type="core/template" after="-" name="static.product_block" as="static.product_block" template="catalog/staticblocks/product_block.phtml"/>
                 <!--
                 <action method="addReviewSummaryTemplate"><type>default</type><template>review/helper/summary.phtml</template></action>
                 <action method="addReviewSummaryTemplate"><type>short</type><template>review/helper/summary_short.phtml</template></action>
@@ -212,7 +214,7 @@ Product view
                 </block>
 				<block type="catalog/product_list_related" name="catalog.product.related" as="related_products"  template="catalog/product/list/related.phtml"/>
 
-                <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
+                <!--<block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />-->
                 <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
                     <action method="addToParentGroup"><group>detailed_info</group></action>
                 </block>

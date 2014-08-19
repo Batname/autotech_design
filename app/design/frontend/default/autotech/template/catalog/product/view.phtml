@@ -62,6 +62,7 @@
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view">
     <div class="product-essential">
+
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <?php echo $this->getBlockHtml('formkey') ?>
         <div class="no-display">
@@ -69,7 +70,7 @@
             <input type="hidden" name="related_product" id="related-products-field" value="" />
         </div>
 
-
+         <div class="product-view-content clearfix">
         <div class="product-img-box">
             <?php echo $this->getChildHtml('media') ?>
         </div>
@@ -82,7 +83,7 @@
 
             <a itemprop="url" href="<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>"></a>
 
-            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <div itemprop="offers" class="clearfix" itemscope itemtype="http://schema.org/Offer">
             <div class="jm-product-price">
 				<?php echo $this->getChildHtml('product_type_data') ?>
 			</div>
@@ -97,20 +98,13 @@
                     <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
                 <?php endif; ?>
 
-
-                <!-- Default module -->
-			<?php if ($_product->isAvailable()): ?>
-				<p class="availability in-stock"><?php //echo $this->__('Availability:') ?> <span itemprop="availability" href="http://schema.org/InStock"><?php //echo $this->__('In stock') ?></span></p>
-			<?php else: ?>
-				<p class="availability out-of-stock"><?php //echo $this->__('Availability:') ?> <span><?php //echo $this->__('Out of stock') ?></span></p>
-			<?php endif; ?>
             </div>
 
 
             <?php if ($this->canEmailToFriend()): ?>
                 <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
             <?php endif; ?>
-            
+
             <?php echo $this->getChildHtml('alert_urls') ?>
             <?php echo $this->getTierPriceHtml() ?>
             <?php echo $this->getChildHtml('extrahint') ?>
@@ -128,24 +122,17 @@
                     <?php echo $this->getChildHtml('addto') ?>
                 </div>
             <?php endif; ?>
-			
+
 			<?php if ($_product->isSaleable() && $this->hasOptions()):?>
                 <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
             <?php endif;?>
-			
+
 			<?php if ($_product->isSaleable() && $this->hasOptions()):?>
 				<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
 			<?php endif;?>
 
-            <?php if ($_product->getShortDescription()):?>
-                <div class="short-description">
-                    <h2><?php echo $this->__('Quick Overview') ?></h2>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                </div>
-            <?php endif;?>
-
             <?php echo $this->getChildHtml('other');?>
-			
+
 			<?php
 				/*
 					<!-- AddThis Button BEGIN -->
@@ -162,9 +149,10 @@
 			?>
 
 			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('addshare')->toHtml() ?>
-			
-		</div>
 
+		</div>
+             <?php echo $this->getChildHtml('static.product_block') ?>
+         </div>
        
 
         <div class="clearer"></div>
@@ -221,69 +209,89 @@
         }.bind(productAddToCartForm);
     //]]>
     </script>
-    </div>
-
     <div id="ja-tab-products" class="product-collateral">
-		<ul class="ja-tab-navigator clearfix">
-			<?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
-				<li><a href="<?php echo "#ja-tab-{$alias}"?>"><span itemprop="description"><?php if ($alias==="description") { echo $this->__('Description'); } else { echo $this->__('Additional');} ?> </span></a></li>
+        <ul class="ja-tab-navigator clearfix">
+            <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+                <li><a href="<?php echo "#ja-tab-{$alias}"?>"><span itemprop="description"><?php if ($alias==="description") { echo $this->__('Description'); } else { echo $this->__('Additional');} ?> </span></a></li>
             <?php endforeach;?>
 
-			<?php if($product_additional_data = $this->getChildHtml('product_additional_data')): ?>
-				<li><a href="#ja-tabitem-tags"><?php echo $this->__('Product Tags') ?></a></li>
-			<?php endif; ?>
-			<?php if($product_reviews = $this->getChildHtml('product_reviews')): ?>
-				<li><a href="#ja-tabitem-reviews"><?php echo $this->__('Product Reviews') ?></a></li>
-			<?php endif; ?>    
-			<?php if($review_form = $this->getChildHtml('review_form')): ?>
-				<li><a href="#ja-tabitem-reviewform"><?php echo $this->__('Write Your Own Review') ?></a></li>
-			<?php endif; ?>
-		</ul>
-		<div class="ja-tab-content">
-			<?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
-			<div id="<?php echo "ja-tab-{$alias}"?>">
-			  <div class="box-collateral <?php echo "1box-{$alias}"?>">
-				 <span itemprop="description"><?php echo $html; ?></span>
-			  </div>
-				</div>
-			<?php endforeach;?>
+            <?php //if($product_additional_data = $this->getChildHtml('product_additional_data')): ?>
+            <!-- <li><a href="#ja-tabitem-tags"><?php //echo $this->__('Product Tags') ?></a></li> -->
+            <?php //endif; ?>
+            <?php if($product_reviews = $this->getChildHtml('product_reviews')): ?>
+                <li><a href="#ja-tabitem-reviews"><?php echo $this->__('Product Reviews') ?></a></li>
+            <?php endif; ?>
+            <?php if($review_form = $this->getChildHtml('review_form')): ?>
+                <li><a href="#ja-tabitem-reviewform"><?php echo $this->__('Write Your Own Review') ?></a></li>
+            <?php endif; ?>
+        </ul>
+        <div class="ja-tab-content">
+            <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+                <div id="<?php echo "ja-tab-{$alias}"?>">
+                    <div class="box-collateral <?php echo "1box-{$alias}"?>">
+				 <span itemprop="description">
+                     <?php if ($alias == "description"): ?>
+                         <?php if ($_product->getShortDescription()):?>
+                             <div class="short-description">
+                                 <h2><?php echo $this->__('Quick Overview') ?></h2>
+                                 <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                             </div>
+                         <?php endif;?>
+                     <?php endif;?>
+                     <?php echo $html; ?>
+                 </span>
+                    </div>
+                </div>
+            <?php endforeach;?>
 
-				<?php if( $product_additional_data ): ?>
-				<div id="ja-tabitem-tags">
-					<?php echo $product_additional_data; ?>
-				</div>
-				<?php endif;?>
-				
-				<?php if($product_reviews): ?>
-				<div id="ja-tabitem-reviews">
-					<?php echo $product_reviews ?>
-				</div>
-				<?php endif;?>
-				
-				<?php if($review_form): ?>
-				<div id="ja-tabitem-reviewform">
-					<?php echo $review_form; ?>
-				</div>
-				<?php endif;?>
-		</div>
-	</div>
- 
-	<?php 
-	if($baseconfig['showupsell']):
+            <?php if( $product_additional_data ): ?>
+                <div id="ja-tabitem-tags">
+                    <?php echo $product_additional_data; ?>
+                </div>
+            <?php endif;?>
 
-		$upsell_products = $this->getChild('upsell_products');
-		if($upsell_products) {
-			$upsell_products->setItemLimit("upsell",$baseconfig['upsellnumber']);
-			if($upsell_products = $this->getChildHtml('upsell_products')): ?>
-			   <?php echo $upsell_products; ?>
-			<?php endif;
-		}
-	endif;
-	?>
+            <?php if($product_reviews): ?>
+                <div id="ja-tabitem-reviews">
+                    <?php echo $product_reviews ?>
+                </div>
+            <?php endif;?>
+
+            <?php if($review_form): ?>
+                <div id="ja-tabitem-reviewform">
+                    <?php echo $review_form; ?>
+                </div>
+            <?php endif;?>
+        </div>
+    </div>
+    </div>
+
+
+    <?php if (strlen($this->getChildHtml('upsell_products')) > 0 || strlen($this->getChildHtml('related_products')) > 0) { ?>
+        <div class="feat-product">
+            <div class="related_upsell_products clearfix">
+                <?php
+                if($baseconfig['showupsell']):
+
+                    $upsell_products = $this->getChild('upsell_products');
+                    if($upsell_products) {
+                        $upsell_products->setItemLimit("upsell",$baseconfig['upsellnumber']);
+                        if($upsell_products = $this->getChildHtml('upsell_products')): ?>
+                            <?php echo $upsell_products; ?>
+                        <?php endif;
+                    }
+                endif;
+                ?>
+
+                <?php echo $this->getChildHtml('related_products'); ?>
+            </div>
+        </div>
+    <?php } ?>
+
+
+
+
+
 </div>
-
-<?php echo $this->getChildHtml('related_products'); ?>
-
 </div>
 
 
