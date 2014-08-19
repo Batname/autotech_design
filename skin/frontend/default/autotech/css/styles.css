@@ -8363,6 +8363,12 @@ and (orientation : landscape) {
 #jm-tops4 .col-1 .block .block-title {padding: 15px 0 19px;}
 .promo-block-line {border-bottom: 15px solid #EBEBEB; margin: 16px -308px 0 -16px;}
 
+.cms-index-index .product-name a {color: #3F3D3D; font-weight: normal;}
+.cms-index-index .product-name a:active,
+.cms-index-index .product-name a:focus,
+.cms-index-index .product-name a:hover {
+    color: #E31E24;
+}
 
 /*universal*/
 .content-block
@@ -8551,7 +8557,7 @@ button.button:hover, button.button:focus {
     border-color: #3F3D3D;
 }
 
-.oil-availability {min-height: 19px;}
+.oil-availability {}
 
 /*------------------------------------------------list version----------------------------------------------------*/
 .products-list .product-shop .f-fix{min-height: 222px;}
@@ -8577,3 +8583,4 @@ button.btn-read-more:hover,button.btn-read-more:focus {background-color:#3F3D3D;
 .products-list .attribute-collection {clear: both;font-style: normal;font-weight: normal;}
 .attribute-collection span {font-weight: bold;}
 .all-description {min-height: 130px;}
+.cms-index-index .oil-availability {font-weight: bold;}

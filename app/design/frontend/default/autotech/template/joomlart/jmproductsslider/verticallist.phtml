@@ -90,7 +90,7 @@ if($configs['autorun']){
       						</div>
       						
       						<div class="product-detail">
-								<p class="product-name">
+								<h5 class="product-name">
 									<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
 										<span>
 											<?php 
@@ -102,8 +102,9 @@ if($configs['autorun']){
 											?>
 										</span>
 									</a>
-								</p>
-								<?php if ($configs['show_price']) : ?>
+								</h5>
+                                <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
+                                <?php if ($configs['show_price']) : ?>
 									<?php echo $this->getPriceHtml($_product,true, '_jmslider') ?>
 								<?php endif; ?>
 

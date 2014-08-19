@@ -103,7 +103,7 @@
 									<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
 										<img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize($thumbnailw, $thumbnailh)->setWatermarkSize('30x10'); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>"/>
 									</a>
-							
+
 									
 									<?php if ($labeltype && $showlabel): ?>
 											<span class="<?php echo $labeltype; ?>-label icon-label">
@@ -133,7 +133,8 @@
 									<h5 class="product-name">
 										<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>"><?php echo $_product->getName() ?></a>
 									</h5>
-									<?php echo $this->getReviewsSummaryHtml($_product, true, true)?>
+                                    <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
+                                    <?php echo $this->getReviewsSummaryHtml($_product, true, true)?>
 									
 									
 									<?php echo $this->getPriceHtml($_product,true, '_jmproduct_' . rand()) ?>
