@@ -29,15 +29,33 @@
  *
  * @see Mage_Catalog_Block_Product_View_Attributes
  */
-?>
-1111
-<?php
-$productAttrs = Mage::getResourceModel('catalog/product_attribute_collection');
+
+
+
+
+/* $productAttrs = Mage::getResourceModel('catalog/product_attribute_collection');
 foreach ($productAttrs as $productAttr) {
-    /** $productAttr Mage_Catalog_Model_Resource_Eav_Attribute */
+    $filter_attr = ($_product->getAttributeText($productAttr->getData()["attribute_code"]));
+    $text_attr = ($_product->getData($productAttr->getData()["attribute_code"]));
+    $label_attr = $productAttr->getData()["frontend_label"];
+    $visible_front_attr = $productAttr->getData()["is_visible_on_front"];
+    if ($visible_front_attr && $filter_attr) {
 
-    print_r($productAttr->getData());
-}
 
-?>
+        if ($productAttr->getData()["position"] == 1) {
+            $unsortAttrArray = array("position" => ($productAttr->getData()["position"]),
+                "frontend_label" => $label_attr,
+                "attribute_code" => ($_product->getResource()->getAttribute($productAttr->getData()["attribute_code"])->getFrontend()->getValue($_product))
+            );
+            // print_r($unsortAttrArray);
+        }
 
+        if ($productAttr->getData()["position"] == 8) {
+            $unsortAttrArray = array("position" => ($productAttr->getData()["position"]),
+                "frontend_label" => $label_attr,
+                "attribute_code" => ($_product->getResource()->getAttribute($productAttr->getData()["attribute_code"])->getFrontend()->getValue($_product))
+            );
+            //print_r($unsortAttrArray);
+        }
+    }
+}*/

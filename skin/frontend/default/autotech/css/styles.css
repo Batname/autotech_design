@@ -57,7 +57,7 @@ span.price,
 h1,h2,h3,
 h4,h5,h6 {
 	color: #555;
-	font-weight: normal
+	font-weight: normal;
 	line-height: 1.35;
 	margin: 0 0 5px
 	
@@ -2383,12 +2383,13 @@ ul.ul-dropdown li a:hover img{
 
 #jm-mycart .btn-toggle span {
 	color: #e31e24;
-	font-size: 14px;
+	/*font-size: 14px;*/
 	text-transform: uppercase;
 	width: 100%;
 	clear: both;
 	display: block;
 	/*line-height: 180%;*/
+    font-size: 101%;
 }
 
 #jm-mycart  .btn-toggle .ico-shopping-cart {
@@ -3488,7 +3489,7 @@ ul.ul-dropdown li a:hover img{
 
 .category-title {
 	border: 0;
-	margin: 0 0 7px
+	margin: 0 0 0;
 }
 
 .category-image {
@@ -3775,6 +3776,7 @@ Linear
 	position: relative;
     outline: 1px solid #BDBDBD;
     margin: 0;
+    background-color: #FFF;
 }
 
 .products-list li.item:hover .product-image,
@@ -3821,9 +3823,9 @@ Linear
 
 .products-list .short-description {
 	clear: both;
-	line-height: 22px;
-	margin: 0 0 15px;
-	padding: 6px 0 0
+	/*line-height: 22px;*/
+	/*margin: 0 0 15px;*/
+	padding: 2px 0 2px;
 }
 
 .products-list .product-name {
@@ -3874,7 +3876,7 @@ Linear
 .ratings {
 	font-size: 11px;
 	line-height: 1.25;
-	margin: 0 0 4px;
+	margin: 3px 0 3px;
 }
 
 .ratings strong {
@@ -5226,18 +5228,18 @@ ul.ja-tab-navigator li.active a{
 /* Content Styles ================================================================= */
 .product-name {
 	font-size: 101%;
-	margin: 0 0 5px
+	margin: 0 0 3px
 }
 
 .product-name a {
-	color: #3f3d3d;
+	color: #e31e24;
     font-weight: normal;
 }
 
 .product-name a:active,
 .product-name a:focus,
 .product-name a:hover {
-	color: #f04e46
+	color: #646464;
 }
 
 /* Product Tags */
@@ -8535,6 +8537,8 @@ and (orientation : landscape) {
 .catalog-block .block-content {padding: 20px}
 .grid-catalog-content {padding: 0px 5px;}
 
+/*footer*/
+
 
 /* sitebar */
 .mb-mana-catalog-leftnav .block .block-title  {text-align: center;}
@@ -8549,8 +8553,8 @@ button.button:hover, button.button:focus {
 
 .oil-availability {min-height: 19px;}
 
-/*list version*/
-.products-list .product-shop .f-fix{background-color: #fff;height: 222px;}
+/*------------------------------------------------list version----------------------------------------------------*/
+.products-list .product-shop .f-fix{min-height: 222px;}
 
 .products-list li:first-child.item {
     padding: 20px 0 10px;
@@ -8560,11 +8564,16 @@ button.button:hover, button.button:focus {
     padding: 10px 0 0;
 }
 
-.f-fix .list-content {padding: 10px 20px;}
+.f-fix .list-content {padding: 8px 20px;}
 .list-content .old-price,.list-content .special-price {display: inline;padding-right: 10px;}
-.list-content .link-compare {position: absolute;display: inline-block;font-size: 12px;font-weight: normal !important;text-transform: uppercase;padding: 5px 0;}
+.list-content .link-compare {position: absolute;display: inline-block;font-size: 12px;font-weight: normal !important;text-transform: uppercase;padding: 6px 0;}
 .list-content a.link-compare  {color: #646464;}
 .list-content a:focus.link-compare,.list-content a:hover.link-compare  {color: #E31E24;}
-.list-content .product-name {display: inline;}
-.list-content .oil-availability {float: right;}
+.list-content .product-name {display: inline}
+.list-content .oil-availability {font-weight: bold; float: right;}
 .products-list .inner {height: 222px}
+button.btn-read-more {background-color: #ffa219;}
+button.btn-read-more:hover,button.btn-read-more:focus {background-color:#3F3D3D; border-color: #3F3D3D; }
+.products-list .attribute-collection {clear: both;font-style: normal;font-weight: normal;}
+.attribute-collection span {font-weight: bold;}
+.all-description {min-height: 130px;}
