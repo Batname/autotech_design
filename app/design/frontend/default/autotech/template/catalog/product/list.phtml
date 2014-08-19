@@ -89,8 +89,10 @@ endif;
                                                                 title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a>
                                     </h2>
 
-                                    <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
+                                    <div
+                                        class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
                                     <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
+                                    <div class="price-and-compare">
                                     <?php echo $this->getPriceHtml($_product, true) ?>
                                     <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
                                         <a
@@ -98,25 +100,38 @@ endif;
                                             class="link-compare"><?php echo $this->__('Add to Compare') ?></a>
 
                                     <?php endif; ?>
+                                    </div>
                                     <div class="all-description">
-                                    <div class="short-description">
-                                        <?php $sdesc = $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-                                        <?php
-                                        if (strlen($sdesc) > 155) :
-                                            echo (strip_tags(mb_substr($sdesc, 0, 130, 'UTF-8'))) . '...'; // sitemaster
-                                        else :
-                                            echo $sdesc;
-                                        endif;
-                                        ?>
-                                    </div>
-                                    <div class="attribute-collection">
-                                        <?php if ($_product->getAttributeText('brendi_v_kategorii')) : ?><span><?php echo $this->__('Бренд')?>: </span><?php echo $_product->getResource()->getAttribute("brendi_v_kategorii")->getFrontend()->getValue($_product)  ?>;<?php endif; ?>
-                                        <?php if ($_product->getAttributeText('klassifikacia_sae')) : ?><span><?php echo $this->__('Классификация')?>: </span><?php echo $_product->getResource()->getAttribute("klassifikacia_sae")->getFrontend()->getValue($_product)  ?>;<?php endif; ?>
-                                        <?php if ($_product->getAttributeText('vid_masla')) : ?><span><?php echo $this->__('Вид масла')?>: </span><?php echo $_product->getResource()->getAttribute("vid_masla")->getFrontend()->getValue($_product)  ?>;<?php endif; ?>
-                                        <?php if ($_product->getAttributeText('primenenie')) : ?><span><?php echo $this->__('Применение')?>: </span><?php echo $_product->getResource()->getAttribute("primenenie")->getFrontend()->getValue($_product)  ?>;<?php endif; ?>
-                                        <?php if ($_product->getAttributeText('type_engine')) : ?><span><?php echo $this->__('Тип двигателя')?>: </span><?php echo $_product->getResource()->getAttribute("type_engine")->getFrontend()->getValue($_product)  ?>;<?php endif; ?>
-                                        <?php if ($_product->getAttributeText('klassifikacia_iso_vg')) : ?><span><?php echo $this->__('Классификация ISO VG')?>: </span><?php echo $_product->getResource()->getAttribute("klassifikacia_iso_vg")->getFrontend()->getValue($_product)  ?>;<?php endif; ?>
-                                    </div>
+                                        <div class="short-description">
+                                            <?php $sdesc = $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                                            <?php
+                                            if (strlen($sdesc) > 155) :
+                                                echo (strip_tags(mb_substr($sdesc, 0, 130, 'UTF-8'))) . '...'; // sitemaster
+                                            else :
+                                                echo $sdesc;
+                                            endif;
+                                            ?>
+                                        </div>
+                                        <div class="attribute-collection">
+                                            <?php if ($_product->getAttributeText('brendi_v_kategorii')) : ?>
+                                                <span><?php echo $this->__('Бренд') ?>
+                                                : </span><?php echo $_product->getResource()->getAttribute("brendi_v_kategorii")->getFrontend()->getValue($_product) ?>;<?php endif; ?>
+                                            <?php if ($_product->getAttributeText('klassifikacia_sae')) : ?>
+                                                <span><?php echo $this->__('Классификация') ?>
+                                                : </span><?php echo $_product->getResource()->getAttribute("klassifikacia_sae")->getFrontend()->getValue($_product) ?>;<?php endif; ?>
+                                            <?php if ($_product->getAttributeText('vid_masla')) : ?>
+                                                <span><?php echo $this->__('Вид масла') ?>
+                                                : </span><?php echo $_product->getResource()->getAttribute("vid_masla")->getFrontend()->getValue($_product) ?>;<?php endif; ?>
+                                            <?php if ($_product->getAttributeText('primenenie')) : ?>
+                                                <span><?php echo $this->__('Применение') ?>
+                                                : </span><?php echo $_product->getResource()->getAttribute("primenenie")->getFrontend()->getValue($_product) ?>;<?php endif; ?>
+                                            <?php if ($_product->getAttributeText('type_engine')) : ?>
+                                                <span><?php echo $this->__('Тип двигателя') ?>
+                                                : </span><?php echo $_product->getResource()->getAttribute("type_engine")->getFrontend()->getValue($_product) ?>;<?php endif; ?>
+                                            <?php if ($_product->getAttributeText('klassifikacia_iso_vg')) : ?>
+                                                <span><?php echo $this->__('Классификация ISO VG') ?>
+                                                : </span><?php echo $_product->getResource()->getAttribute("klassifikacia_iso_vg")->getFrontend()->getValue($_product) ?>;<?php endif; ?>
+                                        </div>
                                     </div>
                                     <div class="btn-cart"></div>
                                     <ul class="add-to-links">
@@ -233,23 +248,24 @@ endif;
                         </div>
 
                         <div class="grid-catalog-content">
-                            <h5 class="product-name">
-                                <a title="<?php echo $this->htmlEscape($_product->getName()) ?>"
-                                   href="<?php echo $_product->getProductUrl() ?>">
-                                    <?php
-                                    if (strlen($_product->getName()) > 55) :
-                                        echo (strip_tags(mb_substr($_product->getName(), 0, 50, 'UTF-8'))) . '...'; // sitemaster
-                                    else :
-                                        echo $_product->getName();
-                                    endif;
-                                    ?>
-                                </a>
-                            </h5>
-                            <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
+                            <div class="fixed-grid-catalog-content">
+                                <h5 class="product-name">
+                                    <a title="<?php echo $this->htmlEscape($_product->getName()) ?>"
+                                       href="<?php echo $_product->getProductUrl() ?>">
+                                        <?php
+                                        if (strlen($_product->getName()) > 55) :
+                                            echo (strip_tags(mb_substr($_product->getName(), 0, 50, 'UTF-8'))) . '...'; // sitemaster
+                                        else :
+                                            echo $_product->getName();
+                                        endif;
+                                        ?>
+                                    </a>
+                                </h5>
+                                <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
 
-                            <div
-                                class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
-
+                                <div
+                                    class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
+                            </div>
                             <div class="ratings">
                                 <div class="price-box-bat">
                                     <div class="rating"><?php echo $this->getPriceHtml($_product, true) ?></div>

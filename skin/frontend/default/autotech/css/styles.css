@@ -8542,6 +8542,7 @@ and (orientation : landscape) {
 {min-height: 200px; background-color: #EBEBEB;}
 .catalog-block .block-content {padding: 20px}
 .grid-catalog-content {padding: 0px 5px;}
+.fixed-grid-catalog-content {min-height: 83px;}
 
 /*footer*/
 
