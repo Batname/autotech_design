@@ -114,12 +114,12 @@ $isLocationAsOneField = $this->helper('sitemaster_checkout')->isLocationAsOneFie
                                 <p class="help"><?php echo $this->getLocationHelp() ?>*</p>
                             </div>
                         <?php else: ?>
-                            <div class="" style="display: none">
+                            <div class="" style="">
                                 <!-- Default - ukraine -->
                                 <li class="fields">
                                     <div class="field">
                                         <div class="input-box">
-                                            <input type="text" placeholder="<?php echo $this->helper('checkout')->__('City') ?>*" name="user[address][city]" class="form-control input-text required-entry w-244" value=".<?php echo $this->htmlEscape($this->getCustomerCity()) ?>" />
+                                            <input type="text" placeholder="<?php echo $this->helper('checkout')->__('City') ?>*" name="user[address][city]" class="form-control input-text required-entry w-244" value="<?php echo $this->htmlEscape($this->getCustomerCity()) ?>" />
                                             <p class="help"></p>
                                         </div>
                                     </div>
@@ -133,7 +133,7 @@ $isLocationAsOneField = $this->helper('sitemaster_checkout')->isLocationAsOneFie
                                         <div class="field">
                                             <div class="input-box">
                                                 <?php $street = $this->getStreet(); ?>
-                                                <input type="text" placeholder="<?php echo $this->__('Street') ?>*" class="input-text required-entry<?php $showBuildRoomFields && print ' w-229' ?>" name="user[address][street][0]" value=".<?php echo $this->htmlEscape($street) ?>" />
+                                                <input type="text" placeholder="<?php echo $this->__('Street') ?>*" class="input-text required-entry<?php $showBuildRoomFields && print ' w-229' ?>" name="user[address][street][0]" value="<?php echo $this->htmlEscape($street) ?>" />
                                                 <p class="help"></p>
                                             </div>
                                         </div>

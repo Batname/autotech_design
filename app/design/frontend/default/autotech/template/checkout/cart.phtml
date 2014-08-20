@@ -33,18 +33,15 @@
  */
 ?>
 <div class="cart">
-    <div class="page-title title-buttons">
-        <h1><?php echo $this->__('Shopping Cart') ?></h1>
-        <?php /* if(!$this->hasError()): ?>
-        <ul class="checkout-types">
-        <?php foreach ($this->getMethods('top_methods') as $method): ?>
-            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-            <li><?php echo $methodHtml; ?></li>
-            <?php endif; ?>
-        <?php endforeach; ?>
-        </ul>
-        <?php endif; */ ?>
-    </div>
+    <ul class="breadcrumbs">
+        <li class="home">
+            <a href="<?php echo $this->getUrl('')?>" title="<?php echo $this->__('Home') ?>"><?php echo $this->__('Home') ?></a>
+        </li>
+        <li> <i class="fa fa-caret-right"></i> </li>
+        <li class="category32">
+            <strong><?php echo $this->__('Shopping Cart') ?></strong>
+        </li>
+    </ul>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
     <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">

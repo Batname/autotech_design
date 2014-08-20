@@ -112,7 +112,9 @@ Default layout, loads most of the pages
 
             <block type="page/html" name="jmtoolbar" as="jmtoolbar" template="page/html/jmtoolbar.phtml">
 				<block type="page/html_welcome" name="welcome" as="welcome"/>
-				<block type="page/template_links" name="top.links" as="topLinks"/>
+				<block type="page/template_links" name="top.links" as="topLinks">
+                    <block type="page/html_welcome" name="welcome" as="welcome"/>
+				</block>
                 <block type="page/switch" name="store_language" as="store_language" template="page/switch/flags.phtml"/>
 				<block type="directory/currency" name="custom_currency_selector" template="currency/currency.phtml"/>
             </block>

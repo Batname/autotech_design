@@ -81,7 +81,6 @@
 
 #oneclickorder-form-wrapper .comment-wrapper textarea {
     width: 90%;
-    max-width: 178px;
     height: 50px;
 }
 
@@ -94,6 +93,6 @@
     width: 195px;
 }
 
-#oneclickorder-form-wrapper .comment-toggle:before  { content: "Комментарий" ; padding: 20px; font-weight:bold; }
+#oneclickorder-form-wrapper .comment-toggle:before  { content: "Комментарий" ; padding: 20px;font-size: 101%; font-weight: bold; color: #3F3D3D; }
 
 #oneclickorder-form .form-list li .required {}

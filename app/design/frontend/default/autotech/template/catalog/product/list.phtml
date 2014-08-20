@@ -88,9 +88,10 @@ endif;
                                     <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>"
                                                                 title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a>
                                     </h2>
-
+                                    <div class="reviews-availability">
                                     <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
                                     <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
+                                    </div>
                                     <div class="price-and-compare">
                                     <?php echo $this->getPriceHtml($_product, true) ?>
                                     <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
@@ -140,11 +141,6 @@ endif;
                                                         class="button btn-cart"
                                                         onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
                                                     <span><?php echo $this->__('Add to Cart') ?></span>
-                                                </button>
-                                                <button type="button" title="<?php echo $this->__('Read more') ?>"
-                                                        class="button btn-read-more"
-                                                        onclick="setLocation('<?php echo $_product->getProductUrl() ?>')">
-                                                    <span><?php echo $this->__('Read more') ?></span>
                                                 </button>
                                             <?php else: ?>
                                                 <p class="availability out-of-stock">

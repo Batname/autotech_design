@@ -41,10 +41,16 @@ $baseconfig = Mage::helper("jmbasetheme")->getactiveprofile();
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div id="jm-wrapper">
 <!-- BEGIN: HEADER -->
-<div id="jm-header" class="wrap clearfix">
-    <?php echo $this->getChildHtml('header') ?>
+<div id="all-header" class="border-content">
+    <div id="jm-head" class="wrap clearfix">
+        <?php echo $this->getChildHtml('jmtoolbar') ?>
+    </div>
+    <div id="jm-header" class="wrap clearfix">
+        <?php echo $this->getChildHtml('header') ?>
+    </div>
 </div>
 <!-- END: HEADER -->
+
 <?php if ($baseconfig["urlfacebook"] || $baseconfig["urltwitter"] || $baseconfig["urlgoogleplus"] || $baseconfig["urlpinterest"] || $baseconfig["urltumblr"] || $baseconfig["urlskype"]): ?>
     <div class="sidebar-socials">
         <?php if ($baseconfig["urlfacebook"]): ?>
@@ -67,11 +73,6 @@ $baseconfig = Mage::helper("jmbasetheme")->getactiveprofile();
         <?php endif; ?>
     </div>
 <?php endif; ?>
-<!-- BEGIN: toolbar -->
-<div id="jm-head" class="wrap clearfix">
-    <?php echo $this->getChildHtml('jmtoolbar') ?>
-</div>
-<!-- END: toolbar -->
 
 <?php if ($this->getChildHtml('tops0')) : ?>
     <!-- TOP SPOTLIGHT -->

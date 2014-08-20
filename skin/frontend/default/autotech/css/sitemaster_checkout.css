@@ -1,5 +1,5 @@
 #jm-main .messages{
-display: block;
+    display: block;
 }
 
 .list-categories{
@@ -22,7 +22,7 @@ display: block;
 }
 
 #giftcard-form .registered-users .buttons-set .button {
-    margin: 2px;
+
 }
 
 #payment-form label {
@@ -44,7 +44,7 @@ display: block;
 }
 
 .product-name {
-    font-size: 16px;
+
 }
 
 .discount h2 {
@@ -121,6 +121,7 @@ ul.infos-menus li.current a {
     padding-bottom:15px;
     position:relative;
     zoom:1;
+    background: #EEE;
 }
 
 #checkout-block, .hr {
@@ -139,9 +140,11 @@ ul.infos-menus li.current a {
 }
 
 #checkout-block .tab-title {
-    font-size: 14px;
-    margin-bottom: 8px;
+    /*font-size: 14px;*/
+    /*margin-bottom: 8px;*/
     /*text-transform: uppercase;*/
+    color: #3F3D3D;
+    font-size: 101%;
 }
 
 #checkout-block .radio .field {
@@ -256,7 +259,7 @@ input.fake-title.input-loading {
 
 #checkout-block .tab-cont {
     position:relative;
-    margin-left: 10px;
+    margin-left: 13px;
     /*padding-top: 13px;*/
     /*width: 722px;*/
     z-index:1;
@@ -290,8 +293,8 @@ div.split-address textarea {
 }
 
 #checkout-block .tab-title {
-    font-size: 14px;
-    margin-bottom: 8px;
+    /*font-size: 14px;*/
+    /*margin-bottom: 8px;*/
     /*text-transform: uppercase;*/
 }
 
@@ -491,8 +494,8 @@ input.disabled { background:#f6f6f6 !important; color:#bbb !important }
     left: 25px;
 }
 #checkout-block .note {
-    font-size: 10px;
-    color:#666;
+    /*font-size: 10px;*/
+    color:#E31E24;
     text-align:right;
 }
 .process {
