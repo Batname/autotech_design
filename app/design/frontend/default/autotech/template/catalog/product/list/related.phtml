@@ -25,9 +25,10 @@
  */
 ?>
 <?php if($this->getItems()->getSize()): ?>
-<div class="content-upsell">
+<div class="content-upsell related-block">
     <div class="page-title">
         <h2><?php echo $this->__('Related Products') ?></h2>
+        <div class="toolbar-line"></div>
     </div>
     <div class="block-content">
         <p class="block-subtitle"><?php echo $this->__('Check items to add to the cart or') ?>&nbsp;<a href="#" onclick="selectAllRelated(this); return false;"><?php echo $this->__('select all') ?></a></p>

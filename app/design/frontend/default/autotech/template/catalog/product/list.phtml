@@ -89,8 +89,7 @@ endif;
                                                                 title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a>
                                     </h2>
 
-                                    <div
-                                        class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
+                                    <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
                                     <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
                                     <div class="price-and-compare">
                                     <?php echo $this->getPriceHtml($_product, true) ?>

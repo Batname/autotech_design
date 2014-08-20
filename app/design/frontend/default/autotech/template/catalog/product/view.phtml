@@ -78,7 +78,8 @@
             <div class="product-name">
                 <span itemprop="name"><h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1></span>
             </div>
-			<?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+            <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
+            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
             <div class="productquestions-summary"><?php // echo Mage::helper('productquestions')->getSummaryHtml()?></div>
 
             <a itemprop="url" href="<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>"></a>

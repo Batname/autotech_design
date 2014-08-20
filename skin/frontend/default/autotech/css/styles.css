@@ -436,7 +436,7 @@ input,select,textarea,button {
 
 input.input-text, select, textarea {
 	background: #fff;
-	border: 1px solid #ebebeb;
+	border: 1px solid #BDBDBD;
 	border-radius: 0;
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0
@@ -1340,7 +1340,7 @@ p.required {
 
 /* Data Table */
 .data-table {
-	border: 1px solid #ebebeb;
+	border: 1px solid #BDBDBD;
 	width: 100%
 }
 
@@ -1372,8 +1372,8 @@ p.required {
 
 .data-table tbody th,
 .data-table tbody td {
-	border-bottom: 1px solid #ebebeb;
-	border-right: 1px solid #ebebeb;
+	border-bottom: 1px solid #BDBDBD;
+	border-right: 1px solid #BDBDBD;
 	vertical-align: middle
 }
 
@@ -4331,9 +4331,9 @@ Linear
 .add-to-cart button.button {
 	clear: both;
 	float: left;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius:0;
 }
 
 .add-to-cart .paypal-logo {
@@ -4413,8 +4413,8 @@ Linear
 .product-collateral h2 {
 	color: #666;
 	font-size: 116.7%;
-	margin: 0 0 15px;
-	padding: 0
+	margin: 0 0 0;
+    padding-bottom: 5px;
 }
 
 .product-collateral .box-collateral {
@@ -4424,7 +4424,7 @@ Linear
 /* Product Images */
 .product-view .product-img-box {
 	float: left;
-	margin: 0 40px 0 0;
+	margin: 20px 30px 20px 20px;
 	width: 370px
 }
 
@@ -4605,9 +4605,9 @@ Linear
 /* Product Shop */
 .product-view .product-shop {
 	float: left;
-	padding: 60px 40px 0 0;
+	padding: 60px 30px 0 0;
 	text-align: left;
-	width: 320px
+	width: 320px;
 }
 
 .col1-layout .product-view .product-shop {
@@ -4622,10 +4622,10 @@ Linear
 
 
 .product-shop .product-name h1{
-	color: #555;
+	color: #E31E24;
 	font-size: 16px;
 	font-weight: normal;
-	margin: 0 0 4px 0;
+	margin: 0 0 0 0;
     font-weight: bold;
 }
 
@@ -4669,10 +4669,10 @@ Linear
 
 .product-view .product-shop .add-to-links {
 	font-size: 12px;
-	margin: 0 0 0 15px;
+	margin: 0 0 0 -61px;
 	position: relative;
 	text-align: right;
-	top: 57px
+	top: 43px
 }
 
 .product-view .product-shop .add-to-links li,
@@ -4931,7 +4931,7 @@ ul.ja-tab-navigator{
 }
 
 ul.ja-tab-navigator li{
-	background: #f5f5f5;
+	background: #D8D8D8;
     border-left: 1px solid #BDBDBD;
     border-top: 1px solid #BDBDBD;
     border-bottom: 1px solid #BDBDBD;
@@ -4966,7 +4966,7 @@ ul.ja-tab-navigator li.active{
 
 .ja-tab-content .box-collateral{
 	min-height: 100px;
-	padding: 40px
+	padding: 20px
 }
 
 ul.ja-tab-navigator li a{
@@ -5022,18 +5022,23 @@ ul.ja-tab-navigator li.active a{
 
 /* Block: Upsell */
 .box-up-sell{
-	border: 1px solid #e0e0e0;
+	border: 0 solid #e0e0e0;
 	float: right;
-	width: 74.7%
+	width: 73%;
+    margin-left: 20px;
 }
 
 .content-upsell{
 	overflow: hidden;
-	padding: 30px 20px
+	padding: 30px;
+    border: 1px solid #BDBDBD;
+    box-shadow: 0px 0px 0px 13px #EBEBEB inset, 0px 0px 0px 14px #BDBDBD inset;
+    min-height: 360px;
+
 }
 
 .product-view .box-up-sell h2 {
-	border-bottom: 1px solid #e0e0e0;
+	border-bottom: 0 solid #e0e0e0;
 	font-size: 16px;
 	margin: 0 0 20px 0;
 	padding: 0 0 10px 0;
@@ -5042,7 +5047,8 @@ ul.ja-tab-navigator li.active a{
 
 .product-view .box-up-sell .products-grid {
 	border: 0 none;
-	width: 100%
+	width: 100%;
+    padding-top: 10px;
 }
 
 .product-view .box-up-sell .products-grid td {
@@ -8603,3 +8609,49 @@ button.btn-read-more:hover,button.btn-read-more:focus {background-color:#3F3D3D;
 .catalog-product-view #jm-bots1 {margin-top: 0;}
 .related_upsell_products {margin-bottom: 20px;}
 .product-shop .price{font-size: 16px;}
+
+.product-shop .add-to-cart button.button {margin-top: -15px}
+.product-shop .oil-availability {font-weight: bold;}
+.product-shop .add-to-cart .qty-l {padding-left: 5px;}
+.box-collateral .short-description {padding-bottom: 15px;}
+#product-attribute-specs-table {margin-top: 5px;}
+.related_upsell_products .content-upsell {}
+.box-up-sell .toolbar-line {
+    height: 13px;
+    padding: 0px;
+    position: absolute;
+    width: 760px;
+    margin: -20px -17px;
+    background-color: #EEE;
+    border-top: 1px solid #BDBDBD;
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.content-upsell .page-title h2 {
+    margin: 0px 0px 20px;
+    text-transform: uppercase;
+    padding: 2px 0px 12px;
+    border-bottom: 0 solid #EBEBEB;
+}
+.content-upsell .page-title .toolbar-line {
+    height: 13px;
+    padding: 0px;
+    position: absolute;
+    width: 243px;
+    margin: -20px -17px;
+    background-color: #EEE;
+    border-top: 1px solid #BDBDBD;
+    border-bottom: 1px solid #BDBDBD;
+}
+
+ol#block-related li.item {
+    float: none;
+    height: 80px;
+}
+
+ol#block-related li.item .related-checkbox {
+    margin-right: -7px;
+    float: right;
+}
+
+.related_upsell_products .related-block {width: 209px;}
