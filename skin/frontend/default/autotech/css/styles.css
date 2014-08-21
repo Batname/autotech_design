@@ -8787,7 +8787,22 @@ ol#block-related li.item .related-checkbox {
 .customer-account-forgotpassword .not-breadcrumbs #jm-mainbody,
 .customer-account-index .not-breadcrumbs #jm-mainbody,
 .customer-account-logoutsuccess .not-breadcrumbs #jm-mainbody,
-.sitemaster-checkout-checkout-success .not-breadcrumbs #jm-mainbody
+.sitemaster-checkout-checkout-success .not-breadcrumbs #jm-mainbody,
+.customer-account-edit .not-breadcrumbs #jm-mainbody,
+.customer-address-index .not-breadcrumbs #jm-mainbody,
+.customer-address-form .not-breadcrumbs #jm-mainbody,
+.sales-order-history .not-breadcrumbs #jm-mainbody,
+.sales-order-view .not-breadcrumbs #jm-mainbody,
+.sales-billing-agreement-index .not-breadcrumbs #jm-mainbody,
+.sales-recurring-profile-index .not-breadcrumbs #jm-mainbody,
+.review-customer-index .not-breadcrumbs #jm-mainbody,
+.tag-customer-index .not-breadcrumbs #jm-mainbody,
+.oauth-customer-token-index .not-breadcrumbs #jm-mainbody,
+.newsletter-manage-index .not-breadcrumbs #jm-mainbody,
+.downloadable-customer-products .not-breadcrumbs #jm-mainbody,
+.enterprise-customerbalance-info-index .not-breadcrumbs #jm-mainbody,
+.enterprise-giftcardaccount-customer-index .not-breadcrumbs #jm-mainbody,
+.enterprise-invitation-index-index .not-breadcrumbs #jm-mainbody
 {  padding-bottom: 0;padding-top: 15px;}
 
 .customer-account-index .block-reorder {margin-bottom: 0;}
