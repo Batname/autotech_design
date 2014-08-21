@@ -18,6 +18,8 @@ $isLocationAsOneField = $this->helper('sitemaster_checkout')->isLocationAsOneFie
                                    class="form-control input-text required-entry<?php echo $isLoggedIn ? ' disabled' : '' ?>"
                                    name="user[name]"
                                    value="<?php echo $this->htmlEscape($this->getCustomerName()) ?>" <?php if ($isLoggedIn): ?> readonly="readonly"<?php endif ?> />
+                            <!-- test name -->
+                            <!-- -->
                         </div>
                         <div class="field name-lastname">
                             <input type="text" placeholder="<?php echo $this->__('Telephone in format 067 000 000 00') ?>*"

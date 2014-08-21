@@ -8786,7 +8786,8 @@ ol#block-related li.item .related-checkbox {
 .customer-account-create .not-breadcrumbs #jm-mainbody,
 .customer-account-forgotpassword .not-breadcrumbs #jm-mainbody,
 .customer-account-index .not-breadcrumbs #jm-mainbody,
-.customer-account-logoutsuccess .not-breadcrumbs #jm-mainbody
+.customer-account-logoutsuccess .not-breadcrumbs #jm-mainbody,
+.sitemaster-checkout-checkout-success .not-breadcrumbs #jm-mainbody
 {  padding-bottom: 0;padding-top: 15px;}
 
 .customer-account-index .block-reorder {margin-bottom: 0;}
