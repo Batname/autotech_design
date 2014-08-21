@@ -35,6 +35,7 @@
 <div class="page-title">
     <h1><?php echo $this->getTitle() ?></h1>
 </div>
+<div class="static-border">
 <?php endif; ?>
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <form action="<?php echo $this->getSaveUrl() ?>" method="post" id="form-validate">
@@ -157,6 +158,7 @@
         <button type="submit" title="<?php echo $this->__('Save Address') ?>" class="button"><span><span><?php echo $this->__('Save Address') ?></span></span></button>
     </div>
 </form>
+</div>
 <script type="text/javascript">
 //<![CDATA[
     var dataForm = new VarienForm('form-validate', true);
