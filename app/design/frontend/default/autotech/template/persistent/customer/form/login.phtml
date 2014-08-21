@@ -36,6 +36,7 @@
     <div class="page-title">
         <h1><?php echo $this->__('Login or Create an Account') ?></h1>
     </div>
+    <div class="static-border">
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
         <div class="col2-set">
@@ -82,6 +83,7 @@
             <input name="context" type="hidden" value="checkout" />
         <?php endif; ?>
     </form>
+    </div>
     <script type="text/javascript">
     //<![CDATA[
         var dataForm = new VarienForm('login-form', true);

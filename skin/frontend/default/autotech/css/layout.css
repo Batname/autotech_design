@@ -35,7 +35,7 @@
 /*main content---*/
 #jm-main { clear: both; display: block; float: right; width: 66.6%; }
 
-#jm-current-content { min-height: 200px; background: #fff; }
+#jm-current-content { min-height: 194px; background: #fff; }
 
 .checkout-multishipping-success #jm-current-content,
 .checkout-multishipping-overview #jm-current-content,

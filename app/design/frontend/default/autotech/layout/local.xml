@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
+    <sales_order_history>
+        <reference name="my.account.wrapper">
+            <action method="unsetChild">
+                <block>customer.account.link.back</block>
+            </action>
+        </reference>
+    </sales_order_history>
 
 
 </layout>

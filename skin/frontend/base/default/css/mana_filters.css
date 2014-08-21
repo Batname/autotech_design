@@ -26,7 +26,13 @@ font-size: 101%;
     padding: 0 0 10px;
 }
 
-.mb-mana-catalog-leftnav li {
+.mb-mana-catalogsearch-leftnav .block-title {
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.mb-mana-catalog-leftnav li,
+.mb-mana-catalogsearch-leftnav li
+{
 color: #646464;
 font-size: 100%;
 font-family: Arial;

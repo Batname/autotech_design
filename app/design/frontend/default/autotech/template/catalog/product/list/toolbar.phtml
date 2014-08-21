@@ -37,7 +37,8 @@
         <?php if ($this->isExpanded()): ?>
         <?php if ($this->isEnabledViewSwitcher()): ?>
         <div class="category-name">
-            <label><?php echo Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName() ?></label></div>
+            <?php $CategoryName = (Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName() == "Default Category" ? $this->__('Search Product Instantly') : Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName()) ?>
+            <label><?php echo $CategoryName ?></label></div>
         <div class="toolbar-right">
             <div class="view-mode">
                 <?php $_modes = $this->getModes(); ?>

@@ -65,7 +65,7 @@ ul.megamenu ul ul {
 /* CHILD CONTENT
 -----------------------------------*/
 .jm-megamenu .childcontent {
-	z-index: 999
+	z-index: 20100;
 }
 
 .jm-megamenu .childcontent .block {
@@ -310,8 +310,8 @@ ul.megamenu ul ul {
 	color: #3f3d3d;
 	display: block;
 	font-size: 101%; /* sitemaster */
-	height: 44px;
-	line-height: 47px;
+	height: 39px;
+	line-height: 42px;
 	padding: 0 19px;
 	text-decoration: none;
 	text-transform: uppercase
