@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Magestore_Instantsearch>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Magestore_Instantsearch>
     </modules>

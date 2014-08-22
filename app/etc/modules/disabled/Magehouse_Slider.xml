@@ -2,7 +2,7 @@
 <config>
   <modules>
       <Magehouse_Slider>
-          <active>true</active>
+          <active>false</active>
           <codePool>community</codePool>
           <version>0.1.0</version>
       </Magehouse_Slider>

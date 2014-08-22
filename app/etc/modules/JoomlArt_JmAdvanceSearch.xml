@@ -2,7 +2,7 @@
 <config>
     <modules>
         <JoomlArt_JmAdvanceSearch>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </JoomlArt_JmAdvanceSearch>
     </modules>

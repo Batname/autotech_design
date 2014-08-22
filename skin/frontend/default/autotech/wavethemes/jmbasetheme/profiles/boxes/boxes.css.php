@@ -158,7 +158,7 @@ ul.ul-dropdown li a:hover img,
 	 color: <?php echo $baseconfig["topcartcolor"] ?>;
 }
 
-.form-search button.button,
+
 .bkg-top-cart,
 .icon-label,
 .hot-label.icon-label,
