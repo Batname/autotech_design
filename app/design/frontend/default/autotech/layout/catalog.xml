@@ -196,6 +196,8 @@ Product view
         <reference name="content">
             <block type="catalog/product_view" name="product.info" template="catalog/product/view.phtml">
                 <block type="core/template" after="-" name="static.product_block" as="static.product_block" template="catalog/staticblocks/product_block.phtml"/>
+                <block type="core/template" after="-" name="static.product_block1" as="static.product_block1" template="catalog/staticblocks/product_block1.phtml"/>
+
                 <!--
                 <action method="addReviewSummaryTemplate"><type>default</type><template>review/helper/summary.phtml</template></action>
                 <action method="addReviewSummaryTemplate"><type>short</type><template>review/helper/summary_short.phtml</template></action>

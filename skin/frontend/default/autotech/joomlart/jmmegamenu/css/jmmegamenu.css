@@ -264,7 +264,7 @@ ul.megamenu ul ul {
 }
 
 .jm-megamenu ul.level0 li.active a.mega{
-	background: #0086af;
+	/*background: #0086af;*/
 	color: #fff
 }
 

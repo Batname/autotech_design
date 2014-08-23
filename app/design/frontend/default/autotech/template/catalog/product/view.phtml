@@ -90,6 +90,7 @@
 			</div>
 
                 <!-- My module -->
+                <?php if (false):?>
              <?php $item_qlt = (Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product)->getQty()); ?>
                 <?php if ( $item_qlt > 5 && $_product->isAvailable() == 1): ?>
                     <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span itemprop="availability" href="http://schema.org/InStock"><?php echo $this->__('In stock') ?></span></p>
@@ -98,7 +99,7 @@
                     <?php else: ?>
                     <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
                 <?php endif; ?>
-
+               <?php endif; ?>
             </div>
 
 
@@ -150,7 +151,7 @@
 			?>
 
 			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('addshare')->toHtml() ?>
-
+            <?php echo $this->getChildHtml('static.product_block1') ?>
 		</div>
              <?php echo $this->getChildHtml('static.product_block') ?>
          </div>
