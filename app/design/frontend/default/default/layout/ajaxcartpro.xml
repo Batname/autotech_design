@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
 	<default>
-		<reference name="head">			
-			
+		<reference name="head">
+
 			<action method="addJs"><script>aw_ajaxcartpro/ajaxcartpro-1.4.6.js</script></action>
-			<action method="addJs"><script>aw_ajaxcartpro/ajaxcartpro-community-1.4.6.js</script></action>			
+			<action method="addJs"><script>aw_ajaxcartpro/ajaxcartpro-community-1.4.6.js</script></action>
 			<action method="addCss"><stylesheet>ajaxcartpro/css/styles.css</stylesheet></action>
 			<block type="core/template" template="ajaxcartpro/init.phtml" name="aw.ajaxcartpro.init" />
 		</reference>
@@ -13,9 +13,9 @@
 			<block type="core/template" template="ajaxcartpro/confirm.phtml" name="aw.ajaxcartpro.confirm" />
 		</reference>
 	</default>
-	
-	
-	
+
+
+
 	<ajaxcartpro_cart>
         <remove name="right"/>
         <remove name="left"/>
@@ -49,6 +49,6 @@
             </block>
         </reference>
     </ajaxcartpro_cart>
-	
-	
+
+
 </layout>

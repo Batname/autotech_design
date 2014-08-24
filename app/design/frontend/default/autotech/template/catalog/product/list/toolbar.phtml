@@ -38,7 +38,14 @@
         <?php if ($this->isEnabledViewSwitcher()): ?>
         <div class="category-name">
             <?php $CategoryName = (Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName() == "Default Category" ? $this->__('Search Product Instantly') : Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName()) ?>
-            <label><?php echo $CategoryName ?></label></div>
+            <label>
+                <?php
+                if (strlen($CategoryName) > 30) :
+                    echo (strip_tags(mb_substr($CategoryName, 0, 15, 'UTF-8'))) . '...'; // sitemaster
+                else :
+                    echo $CategoryName;
+                endif;
+                ?></label></div>
         <div class="toolbar-right">
             <div class="view-mode">
                 <?php $_modes = $this->getModes(); ?>
