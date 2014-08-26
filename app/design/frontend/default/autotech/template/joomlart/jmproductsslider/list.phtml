@@ -8,7 +8,10 @@ if ($configs['autorun']) {
     $configs['autorun'] = $configs['delaytime'];
 }
 
-
+$configs['width'] = 170;
+$configs['height'] =170;
+$configs['itemwidth'] = 172;
+$configs['itemheight'] = 206;
 ?>
 
 <?php if ($_collectionSize) { ?>
@@ -81,12 +84,13 @@ if ($configs['autorun']) {
                     <?php foreach ($listall->getItems() as $_product) { ?>
                         <li class="jm-slider-li"
                             style="float: left;width:<?php echo $configs['itemwidth']; ?>px;height:<?php echo $configs['itemheight']; ?>px">
+                            <script>console.log(<?php  echo ($configs['itemheight']); ?>)</script>
                             <div class="item-slider">
                                 <div class="product-image">
                                     <a title="<?php echo $this->htmlEscape($_product->getName()) ?>"
                                        href="<?php echo $_product->getProductUrl() ?>">
                                         <img
-                                            src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->keepAspectRatio(TRUE)->resize($configs['width']=170, $configs['height']=170)->setWatermarkSize('30x10'); ?>"
+                                            src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->keepAspectRatio(TRUE)->resize($configs['width'], $configs['height'])->setWatermarkSize('30x10'); ?>"
                                             alt="<?php echo $this->htmlEscape($_product->getName()) ?>"/>
                                     </a>
                                 </div>

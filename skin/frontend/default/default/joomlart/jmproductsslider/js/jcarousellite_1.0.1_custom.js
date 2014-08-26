@@ -256,35 +256,35 @@ $.fn.jCarouselLite = function(o) {
 
                        liindex = $(".jm-tabs-title li").index($(this).parents("li"));
                        parentdiv = $(".jm-tab-content").eq(liindex);
-                       div = parentdiv.find("ul").parent(); 
-                      
+                       div = parentdiv.find("ul").parent();
+
                        ul = $("ul", div), li = $("li", ul);
                        liSize = o.vertical ? height(li) : width(li);   // Full li size(incl margin)-Used for animation
                        if(liSize){
 
-                            li.css({"width":"","height":""});  
+                            li.css({"width":"","height":""});
                             ulSize = liSize * itemLength;                   // size of full ul(total length, not just for the visible items)
                             divSize = liSize * v;                           // size of entire div(total length for just the visible items)
-                             
+
                             li.css({width: li.width(), height: li.height()});
                             ul.css(sizeCss, ulSize+"px").css(animCss, -(curr*liSize));
-                            div.css(sizeCss, divSize+"px"); 
-                       }       
+                            div.css(sizeCss, divSize+"px");
+                       }
                 });
             }
         }
-        
+
         jQuery(window).resize (function() {
-                                        
-            li.css({"width":"","height":""});                           
+
+            li.css({"width":"","height":""});
             liSize = o.vertical ? height(li) : width(li);   // Full li size(incl margin)-Used for animation
             ulSize = liSize * itemLength;                   // size of full ul(total length, not just for the visible items)
             divSize = liSize * v;                           // size of entire div(total length for just the visible items)
-             
+
             li.css({width: li.width(), height: li.height()});
             ul.css(sizeCss, ulSize+"px").css(animCss, -(curr*liSize));
-    
-            div.css(sizeCss, divSize+"px");                             
+
+            div.css(sizeCss, divSize+"px");
         });
         addclasstolis();
 
@@ -326,7 +326,7 @@ $.fn.jCarouselLite = function(o) {
              li.eq(curr+realvisible-1).addClass("lastitem");
              li.eq(curr+realvisible).addClass("afterlastitem");
 
-        } 
+        }
         function go(to) {
             if(!running) {
 
@@ -385,5 +385,6 @@ function width(el) {
 function height(el) {
     return el[0].offsetHeight + css(el, 'marginTop') + css(el, 'marginBottom');
 };
+
 
 })(jQuery);

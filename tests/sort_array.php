@@ -22,4 +22,3 @@ $orderby = "age"; //change this to whatever key you want from the array
 array_multisort($sortArray[$orderby],SORT_ASC,$people);
 
 var_dump($people);
-?> 

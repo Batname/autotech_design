@@ -230,7 +230,7 @@ $.fn.jCarouselLite = function(o) {
 
         var running = false, animCss=o.vertical?"top":"left", sizeCss=o.vertical?"height":"width";
         var div = $(this), ul = $("ul", div), tLi = $("li", ul), tl = tLi.size(), v = o.visible;
-		
+
         if(o.circular) {
             ul.prepend(tLi.slice(tl-v-1+1).clone())
               .append(tLi.slice(0,v).clone());
@@ -247,7 +247,7 @@ $.fn.jCarouselLite = function(o) {
         var liSize = o.vertical ? height(li) : width(li);   // Full li size(incl margin)-Used for animation
         var ulSize = liSize * itemLength;                   // size of full ul(total length, not just for the visible items)
         var divSize = liSize * v;                           // size of entire div(total length for just the visible items)
-		
+
         li.css({width: li.width(), height: li.height()});
         ul.css(sizeCss, ulSize+"px").css(animCss, -(curr*liSize));
 
@@ -259,7 +259,7 @@ $.fn.jCarouselLite = function(o) {
 					timedelay= new Date();
 					pre = setInterval(function() {
 						predelay= new Date();
-						
+
 						if (predelay.getSeconds() - timedelay.getSeconds() > 5) {
 							clearInterval(pre);
 							 if(o.auto)
@@ -283,9 +283,9 @@ $.fn.jCarouselLite = function(o) {
 						timeout = setInterval(function() {
 						go(curr - o.scroll);
 					}, o.auto + o.speed);
-				 }, function () {				 	
+				 }, function () {
 					 	clearInterval(timeout);
-						
+
 						if (o.auto > 0) {
 						o.scroll = 1;
 							timeout = setInterval(function() {
@@ -302,7 +302,7 @@ $.fn.jCarouselLite = function(o) {
 					timedelay= new Date();
 					pre = setInterval(function() {
 						predelay= new Date();
-						
+
 						if (predelay.getSeconds() - timedelay.getSeconds() > 6) {
 							clearInterval(pre);
 							 if(o.auto)
@@ -329,18 +329,18 @@ $.fn.jCarouselLite = function(o) {
 					}, o.auto + o.speed);
 				 }, function () {
 					 	clearInterval(timeout);
-						
+
 						if (o.auto > 0) {
-					 	o.scroll = 1;				 	
+					 	o.scroll = 1;
 							timeout = setInterval(function() {
 								go(curr + o.scroll);
 							}, o.auto + o.speed);
 						}
 				 });
         	}
-			 
+
 		}
-        
+
         if(o.btnGo)
             $.each(o.btnGo, function(i, val) {
                 $(val).click(function() {
@@ -352,18 +352,18 @@ $.fn.jCarouselLite = function(o) {
             div.mousewheel(function(e, d) {
                 return d>0 ? go(curr-o.scroll) : go(curr+o.scroll);
             });
-		
-		
+
+
 		// ++ modify 25/09/2009
         // fix error autorun when mouse over(out) on image in which auto=0
         if(o.auto){
             timeout = setInterval(function() {
                 go(curr + o.scroll);
             }, o.auto + o.speed);
-            
+
             $(this).find('li').hover(
                 function () {
-                    clearInterval(timeout);    
+                    clearInterval(timeout);
                 },
                 function () {
                     o.scroll = 1;
@@ -373,24 +373,24 @@ $.fn.jCarouselLite = function(o) {
                     }, o.auto + o.speed);
                 }
             );
-        
+
         }else{
             $(this).find('li').hover(
                 function () {
-                    clearInterval(timeout);    
+                    clearInterval(timeout);
                 },
                 function () {
-                    clearInterval(timeout); 
+                    clearInterval(timeout);
                 }
             );
-        }    
+        }
         // -- modify 25/09/2009
-        
+
         function vis() {
             return li.slice(curr).slice(0,v);
-        };		
-		
-		
+        };
+
+
         function go(to) {
             if(!running) {
 
