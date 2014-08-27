@@ -8457,6 +8457,11 @@ and (orientation : landscape) {
     border-radius: 0 0 0 0;
     height: 32px;
 }
+
+.form-search button.button:hover, .form-search button.button:focus {
+    background: #3f3d3d url(../wavethemes/jmbasetheme/profiles/boxes/images/default/search-icon.png) 50% no-repeat;
+}
+
 .subscribe-button {
     height: 32px;
     background: #E31E24;
@@ -8868,6 +8873,8 @@ ol#block-related li.item .related-checkbox {
 
 #checkout-block .fieldset
 {width: 92.2%;}
+
+#payment_form_liqpay {width: 400px;}
 
 /*------------------------------------------------static pages----------------------------------------------------*/
 
