@@ -397,7 +397,7 @@
 "Sign Up for Newsletter","Подписаться на рассылку"
 "Skipping import row, required field ""%s"" is not defined.","Пропуск строки, не определено обязательное поле ""%s""."
 "Skipping import row, website ""%s"" field does not exist.","Пропуск строки, не определено поле для сайта ""%s""."
-"State/Province","Штат/Провинция"
+"State/Province","Область"
 "Status","Статус"
 "Store","Магазин"
 "Store View","Представление магазина"

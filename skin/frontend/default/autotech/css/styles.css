@@ -8761,6 +8761,10 @@ border: 1px solid #BDBDBD !important;
     margin-bottom: -10px;
 }
 
+.category-products #products-list .product-name a {
+    font-weight: bold;
+}
+
 .f-fix .list-content {padding: 8px 20px;}
 .list-content .old-price,.list-content .special-price {display: inline;padding-right: 10px;}
 .list-content .link-compare {position: absolute;display: inline-block;font-size: 12px;font-weight: normal !important;text-transform: uppercase;padding: 6px 0;}

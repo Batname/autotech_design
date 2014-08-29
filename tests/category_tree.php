@@ -5,6 +5,11 @@ Mage::app(1);
 
 $rootCatId = Mage::app()->getStore()->getRootCategoryId();
 
+/**
+ * @param $parentId
+ * @param $isChild
+ * @return string
+ */
 function getTreeCategories($parentId, $isChild){
     $allCats = Mage::getModel('catalog/category')
         ->getCollection()
