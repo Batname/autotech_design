@@ -2,7 +2,7 @@
 <config>
     <modules>
         <AW_All>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </AW_All>
     </modules>

@@ -155,7 +155,7 @@ Growler = (function(){
 		}
 		,warn: function(msg, options){
 			return specialNotice(this.growler, msg, options, "Пожалуйста, подождите...", "#eee", "#3F3D3D",
-                "url('http://localhost/autotech.ua/skin/frontend/default/autotech/images/sitemaster/loader.gif')",
+                "url('http://autotech.ua/skin/frontend/default/autotech/images/sitemaster/loader.gif')",
                 "no-repeat, repeat-x",
                 "50% 70%, 0px 0px"
             );
