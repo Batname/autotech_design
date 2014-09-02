@@ -98,7 +98,7 @@
 						}
 				?> 
 						<li class="item <?php if ($j==$_rowCount) : echo "item-row-last"; endif; ?> <?php if(($i-1)%$config['perrow']==0): ?> first<?php elseif($i%$config['perrow']==0): ?> last<?php endif; ?>" <?php echo $width;?>>
-							<div class="inner">							
+							<div class="inner">
 								<div class="product-image">
 									<a title="<?php echo $this->htmlEscape($_product->getName()) ?>" href="<?php echo $_product->getProductUrl() ?>">
 										<img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize($thumbnailw, $thumbnailh)->setWatermarkSize('30x10'); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>"/>

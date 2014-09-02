@@ -39,27 +39,7 @@
         <!-- END: 2-COL SITE SEARCH & CONTACTS -->
 
         <!-- BEGIN: MY CART-->
-        <div id="jm-mycart" class="has-toggle">
-            <div class="jmajmxloading">&nbsp;</div>
-            <div class="btn-toggle mycart-toggle">
-                <?php if(Mage::getSingleton('checkout/session')->getQuote()->getSubtotal() > 0 || Mage::getSingleton('checkout/session')->getQuote()->getSubtotal() > 1 ) { ?>
-                    <i class="fa fa-shopping-cart"></i>
-                    <a class="ico-shopping-cart" href="<?php echo Mage::getUrl("checkout/cart") ?>">
-                        <span><?php echo $this->__("My Cart 1") ?></span>
-                        <strong><?php echo Mage::getSingleton('checkout/session')->getQuote()->getItemsSummaryQty(); ?><?php echo $this->__(" items") ?></strong>
-                    </a>
-                <?php	} else { ?>
-                    <i class="fa fa-shopping-cart"></i>
-                    <a class="ico-shopping-cart" href="<?php echo Mage::getUrl("checkout/cart") ?>">
-                        <span><?php echo $this->__("My Cart 1") ?></span>
-                        <strong><?php echo Mage::getSingleton('checkout/session')->getQuote()->getItemsSummaryQty(); ?><?php echo $this->__(" item") ?></strong>
-                    </a>
-                <?php	} ?>
-            </div>
-            <div class="inner-toggle">
-                <?php echo $this->getChildHtml('mycart') ?>
-            </div>
-        </div>
+        <?php echo $this->getChildHtml('global_cart') ?>
         <!-- END: MY CART -->
 
 

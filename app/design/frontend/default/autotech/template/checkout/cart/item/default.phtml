@@ -37,6 +37,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
             <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->escapeHtml($this->getProductName()) ?></a>
             <?php $custom_attribute = Mage::getModel('catalog/product')->load($_item->getProductId());?>
             <?php if ($custom_attribute->getAttributeText('emkost')) : ?><div class="oil-availability"><?php echo $this->__('Capacity') . " " . $custom_attribute->getAttributeText('emkost') . " " . $this->__('l.') ?></div><?php endif; ?>
+            <?php if ($custom_attribute->getAttributeText('custom_weight')) : ?><div class="oil-availability"><?php echo $this->__('Weight') . ": " . $custom_attribute->getAttributeText('custom_weight') . " " . $this->__('kg.') ?></div><?php endif; ?>
 
         <?php else: ?>
             <?php echo $this->escapeHtml($this->getProductName()) ?>

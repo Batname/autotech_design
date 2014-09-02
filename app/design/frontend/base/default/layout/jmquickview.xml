@@ -270,8 +270,8 @@
 	   </reference>
    </jmquickview_links_index>
    <jmquickview_links_updatecart>
-        <reference name="root">   
-          <action method="setTemplate"><template>page/jmquickview.phtml</template></action>   
+        <reference name="root">
+          <action method="setTemplate"><template>page/jmquickview.phtml</template></action>
        </reference>
 	    <reference name="content">
 	       <block type="checkout/cart_sidebar" name="cart_sidebar" template="jmquickview/cart/sidebar.phtml" before="-">
@@ -282,7 +282,7 @@
                     <label>Shopping Cart Sidebar Extra Actions</label>
                 </block>
             </block>
-	   </reference> 
+	   </reference>
     </jmquickview_links_updatecart>
    
 </layout>   

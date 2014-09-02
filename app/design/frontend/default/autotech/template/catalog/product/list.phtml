@@ -89,8 +89,10 @@ endif;
                                                                 title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a>
                                     </h2>
                                     <div class="reviews-availability">
-                                    <div class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
-                                    <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
+                                        <div class="oil-availability">
+                                            <?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?>
+                                            <?php if ($_product->getAttributeText('custom_weight')) : ?><?php echo $this->__('Weight') . ": " . $_product->getAttributeText('custom_weight') . " " . $this->__('kg.') ?><?php endif; ?>
+                                        </div>                                    <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
                                     </div>
                                     <div class="price-and-compare">
                                     <?php echo $this->getPriceHtml($_product, true) ?>
@@ -146,6 +148,9 @@ endif;
                                                 <a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>"
                                                    class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
                                             </li>
+                                        <?php endif; ?>
+                                        <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                                            <li><a href="<?php echo $_compareUrl ?>" class="link-compare"></a></li>
                                         <?php endif; ?>
 
 
@@ -204,7 +209,7 @@ endif;
 
                             <!-- don't visible parameters -->
 
-                            <div class="actions" style="display: none">
+                            <div class="actions" style="">
                                 <?php if ($_product->isSaleable()) { ?>
                                     <button class="form-button btn-cart"
                                             onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
@@ -252,8 +257,10 @@ endif;
                                 </h5>
                                 <?php echo $this->getReviewsSummaryHtml($_product, true, true) ?>
 
-                                <div
-                                    class="oil-availability"><?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?></div>
+                                <div class="oil-availability">
+                                    <?php if ($_product->getAttributeText('emkost')) : ?><?php echo $this->__('Capacity') . " " . $_product->getAttributeText('emkost') . " " . $this->__('l.') ?><?php endif; ?>
+                                    <?php if ($_product->getAttributeText('custom_weight')) : ?><?php echo $this->__('Weight') . ": " . $_product->getAttributeText('custom_weight') . " " . $this->__('kg.') ?><?php endif; ?>
+                                </div>
                             </div>
                             <div class="ratings">
                                 <div class="price-box-bat">

@@ -373,9 +373,10 @@
 "IBAN","ЕДРПО"
 "Credit card's data input is making on the site's purchasing system. You will be redirected on the payment's page after confirmation of your order on the next step.","Ввод данных пластиковой карты происходит на сайте платежной системы. Вы будете перенаправлены на страницу оплаты после подтверждения своего заказа на следующем шаге."
 "Visa / MasterCard credit cards payment effected through the LiqPay payment system","Оплата пластиковыми картами Visa / MasterCard производится через платежную систему LiqPay."
-"",""
-"",""
-"",""
+"Continue shopping","Продолжить"
+"Go to Checkout","В Корзину"
+"%s was added into cart.","%s добавлен в Вашу корзину."
+"Item was removed.","Товар удален из корзины"
 "",""
 "",""
 

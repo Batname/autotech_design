@@ -15,25 +15,26 @@
     z-index:20000;
     }
 #m-wait .loader {
-    position:fixed;
-    top:45%;
-    left:50%;
-    width:120px;
-    margin-left: -120px;
-    padding:15px 60px;
-    background:#eee;
-    border:1px solid #BDBDBD;
-    color:#3F3D3D;
-    font-weight:bold;
-    text-align:center;
-    z-index:20050;
+    position: fixed;
+    color: #3F3D3D;
+    text-align: center;
+    z-index: 20050;
+    top: 45%;
+    box-sizing: content-box;
+    font-weight: bold;
+    border: 1px solid #BDBDBD;
+    background: none repeat scroll 0% 0% #EEE;
+    margin-left: -129px;
+    left: 50%;
+    padding: 15px 0px;
+    min-width: 254px;
+    min-height: 98px;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
-    box-sizing: content-box;
     -ms-box-sizing: content-box;
     }
 
-#m-wait .loader {  }
+#m-wait .loader img { margin-top: 20px; }
 .m-popup {
     position: absolute;
     background: white;

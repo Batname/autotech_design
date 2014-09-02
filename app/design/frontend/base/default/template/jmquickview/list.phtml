@@ -126,8 +126,8 @@
         <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])
 		     jQuery.noConflict();
 			 jQuery(document).ready(function($){
-			 
-			       //onComplete loading the shopping cart 
+
+			       //onComplete loading the shopping cart
 					function addComplete(){
 						var urlcart = false;
 						$(".btn-remove2").bind("click",function(e){
@@ -137,11 +137,11 @@
 									newtag = $("</a>");
 									newtag.attr("href",newhref)
 									$.colorbox({href:newhref,onComplete:function(){
-										 addComplete();  
+										 addComplete();
 									}});
-									
+
 						});
-						
+
 						$(".btn-update,.btn-empty").bind("click",function(e){
 							   e.preventDefault();
 							   if(!urlcart) {
@@ -152,7 +152,7 @@
 							   datacart = datacart + "&update_cart_action=" + $(this).attr("value");
 							   urlcart = urlcart+"?"+datacart
 							   $.colorbox({href:urlcart,onComplete:function(){
-										 addComplete();  
+										 addComplete();
 							   }});
 						});
 						$.post("jmquickview/links/index",function(data){
@@ -161,9 +161,9 @@
 										    if($(".block-cart")) $(".block-cart").html(datacart);
 										  })
 						});
-						
+
 					}
-					
+
 					//Examples of how to assign the ColorBox event to elements
 					$("a[rel='quickviewbox']").colorbox({current: "Product {current} of {total}",onComplete:function(){
 						  $("a[rel='ja-colorbox']").colorbox();
@@ -189,10 +189,10 @@
 							  })
 						  }});
 					}});
-					
-			}); 
-		
-		
+
+			});
+
+
 		</script>
     <?php endif; ?>
 
