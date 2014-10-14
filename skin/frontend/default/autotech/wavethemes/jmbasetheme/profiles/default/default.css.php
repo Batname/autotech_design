@@ -7,6 +7,8 @@
 	header("Content-type: text/css; charset: UTF-8");
 ?>
 
+
+
 /* Base settings */
 body#bd {
 	background-image:url("images/<?php echo $baseconfig["bgimage"]; ?>");

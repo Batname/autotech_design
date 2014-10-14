@@ -46,7 +46,6 @@
             <block type="sitemaster_checkout/newsletter" name="sitemaster_checkout.newsletter" template="sitemaster/checkout/newsletter.phtml" after="checkout.onepage.agreements" />
             <block type="checkout/agreements" name="checkout.onepage.agreements" as="agreements" template="sitemaster/checkout/agreements.phtml" before="checkout.cart.methods.multishipping" />
             <block type="core/template" name="sitemaster_checkout.place_order" template="sitemaster/checkout/link.phtml" after="checkout.onepage.agreements" />
-
         </reference>
     </checkout_cart_index>
 
@@ -62,6 +61,9 @@
     </sitemaster_checkout_update>
 
     <sitemaster_checkout_checkout_success>
+        <reference name="head">
+            <action method="setData" translate="title"><key>title</key><value>Autotech.ua: Спасибо за покупку!</value></action>
+        </reference>
         <update handle="checkout_onepage_success" />
     </sitemaster_checkout_checkout_success>
 

@@ -375,7 +375,7 @@ div.split-address textarea {
     font-weight: normal;
     color:#000;
 }
-.loading{background:url(../images/sitemaster/loader.gif) no-repeat 50% 50% !important}
+.loading{background:url(../images/sitemaster/loader.gif) no-repeat 50% 30% !important}
 .shipping-methods {min-height:80px; max-height:150px; overflow:auto}
 .input-loading { background:url(../images/sitemaster/select-loader.gif) no-repeat 228px center !important }
 div.autocomplete {

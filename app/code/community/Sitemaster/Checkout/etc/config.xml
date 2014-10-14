@@ -94,6 +94,7 @@
                 <newsletter_send_success>1</newsletter_send_success>
                 <shipping_dependent_sections>totals</shipping_dependent_sections>
                 <payment_dependent_sections>totals</payment_dependent_sections>
+                <checkout_css>.checkout-cart-index #additional-cart-info { display: none; }</checkout_css>
             </sitemaster>
         </checkout>
     </default>

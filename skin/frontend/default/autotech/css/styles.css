@@ -1064,7 +1064,7 @@ p.required {
 }
 
 .little-border {
-    padding: 14px;
+    /*padding: 14px;*/
     background-color: #FFF;
     min-height: 94px;
 }
@@ -3860,6 +3860,7 @@ Linear
     border: 1px solid #BDBDBD !important;
     margin: 0;
     background-color: #FFF;
+    min-width: 761px;
 }
 
 .products-list li.item:hover .product-image,
@@ -8846,7 +8847,7 @@ ol#block-related li.item .related-checkbox {
 {text-align: center;}
 
 .product-block-center .block-content {min-height: 70px;}
-.product-block-center {margin-top: 15px;}
+.product-block-center {margin-top: 15px; border: 0;}
 
 /*------------------------------------------------checkout-cart-index----------------------------------------------------*/
 .checkout-cart-index .cart{padding: 10px 10px 0;}

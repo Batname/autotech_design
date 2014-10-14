@@ -32,6 +32,7 @@
  * @var $this Mage_Checkout_Block_Cart_Totals
  */
 ?>
+
 <?php if ($this->canApplyMsrp()): ?>
     <div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
 <?php else: ?>
@@ -41,7 +42,7 @@
         <tfoot>
             <?php echo $this->renderTotals('footer'); ?>
         </tfoot>
-        <tbody>
+        <tbody id="additional-cart-info">
             <?php echo $this->renderTotals(); ?>
         </tbody>
     </table>

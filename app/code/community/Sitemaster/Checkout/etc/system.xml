@@ -137,6 +137,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </shipping_dependent_sections>
+                        <checkout_css translate="label">
+                            <label>Checkout Css - use .checkout-cart-index</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </checkout_css>
                     </fields>
                 </sitemaster>
             </groups>

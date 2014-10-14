@@ -43,7 +43,7 @@
 "Stock Status","Статус наличия"
 "The maximum quantity allowed for purchase is %s.","Максимальное количество, разрешённое для приобретения: %s."
 "The minimum quantity allowed for purchase is %s.","Минимальное количество, разрешённое для приобретения: %s."
-"The requested quantity for ""%s"" is not available.","Запрашиваемое количество для товара ""%s"" недоступно."
+"The requested quantity for ""%s"" is not available.","Запрашиваемое количество для товара ""%s"" доступно по согласованию с менеджером. Тел.: (050) 396-98-88, (067) 396-98-80."
 "The requested quantity is not available.","Запрашиваемое количество недоступно."
 "The stock item for Product in option is not valid.","Неверное количество выбранного товара."
 "The stock item for Product is not valid.","Неверное количество товара."

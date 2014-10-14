@@ -8,6 +8,9 @@
 ?>
 
 /* Base settings */
+
+<?php echo Mage::getConfig()->getNode('default/checkout/sitemaster/checkout_css')?>;
+
 body#bd {
 	background-image:url("images/<?php echo $baseconfig["bgimage"]; ?>");
 	background-color: <?php echo $baseconfig["bgolor"] ?>;
