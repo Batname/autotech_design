@@ -70,7 +70,7 @@ require_once $mageFilename;
 
 #Varien_Profiler::enable();
 
-//$_SERVER['MAGE_IS_DEVELOPER_MODE'] = 1;
+// $_SERVER['MAGE_IS_DEVELOPER_MODE'] = 1;
 
 if (isset($_SERVER['MAGE_IS_DEVELOPER_MODE'])) {
     Mage::setIsDeveloperMode(true);

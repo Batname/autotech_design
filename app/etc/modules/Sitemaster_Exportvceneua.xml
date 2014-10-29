@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Sitemaster_Exportvceneua>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
         </Sitemaster_Exportvceneua>
     </modules>

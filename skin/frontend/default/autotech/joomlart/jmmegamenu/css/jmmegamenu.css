@@ -296,7 +296,7 @@ ul.megamenu ul ul {
 
 .jm-megamenu ul.level0 li.mega a img {
 	float: left;
-	padding-right: 5px
+	/*padding-right: 5px*/
 }
 
 .jm-megamenu ul.level0 li.mega a img.icon-image {

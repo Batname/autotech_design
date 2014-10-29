@@ -19,7 +19,7 @@
 
 
 #menu_masla{
-    width: 810px;
+    width: 1080px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -59,6 +59,36 @@
 
 #item_menu a:hover{
 	color: #FF171F;
+}
+
+#item_menu a.underline{
+    text-decoration: underline;
+}
+
+
+.menu-non-original-brand {
+    border-left: 1px solid #BDBDBD;
+}
+
+#item_menu p{
+    padding-left: 93px;
+    line-height: 40px;
+    color: #3f3d3d;
+}
+
+.menu-non-original-brand img {
+    border: 1px solid #BDBDBD;
+}
+
+.menu-non-original-brand table td {
+    padding-left: 14px;
+}
+
+.menu-non-original-brand table tr.height-space {
+    height: 10px
+}
+.menu-non-original-brand table {
+padding-top: 7px;
 }
 
 

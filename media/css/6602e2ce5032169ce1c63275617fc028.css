@@ -1,0 +1,3717 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/* Reset ================================================================================= */
+* { margin:0; padding:0; }
+
+body          { background:#496778 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_body.gif) 50% 0 repeat-y; font:12px/1.55 Arial, Helvetica, sans-serif; color:#2f2f2f; text-align:center; }
+
+img           { border:0; vertical-align:top; }
+
+a             { color:#1e7ec8; text-decoration:underline; }
+a:hover       { text-decoration:none; }
+:focus        { outline:0; }
+
+/* Headings */
+h1,h2,h3,
+h4,h5,h6      { margin:0 0 5px; line-height:1.35; color:#0a263c; }
+h1            { font-size:20px; font-weight:normal; }
+h2            { font-size:18px; font-weight:normal; }
+h3            { font-size:16px; font-weight:bold; }
+h4            { font-size:14px; font-weight:bold; }
+h5            { font-size:12px; font-weight:bold; }
+h6            { font-size:11px; font-weight:bold; }
+
+/* Forms */
+form          { display:inline; }
+fieldset      { border:0; }
+legend        { display:none; }
+
+/* Table */
+table         { border:0; /*border-collapse:collapse;*/ border-spacing:0; empty-cells:show; font-size:100%; }
+caption,th,td { vertical-align:top; text-align:left; font-weight:normal; }
+
+/* Content */
+p             { margin:0 0 10px; }
+strong        { font-weight:bold; }
+address       { font-style:normal; line-height:1.35; }
+cite          { font-style:normal; }
+q,
+blockquote    { quotes:none; }
+q:before,
+q:after       { content:''; }
+small,big     { font-size:1em; }
+/*sup           { font-size:1em; vertical-align:top; }*/
+
+/* Lists */
+ul,ol         { list-style:none; }
+
+/* Tools */
+.hidden       { display:block !important; border:0 !important; margin:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important; width:0 !important; height:0 !important; overflow:hidden !important; }
+.nobr         { white-space:nowrap !important; }
+.wrap         { white-space:normal !important; }
+.a-left       { text-align:left !important; }
+.a-center     { text-align:center !important; }
+.a-right      { text-align:right !important; }
+.v-top        { vertical-align:top; }
+.v-middle     { vertical-align:middle; }
+.f-left,
+.left         { float:left !important; }
+.f-right,
+.right        { float:right !important; }
+.f-none       { float:none !important; }
+.f-fix        { float:left; width:100%; }
+.no-display   { display:none; }
+.no-margin    { margin:0 !important; }
+.no-padding   { padding:0 !important; }
+.no-bg        { background:none !important; }
+/* ======================================================================================= */
+
+
+/* Layout ================================================================================ */
+.wrapper { min-width:954px; }
+.page {}
+.page-print { background:#fff; padding:25px 30px; text-align:left; }
+.page-empty { background:#fff; padding:20px; text-align:left; }
+.page-popup { background:#fff; padding:25px 30px; text-align:left; }
+.main-container { background:#fbfaf6 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_main1.gif) 50% 0 no-repeat; }
+.main { width:900px; margin:0 auto; min-height:400px; padding:25px 25px 80px; background:#fffffe url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_main2.gif) 0 0 no-repeat; text-align:left; }
+
+/* Base Columns */
+.col-left { float:left; width:195px; padding:0 0 1px; }
+.col-main { float:left; width:685px; padding:0 0 1px; }
+.col-right { float:right; width:195px; padding:0 0 1px; }
+
+/* 1 Column Layout */
+.col1-layout .col-main { float:none; width:auto; }
+
+/* 2 Columns Layout */
+.col2-left-layout .col-main { float:right; }
+.col2-right-layout .col-main {}
+
+/* 3 Columns Layout */
+.col3-layout .col-main { width:475px; margin-left:17px; }
+.col3-layout .col-wrapper { float:left; width:687px; }
+.col3-layout .col-wrapper .col-main { float:right; }
+
+/* Content Columns */
+.col2-set .col-1 { float:left; width:48.5%; }
+.col2-set .col-2 { float:right; width:48.5%; }
+.col2-set .col-narrow { width:32%; }
+.col2-set .col-wide { width:65%; }
+
+.col3-set .col-1 { float:left; width:32%; }
+.col3-set .col-2 { float:left; width:32%; margin-left:2%; }
+.col3-set .col-3 { float:right; width:32%; }
+
+.col4-set .col-1 { float:left; width:23.5%; }
+.col4-set .col-2 { float:left; width:23.5%; margin:0 2%; }
+.col4-set .col-3 { float:left; width:23.5%; }
+.col4-set .col-4 { float:right; width:23.5%; }
+/* ======================================================================================= */
+
+
+/* Global Styles ========================================================================= */
+/* Form Elements */
+input,select,textarea,button { font:12px/15px Arial, Helvetica, sans-serif; vertical-align:middle; color:#2f2f2f; }
+input.input-text,select,textarea { background:#fff; border:1px solid #b6b6b6; }
+input.input-text,textarea { padding:2px; }
+select { padding:1px; }
+select option { padding-right:10px; }
+select.multiselect option { border-bottom:1px solid #b6b6b6; padding:2px 5px; }
+select.multiselect option:last-child { border-bottom:0; }
+textarea { overflow:auto; }
+input.radio { margin-right:3px; }
+input.checkbox { margin-right:3px; }
+input.qty { width:2.5em !important; }
+button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
+button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
+button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
+button.button span { display:block; height:19px; border:1px solid #de5400; background:#f18200; padding:0 8px; font:bold 12px/19px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }
+button.button span span { border:0; padding:0; }
+button.disabled span { border-color:#bbb !important; background:#bbb !important; }
+
+button.btn-checkout span { height:40px; border:0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_checkout.gif) 0 0 no-repeat; padding:0 0 0 9px; font:bold 15px/40px Arial, Helvetica, sans-serif; color:#fff; }
+button.btn-checkout span span { background-position:100% 0; padding:0 25px 0 16px; }
+button.btn-checkout.no-checkout span { background-position:0 100%; color:#b8baba; }
+button.btn-checkout.no-checkout span span { background-position:100% 100%; }
+
+p.control input.checkbox,
+p.control input.radio { margin-right:6px; }
+/* Form Highlight */
+input.input-text:focus,select:focus,textarea:focus { background-color:#edf7fd; }
+/*.highlight { background:#efefef; }*/
+
+/* Form lists */
+/* Grouped fields */
+/*.form-list { width:535px; margin:0 auto; overflow:hidden; }*/
+.form-list li { margin:0 0 8px; }
+.form-list label { float:left; color:#666; font-weight:bold; position:relative; z-index:0; }
+.form-list label.required {}
+.form-list label.required em { float:right; font-style:normal; color:#eb340a; position:absolute; top:0; right:-8px; }
+.form-list li.control label { float:none; }
+.form-list li.control input.radio,
+.form-list li.control input.checkbox { margin-right:6px; }
+.form-list li.control .input-box { clear:none; display:inline; width:auto; }
+/*.form-list li.fields { margin-right:-15px; }*/
+.form-list .input-box { display:block; clear:both; width:260px; }
+.form-list .field { float:left; width:275px; }
+.form-list input.input-text { width:254px; }
+.form-list textarea { width:254px; height:10em; }
+.form-list select { width:260px; }
+.form-list li.wide .input-box { width:535px; }
+.form-list li.wide input.input-text { width:529px; }
+.form-list li.wide textarea { width:529px; }
+.form-list li.wide select { width:535px; }
+.form-list li.additional-row { border-top:1px solid #ccc; margin-top:10px; padding-top:7px; }
+.form-list li.additional-row .btn-remove { float:right; margin:5px 0 0; }
+.form-list .input-range input.input-text { width:74px; }
+
+.form-list-narrow li  { margin-bottom:0; }
+.form-list-narrow li .input-box { margin-bottom:6px; }
+.form-list-narrow li.wide .input-box { width:260px; }
+.form-list-narrow li.wide input.input-text,
+.form-list-narrow li.wide textarea { width:254px }
+.form-list-narrow li.wide select { width:260px; }
+
+/* Customer */
+.form-list .customer-name-prefix .input-box,
+.form-list .customer-name-suffix .input-box,
+.form-list .customer-name-prefix-suffix .input-box,
+.form-list .customer-name-prefix-middlename .input-box,
+.form-list .customer-name-middlename-suffix .input-box,
+.form-list .customer-name-prefix-middlename-suffix .input-box { width:auto; }
+
+.form-list .name-prefix { width:65px; }
+.form-list .name-prefix select { width:55px; }
+.form-list .name-prefix input.input-text { width:49px; }
+
+.form-list .name-suffix { width:65px; }
+.form-list .name-suffix select { width:55px; }
+.form-list .name-suffix input.input-text { width:49px; }
+
+.form-list .customer-name-prefix-middlename-suffix .name-firstname,
+.form-list .customer-name-prefix-middlename .name-firstname { width:140px; }
+.form-list .customer-name-prefix-middlename-suffix .name-firstname input.input-text,
+.form-list .customer-name-prefix-middlename .name-firstname input.input-text { width:124px; }
+.form-list .customer-name-prefix-middlename-suffix .name-lastname { width:205px; }
+.form-list .customer-name-prefix-middlename-suffix .name-lastname input.input-text { width:189px; }
+
+.form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
+.form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
+.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
+.form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
+
+.form-list .customer-name-prefix-suffix .name-firstname { width:210px; }
+.form-list .customer-name-prefix-suffix .name-lastname { width:205px; }
+.form-list .customer-name-prefix-suffix .name-firstname input.input-text,
+.form-list .customer-name-prefix-suffix .name-lastname input.input-text { width:189px; }
+
+.form-list .customer-name-prefix .name-firstname,
+.form-list .customer-name-middlename .name-firstname,
+.form-list .customer-name-middlename .name-middlename { width:210px; }
+
+.form-list .customer-name-suffix .name-lastname,
+.form-list .customer-name-middlename .name-firstname,
+.form-list .customer-name-middlename .name-middlename,
+.form-list .customer-name-middlename-suffix .name-firstname,
+.form-list .customer-name-middlename-suffix .name-lastname { width:205px; }
+
+.form-list .customer-name-prefix .name-firstname input.input-text,
+.form-list .customer-name-suffix .name-lastname input.input-text,
+.form-list .customer-name-middlename .name-firstname input.input-text,
+.form-list .customer-name-middlename .name-middlename input.input-text,
+.form-list .customer-name-middlename-suffix .name-firstname input.input-text,
+.form-list .customer-name-middlename-suffix .name-lastname input.input-text { width:189px; }
+
+.form-list .customer-dob .dob-month,
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-year { float:left; width:85px; }
+.form-list .customer-dob input.input-text { display:block; width:74px; }
+.form-list .customer-dob label { font-size:10px; font-weight:normal; color:#888; }
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-month { width:60px; }
+.form-list .customer-dob .dob-day input.input-text,
+.form-list .customer-dob .dob-month input.input-text { width:46px; }
+.form-list .customer-dob .dob-year { width:140px; }
+.form-list .customer-dob .dob-year input.input-text { width:134px; }
+
+/* Independent fields */
+/*.form-list li { margin:0 0 8px; }
+.form-list li.fields { margin:0; }
+.form-list .field { display:block; margin:0 0 8px; }
+.form-list li.control {}
+.form-list label { float:left; width:150px; padding:2px 10px 0 0; text-align:right; }
+.form-list label.required { font-weight:bold; }
+.form-list label.required em { font-variant:normal; color:#eb340a; margin-right:3px; }
+.form-list .input-box { float:left; width:260px; }
+.form-list input.input-text,
+.form-list textarea { width:254px; }
+.form-list select { width:260px; }
+.form-list li.additional-row { border-top:1px solid #ddd; margin-top:10px; }
+.form-list li.additional-row .btn-remove { float:right; margin:5px 5px 0 0; }
+.form-list .input-range input.input-text { width:96px; }*/
+/* Customer */
+/*.form-list .customer-dob .dob-month,
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-year { float:left; width:85px; }
+.form-list .customer-dob input.input-text { display:block; width:74px; }
+.form-list .customer-dob label { font-size:11px; font-weight:normal; color:#777; text-align:left; }
+.form-list .customer-dob .dob-day,
+.form-list .customer-dob .dob-month { width:60px; }
+.form-list .customer-dob .dob-day input.input-text,
+.form-list .customer-dob .dob-month input.input-text { width:46px; }
+.form-list .customer-dob .dob-year { width:140px; }
+.form-list .customer-dob .dob-year input.input-text { width:134px; }*/
+
+.buttons-set { clear:both; margin:4em 0 0; padding:8px 0 0; border-top:1px solid #e4e4e4; text-align:right; }
+.buttons-set p.required { margin:0 0 10px; }
+.buttons-set .back-link { float:left; margin:0; }
+.buttons-set button.button { float:right; margin-left:5px; }
+
+.buttons-set-order { margin:10px 0 0; }
+.buttons-set-order .please-wait { padding:12px 7px 0 0; }
+
+.fieldset { border:1px solid #bbafa0; background:#fbfaf6; padding:22px 25px 12px 33px; margin:28px 0; }
+.fieldset .legend { float:left; font-weight:bold; font-size:13px; border:1px solid #f19900; background:#f9f3e3; color:#e76200; margin:-33px 0 0 -10px; padding:0 8px; position:relative; }
+
+/* Form Validation */
+.validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:17px; font-size:11px; font-weight:bold; line-height:13px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/validation_advice_bg.gif) 2px 0 no-repeat; color:#eb340a; }
+.validation-failed { border:1px dashed #eb340a !important; background:#faebe7 !important; }
+.validation-passed {}
+p.required { font-size:11px; text-align:right; color:#EB340A; }
+/* Expiration date and CVV number validation fix */
+.v-fix { float:left; }
+.v-fix .validation-advice { display:block; width:12em; margin-right:-12em; position:relative; }
+
+/* Global Messages  */
+.success { color:#3d6611; font-weight:bold; }
+.error { color:#df280a; font-weight:bold; }
+.notice { color:#e26703; }
+
+.messages,
+.messages ul { list-style:none !important; margin:0 !important; padding:0 !important; }
+.messages { width:100%; overflow:hidden; }
+.messages li { margin:0 0 10px !important; }
+.messages li li { margin:0 0 3px !important; }
+.error-msg,
+.success-msg,
+.note-msg,
+.notice-msg { border-style:solid !important; border-width:1px !important; background-position:10px 9px !important; background-repeat:no-repeat !important; min-height:24px !important; padding:8px 8px 8px 32px !important; font-size:11px !important; font-weight:bold !important; }
+.error-msg { border-color:#f16048; background-color:#faebe7; background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_msg-error.gif); color:#df280a; }
+.success-msg { border-color:#446423; background-color:#eff5ea; background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_msg-success.gif); color:#3d6611; }
+.note-msg,
+.notice-msg { border-color:#fcd344; background-color:#fafaec; background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_msg-note.gif); color:#3d6611; }
+
+/* BreadCrumbs */
+.breadcrumbs { font-size:11px; line-height:1.25; margin:0 0 13px; }
+.breadcrumbs li { display:inline; }
+.breadcrumbs li strong { font-weight:bold; }
+
+/* Page Heading */
+.page-title { width:100%; overflow:hidden; border-bottom:1px solid #ccc; margin:0 0 25px; }
+.page-title h1,
+.page-title h2 { margin:0; font-size:20px; color:#0a263c; }
+.page-title .separator { margin:0 3px; }
+.page-title .link-rss { float:right; margin:7px 0 0; }
+.title-buttons { text-align:right; }
+.title-buttons h1,
+.title-buttons h2,
+.title-buttons h3,
+.title-buttons h4,
+.title-buttons h5,
+.title-buttons h6 { float:left; }
+
+.subtitle,
+.sub-title { clear:both; padding:15px 0 0; font-size:15px; font-weight:bold; margin:0 0 6px; color:#e25203; }
+
+/* Pager */
+.pager { font-size:11px; background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_toolbar.gif) 0 100% repeat-x; padding:4px 8px; border-top:1px solid #e2e2e2; text-align:center; }
+.pager .amount { float:left; margin:0; }
+.pager .limiter { float:right; }
+.pager .limiter label { vertical-align:middle; }
+.pager .limiter select { padding:0; margin:0 0 1px; vertical-align:middle; }
+.pager .pages { margin:0 140px; }
+.pager .pages ol { display:inline; }
+.pager .pages li { display:inline; margin:0 2px; }
+.pager .pages .current {}
+
+/* Sorter */
+.sorter { font-size:11px; background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_toolbar.gif) 0 100% repeat-x; padding:3px 8px; border-top:1px solid #e2e2e2; }
+.sorter .view-mode { float:left; margin:0; }
+.sorter .sort-by { float:right; padding-right:36px; }
+.sorter .sort-by label { vertical-align:middle; }
+.sorter .sort-by select { padding:0; margin:0 0 1px; vertical-align:middle; }
+.sorter .link-feed {}
+
+/* Toolbar */
+.toolbar {}
+.toolbar .pager { padding:3px 8px; border-bottom:1px solid #fff; }
+.toolbar .sorter { border-bottom:1px solid #fff; }
+.toolbar-bottom {}
+
+/* Data Table */
+.data-table { width:100%; border:1px solid #bebcb7; }
+.data-table .odd  { background:#f8f7f5 }
+.data-table .even { background:#eeeded; }
+/*.data-table tr.odd:hover,
+.data-table tr.even:hover { background:#ebf1f6; }*/
+.data-table td.last,
+.data-table th.last { border-right:0; }
+.data-table tr.last th,
+.data-table tr.last td { border-bottom:0 !important; }
+.data-table th { padding:3px 8px; font-weight:bold; }
+.data-table td { padding:3px 8px; }
+
+.data-table thead th { font-weight:bold; border-right:1px solid #c2d3e0; padding:2px 8px; color:#0a263c; white-space:nowrap; vertical-align:middle; }
+.data-table thead th.wrap { white-space:normal; }
+.data-table thead th a,
+.data-table thead th a:hover { color:#fff; }
+.data-table thead th { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_th.gif) repeat-x 0 100% #d9e5ee; }
+.data-table thead th .tax-flag { font-size:11px; white-space:nowrap; }
+
+.data-table tfoot { border-bottom:1px solid #d9dde3; }
+.data-table tfoot tr.first td { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_tfoot.gif) 0 0 repeat-x; }
+.data-table tfoot tr { background-color:#dee5e8 !important; }
+.data-table tfoot td { padding-top:1px; padding-bottom:1px; border-bottom:0; border-right:1px solid #d9dde3; }
+.data-table tfoot strong { font-size:16px; }
+
+.data-table tbody th,
+.data-table tbody td { border-bottom:1px solid #d9dde3; border-right:1px solid #d9dde3; }
+/* Bundle products tables */
+.data-table tbody.odd tr { background:#f8f7f5 !important; }
+.data-table tbody.even tr { background:#f6f6f6 !important; }
+.data-table tbody.odd tr td,
+.data-table tbody.even tr td { border-bottom:0; }
+.data-table tbody.odd tr.border td,
+.data-table tbody.even tr.border td { border-bottom:1px solid #d9dde3; }
+
+.data-table tbody td .option-label { font-weight:bold; font-style:italic; }
+.data-table tbody td .option-value { padding-left:10px; }
+
+/* Generic Info Box */
+.info-box { background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-title.gif) 0 0 repeat-x; border:1px solid #d0cbc1; padding:12px 15px; margin:0 0 15px; }
+.info-box h2 { font-weight:bold; font-size:13px; }
+
+.info-table th { font-weight:bold; padding:2px 15px 2px 0; }
+.info-table td { padding:2px 0; }
+
+/* Shopping cart total summary row expandable to details */
+tr.summary-total { cursor:pointer; }
+tr.summary-total td {}
+tr.summary-total .summary-collapse { float:right; text-align:right; padding-left:20px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_collapse.gif) 0 5px no-repeat; cursor:pointer; }
+tr.show-details .summary-collapse { background-position:0 -52px; }
+tr.show-details td {}
+tr.summary-details td { font-size:11px; background-color:#dae1e4; color:#626465; }
+tr.summary-details-first td { border-top:1px solid #d2d8db; }
+tr.summary-details-excluded { font-style:italic; }
+
+/* Shopping cart tax info */
+.cart-tax-info { display:block; }
+.cart-tax-info,
+.cart-tax-info .cart-price { padding-right:20px; }
+.cart-tax-total { display:block; padding-right:20px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_collapse.gif) 100% 5px no-repeat; cursor:pointer; }
+.cart-tax-info .price,
+.cart-tax-total .price { display:inline !important; font-weight:normal !important; }
+.cart-tax-total-expanded { background-position:100% -52px; }
+
+/* Class: std - styles for admin-controlled content */
+.std .subtitle { padding:0; }
+.std ol.ol { list-style:decimal outside; padding-left:1.5em; }
+.std ul.disc { list-style:disc outside; padding-left:18px; margin:0 0 10px; }
+.std dl dt { font-weight:bold; }
+.std dl dd { margin:0 0 10px; }
+.std ul,
+.std ol,
+.std dl,
+.std p,
+.std address,
+.std blockquote { margin:0 0 1em; padding:0; }
+.std ul { list-style:disc outside; padding-left:1.5em; }
+.std ol { list-style:decimal outside; padding-left:1.5em; }
+.std ul ul { list-style-type:circle; }
+.std ul ul,
+.std ol ol,
+.std ul ol,
+.std ol ul { margin:.5em 0; }
+.std dt { font-weight:bold; }
+.std dd { padding:0 0 0 1.5em; }
+.std blockquote { font-style:italic; padding:0 0 0 1.5em; }
+.std address { font-style:normal; }
+.std b,
+.std strong { font-weight:bold; }
+.std i,
+.std em { font-style:italic; }
+
+/* Misc */
+.links li { display:inline; }
+.links li.first { padding-left:0 !important; }
+.links li.last { background:none !important; padding-right:0 !important; }
+
+.link-cart { color:#dc6809 !important; font-weight:bold; }
+.link-wishlist { color:#dc6809 !important; font-weight:bold; }
+.link-reorder { font-weight:bold; color:#dc6809 !important; }
+.link-compare { font-weight:bold; }
+.link-print { /*background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_print.gif) 0 2px no-repeat; padding:2px 0 2px 25px;*/ font-weight:bold; color:#dc6809; }
+.link-rss { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_rss.gif) 0 2px no-repeat; padding-left:18px; line-height:14px; white-space:nowrap; }
+.btn-remove  { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_remove.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
+.btn-previous  { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_previous.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
+.btn-remove2 { display:block; width:16px; height:16px; font-size:0; line-height:0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_trash.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
+.btn-edit    { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_edit.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
+
+.cards-list dt { margin:5px 0 0; }
+.cards-list .offset { padding:2px 0 2px 20px; }
+
+.separator { margin:0 3px; }
+
+.divider { clear:both; display:block; font-size:0; line-height:0; height:1px; margin:10px 0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_divider1.gif) 0 50% repeat-x; text-indent:-999em; overflow:hidden; }
+
+/* Global site notices */
+.global-site-notice { border:1px solid #cfcfcf; border-width:0 0 1px; background:#ffff90; font-size:12px; line-height:1.25; text-align:center; color:#2f2f2f; }
+.global-site-notice .notice-inner { width:860px; margin:0 auto; padding:12px 0 12px 80px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_notice.gif) 20px 25px no-repeat; text-align:left; }
+.global-site-notice .notice-inner p { margin:0; border:1px dotted #cccc73; padding:10px; }
+.global-site-notice .notice-inner .actions { padding-top:10px; }
+
+/* Cookie Notice */
+.notice-cookie { }
+
+/* Noscript Notice */
+.noscript {}
+
+/* Demo Notice */
+.demo-notice { margin:0; padding:6px 10px; background:#d75f07; font-size:12px; line-height:1.15; border:0; text-align:center; color:#fff; }
+.demo-notice .notice-inner { width:auto; padding:0; background:none; text-align:center; }
+.demo-notice .notice-inner p { padding:0; border:0; }
+
+/* ======================================================================================= */
+
+
+/* Header ================================================================================ */
+.logo { float:left; }
+.header-container { border-top:5px solid #0d2131; border-bottom:1px solid #415966; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_header.jpg) 50% 0 repeat; }
+.header { width:930px; margin:0 auto; padding:10px; text-align:right; position:relative; z-index:10; }
+.header .logo { float:left; margin:3px 0 10px 12px; text-decoration:none !important; }
+.header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
+.header h1.logo { margin:0; }
+.header .quick-access { float:right; width:600px; padding:28px 10px 0 0; }
+.header .welcome-msg { margin:0; color:#fff; text-align:right; }
+.header .welcome-msg a { color:#ebbc58; }
+.header .form-search { position:absolute; top:0; right:29px; width:315px; height:30px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_form-search.gif) 0 0 no-repeat; padding:1px 0 0 16px; }
+.header .form-search label { float:left; width:24px; height:21px; text-align:left; text-indent:-999em; overflow:hidden; }
+.header .form-search input.input-text { float:left; border-color:#5c7989; width:209px; margin-right:4px; }
+.header .form-search button.button { float:left; }
+.header .form-search button.button span { border:0; height:21px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_search.gif) 0 0 no-repeat; padding:0 0 0 3px; font:bold 11px/21px Tahoma, Verdana, Arial, sans-serif; }
+.header .form-search button.button span span { background-position:100% 0; padding:0 6px 0 3px; }
+.header .form-search .search-autocomplete { z-index:999; left:40px !important; top:22px !important; }
+.header .form-search .search-autocomplete ul { border:1px solid #5c7989; background-color:#f9f5f0; }
+.header .form-search .search-autocomplete li { text-align:left; border-bottom:1px solid #f4eee7; padding:2px 8px 1px 8px; cursor:pointer; }
+.header .form-search .search-autocomplete li .amount { float:right; font-weight:bold; }
+.header .form-search .search-autocomplete li.odd { background-color:#fffefb; }
+.header .form-search .search-autocomplete li.selected { background-color:#f7e8dd; }
+.header .form-language { clear:both; padding:5px 0 0; text-align:right; }
+.header .form-language label { font-weight:bold; padding-right:5px; color:#a7c6dd; vertical-align:middle; }
+.header .form-language select { padding:0; }
+.header .form-language select.flags option { background-position:4px 50%; background-repeat:no-repeat; padding-left:25px; }
+.header .links { float:right; margin:0 0 6px; }
+.header .links li { float:left; font-size:11px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_pipe1.gif) 100% 60% no-repeat; padding:0 8px 0 7px; }
+.header .links a { color:#ebbc58; }
+.header-container .top-container { clear:both; padding:5px 10px 0 12px; text-align:right; }
+.header-container .top-container a { font-size:11px; color:#ebbc58; }
+
+/********** < Navigation */
+.nav-container { background:#0a263d url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_nav0.jpg) 50% 0 repeat-y; }
+#nav { width:918px; margin:0 auto; padding:0 16px; font-size:13px; }
+
+/* All Levels */ /* Style consistent throughout all nav levels */
+#nav li { position:relative; text-align:left; }
+#nav li.over { z-index:998; }
+#nav a,
+#nav a:hover { display:block; line-height:1.3em; text-decoration:none; }
+#nav span { display:block; cursor:pointer; white-space:nowrap; }
+#nav li ul span {white-space:normal; }
+#nav ul li.parent a { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_nav2.gif) 100% 100% no-repeat; }
+#nav ul li.parent li a { background-image:none; }
+
+/* 0 Level */
+#nav li { float:left; }
+#nav li.active a { color:#d96708; }
+#nav a { float:left; padding:5px 12px 6px 8px; color:#a7c6dd; font-weight:bold; }
+#nav li.over a,
+#nav a:hover { color:#d96708; }
+
+/* 1st Level */
+#nav ul li,
+#nav ul li.active { float:none; margin:0; padding-bottom:1px; background:#ecf3f6 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_nav1.gif) 0 100% repeat-x; }
+#nav ul li.last { background:#ecf3f6; padding-bottom:0; }
+
+#nav ul a,
+#nav ul a:hover { float:none; padding:0; background:none; }
+#nav ul li a { font-weight:normal !important; }
+
+/* 2nd Level */
+#nav ul,
+#nav div { position:absolute; width:15em; top:27px; left:-10000px; border:1px solid #899ba5; }
+#nav div ul { position:static; width:auto; border:none; }
+
+/* 3rd+ Level */
+#nav ul ul,
+#nav ul div { top:5px; }
+
+#nav ul li a { background:#ecf3f6; }
+#nav ul li a:hover { background:#d5e4eb; }
+#nav ul li a,
+#nav ul li a:hover { color:#2f2f2f !important; }
+#nav ul span,
+#nav ul li.last li span { padding:3px 15px 4px 15px; }
+
+/* Show menu */
+#nav li ul.shown-sub,
+#nav li div.shown-sub { left:0; z-index:999; }
+#nav li .shown-sub ul.shown-sub,
+#nav li .shown-sub li div.shown-sub { left:100px; }
+/********** Navigation > */
+/* ======================================================================================= */
+
+
+/* Sidebar =============================================================================== */
+.block { border:1px solid #c4c1bc; margin:0 0 15px; }
+.block .block-title { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-title.gif) 0 0 repeat-x; border-bottom:1px solid #ddd; padding:2px 9px; }
+.block .block-title strong { display:block; font:bold 12px/16px Arial, Helvetica, sans-serif; min-height:16px; padding:1px 0 1px; text-transform:uppercase; color:#e26703; }
+.block .block-title strong span {}
+.block .block-title a { text-decoration:none !important; }
+.block .block-subtitle { margin:0; padding:5px 9px; font-size:1em; font-weight:bold; color:#0a263c; }
+.block .block-content { background:#f8f7f5; }
+.block .block-content li.item { padding:7px 9px; }
+.block .block-content .product-name { color:#1e7ec8; }
+.block .btn-remove,
+.block .btn-edit { float:right; margin:1px 0 2px 5px; }
+.block .actions { background:#dee5e8 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-actions.gif) 0 0 repeat-x; padding:6px 9px; text-align:right; }
+.block .actions a { float:left; }
+.block .actions button.button { float:right; }
+.block .empty { margin:0; padding:5px 9px; }
+
+.block li.odd { background-color:#f4f3f3; }
+.block li.even { background-color:#fafafa; }
+
+/* Mini Blocks */
+.block-cart,
+.block-wishlist,
+.block-subscribe,
+.block-compare,
+.block-reorder,
+.block-poll,
+.block-gr-search,
+.block-viewed,
+.block-compared,
+.block-related,
+.block-tags,
+.block-login { font-size:11px; line-height:1.25; }
+.block-cart .block-title strong,
+.block-wishlist .block-title strong,
+.block-subscribe .block-title strong,
+.block-compare .block-title strong,
+.block-reorder .block-title strong,
+.block-poll .block-title strong,
+.block-viewed .block-title strong,
+.block-compared .block-title strong,
+.block-related .block-title strong,
+.block-tags .block-title strong,
+.block-login .block-title strong {  background-position:0 0; background-repeat:no-repeat; padding-left:21px; }
+
+/* Mini Products List */
+.mini-products-list .product-image { float:left; width:50px; border:1px solid #a9a9a9; }
+.mini-products-list .product-details { margin-left:60px; }
+.block-cart .mini-products-list .product-details .product-name,
+.block-cart .mini-products-list .product-details .nobr small { word-wrap:break-word; }
+.block-cart .mini-products-list .product-details .nobr { white-space:normal !important; }
+
+/* Block: Account */
+.block-account { border-color:#bbb; }
+.block-account .block-title { background:#fc9d36 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-title-account.gif) 0 100% repeat-x; border:0; padding:3px 10px; }
+.block-account .block-title strong { font-size:13px; color:#fff; }
+.block-account .block-content { background:#fbfaf6; padding:7px 10px 7px; }
+.block-account .block-content li a { display:block; border-bottom:1px solid #ddd; padding:3px 0; color:#5f5d5c; text-decoration:none !important; }
+.block-account .block-content li a:hover { color:#ea7900; }
+.block-account .block-content li.last a { border-bottom:0; }
+.block-account .block-content li.current { border-bottom:1px solid #ddd; padding:3px 0; color:#ea7900; }
+.block-account .block-content li.current.last { border-bottom:0; }
+
+/* Block: Currency Switcher */
+.block-currency { border:0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-currency.gif) 0 0 no-repeat; padding:7px 12px 10px; height:51px; }
+.block-currency .block-title { background:none; border:0; padding:0; margin:0 0 5px; }
+.block-currency .block-title strong { font:bold 13px/21px Arial, Helvetica, sans-serif; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-currency.gif) 0 50% no-repeat; padding:0 0 0 21px; text-transform:none; color:#fff; }
+.block-currency .block-content { background:none; padding:0; }
+.block-currency .block-content select { width:100%; padding:0; }
+
+/* Block: Layered Navigation */
+.block-layered-nav { border:0; }
+.block-layered-nav .block-title { border:0; padding:0; height:24px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-layered-title.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
+.block-layered-nav .block-subtitle { line-height:1.35; background:#d5e8ff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-layered1.gif) 0 50% repeat; padding:3px 9px; border:1px solid #b9ccdd; border-width:1px 0; text-transform:uppercase; color:#1f5070; }
+.block-layered-nav .block-content { border:1px solid #a0b3c3; background:#e7f1f4; }
+.block-layered-nav dt { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-layered-dt.gif) 9px 11px no-repeat; padding:7px 10px 0 25px; font-weight:bold; text-transform:uppercase; }
+.block-layered-nav dd { padding:0 12px 12px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-layered-dd.gif) 0 100% repeat-x; }
+.block-layered-nav dd.last { background:none; }
+.block-layered-nav .currently li { background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-layered-li.gif) 0 100% repeat-x; padding:6px 24px 6px 10px; position:relative; z-index:1; line-height:1.5; }
+.block-layered-nav .currently .label { font-weight:bold; padding-left:15px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-layered-label.gif) 0 4px no-repeat; text-transform:uppercase; display:inline-block; vertical-align:top; }
+.block-layered-nav .currently .value { display:inline-block; vertical-align:top; }
+.block-layered-nav .currently .btn-previous,
+.block-layered-nav .currently .btn-remove { position:absolute; right:4px; top:9px; margin:0; }
+.block-layered-nav .currently .btn-previous { right:17px; }
+.block-layered-nav .actions { font-size:11px; padding:4px 5px 4px 9px; background:#cad6e4; border:1px solid #dee5e8; border-width:1px 0; text-align:right; }
+.block-layered-nav .actions a { float:none; }
+
+/* Block: Cart */
+.block-cart .block-title { /*border-bottom:0;*/ }
+.block-cart .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-cart.gif); }
+.block-cart .summary { background:#fff; padding:2px 8px 8px; margin:-1px 0 0; position:relative; z-index:1; }
+.block-cart .amount { margin:0; }
+.block-cart .amount a { font-weight:bold; }
+.block-cart .subtotal { margin:5px 0 0; padding:2px 0; background:#fbebd9; text-align:center; }
+.block-cart .subtotal .price { font-weight:bold; }
+.block-cart .actions { border-bottom:1px solid #c2c2c2; }
+.block-cart .actions .paypal-logo { float:left; width:100%; margin:3px 0 0; text-align:right; }
+.block-cart .actions .paypal-logo .paypal-or { clear:both; display:block; padding:0 55px 8px 0; }
+
+/* Block: Wishlist */
+.block-wishlist .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-wishlist.gif); }
+.block-wishlist .actions { text-align:right; }
+.block-wishlist .actions a { float:none; }
+
+/* Block: Related */
+.block-related .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-related.gif); background-position:0 1px; }
+.block-related input.checkbox { float:left; }
+.block-related .product { margin-left:20px; }
+
+/* Block: Compare Products */
+.block-compare .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-list.gif); background-position:0 1px; }
+.block-compare button.button span { border-color:#406a83; background:#618499; }
+.page-popup .link-print { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_print.gif) 0 2px no-repeat; padding:2px 0 2px 25px; font-weight:bold; color:#1e7ec8; }
+.compare-table { border:0; }
+.compare-table thead tr.first th,
+.compare-table thead tr.first td { border:0; background:none; padding:0; font-size:0; line-height:0; }
+.compare-table .btn-remove { float:right; background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_remove2.gif); width:72px; height:15px; }
+.compare-table tbody th { background:#d9e5ee url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_th-v.gif) 100% 0 repeat-y; }
+.compare-table tbody th,
+.compare-table tbody td { padding:10px; border:0; border-top:1px solid #ccc; border-left:1px solid #ccc; }
+.compare-table tbody td.last { border-right:1px solid #ccc; }
+.compare-table tbody tr.last th,
+.compare-table tbody tr.last td { border-bottom:1px solid #ccc !important; }
+.compare-table tr.add-to-row td { background:#fffada; text-align:center; }
+.compare-table tr.first td { text-align:center; }
+.compare-table tr.first td .product-name { font-size:13px; font-weight:bold; margin:0 0 5px; color:#203548; }
+.compare-table tr.first td .product-name a { color:#203548; }
+.compare-table tr.first td .ratings { width:69px; margin:0 auto; }
+.compare-table tr.first td p,
+.compare-table tr.add-to-row td p { margin:0; }
+
+/* Block: Recently Viewed */
+.block-viewed .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-viewed.gif); }
+
+/* Block: Recently Compared */
+.block-compared .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-list.gif); background-position:0 1px; }
+
+/* Block: Poll */
+.block-poll .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-poll.gif); }
+.block-poll .block-subtitle { font-size:12px; }
+.block-poll label { color:#777; font-weight:bold; }
+.block-poll input.radio { float:left; margin:1px -18px 0 0; }
+.block-poll .label { display:block; margin-left:18px; }
+.block-poll li { padding:3px 9px; }
+.block-poll .actions { margin:5px 0 0; }
+.block-poll button.button span { border-color:#406a83; background:#618499; }
+.block-poll .answer { font-weight:bold; }
+.block-poll .votes { float:right; margin-left:10px; }
+
+/* Block: Orders and Returns */
+.block-gr-search li { padding:3px 9px; }
+.block-gr-search button.button span { border-color:#406a83; background:#618499; }
+
+/* Block: Tags */
+.block-tags .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-tags.gif); }
+.block-tags .block-content .tags-list { background:none; border:0; font-size:12px; }
+.block-tags .block-content a { color:#1b2d3b; }
+.block-tags .actions { text-align:right; }
+.block-tags .actions a { float:none; }
+
+/* Block: Subscribe */
+.block-subscribe .block-content { padding:5px 10px; }
+.block-subscribe .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-subscribe.gif); }
+.block-subscribe label { font-weight:bold; color:#666; }
+.block-subscribe input.input-text { display:block; width:167px; margin:3px 0; }
+.block-subscribe .actions { background:none; padding:0; margin:3px 0 0; text-align:left; }
+.block-subscribe .actions button.button { float:none; }
+.block-subscribe .actions button.button span { border-color:#406a83; background:#618499; }
+
+/* Block: Reorder */
+.block-reorder .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_block-list.gif); }
+.block-reorder input.checkbox { float:left; margin:2px -20px 0 0; }
+.block-reorder .product-name { margin-left:20px; }
+.block-reorder .validation-advice { margin:3px 9px 7px; }
+
+/* Block: Banner */
+.block-banner { border:0; }
+.block-banner .block-content { padding:0; text-align:center; }
+
+/* Block: Login */
+.block-login .block-title strong { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_ma-info.gif); }
+.block-login .block-content { padding:5px 10px; }
+.block-login label { font-weight:bold; color:#666; }
+.block-login input.input-text { display:block; width:167px; margin:3px 0; }
+.block-login .actions { background:none; padding:0; margin:3px 0 0; }
+.block-login .actions button.button span { border-color:#406a83; background:#618499; }
+
+/* Paypal */
+.sidebar .paypal-logo { display:block; margin:10px 0; text-align:center; }
+.sidebar .paypal-logo a { float:none; }
+/* ======================================================================================= */
+
+
+/* Category Page ========================================================================= */
+.category-title { border:0; margin:0 0 7px; }
+.category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
+.category-image img {}
+.category-description { margin:0 0 10px; }
+.category-products {}
+
+/* View Type: Grid */
+.products-grid { border-bottom:1px solid #d9ddd3; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_grid.gif) 0 0 repeat; position:relative; }
+.products-grid.last { border-bottom:0; }
+.products-grid li.item { float:left; width:138px; padding:12px 10px 80px; }
+.products-grid .product-image { display:block; width:135px; height:135px; margin:0 0 10px; }
+.products-grid .product-name { /*min-height:2.7em;*/ margin:0 0 5px; font-weight:bold; font-size:13px; color:#203548; }
+.products-grid .product-name a { color:#203548; }
+.products-grid .price-box { margin:5px 0; }
+.products-grid .availability { line-height:21px; }
+.products-grid .actions { position:absolute; bottom:12px; }
+.col2-left-layout .products-grid,
+.col2-right-layout .products-grid { width:632px; margin:0 auto; }
+.col1-layout .products-grid { width:790px; margin:0 auto; }
+
+/* View Type: List */
+.products-list li.item { border-bottom:1px solid #d9ddd3; padding:12px 10px; }
+.products-list li.item.last { border-bottom:0; }
+.products-list .product-image { float:left; width:135px; height:135px; margin:0 0 10px; }
+.products-list .product-shop { margin-left:150px; }
+.products-list .product-name { margin:0 0 5px; font-weight:bold; font-size:13px; color:#203548; }
+.products-list .product-name a { color:#203548; }
+.products-list .price-box { float:left; margin:3px 13px 5px 0; }
+.products-list .availability { float:left; margin:3px 0 0; }
+.products-list .desc { clear:both; padding:6px 0 0; margin:0 0 15px; line-height:1.35; }
+.products-list .desc .link-learn { font-size:11px; }
+.products-list .add-to-links { clear:both; }
+.products-list .add-to-links li { display:inline; }
+.products-list .add-to-links .separator { display:inline; margin:0 2px; }
+/* ======================================================================================= */
+
+
+/* Product View ========================================================================== */
+/* Rating */
+.no-rating { margin:0; }
+
+.ratings { font-size:11px; line-height:1.25; margin:7px 0; }
+.ratings strong { float:left; margin:1px 3px 0 0; }
+.ratings .rating-links { margin:0; }
+.ratings .rating-links .separator { margin:0 2px; }
+.ratings dt {}
+.ratings dd {}
+.rating-box { width:69px; height:13px; font-size:0; line-height:0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_rating.gif) 0 0 repeat-x; text-indent:-999em; overflow:hidden; }
+.rating-box .rating { float:left; height:13px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_rating.gif) 0 100% repeat-x; }
+.ratings .rating-box { float:left; margin-right:3px; }
+.ratings .amount {}
+
+.ratings-table th,
+.ratings-table td { font-size:11px; line-height:1.15; padding:3px 0; }
+.ratings-table th { font-weight:bold; padding-right:8px; }
+
+/* Availability */
+.availability { margin:0; }
+.availability span { font-weight:bold; }
+.availability.in-stock span {}
+.availability.out-of-stock span { color:#d83820; }
+
+.availability-only { margin:10px 0 7px; line-height:16px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_availability_only.gif) 0 50% no-repeat; padding-left:15px; }
+.availability-only span,
+.availability-only a { border-bottom:1px dashed #751d02; color:#000; }
+.availability-only a { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_availability_only_arrow.gif) 100% 0 no-repeat; cursor:pointer; padding-right:15px; text-decoration:none; }
+.availability-only .expanded { background-position:100% -15px; }
+.availability-only strong { color:#be2c00; }
+
+.availability-only-details { margin:0 0 7px; }
+.availability-only-details th { background:#d2d6d9; font-size:10px; padding:0 8px; }
+.availability-only-details td { background:#ebf0f3; border-bottom:1px solid #fff; font-size:11px; padding:2px 8px 1px; }
+.availability-only-details tr.odd td.last { color:#d95e00; font-weight:bold; }
+
+.product-view .product-shop .availability { font-size:11px; }
+.product-view .product-shop .availability span { font-weight:normal; }
+
+/* Email to a Friend */
+.email-friend { margin:0; }
+
+/* Alerts */
+.alert-price { margin:0; font-size:11px; }
+.alert-stock { margin:0; font-size:11px; }
+
+/********** < Product Prices */
+.price { white-space:nowrap !important; }
+
+.price-box { margin:5px 0; }
+.price-box .price { font-weight:bold; color:#c76200; }
+
+/* Regular price */
+.regular-price { color:#c76200; }
+.regular-price .price { font-weight:bold; font-size:13px; color:#c76200; }
+.block .regular-price,
+.block .regular-price .price { color:#2f2f2f; }
+
+/* Old price */
+.old-price { margin:0; }
+.old-price .price-label { white-space:nowrap; color:#999; }
+.old-price .price { font-weight:bold; color:#c76200; text-decoration:line-through; }
+
+/* Special price */
+.special-price { margin:0; padding:3px 0; }
+.special-price .price-label { font-size:13px; font-weight:bold; white-space:nowrap; color:#cd5033; }
+.special-price .price { font-size:13px; font-weight:bold; color:#c76200; }
+
+/* Minimal price (as low as) */
+.minimal-price { margin:0; }
+.minimal-price .price-label { font-weight:bold; white-space:nowrap; }
+
+.minimal-price-link { display:block; }
+.minimal-price-link .label {color:#1e7ec8;}
+.minimal-price-link .price { font-weight:normal; color:#1e7ec8; }
+
+/* Excluding tax */
+.price-excluding-tax { display:block; color:#999; }
+.price-excluding-tax .label { white-space:nowrap; color:#999; }
+.price-excluding-tax .price { font-size:13px; font-weight:normal; color:#c76200; }
+
+/* Including tax */
+.price-including-tax { display:block; color:#999; }
+.price-including-tax .label { white-space:nowrap; color:#999; }
+.price-including-tax .price { font-size:13px; font-weight:bold; color:#c76200; }
+
+/* Configured price */
+.configured-price { margin:0; }
+.configured-price .price-label { font-weight:bold; white-space:nowrap; }
+.configured-price .price { font-weight:bold; }
+
+/* FPT */
+.weee { display:block; font-size:11px; color:#444; }
+.weee .price { font-size:11px; font-weight:normal; }
+
+/* Excl tax (for order tables) */
+.price-excl-tax  { display:block; }
+.price-excl-tax .label { display:block; white-space:nowrap; }
+.price-excl-tax .price { display:block; }
+
+/* Incl tax (for order tables) */
+.price-incl-tax { display:block; }
+.price-incl-tax .label { display:block; white-space:nowrap; }
+.price-incl-tax .price { display:block; font-weight:bold; }
+
+/* Price range */
+.price-from { margin:0; }
+.price-from .price-label { font-weight:bold; white-space:nowrap; }
+
+.price-to { margin:0; }
+.price-to .price-label { font-weight:bold; white-space:nowrap; }
+
+/* Price notice next to the options */
+.price-notice { padding-left:10px; color:#999; }
+.price-notice .price { font-weight:bold; color:#2f2f2f; }
+
+/* Price as configured */
+.price-as-configured { margin:0; }
+.price-as-configured .price-label { font-weight:bold; white-space:nowrap; }
+
+.price-box-bundle { padding:0 0 10px 0; }
+.price-box-bundle .price-box { margin:0 !important; padding:0 !important; }
+.price-box-bundle .price { color:#555; }
+/********** Product Prices > */
+
+/* Tier Prices */
+.product-pricing,
+.tier-prices { margin:10px 0; padding:10px; background-color:#f4f7f7; border:1px solid #dadddd; color:#424242; }
+.tier-prices li { line-height:1.4; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_tier.gif) no-repeat 0 3px; padding:2px 0 2px 10px; }
+.tier-prices .benefit { font-style:italic; font-weight:bold; color:#2f2f2f; }
+.tier-prices .price { font-weight:bold; color:#2f2f2f; }
+
+.tier-prices-grouped li { padding:2px 0; color:#e26703; }
+.tier-prices-grouped li .price { font-weight:bold; }
+
+/* Add to Links */
+.add-to-links { font-size:11px; margin:5px 0 0; }
+.add-to-links .separator { display:none; }
+
+/* Add to Cart */
+.add-to-cart label { float:left; margin-right:5px; font-weight:bold; color:#666; }
+.add-to-cart .qty { float:left; margin-right:5px; }
+.add-to-cart button.button { float:left; }
+.add-to-cart .paypal-logo { clear:left; margin:0; text-align:right; }
+.add-to-cart .paypal-logo .paypal-or { clear:both; display:block; margin:5px 60px 5px 0; }
+.product-view .add-to-cart .paypal-logo { margin:0; }
+
+/* Add to Links + Add to Cart */
+.add-to-box { margin:10px 0; }
+.add-to-box .add-to-cart { float:left; }
+.add-to-box .or { float:left; font-weight:bold; margin:0 7px; color:#666; }
+.add-to-box .add-to-links { float:left; margin:0; font-size:12px !important; line-height:1.25 !important; text-align:left !important; }
+.add-to-box .add-to-links li { display:block !important; }
+.add-to-box .add-to-links li .separator { display:none !important; }
+
+
+.product-view { border:1px solid #c4c6c8; }
+
+.product-essential { padding:25px; background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_product-view.gif) 100% 0 no-repeat; }
+.product-essential h2 { font:bold 13px/1.35 Arial, Helvetica, sans-serif; }
+
+.product-collateral { background:#faf7ee url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_product_collateral.gif) 0 0 repeat-x; padding:25px; }
+.product-collateral h2 { font-weight:bold; font-size:15px; color:#e26703; border-bottom:1px solid #e5dcc3; padding:0 0 1px; margin:0 0 15px; }
+.product-collateral .box-collateral { margin:0 0 25px; }
+
+/* Product Images */
+.product-view .product-img-box { float:left; width:267px; }
+.col3-layout .product-view .product-img-box { float:none; margin:0 auto; }
+.product-view .product-img-box .product-image { margin:0 0 13px; }
+.product-view .product-img-box .product-image-zoom { position:relative; width:265px; height:265px; overflow:hidden; z-index:9; }
+.product-view .product-img-box .product-image-zoom img { position:absolute; left:0; top:0; cursor:move; }
+.product-view .product-img-box .zoom-notice { font-size:11px; margin:0 0 5px; text-align:center; }
+.product-view .product-img-box .zoom { position:relative; z-index:9; height:18px; margin:0 auto 13px; padding:0 28px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/slider_bg.gif) 50% 50% no-repeat; cursor:pointer; }
+.product-view .product-img-box .zoom.disabled { -moz-opacity:.3; -webkit-opacity:.3; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";/*IE8*/ opacity:.3; }
+.product-view .product-img-box .zoom #track { position:relative; height:18px; }
+.product-view .product-img-box .zoom #handle { position:absolute; left:0; top:-1px; width:9px; height:22px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/magnifier_handle.gif) 0 0 no-repeat;  }
+.product-view .product-img-box .zoom .btn-zoom-out { position:absolute; left:2px; top:0; }
+.product-view .product-img-box .zoom .btn-zoom-in { position:absolute; right:2px; top:0; }
+.product-view .product-img-box .more-views h2 { font-size:11px; border-bottom:1px solid #ccc; margin:0 0 8px; text-transform:uppercase; }
+.product-view .product-img-box .more-views ul { margin-left:-9px }
+.product-view .product-img-box .more-views li { float:left; margin:0 0 8px 9px; }
+.product-view .product-img-box .more-views li a { float:left; width:56px; height:56px; border:2px solid #ddd; overflow:hidden; }
+
+.product-image-popup { margin:0 auto; }
+.product-image-popup .buttons-set { float:right; clear:none; border:0; margin:0; padding:0; }
+.product-image-popup .nav { font-weight:bold; margin:0 100px; text-align:center; }
+.product-image-popup .image { display:block; margin:10px 0;  }
+.product-image-popup .image-label { font-size:13px; font-weight:bold; margin:0 0 10px; color:#2f2f2f; }
+
+/* Product Shop */
+.product-view .product-shop { float:right; width:330px; }
+.col1-layout .product-view .product-shop { float:right; width:545px; }
+.col3-layout .product-view .product-shop { float:none; width:auto; }
+.product-view .product-shop .product-name { margin:0 0 5px; }
+.product-view .product-shop .product-name h1 { margin:0; font:bold 15px/1.35 Arial, Helvetica, sans-serif; }
+.product-view .product-shop .availability { margin:10px 0; }
+.product-view .product-shop .short-description { margin:10px 0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_divider1.gif) 0 0 repeat-x; padding:10px 0 0; }
+.product-view .product-shop .price-box { margin:10px 0; }
+.product-view .product-shop .add-to-links { margin:0; }
+.product-view .product-shop .add-to-links { font-size:12px; text-align:right; }
+.product-view .product-shop .add-to-links li,
+.product-view .product-shop .add-to-links li .separator { display:inline; }
+.product-view .product-shop .add-to-links a { color:#1E7EC8 !important; font-weight:normal !important; }
+
+/* Product Options */
+.product-options { margin:20px 0 0; padding:10px 15px 20px; position:relative; background-color:#f6f6f6; border:1px solid #e4e4e4; }
+.product-options dt { padding:10px 0 0; font-weight:normal; }
+.product-options dt label { font-weight:bold; color:#2f2f2f; }
+.product-options dt label.required em { color:#eb340a; margin-left:5px; }
+.product-options dd .qty-holder { display:block; padding:10px 0 0; }
+.product-options dd .qty-holder label { vertical-align:middle; }
+.product-options dt .qty-disabled { background:none; border:0; padding:3px; color:#2f2f2f; }
+.product-options dd { padding:5px 10px 15px; margin:0 0 5px; border-bottom:1px solid #e4e4e4; }
+.product-options dl.last dd.last { border-bottom:0; padding-bottom:5px; margin-bottom:0; }
+.product-options dd input.input-text { width:98%; }
+.product-options dd input.datetime-picker { width:150px; }
+.product-options dd .time-picker { display:-moz-inline-box; display:inline-block; padding:2px 0; vertical-align:middle; }
+.product-options dd textarea { width:98%; height:8em; }
+.product-options dd select { width:99%; }
+.product-options dd .multiselect option { border-bottom:1px dotted #d9e5ee; padding:2px 4px; }
+.product-options ul.options-list { margin-right:5px; }
+.product-options ul.options-list li { line-height:1.5; padding:2px 0; }
+.product-options ul.options-list input.radio { float:left; margin-top:3px; }
+.product-options ul.options-list input.checkbox { float:left; margin-top:3px; }
+.product-options ul.options-list .label { display:block; margin-left:18px; }
+.product-options ul.options-list label { font-weight:normal; }
+.product-options ul.validation-failed { padding:0 7px; }
+.product-options p.note { margin:0; font-size:11px; }
+.product-options p.required { position:absolute; right:20px; top:20px; }
+
+.product-options-bottom { background-color:#fffada; padding:15px 20px; border:1px solid #e4e4e4; border-top:0; }
+.product-options-bottom .product-pricing,
+.product-options-bottom .tier-prices { margin:0; padding:0 0 10px; border:0; background:0; color:#e26703; }
+.product-options-bottom .tier-prices li { background:0; padding:2px 0; }
+.product-options-bottom .tier-prices .price,
+.product-options-bottom .tier-prices .benefit { color:#e26703; }
+.product-options-bottom .price-box { float:left; margin:0; padding:0; }
+.product-options-bottom .add-to-links { clear:both; padding:5px 0 0; text-align:right; }
+.col3-layout .product-options-bottom .price-box { float:none; padding:0 0 5px; }
+.product-options-bottom .price-label { float:left; padding-right:5px; }
+.product-options-bottom .price-tax { float:left; }
+.product-options-bottom .add-to-cart { float:right; }
+.product-shop .product-options-bottom { margin:0 0 10px; }
+.product-shop .product-options-bottom .price-box { float:none; margin:0 0 5px; }
+.product-shop .product-options-bottom .price-label { float:none; padding-right:0; }
+.product-shop .product-options-bottom .price-tax { float:none; }
+.product-shop .product-options-bottom .add-to-cart-box { clear:both; float:left; padding-top:12px; }
+.product-shop .product-options-bottom .add-to-links { clear:both; padding:5px 0 0; text-align:right; }
+
+/* Grouped Product */
+.product-view .grouped-items-table .price-box { margin:0; padding:0; }
+
+/* Block: Description */
+.product-view .box-description {}
+
+/* Block: Additional */
+.product-view .box-additional .data-table th,
+.product-view .box-additional .data-table td { line-height:1.25; }
+
+/* Block: Upsell */
+.product-view .box-up-sell h2 { border-bottom:0; padding:0; margin:0 0 8px; }
+.product-view .box-up-sell .products-grid { width:100%; border:1px solid #e5dcc3; }
+.product-view .box-up-sell .products-grid td { width:25%; background:#f6f2e7; border-right:1px solid #e5dcc3; border-bottom:1px solid #e5dcc3; padding:15px 10px 12px; line-height:1.6em; }
+.product-view .box-up-sell .products-grid tr.last td { border-bottom:0; }
+.product-view .box-up-sell .products-grid td.last { border-right:0; }
+.product-view .box-up-sell .products-grid td img { border:1px solid #e5dcc3; }
+.product-view .box-up-sell .products-grid .product-image { text-align:center; }
+.product-view .box-up-sell .products-grid td.empty { border-right:0; background:#f1ecdb; }
+.product-view .box-up-sell .products-grid .ratings .rating-box { float:none; display:block; margin:0 0 3px; }
+
+/* Block: Tags */
+.product-view .box-tags { margin:0; }
+.product-view .box-tags h3 { font-size:13px; }
+.product-view .box-tags .product-tags { display:block; margin:0 0 15px; }
+.product-view .box-tags .product-tags li { display:inline; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_pipe3.gif) 100% 4px no-repeat; padding:0 7px 0 4px; }
+.product-view .box-tags .product-tags li.first { padding-left:0; }
+.product-view .box-tags .product-tags li.last { background:none; padding-right:0; }
+.product-view .box-tags .form-add label { display:block; font-size:13px; font-weight:bold; margin:0 0 5px; color:#0a263c;}
+.product-view .box-tags .form-add .input-box { float:left; width:305px; margin:0 5px 0 0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_tag_add.gif) 0 2px no-repeat; padding:0 0 0 23px; }
+.product-view .box-tags .form-add input.input-text { width:299px; }
+.product-view .box-tags .form-add button.button span { border-color:#406a83; background:#618499; }
+.product-view .box-tags .note { margin:3px 0 0; padding:0 0 0 23px; font-size:11px; }
+
+/* Block: Reviews */
+.product-view .box-reviews dl { margin:15px 0; }
+.product-view .box-reviews dt a,
+.product-view .box-reviews dt span { font-weight:bold; }
+.product-view .box-reviews dd { margin:0 0 15px; }
+.product-view .box-reviews dd small { font-style:italic; }
+.product-view .box-reviews .form-add { margin:15px 0 0; }
+.product-view .box-reviews .form-add h3 { font-size:13px; font-weight:normal; }
+.product-view .box-reviews .form-add h3 span { font-weight:bold; }
+.product-view .box-reviews .form-add h4 { font-size:12px; }
+.product-view .box-reviews .form-add .data-table td { text-align:center; }
+.product-view .box-reviews .form-add .form-list { margin:15px 0 0; }
+.product-view .box-reviews .form-add .form-list .input-box { width:360px; }
+.product-view .box-reviews .form-add .form-list input.input-text,
+.product-view .box-reviews .form-add .form-list textarea { width:354px; }
+
+/* Send a Friend */
+.send-friend .form-list { width:615px; overflow:hidden; }
+.send-friend .form-list li { margin-right:-15px; }
+.send-friend .form-list li p { margin:0 15px 0 0; }
+.send-friend .form-list .field { width:315px; }
+.send-friend .form-list .input-box { width:300px; }
+.send-friend .form-list input.input-text,
+.send-friend .form-list textarea { width:294px; }
+.send-friend .form-list li.wide .input-box { width:612px; }
+.send-friend .form-list li.wide textarea { width:609px; }
+.send-friend .buttons-set .limit { float:right; margin:0 7px 0 0; font-size:11px; line-height:21px; }
+/* ======================================================================================= */
+
+
+/* Content Styles ================================================================= */
+.product-name { margin:0; font-size:1em; font-weight:normal; }
+.product-name a { color:#1e7ec8; }
+
+/* Product Tags */
+.tags-list { display:block; font-size:13px; border:1px solid #c1c4bc; background:#f8f7f5; padding:10px; }
+.tags-list li { display:inline !important; margin:0 4px 0 0; }
+.tags-list li a { color:#1b2d3b; }
+
+/* Advanced Search */
+.advanced-search .form-list label { width:160px; padding-right:10px; }
+.advanced-search .form-list .input-box,
+.advanced-search .form-list .input-range { float:left; clear:none; }
+.advanced-search-amount { margin:0 0 10px; }
+.advanced-search-summary { margin:10px 0; border:1px solid #e9d7c9; background:#fff6f1; padding:10px; }
+.advanced-search-summary ul { float:left; width:49%; }
+.advanced-search-summary strong { color:#E17C24; padding-left:15px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_search_criteria.gif) 0 3px no-repeat; }
+.advanced-search-summary p { clear:both; font-weight:bold; margin:0; }
+
+/* CMS Home Page */
+.cms-home .subtitle {}
+.cms-index-index .subtitle {}
+
+/* Sitemap */
+.page-sitemap .links { text-align:right; margin:0 8px -22px 0; }
+.page-sitemap .links a { text-decoration:none; position:relative; }
+.page-sitemap .links a:hover { text-decoration:underline; }
+.page-sitemap .sitemap { margin:12px; }
+.page-sitemap .sitemap a { color:#1b2d3b; }
+.page-sitemap .sitemap li { margin:3px 0; }
+.page-sitemap .sitemap li.level-0 { margin:10px 0 0; font-weight:bold; }
+.page-sitemap .sitemap li.level-0 a { color:#1e7ec8; }
+
+/* RSS */
+.rss-title h1 { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_rss-big.png) 0 4px no-repeat; padding-left:27px; }
+.rss-table .link-rss { display:block; line-height:1.55; background-position:0 4px; }
+/* ======================================================================================= */
+
+
+/* Shopping Cart ========================================================================= */
+.cart .page-title { border-bottom:0; margin:0 0 12px; }
+.cart .page-title h1 { margin:10px 0 0; }
+
+/* Checkout Types */
+.cart .page-title .checkout-types li { margin:0 0 5px; }
+.cart .title-buttons .checkout-types { float:right; }
+.cart .title-buttons .checkout-types li { float:left; margin:0 0 5px 5px; }
+.cart .checkout-types .paypal-or { margin:0 8px; line-height:2.3; }
+.cart .totals .checkout-types .paypal-or { clear:both; display:block; padding:8px 55px 0 0; line-height:1.0; font-size:11px; }
+
+/* Shopping Cart Table */
+.cart-table th { padding:2px 10px; }
+.cart-table td { padding:10px; }
+.cart-table .product-name { font-weight:bold; margin:0 0 5px; color:#2f2f2f; }
+.cart-table .item-msg { margin:5px 0; font-size:11px; font-weight:bold; color:#df280a; }
+.cart-table tfoot td { padding:5px 10px; }
+.cart-table .btn-continue { float:left; }
+.cart-table .btn-empty span,
+.cart-table .btn-continue span,
+.cart-table .btn-update span { border-color:#406a83; background:#618499; }
+.cart-table .btn-update,
+.cart-table .btn-empty { float:right; }
+.cart-table .btn-update { margin-left:10px; }
+
+/* Shopping Cart Collateral boxes */
+.cart .cart-collaterals { padding:25px 0 0; }
+.cart .cart-collaterals .col2-set { float:left; width:605px; }
+.cart .cart-collaterals .col2-set .col-2 { width:294px; }
+
+.cart .crosssell { border:1px solid #cec3b6; background:#fafaec; padding:12px 15px; }
+.cart .crosssell h2 { font-size:13px; font-weight:bold; }
+.cart .crosssell .product-image { float:left; width:75px; height:75px; border:1px solid #d0cdc9; }
+.cart .crosssell .product-details { margin-left:90px; }
+.cart .crosssell .product-name { font-weight:bold; }
+.cart .crosssell li.item { margin:12px 0; }
+.cart .crosssell .link-compare { font-weight:normal; }
+
+/* Discount Codes & Estimate Shipping and Tax Boxes */
+.cart .discount,
+.cart .shipping { border:1px solid #d0cbc1; background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-title.gif) 0 0 repeat-x; padding:12px 15px; margin:0 0 18px; }
+.cart .discount h2,
+.cart .shipping h2 { background-position:0 0; background-repeat:no-repeat; font:bold 13px/16px Arial, Helvetica, sans-serif; padding:0 0 0 21px; color:#e26703; text-transform:uppercase; }
+.cart .discount button span,
+.cart .shipping button span { border-color:#406a83; background:#618499; }
+.cart .discount .buttons-set,
+.cart .shipping .buttons-set { margin:10px 0 0; border:0; padding:0; text-align:left; }
+.cart .discount .buttons-set button.button,
+.cart .shipping .buttons-set button.button { float:none; margin-left:0; }
+
+.cart .discount h2 { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_discount.gif); }
+.cart .discount .input-box { margin:8px 0 0; width:260px; }
+.cart .discount input.input-text { width:254px; }
+
+.cart .shipping h2 { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_shipping.gif); }
+.cart .shipping .sp-methods { margin:10px 0 0; padding:5px 0 0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_divider1.gif) 0 0 repeat-x; }
+
+/* Shopping Cart Totals */
+.cart .totals { float:right; width:268px; background:#dee5e8; border:1px solid #bebcb7; }
+.cart .totals table { width:100%; margin:7px 0; }
+.cart .totals td { padding:1px 15px 1px 7px; }
+.cart .totals tr.last td {}
+.cart .totals tfoot th { padding:5px 15px 5px 7px; }
+.cart .totals tfoot td { padding-top:5px; padding-bottom:5px; }
+.cart .totals tfoot th strong,
+.cart .totals tfoot td strong { font-size:15px; }
+.cart .totals .checkout-types { font-size:13px; padding:8px 15px 15px; text-align:right; }
+.cart .totals .checkout-types li { clear:both; margin:10px 0; }
+
+/* Options Tool Tip */
+.item-options dt { font-weight:bold; font-style:italic; }
+.item-options dd { padding-left:10px; margin:0 0 6px; }
+.truncated { cursor:help; }
+.truncated a.dots { cursor:help; }
+.truncated a.details { cursor:help; }
+.truncated .truncated_full_value { position:relative; z-index:999; }
+.truncated .truncated_full_value .item-options { position:absolute; top:-99999em; left:-99999em; z-index:999; width:250px; padding:8px; border:1px solid #ddd; background-color:#f6f6f6; }
+.truncated .truncated_full_value .item-options > p { font-weight:bold; text-transform:uppercase; }
+.truncated .show .item-options { top:-20px; left:50%; }
+.col-left .truncated .show .item-options { left:15px; top:7px; }
+.col-right .truncated .show .item-options { left:-240px; top:7px; }
+/* ======================================================================================= */
+
+
+/* Checkout ============================================================================== */
+/********** < Common Checkout Styles */
+/* Shipping and Payment methods */
+.sp-methods { margin:0 0 8px; }
+.sp-methods dt { margin:13px 0 5px; font-weight:bold; }
+.sp-methods dd {}
+.sp-methods dd li { margin:5px 0; }
+.sp-methods label { font-weight:bold; color:#666; }
+.sp-methods .price { font-weight:bold; }
+.sp-methods .form-list { padding-left:20px; }
+.sp-methods .form-list li { margin:0 0 8px; }
+.sp-methods select.month { width:154px; margin-right:10px; }
+.sp-methods select.year { width:96px; }
+.sp-methods input.cvv { width:3em !important; }
+
+.sp-methods .checkmo-list li { margin:0 0 5px; }
+.sp-methods .checkmo-list label { width:135px; padding-right:10px; text-align:right; }
+.sp-methods .checkmo-list address { float:left; }
+
+.sp-methods .centinel-logos a { margin-right:3px; }
+.sp-methods .centinel-logos img { vertical-align:middle; }
+
+.sp-methods .release-amounts { margin:0.5em 0; }
+.sp-methods .release-amounts button { float:left; margin:5px 10px 0 0; }
+
+.please-wait { float:right; }
+.please-wait img { vertical-align:middle; }
+.cvv-what-is-this { font-size:11px; cursor:help; margin-left:10px; }
+
+/* Tooltip */
+.tool-tip { border:1px solid #7BA7C9; background:#EAF6FF; padding:15px 20px; position:absolute; z-index:9999; }
+.tool-tip .btn-close { margin:-9px -14px 0; text-align:right; }
+.tool-tip .btn-close a { display:block; margin:0 0 0 auto; width:15px; height:15px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_window_close.gif) 100% 0 no-repeat; text-align:left; text-indent:-999em; overflow:hidden; }
+.tool-tip .tool-tip-content { padding:5px; }
+
+/* Gift Messages */
+.gift-messages h3 { font-size:12px; font-weight:bold; color:#e87403; }
+.gift-messages p.control { color:#8e8d8b; }
+.gift-messages-form { position:relative; }
+.gift-messages-form label { float:none !important; position:static !important; }
+.gift-messages-form h4 { font-size:12px; font-weight:bold; color:#e87403; }
+.gift-messages-form .whole-order { margin:0 0 25px; }
+.gift-messages-form .item { margin:0 0 10px; }
+.gift-messages-form .item .product-img-box { float:left; width:75px; }
+.gift-messages-form .item .product-image { margin:0 0 7px; }
+.gift-messages-form .item .number { margin:0; font-weight:bold; text-align:center; color:#8a8987; }
+.gift-messages-form .item .details { margin-left:90px; }
+.gift-messages-form .item .details .product-name { font-size:13px; font-weight:bold; margin:0 0 10px; }
+.gift-messages-form .item .details .form-list .field { width:255px; }
+.gift-messages-form .item .details .form-list .input-box { width:240px; }
+.gift-messages-form .item .details .form-list input.input-text { width:234px; }
+.gift-messages-form .item .details .form-list li.wide .input-box { width:500px; }
+.gift-messages-form .item .details .form-list li.wide textarea { width:494px; }
+
+.gift-message-link { font-size:11px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_collapse-gm.gif) 100% 6px no-repeat; padding-right:7px; }
+.gift-message-link.expanded { background-position:100% -40px; }
+.gift-message-row { background:#f2efe9; }
+.gift-message-row .btn-close { float:right; width:16px; height:16px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_gm-close.gif) 0 0 no-repeat; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
+
+/* Checkout Agreements */
+.checkout-agreements li { margin:30px 0; }
+.checkout-agreements .agreement-content { overflow:auto; height:12em; padding:10px; background-color:#fbfaf6; border:1px solid #bbb6a5; }
+.checkout-agreements .agree { margin:0; padding:10px 0 10px 11px; }
+.checkout-agreements .agree input.checkbox { margin-right:6px; }
+.checkout-agreements .agree label { font-weight:bold; color:#666; }
+
+.opc .checkout-agreements { border:1px solid #d9dde3; border-width:0 1px; padding:5px 30px; }
+.opc .checkout-agreements li { margin:20px 0 0; }
+.opc .checkout-agreements .agreement-content { background-color:#fff; border-color:#e4e4e4; padding:5px; }
+.opc .checkout-agreements .agree { padding-left:6px; }
+
+/* Centinel */
+.centinel {}
+.centinel .authentication { border:1px solid #ddd; background:#fff; }
+.centinel .authentication iframe { width:99%; height:400px; background:transparent !important; margin:0 !important; padding:0 !important; border:0 !important; }
+
+.opc .centinel { border:1px solid #bbb6a5; border-width:0 1px 1px; padding:10px 30px; }
+
+/* Generic Info Set */
+.info-set { background:#fbfaf6 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_checkout.gif) 0 0 repeat-x; border:1px solid #bbb6a5; margin:0 0 25px; padding:20px; }
+.info-set h2 { font-size:13px; font-weight:bold; margin:0 0 10px; }
+.info-set h3,
+.info-set h4 { font-size:13px; font-weight:bold; color:#E26703; }
+.info-set h2 a,
+.info-set h3 a,
+.info-set h4 a { font-weight:normal; }
+.info-set h2.legend { margin:-20px -20px 15px; padding:5px 10px; background:#f9f3e3; border-bottom:1px solid #bbafa0; position:relative; }
+.info-set h3.legend { margin:0 0 10px; color:#0a263c; }
+.info-set .divider { margin:0 -20px; padding:25px 0; position:relative; }
+.info-set .box { margin:0 0 15px; }
+.info-set .box h2 { color:#e26703; }
+.info-set .data-table .product-name { font-size:1em !important; font-weight:bold !important; color:#1e7ec8 !important; }
+.info-set .data-table .product-name a { font-weight:bold !important; }
+.info-set .data-table .item-options { margin:5px 0 0; }
+/********** Common Checkout Styles > */
+
+/* One Page Checkout */
+.block-progress { border:0; margin:0; }
+.block-progress .block-title { background:none; border:0; padding:0; margin:0 0 5px; }
+.block-progress .block-title strong { font-size:13px; color:#0a263c; }
+.block-progress .block-content { background:none; }
+.block-progress dt { font-size:13px; font-weight:bold; line-height:1.35; background:#eee; border:1px solid #a3aeb3; margin:0 0 6px; padding:2px 8px; color:#999; }
+.block-progress dd { background:#eee; border:1px solid #a3aeb3; border-top:0; padding:8px 13px; margin:0 0 6px; }
+.block-progress dt.complete { margin:0; background:#d0dce1; color:#5e8ab4; }
+.block-progress dd.complete {}
+.block-progress p { margin:0; }
+.block-progress .cards-list dt { background:none; border:0 none; color:inherit; font-size:12px; margin:5px 0; padding:0; }
+.block-progress .cards-list dd { border:0 none; margin:0; padding:0; }
+.block-progress .cards-list .info-table th { font-weight:normal; }
+
+/* show/hide "change" link for progress step depend on complete status
+ * should be placed in .css file */
+.opc-block-progress dt.complete a,
+.opc-block-progress dt.complete .separator { display: inline; }
+.opc-block-progress dt a,
+.opc-block-progress dt .separator { display: none; }
+
+.opc .buttons-set { margin-top:0; padding-top:2em; }
+.opc .buttons-set p.required { margin:0; padding:0 0 10px; }
+.opc .buttons-set .back-link small { display:none; }
+.opc .buttons-set .back-link a { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_arrow-top.gif) 0 50% no-repeat; padding-left:16px; }
+.opc .buttons-set.disabled button.button { display:none; }
+.opc .buttons-set .please-wait { height:21px; line-height:21px; }
+.opc .ul { list-style:disc outside; padding-left:18px; }
+
+.opc { position:relative; }
+.opc li.section {}
+
+.opc .step-title { border-width:0 1px; border-style:solid; border-color:#fff #d9dde3 #d9dde3; background:#eee url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_opc-title-off.gif) 0 100% repeat-x; padding:4px 8px 6px; text-align:right; }
+.opc .step-title .number { float:left; background:#fff; border:1px solid #fff; padding:0 4px; margin:0 5px 0 0; font:bold 11px/14px arial, helvetica, sans-serif; color:#999; }
+.opc .step-title h2 { float:left; margin:0; font:bold 13px/16px Arial, Helvetica, sans-serif; color:#999; }
+.opc .step-title a { display:none; float:right; font-size:11px; line-height:16px; }
+
+.opc .allow .step-title { background:#d0dce1; border:1px solid #a3aeb3; border-bottom:0; color:#a4b3b9; cursor:pointer; }
+.opc .allow .step-title .number { background:#dbe6eb; border-color:#dbe6eb; color:#a4b3b9; }
+.opc .allow .step-title h2 { color:#a4b3b9; }
+/*.opc .allow .step-title a { display:block; }*/
+
+.opc .active .step-title { background:#f9f3e3; border:1px solid #bbafa0; padding-bottom:5px; color:#f18200; cursor:default; }
+.opc .active .step-title .number { background:#f18200; border-color:#f19900; color:#fff; }
+.opc .active .step-title h2 { color:#f18200; }
+/*.opc .active .step-title a { display:none; }*/
+
+.opc .step { border:1px solid #bbafa0; border-top:0; background:#fbfaf6 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_checkout.gif) 0 0 repeat-x; padding:15px 30px; position:relative; }
+.opc .step .tool-tip { right:30px; }
+
+#opc-login .buttons-set { border-top:0; }
+#opc-login h3 { font-size:13px; border-bottom:1px solid #e4e4e4; padding-bottom:2px; text-transform:uppercase; }
+#opc-login h4 { font-size:1em; font-weight:bold; margin:0; color:#2f2f2f; }
+
+#opc-shipping_method .buttons-set { border-top:0; }
+.opc .gift-messages-form { margin:0 -30px; background:#f6f1eb; border:1px solid #e9e4de; border-width:1px 0; padding:22px 24px 22px 30px; }
+.opc .gift-messages-form .inner-box { padding:5px; height:260px; overflow:auto; }
+
+#opc-review .step { border:0; padding:0; }
+#opc-review .product-name { font-weight:bold; color:#0a263c; }
+#opc-review .item-options { margin:5px 0 0; }
+#opc-review .buttons-set { padding:20px 30px; border:1px solid #d9dde3; border-width:0 1px 1px; }
+#opc-review .buttons-set p { margin:0; line-height:40px; }
+#opc-review .buttons-set .please-wait { height:40px; line-height:40px; }
+#opc-review .authentication { margin:0 auto; width:570px; }
+#opc-review .warning-message { color:#222; font-weight:bold; text-align:center; padding:10px 10px 0; }
+
+/* Multiple Addresses Checkout */
+.checkout-progress { padding:0 90px; margin:0 0 20px; }
+.checkout-progress li { float:left; width:19%; margin:0 3px 0 0; border-top:10px solid #999; padding:2px 0 0; font-weight:bold; text-align:center; color:#abb5ba; }
+.checkout-progress li.active { border-top-color:#e96200; color:#e96200; }
+
+.multiple-checkout h2 { font-size:13px; font-weight:bold; margin:0 0 10px; }
+.multiple-checkout h3,
+.multiple-checkout h4 { font-size:13px; font-weight:bold; color:#E26703; }
+.multiple-checkout h2 a,
+.multiple-checkout h3 a,
+.multiple-checkout h4 a { font-weight:normal; }
+.multiple-checkout .data-table .product-name { font-size:1em !important; font-weight:bold !important; color:#1e7ec8 !important; }
+.multiple-checkout .data-table .product-name a { font-weight:bold !important; }
+.multiple-checkout .data-table .item-options { margin:5px 0 0; }
+
+.multiple-checkout .gift-messages { margin:15px 0 0; }
+
+.multiple-checkout .tool-tip { top:50%; margin-top:-120px; right:20px; }
+
+.multiple-checkout .col2-set,
+.multiple-checkout .col3-set { background:#fbfaf6 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_checkout.gif) 0 0 repeat-x; border:1px solid #bbb6a5; margin:0 0 25px; padding:20px; }
+.multiple-checkout .col2-set h2.legend { margin:-20px -20px 15px; padding:5px 10px; background:#f9f3e3; border-bottom:1px solid #bbafa0; position:relative; }
+.multiple-checkout .col2-set h3.legend { margin:0 0 10px; color:#0a263c; }
+.multiple-checkout .col2-set .divider { margin:0 -20px; padding:25px 0; position:relative; }
+.multiple-checkout .box { margin:0 0 15px; }
+.multiple-checkout .box h2 { color:#e26703; }
+
+.multiple-checkout .place-order .please-wait { float:right; padding:27px 7px 0 0; }
+.multiple-checkout .place-order .grand-total { float:right; height:71px; font-size:1.5em; padding:0 0 0 21px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_grand-total.gif) 0 0 no-repeat; overflow:hidden; }
+.multiple-checkout .place-order .grand-total .inner { float:left; height:57px; padding:14px 21px 0 0; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_grand-total.gif) 100% 0 no-repeat; }
+.multiple-checkout .place-order .grand-total .inner div { display:inline; }
+.multiple-checkout .place-order .grand-total big { display:inline; margin-right:12px; }
+.multiple-checkout .place-order .grand-total .price { color:#E26703; }
+.multiple-checkout .place-order .grand-total button.button span { font-size:16px; }
+.multiple-checkout .place-order .grand-total button.button span span { padding:0 45px 0 36px; }
+
+/* Step 1 */
+.multiple-checkout .title-buttons button.button span { border-color:#406a83; background:#618499; }
+#multiship-addresses-table td { padding:10px; }
+#multiship-addresses-table tfoot td { padding:5px 10px; }
+#multiship-addresses-table tfoot button.button span { border-color:#406a83; background:#618499; }
+
+/* Step 2 */
+.multiple-checkout .gift-messages-form .item .details .form-list { width:100%; overflow:hidden; }
+.multiple-checkout .gift-messages-form .item .details .form-list li { margin-right:-15px; }
+.multiple-checkout .gift-messages-form .item .details .form-list .field { width:230px; }
+.multiple-checkout .gift-messages-form .item .details .form-list .input-box { width:215px; }
+.multiple-checkout .gift-messages-form .item .details .form-list input.input-text { width:209px; }
+.multiple-checkout .gift-messages-form .item .details .form-list li.wide .input-box { width:445px; }
+.multiple-checkout .gift-messages-form .item .details .form-list li.wide textarea { width:439px; }
+.checkout-multishipping-shipping .box-sp-methods { border:1px solid #d9d2be; background:#f9f3e3; padding:13px; position:relative; }
+.checkout-multishipping-shipping .box-sp-methods .pointer { position:absolute; top:-20px; right:-40px; width:178px; height:41px; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_sp-methods.gif) 0 0 no-repeat; overflow:hidden; }
+
+/* Step 3 */
+.checkout-multishipping-billing .multiple-checkout { position:relative; }
+/* ======================================================================================= */
+
+
+/* Account Login/Create Pages ============================================================ */
+.account-login .content { min-height:345px; padding:14px 21px; background:#faf7ee url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_login-box.gif) 0 0 repeat-x; border:1px solid #bbb6a5; border-bottom:0; }
+.account-login .content h2 { font-weight:bold; font-size:13px; margin:0 0 14px; padding:0 0 5px 23px; border-bottom:1px solid #ddd; background-position:0 1px; background-repeat:no-repeat; text-transform:uppercase; color:#e76200; }
+.account-login .new-users h2 { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_page1.gif)}
+.account-login .registered-users h2 { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_page2.gif); }
+.account-login .buttons-set { border:1px solid #bbb6a5; border-top:0; margin:0; padding:8px 13px; background:#dee5e8 url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_buttons-set1.gif) 0 0 repeat-x; }
+
+.account-create {}
+
+/* Captcha ================================================================================ */
+.captcha-note      { clear:left; padding-top:5px; }
+.captcha-image     { float:left; display:inline;  margin:0; position:relative; width:258px; }
+.captcha-image .captcha-img { border:1px solid #b6b6b6; vertical-align:bottom; width:100%; }
+.registered-users .captcha-image { margin:0;}
+.captcha-reload { cursor:pointer; position:absolute; top:2px; right:2px;}
+.captcha-reload.refreshing  { animation:rotate 1.5s infinite linear; -webkit-animation:rotate 1.5s infinite linear; -moz-animation:rotate 1.5s infinite linear; }
+
+@-webkit-keyframes rotate {
+    0% { -webkit-transform:rotate(0); }
+    0% { -webkit-transform:rotate(-360deg); }
+}
+@-moz-keyframes rotate {
+    0% { -moz-transform:rotate(0); }
+    0% { -moz-transform:rotate(-360deg); }
+}
+@keyframes rotate {
+    0% { transform:rotate(0); }
+    0% { transform:rotate(-360deg); }
+}
+
+/* Remember Me Popup ===================================================================== */
+.window-overlay { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/window_overlay.png) repeat; background:rgba(0, 0, 0, 0.35); position:absolute; top:0; left:0; height:100%; width:100%; z-index:990; }
+
+.remember-me label { float:none; margin:0 6px; }
+.remember-me-popup { background:#fff; border:1px solid #ccc; left:50%; top:50%; position:absolute; margin:-85px 0 0 -200px; width:400px; text-align:left; -moz-box-shadow:0 0 6px #ccc; -webkit-box-shadow:0 0 6px #ccc; -box-shadow:0 0 6px #ccc; z-index:1000; }
+.remember-me-popup h3 { background:#d9e5ee; border-bottom:1px solid #ccc; font-size:14px; padding:5px 10px; }
+.remember-me-popup .remember-me-popup-head { position:relative; }
+.remember-me-popup .remember-me-popup-head .remember-me-popup-close { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_window_close.gif) no-repeat; display:block; position:absolute; top:7px; right:7px; height:15px; width:15px; text-indent:-9999em; }
+.remember-me-popup .remember-me-popup-body { padding:10px; }
+.remember-me-popup .remember-me-popup-body a { display:inline-block; height:19px; border:1px solid #de5400; background:#f18200; padding:0 8px; font:bold 12px/19px Arial, Helvetica, sans-serif; text-align:center; text-decoration:none; white-space:nowrap; color:#fff; }
+/* Remember Me Popup ===================================================================== */
+
+
+/* My Account ============================================================================= */
+.my-account .title-buttons .link-rss { float:none; margin:0; }
+
+/********** < Dashboard */
+.dashboard .welcome-msg { margin:0 8em 1.5em 0; }
+.dashboard .welcome-msg p { margin:0; }
+.dashboard .col2-set { margin:0 0 15px; }
+
+/* General Box */
+.box-account { background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_account_box.gif) 0 0 repeat-x; border:1px solid #ccc; border-color:#ccc #999 #999 #ccc; padding:15px; margin: 0 0 20px; }
+.box-account .box-head { border-bottom:1px solid #d9dde3; margin:0 0 10px; text-align:right; }
+.box-account .box-head h2 { float:left; margin:0; font-size:13px; font-weight:bold; text-transform:uppercase; background-position:0 0; background-repeat:no-repeat; padding-left:21px; color:#e65505; }
+
+.dashboard .box .box-title { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_divider1.gif) 0 100% repeat-x; padding:0 0 2px; margin:0 0 8px; text-align:right; }
+.dashboard .box .box-title h3,
+.dashboard .box .box-title h4 { float:left; font-size:13px; font-weight:bold; margin:0; }
+
+/* Block: Recent Orders */
+.dashboard .box-recent .box-head h2 { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_folder-table.gif); }
+
+/* Block: Account Information */
+.dashboard .box-info .box-head h2 { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_ma-info.gif); }
+.dashboard .box-info h4 { font-size:11px; font-weight:bold; text-transform:uppercase; }
+
+/* Block: Reviews */
+.dashboard .box-reviews .box-head h2 { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_ma-reviews.gif); }
+.dashboard .box-reviews .number { float:left; font-size:10px; font-weight:bold; line-height:1; color:#fff; margin:3px -20px 0 0; padding:2px 3px; background:#0a263c; }
+.dashboard .box-reviews .details { margin-left:20px; }
+.dashboard .box-reviews li.item { margin:0 0 7px; }
+.dashboard .box-reviews li.item.last { margin:0; }
+.dashboard .box-reviews .ratings { margin:7px 0 0; }
+
+/* Block: Tags */
+.dashboard .box-tags .box-head h2 { background-image:url(http://localhost/autotech.ua/skin/frontend/default/default/images/i_ma-tags.gif); }
+.dashboard .box-tags .number { float:left; font-size:10px; font-weight:bold; line-height:1; color:#fff; margin:3px -20px 0 0; padding:2px 3px; background:#0a263c; }
+.dashboard .box-tags .details { margin-left:20px; }
+.dashboard .box-tags li.item { margin:0 0 7px; }
+.dashboard .box-tags li.item.last { margin:0; }
+.dashboard .box-tags .tags strong,
+.dashboard .box-tags .tags ul,
+.dashboard .box-tags .tags ul li { display:inline; }
+/********** Dashboard > */
+
+/* Address Book */
+.addresses-list h2 { font-weight:bold; font-size:13px; color:#e26703; text-transform:uppercase; }
+.addresses-list h3 { font-weight:bold; font-size:13px; }
+.addresses-list address { margin:0 0 3px; }
+.addresses-list p { margin:0; }
+.addresses-list a { font-weight:bold; }
+.addresses-list .link-remove { color:#646464; }
+.addresses-list .separator { margin:0 3px; }
+.addresses-list li.item { background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_account_box.gif) 0 0 repeat-x; border:1px solid #ccc; padding:10px 13px; margin:0 0 10px; }
+.addresses-list li.empty { background:none; border:0; padding:0; }
+.addresses-list li.empty p { font-weight:bold; }
+.addresses-list .addresses-additional li.item { background:none; border:0; padding:0; }
+
+/* Order View */
+.order-info { background:#dee5e8; border:1px solid #d0cbc1; padding:4px 8px; margin:0 0 8px; }
+.order-info dt,
+.order-info dd,
+.order-info ul,
+.order-info li { display:inline; }
+.order-info .current { font-weight:bold; }
+.order-info li { margin:0 3px; }
+
+.order-date { margin:10px 0; }
+
+.order-info-box { background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_block-title.gif) 0 0 repeat-x; border:1px solid #d0cbc1; padding:12px 15px; margin:0 0 15px; }
+.order-info-box h2 { font-weight:bold; font-size:13px; }
+.order-info-box .box-payment p { margin:0 0 3px; }
+.order-info-box .box-payment th { font-weight:bold; padding-right:7px; }
+
+.order-items { width:100%; overflow-x:auto; }
+.order-items h2,
+.order-items h3 { clear:none; font-weight:bold; font-size:13px; padding:0; margin:0 0 5px; color:#0a263c; }
+.order-items .product-name { font-size:1em !important; font-weight:bold !important; }
+.order-items .link-print { color:#1e7ec8; font-weight:normal; }
+.order-items .order-links { text-align:right; }
+
+.order-additional { margin:15px 0; }
+/* Order Gift Message */
+.gift-message dt strong { color:#666; }
+.gift-message dd { font-size:13px; margin:5px 0 0; }
+/* Order Comments */
+.order-about dt { font-weight:bold; }
+.order-about dd { font-size:13px; margin:0 0 7px; }
+
+.tracking-table { margin:0 0 15px; }
+.tracking-table th { font-weight:bold; white-space:nowrap; }
+
+.tracking-table-popup { width:100%; }
+.tracking-table-popup th { font-weight:bold; white-space:nowrap; }
+.tracking-table-popup th,
+.tracking-table-popup td { padding:1px 8px; }
+
+/* Order Print Pages */
+.page-print .print-head { margin:0 0 15px; }
+.page-print .print-head .logo { float:left; }
+.page-print .print-head address { float:left; margin-left:15px; }
+.page-print h1 { font-size:16px; font-weight:bold; }
+.page-print h2,
+.page-print h3 { font-size:13px; font-weight:bold; }
+.page-print h2.h2 { font-size:16px; font-weight:bold; }
+.page-print .order-date { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_divider1.gif) 0 100% repeat-x; padding:0 0 10px; margin:0 0 10px; }
+.page-print .col2-set { margin:0 0 10px; }
+/* Price Rewrites */
+.page-print .gift-message-link { display:none; }
+.page-print .price-excl-tax,
+.page-print .price-incl-tax { display:block; white-space:nowrap; }
+.page-print .cart-price,
+.page-print .price-excl-tax .label,
+.page-print .price-incl-tax .label,
+.page-print .price-excl-tax .price,
+.page-print .price-incl-tax .price { display:inline; }
+
+/* My Wishlist */
+.my-wishlist .data-table td { padding:10px; }
+.my-wishlist .product-image { display:block; width:113px; height:113px; margin:0 0 5px; }
+.my-wishlist textarea { display:block; width:97%; height:109px; }
+.my-wishlist .buttons-set { margin-top:2em; }
+.my-wishlist .buttons-set button.button { float:none; }
+.my-wishlist .buttons-set .btn-add span,
+.my-wishlist .buttons-set .btn-share span { border-color:#406a83; background:#618499; }
+#wishlist-table .add-to-links { white-space:nowrap; }
+
+/* My Tags */
+.my-tag-edit { float:left; margin:0 0 10px; }
+.my-tag-edit .btn-remove { float:right; margin:4px 0 0 5px; }
+#my-tags-table { clear:both; }
+#my-tags-table td { padding:10px; }
+#my-tags-table .add-to-links { white-space:nowrap; }
+
+/* My Reviews */
+#my-reviews-table td { padding:10px; }
+
+.product-review .product-img-box { float:left; width:140px;  }
+.product-review .product-img-box .product-image { display:block; width:125px; height:125px; }
+.product-review .product-img-box .label { font-size:11px; margin:0 0 3px; }
+.product-review .product-img-box .ratings .rating-box { float:none; display:block; margin:0 0 3px; }
+.product-review .product-details { margin-left:150px; }
+.product-review .product-name { font-size:16px; font-weight:bold; margin:0 0 10px; }
+.product-review h3 { font-size:12px; margin:0 0 3px; color:#2f2f2f; }
+.product-review .ratings-table { margin:0 0 10px; }
+.product-review dt { font-weight:bold; }
+.product-review dd { font-size:13px; margin:5px 0 0; }
+
+/* Billing Agreements */
+.billing-agreements .info-box{ margin:15px 0; }
+.billing-agreements .form-list li select { float:left; }
+.billing-agreements .form-list li button.button { float:left; margin-left:10px; }
+.billing-agreements .table-caption { font-weight:bold; font-size:13px; }
+/* ======================================================================================= */
+
+
+/* MAP Popup============================================================================== */
+.cart-msrp-totals { color:red; font-size:12px !important; font-weight:bold; margin:10px 10px 0; padding:10px; text-align:right; text-transform:uppercase;}
+.map-cart-sidebar-total { color:red; display:block; font-size:10px; font-weight:bold; text-align:left; padding:2px 5px; text-shadow:0 1px 0 #fff; }
+
+.map-popup { background:#fff; border:1px solid #aaa; margin:12px 0 0; position:absolute; -moz-box-shadow:0 0 6px #ccc; -webkit-box-shadow:0 0 6px #ccc; box-shadow:0 0 6px #ccc; text-align:left; width:300px; z-index:100; }
+.map-popup-heading { background:#d9e5ee; border-bottom:1px solid #ccc; padding:5px 30px 5px 10px; width:260px; }
+.map-popup-heading h2 { font-size:16px; margin:0; text-shadow:0 1px 0 #f6f6f6; overflow:hidden; white-space:nowrap; word-wrap:break-word; text-align:left; text-overflow:ellipsis; }
+.map-popup-arrow { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/map_popup_arrow.gif) no-repeat; position:absolute; left:50%; top:-10px; height:10px; width:19px; }
+.map-popup-close { background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/btn_window_close.gif) no-repeat; display:block; position:absolute; top:8px; right:10px; height:15px; width:15px; text-indent:-9999em; -moz-box-shadow:0 0 3px #999; -webkit-box-shadow:0 0 3px #999; box-shadow:0 0 3px #999; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; }
+.map-popup-content { border-top:1px solid #eee; padding:10px; overflow:hidden; text-align:left; width:280px; }
+.map-popup-checkout { display:inline; float:right; text-align:right; }
+.map-popup-checkout span { display:block; padding-right:30px; }
+.map-popup-checkout .paypal-logo { margin:0 0 5px; }
+.map-popup-price .price-box,
+.map-popup-price .price-box .special-price { margin:0; padding:0; }
+.map-popup-price { margin:5px 0 0; }
+.map-popup-text { clear:right; margin:0 10px; padding:10px 0; text-align:left; word-wrap:break-word; }
+.map-popup-only-text { border-top:1px solid #ddd; }
+/* ======================================================================================= */
+
+
+/* Footer ================================================================================ */
+.footer-container { border-top:15px solid #b6d1e2; }
+.footer { width:930px; margin:0 auto; padding:10px 10px 50px; }
+.footer .store-switcher { display:inline; margin:0 5px 0 0; color:#fff; }
+.footer .store-switcher label { font-weight:bold; vertical-align:middle; }
+.footer .store-switcher select { padding:0; vertical-align:middle; }
+.footer a { color:#fff; text-decoration:none; }
+.footer a:hover { text-decoration:underline; }
+.footer .bugs { margin:13px 0 0; color:#ecf3f6; }
+.footer .bugs a { color:#ecf3f6; text-decoration:underline; }
+.footer .bugs a:hover { text-decoration:none; }
+.footer address { margin:0 0 20px; color:#ecf3f6; }
+.footer address a { color:#ecf3f6; text-decoration:underline; }
+.footer address a:hover { text-decoration:none; }
+.footer ul { display:inline; }
+.footer ul.links { display:block; }
+.footer li { display:inline; background:url(http://localhost/autotech.ua/skin/frontend/default/default/images/bkg_pipe2.gif) 100% 60% no-repeat; padding:0 7px 0 4px; }
+.footer li.last { background:none !important; padding-right:0 !important; }
+.footer-container .bottom-container { margin:0 0 5px; }
+/* ======================================================================================= */
+
+/* Sample Data============================================================================ */
+.home-callout { margin-bottom:12px; }
+.home-callout img { display:block }
+.home-spot { float:left; width:470px; margin-left:20px; }
+.best-selling h3 { margin:12px 0 6px 0; color:#e25203; font-size:1.2em; }
+.best-selling table { border-top:1px solid #ccc; }
+.best-selling tr.odd { background:#eee url(http://localhost/autotech.ua/skin/frontend/default/default/images/best_selling_tr_odd_bg.gif) 0 100% repeat-x; }
+.best-selling tr.even { background:#fff url(http://localhost/autotech.ua/skin/frontend/default/default/images/best_selling_tr_even_bg.gif) 0 100% repeat-x; }
+.best-selling td { width:50%; border-bottom:1px solid #ccc; padding:8px 10px 8px 8px; font-size:11px; }
+.best-selling .product-img { float:left; border:2px solid #dcdcdc; }
+.best-selling .product-description { margin-left:107px; line-height:1.3em; }
+.best-selling a.product-name,
+.home-spot .best-selling a.product-name:hover { color:#203548; }
+/* ======================================================================================= */
+
+
+/* Clears ================================================================================ */
+.clearer:after,
+.header-container:after,
+.header-container .top-container:after,
+.header:after,
+.header .quick-access:after,
+#nav:after,
+.main:after,
+.footer:after,
+.footer-container .bottom-container:after,
+.col-main:after,
+.col2-set:after,
+.col3-set:after,
+.col3-layout .product-options-bottom .price-box:after,
+.col4-set:after,
+.search-autocomplete li:after,
+.block .block-content:after,
+.block .actions:after,
+.block li.item:after,
+.block-poll li:after,
+.block-layered-nav .currently li:after,
+.page-title:after,
+.products-grid:after,
+.products-list li.item:after,
+.box-account .box-head:after,
+.dashboard .box .box-title:after,
+.box-reviews li.item:after,
+.box-tags li.item:after,
+.pager:after,
+.sorter:after,
+.ratings:after,
+.add-to-box:after,
+.add-to-cart:after,
+.product-essential:after,
+.product-collateral:after,
+.product-view .product-img-box .more-views ul:after,
+.product-view .box-tags .form-add:after,
+.product-view .product-shop .short-description:after,
+.product-view .box-description:after,
+.product-options .options-list li:after,
+.product-options-bottom:after,
+.product-review:after,
+.cart:after,
+.cart-collaterals:after,
+.cart .crosssell li.item:after,
+.opc .step-title:after,
+.checkout-progress:after,
+.multiple-checkout .place-order:after,
+.group-select li:after,
+.form-list li:after,
+.form-list .field:after,
+.buttons-set:after,
+.page-print .print-head:after,
+.advanced-search-summary:after,
+.gift-messages-form .item:after,
+.send-friend .form-list li p:after { display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }
+/* ======================================================================================= */
+
+.guest-select {width:305px !important;}
+
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/* Widgets =============================================================================== */
+.widget { display:inline; }
+.widget .widget-title { clear:both; padding:15px 0 0; margin:0 0 7px; }
+.widget .widget-title h2 { font-size:15px; font-weight:bold; color:#e25203; }
+
+.widget .mini-products-images-list .product-image { display:block; width:76px; height:76px; border:1px solid #a9a9a9; margin:0 auto; }
+.widget .mini-products-images-list li.item { float:left; width:77px; height:77px; }
+
+/* Widget: Catalog New Proructs List */
+.widget-new-products { display:block; }
+.col-main .widget-new-products { margin:7px 0; }
+.widget-new-products .products-grid .product-image,
+.widget-new-products .products-list .product-image { width:85px; height:85px; }
+.widget-new-products .products-list .product-shop { margin-left:100px; }
+.sidebar .widget-new-products .block { font-size:11px; line-height:1.25; }
+.sidebar .widget-new-products .block-title strong { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_widget-new.gif) 0 1px no-repeat; padding-left:21px; color:#dc5033; }
+
+/* Widget: Recently Viewed Proructs */
+.widget-viewed { display:block; }
+.col-main .widget-viewed { margin:7px 0; }
+.widget-viewed .products-grid .product-image,
+.widget-viewed .products-list .product-image { width:85px; height:85px; }
+.widget-viewed .products-list .product-shop { margin-left:100px; }
+.sidebar .widget-viewed .block { font-size:11px; line-height:1.25; }
+.sidebar .widget-viewed .block-title strong { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_block-list.gif) 0 0 no-repeat; padding-left:21px; }
+
+/* Widget: Recently Compared Proructs */
+.widget-compared { display:block;}
+.col-main .widget-compared { margin:7px 0; }
+.widget-compared .products-grid .product-image,
+.widget-compared .products-list .product-image { width:85px; height:85px; }
+.widget-compared .products-list .product-shop { margin-left:100px; }
+.sidebar .widget-compared .block { font-size:11px; line-height:1.25; }
+.sidebar .widget-compared .block-title strong { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_block-list.gif) 0 0 no-repeat; padding-left:21px; }
+
+/* Widget: CMS Static Block */
+.widget-static-block {}
+.sidebar .widget-static-block { display:block; margin:0 0 15px; }
+
+/* Widgets: Links Common Styles */
+.top-container .widget a { padding:0 0 0 7px; }
+
+.bottom-container .widget a { padding:0 3px; }
+
+/* Widget: Catalog Product Link */
+.widget-product-link-inline { display:inline; }
+
+.col-main .widget-product-link { display:block; text-align:right; margin:7px 0; }
+.col-main .widget-product-link a { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding-right:15px; }
+
+.sidebar .widget-product-link { display:block; margin:0 0 15px; padding:0 10px; }
+.sidebar .widget-product-link a { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding:0 15px 0 0; }
+
+/* Widget: Catalog Category Link */
+.widget-category-link-inline { display:inline; }
+
+.col-main .widget-category-link { display:block; text-align:right; margin:7px 0; }
+.col-main .widget-category-link a { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding-right:15px; }
+
+.sidebar .widget-category-link { display:block; margin:0 0 15px; padding:0 10px; }
+.sidebar .widget-category-link a { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding:0 15px 0 0; }
+
+/* Widget: CMS Page Link */
+.widget-cms-link-inline { display:inline; }
+
+.col-main .widget-cms-link { display:block; text-align:right; margin:7px 0; }
+.col-main .widget-cms-link a { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding-right:15px; }
+
+.sidebar .widget-cms-link { display:block; margin:0 0 15px; padding:0 10px; }
+.sidebar .widget-cms-link a { background:url(http://localhost/autotech.ua/skin/frontend/base/default/images/widgets/i_widget-link.gif) 100% 4px no-repeat; padding:0 15px 0 0; }
+/* ======================================================================================= */
+
+#extabs span#tb4 {
+	width: 100px;
+}
+div#noticeevents {
+	border: 1px solid #999;
+	background-color: #FFF;
+	height: 100px;
+	overflow: auto;
+}
+div#noticeevents div {
+	border-bottom: 1px dotted #DDD;
+	padding: 3px;
+	margin: 0px;
+}
+.runner {
+	-moz-border-radius: 	5px;
+	-webkit-border-radius:	5px;
+	float: right;
+	font-size: .8em;
+	background-color: #333;
+	color: #FFF;
+	padding: 2px 10px 5px 10px;
+	cursor: pointer;
+}
+
+
+/** Growler Notice Custom Styling **/
+div.Growler-notice {
+	background-color: 		#000;
+	color: 					#fff;
+	opacity: 				.85;
+	filter: 				alpha(opacity = 85);
+	zoom: 					1;
+	width: 					235px;
+	padding: 				10px;
+	margin-top: 			5px;
+	margin-bottom: 			5px;
+	margin-left: 			auto;
+	margin-right: 			auto;
+	font-family: 			Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 				12px;
+	text-align: 			left;
+	display: 				none;
+	-moz-border-radius: 	5px;
+	-webkit-border-radius:	5px;
+	min-height: 			40px;
+    z-index:                10000;
+}
+
+div.Growler-notice-head {
+	font-weight: 			bold;
+	font-size:				10px;
+}
+
+div.Growler-notice-exit {
+	float: 					right;
+	font-weight: 			bold;
+	font-size: 				12px;
+	cursor:					pointer;
+}
+
+/** Plain Theme **/
+div.plain {
+	color: 					#000;
+	width: 					253px;
+	margin-top: 			5px;
+	margin-bottom: 			5px;
+	text-align: 			left;
+	display: 				none;
+	min-height: 			40px;
+	background-color: 		#EDEDED;
+	border: 				1px solid #777;
+}
+
+div.plain div.Growler-notice-head {
+	font-weight: 			bold;
+	font-size:				10px;
+	padding: 				2px 10px;
+}
+
+div.plain div.Growler-notice-exit {
+	float: 					right;
+	cursor:					pointer;
+	margin: 				0px;
+	padding: 				0px 0px 2px 2px;
+	width: 					10px;
+	height: 				10px;
+	color: 					#BFBFBF;
+}
+div.plain div.Growler-notice-body {
+	padding: 5px;
+}
+
+
+/** Mac OS X Theme **/
+div.macosx {
+	color: 					#000;
+	width: 					253px;
+	margin-top: 			5px;
+	margin-bottom: 			5px;
+	text-align: 			left;
+	display: 				none;
+	min-height: 			40px;
+	background: #d7d7d7 url(http://localhost/autotech.ua/skin/frontend/base/default/images/macosx.jpg) repeat-y 0;
+	border: 				1px solid #C9C9C9;
+}
+
+div.macosx div.Growler-notice-head {
+	font-weight: 			bold;
+	font-size:				10px;
+	padding: 				5px 10px;
+}
+
+div.macosx div.Growler-notice-exit {
+	width: 					15px;
+	height: 				15px;
+	float: 					left;
+	cursor:					pointer;
+	margin: 				4px;
+	margin-left: 			1px;
+	font-size: 				0em;
+	color: 					transparent;
+	background: transparent url(http://localhost/autotech.ua/skin/frontend/base/default/images/macosx_exit.png) no-repeat left 0;
+}
+div.macosx div.Growler-notice-exit:hover {
+	background: transparent url(http://localhost/autotech.ua/skin/frontend/base/default/images/macosx_exit_over.png) no-repeat left 0;
+}
+div.macosx div.Growler-notice-body {
+	padding: 2px 0 10px 25px;
+}
+
+/** Candybars Theme **/
+div.candybar {
+	color: 					#000;
+	width: 					253px;
+	margin-top: 			5px;
+	margin-bottom: 			5px;
+	text-align: 			left;
+	display: 				none;
+	min-height: 			40px;
+	background-color: 		#F5F7FA;
+	border: 				1px solid #19304B;
+}
+
+div.candybar div.Growler-notice-head {
+	font-weight: 			bold;
+	font-size:				10px;
+	background: 			url(http://localhost/autotech.ua/skin/frontend/base/default/images/candybars.jpg) repeat-x;
+	padding: 				5px 10px;
+}
+
+div.candybar div.Growler-notice-exit {
+	float: 					right;
+	cursor:					pointer;
+	margin: 				3px;
+}
+div.candybar div.Growler-notice-body {
+	border-top: 1px solid #999;
+	padding: 10px;
+}
+
+/** Construction Theme **/
+div.atwork {
+	color: 					#FFF;
+	width: 					253px;
+	margin-top: 			5px;
+	margin-bottom: 			5px;
+	text-align: 			left;
+	display: 				none;
+	min-height: 			40px;
+	background: 			#4d4d4d url(http://localhost/autotech.ua/skin/frontend/base/default/images/atwork.png) repeat-y 0;
+	border: 				1px solid #222;
+}
+
+div.atwork div.Growler-notice-head {
+	font-weight: 			bold;
+	font-size:				12px;
+	padding: 				5px 20px;
+	color: 					#efca23;
+	
+}
+
+div.atwork div.Growler-notice-exit {
+	float: 					right;
+	cursor:					pointer;
+	margin: 				3px;
+}
+div.atwork div.Growler-notice-body {
+	padding: 2px 0 10px 25px;
+}
+
+
+#MB_overlay {
+	position: absolute;
+	margin: auto;
+	top: 0;	left: 0;
+	width: 100%; height: 100%;
+	z-index: 9999;
+	border: 0;
+	background-color: #000!important;
+}
+#MB_overlay[id] { position: fixed; }
+
+#MB_window {
+	position: absolute;
+	top: 0;
+	border: 0 solid;
+	text-align: left;
+	z-index: 10000;
+}
+#MB_window[id] { position: fixed!important; }
+
+#MB_frame {
+	position: relative;
+	background-color: #EFEFEF;
+	height: 100%;
+}
+
+#MB_header {
+	margin: 0;
+	padding: 0;
+}
+
+#MB_content {
+	position: relative;
+	padding: 6px .75em;
+	overflow: auto;
+}
+
+#MB_caption {
+	font: bold 100% "Lucida Grande", Arial, sans-serif;
+	text-shadow: #FFF 0 1px 0;
+	padding: .5em 2em .5em .75em;
+	margin: 0;
+	text-align: left;
+}
+
+#MB_close {
+	display: block;
+	position: absolute;
+	right: 5px; top: 4px;
+	padding: 2px 3px;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 13px;
+}
+#MB_close:hover {
+	background: transparent;
+}
+
+#MB_loading {
+	padding: 1.5em;
+	text-indent: -10000px;
+	background: transparent url(http://localhost/autotech.ua/skin/frontend/base/default/ajaxcart/spinner.gif) 50% 0 no-repeat;
+}
+
+/* Color scheme */
+#MB_window {
+	background-color: #EFEFEF;
+	color: #000;
+	
+	-webkit-box-shadow: 0 0 64px #000; 
+	-moz-box-shadow: #000 0 0 64px; 
+	box-shadow: 0 0 64px #000;
+}
+	#MB_frame {
+		padding-bottom: 4px;
+		
+		-webkit-border-bottom-left-radius: 4px;
+		-webkit-border-bottom-right-radius: 4px;
+
+		-moz-border-radius-bottomleft: 4px;
+		-moz-border-radius-bottomright: 4px;
+
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+	
+	#MB_content { border-top: 1px solid #F9F9F9; }
+
+	#MB_header {
+	  background-color: #DDD;
+	  border-bottom: 1px solid #CCC;
+	}
+		#MB_caption { color: #000 }
+		#MB_close { color: #777 }
+		#MB_close:hover { color: #000 }
+
+
+/* Alert message */
+.MB_alert {
+	margin: 10px 0;
+	text-align: center;
+}
+ul.products-grid .item-more {
+  float: left;
+  height: 60px;
+  width: 100%;
+}
+
+ul.products-grid .item-more .item-inner {
+  background: none repeat scroll 0 0 #FC615D;
+  border-radius: 5px 5px 5px 5px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+  font-family: 'NovecentowideNormalRegular';
+  font-size: 120%;
+  font-style: normal;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  width: 610px;
+}
+
+div.item-more h3{
+	display: block;
+    float: left;
+    width: 100%;
+}
+div#infscr-loading{
+   display: block;
+   height: 60px;
+   margin: 0 auto;
+   position: relative;
+   width: 100px;
+
+}
+div#infscr-loading div{
+	margin: 0 auto;
+    position: absolute;
+    top: 0;
+}
+
+img { border: none; }
+
+/* image replacement */
+.graphic {
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-indent: -8000px;
+}
+
+/* // image replacement */
+.jm-products-slider-listing {
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+}
+
+.jm-products-slider-content{ 
+	position: relative; 
+	padding: 15px 0;
+}
+
+/* Easy Slider */
+.jm-slider { overflow: hidden; width: 0px; float: left;}
+
+.jm-slider ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.jm-slider li {
+	overflow: hidden;
+	float: left;
+	margin: 0;
+	text-align: center;
+	display: block;
+}
+
+/*.jm-slider a { position: relative; } */
+
+.jm-prev {
+	position: absolute;
+	left: 10px;
+	width: 30px;
+}
+
+.jm-next {
+	position: absolute;
+	right: 10px;
+	width: 30px;
+}
+
+.jm-slide-left-img,
+.jm-slide-right-img {
+	position: absolute;
+	top: 70px;
+	cursor: pointer;
+	z-index:999;
+}
+
+
+/* scroller */
+.has-hscrollbar {
+	padding-bottom: 30px;
+}
+
+.customScrollerContainer {
+
+}
+.customScrollerContent {
+
+}
+
+/* SCROLLER STYLE */
+/* VERTICAL */
+.divVScrollerBar {
+	width: 18px;
+	margin-left: 1px;
+}
+
+/* ORIZONTAL */
+.divOScrollerBar {
+	height: 18px;
+	margin-top: 1px;
+}
+
+/* AREA UP */
+.divVScrollerBarUp {
+	cursor: pointer;
+	height: 17px;
+}
+/* AREA LEFT */
+.divOScrollerBarLeft {
+	cursor: pointer;
+	width: 17px;
+}
+/* AREA DOWN */
+.divVScrollerBarDown {
+	cursor: pointer;
+	height: 17px;
+}
+/* AREA RIGHT */
+.divOScrollerBarRight {
+	cursor: pointer;
+	width: 17px;
+}
+/* ARROW UP AND DOWN */
+.divVScrollerBarUp span,
+.divVScrollerBarDown span {
+	display: block;
+	border: 1px solid #dae4eb;
+	width: 16px;
+	height: 15px;
+	line-height: 0;
+	font-size: 0;
+}
+.divVScrollerBarUp span {
+	background: #baccda url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmproductsslider/images/vtop.gif) no-repeat center center;
+}
+.divVScrollerBarDown span {
+	background: #baccda url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmproductsslider/images/vbottom.gif) no-repeat center center;
+}
+/* ARROW LEFT AND RIGHT */
+.divOScrollerBarLeft span,
+.divOScrollerBarRight span {
+	display: block;
+	
+	height: 16px;
+	width: 15px;
+	line-height: 0;
+	font-size: 0;
+}
+.divOScrollerBarLeft span {
+	background: #ffffff url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmproductsslider/images/re-left.gif) no-repeat center center;
+}
+.divOScrollerBarRight span {
+	background: #ffffff url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmproductsslider/images/re-right.gif) no-repeat center center;
+}
+
+/* ARROWS HOVER */
+.divVScrollerBarUp span.hover,
+.divOScrollerBarLeft span.hover,
+.divVScrollerBarDown span.hover,
+.divOScrollerBarRight span.hover {
+	
+	background-color: #527fa2;
+}
+
+/* TRACE */
+.divVScrollerBarTrace, .divOScrollerBarTrace {
+	background: url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmproductsslider/images/line.gif) repeat-x left center;
+	line-height: 0;
+	font-size: 0;
+}
+
+/* CURSORS */
+.divVScrollerBarCursor {
+	cursor: pointer;
+}
+.divOScrollerBarCursor {
+	cursor: pointer;
+}
+.divVScrollerBarCursor span {
+	display: block;
+	border-left: 1px solid #dae4eb;
+	border-right: 1px solid #dae4eb;
+	height: 100%;
+	width: 16px;
+	background: #baccda url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmproductsslider/images/vcursor.gif) no-repeat center center;
+	line-height: 0;
+	font-size: 0;
+}
+.divOScrollerBarCursor span {
+	display: block;
+	border-top: 1px solid #dae4eb;
+	border-bottom: 1px solid #dae4eb;
+	height: 10px;
+	width: 100%;
+	background: #cccccc url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmproductsslider/images/ocursor.gif) no-repeat center center;
+	font-size: 0;
+	margin-top:3px;
+}
+/* CURSORS HOVER */
+.divVScrollerBarCursor span.hover {
+	border-left: 1px solid #a3bbce;
+	border-right: 1px solid #a3bbce;
+	background-color: #527fa2;
+}
+.divOScrollerBarCursor span.hover {
+	border-top: 1px solid #a3bbce;
+	border-bottom: 1px solid #a3bbce;
+	background-color: #cccccc;
+}
+
+.jm-slideshow {
+	border-bottom: 5px solid #2c2d35;
+	margin: 30px 0 20px;
+	border: 0;
+}
+
+.jm-slidewrap {
+	background: white no-repeat left bottom;
+	margin: 0;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	height: auto;
+}
+
+.jm-slide-main-wrap {
+	position: relative;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.jm-slide-main {
+	position: absolute;
+	z-index: 1;
+}
+
+.jm-slide-item {
+	display: block;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+}
+
+.jm-slide-item img {
+	padding: 0;
+}
+
+.jm-slide-thumbs-wrap {
+	background: #000;
+	position: absolute;
+	overflow: hidden;
+	clear: both;
+	bottom: 40px;
+	right: 40px;
+	z-index: 999;
+}
+
+.jm-thumbs-top {
+	margin-top: 10px;
+}
+
+.jm-thumbs-bottom {
+	margin-bottom: 10px;
+}
+
+.jm-thumbs-left {
+	margin-left: 10px;
+}
+
+.jm-thumbs-right {
+	margin-right: 10px;
+}
+
+.jm-slide-thumbs,
+.jm-slide-thumbs-mask,
+.jm-slide-thumbs-handles {
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 5000px;
+}
+
+.jm-slide-descs {
+	display: none;
+}
+
+.jm-slide-thumb,
+.jm-slide-thumbs-handles span {
+	display: block;
+	margin: 0;
+	float: left;
+	cursor: pointer;
+	color: #eee;
+	background: url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmslideshow/images/blank.png) left top no-repeat;
+}
+
+.jm-slide-thumbs-mask-left,
+.jm-slide-thumbs-mask-right,
+.jm-slide-thumbs-mask-center {
+	float: left;
+}
+
+.jm-slide-thumbs-mask-left, .jm-slide-thumbs-mask-right{
+	background: #000000;
+}
+
+.jm-mask-desc {
+	display: block;
+	z-index: 100;
+	position: relative;
+	padding: 20px;
+}
+
+.jm-mask-desc .jm-slide-desc br {
+	display: none;
+}
+
+.jm-mask-desc .readmore {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	color: #B5B5B4;
+	font-size: 100%;
+	margin: 30px;
+}
+
+.jm-mask-desc a.readon:hover,
+.jm-mask-desc a.readon:active,
+.jm-mask-desc a.readon:focus {
+	color: #eee;
+}
+
+.jm-slide-buttons {
+	z-index: 999;
+	position: absolute;
+	display: block;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	width: 100%;
+}
+
+.jm-slide-controls {
+	position: absolute;
+	z-index: 901;
+}
+
+.jm-slide-buttons span {
+	background: url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmslideshow/images/arrow.png) left top no-repeat;
+	color: #eee;
+	display: block;
+	cursor: pointer;
+	width: 37px;
+	height: 37px;
+	text-indent: -10000em;
+}
+
+.jm-slide-buttons span.jm-slide-prev {
+	float: left;
+	margin-left: 30px;
+	background-position: left top;
+}
+
+.jm-slide-buttons span.jm-slide-next {
+	float: right;
+	margin-right: 30px;
+	background-position: right top;
+}
+
+.jm-slide-buttons span.jm-slide-prev:hover {
+	background-position: left bottom;
+}
+
+.jm-slide-buttons span.jm-slide-next:hover {
+	background-position: right bottom;
+}
+
+.jm-slide-mask {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	height: 70px;
+	width: 210px;
+	z-index: 99;
+	display: none;
+	filter: none !important; /* IE < 9 */
+}
+
+.jm-slide-thumb img {
+	overflow: hidden;
+}
+
+.jm-mask-desc .jm-slide-desc {
+	color: #999;
+	font-size: 100%;
+	padding: 30px;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	min-width: 300px;
+}
+
+.jm-mask-desc .jm-slide-desc h3 {
+	color: #eee;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+	font-size: 200%;
+}
+
+.jm-mask-top {
+	margin-top: 0px;
+}
+
+.jm-mask-bottom {
+	margin-bottom: 0px;
+}
+
+.jm-mask-left {
+	margin-left: 0px;
+}
+
+.jm-mask-right {
+	margin-right: 0px;
+}
+
+.jm-slide-desc {
+	color: #999;
+	font-size: 115%;
+}
+
+.jm-slide-desc h3 {
+	color: #eee;
+	font-size: 200%;
+	font-weight: normal;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+.jm-slide-desc p {
+	font-weight: normal;
+}
+
+.jm-slide-desc .price {
+	font-size: 165%;
+	color: #eee;
+	margin-right: 30px;
+	vertical-align: middle;
+}
+
+.jm-slide-desc button span {
+	background-image: url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmslideshow/images/btn-bg-01-active.png);
+}
+
+.jm-slide-desc button:hover span {
+	background-image: url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmslideshow/images/btn-bg-01.png);
+}
+
+/* Slideshow layout style ---*/
+.jm-vertical_right {
+	overflow: hidden;
+	position: absolute;
+	right: 80px;
+	top: 40px;
+	z-index: 100;
+}
+
+.jm-vertical_left {
+	left: 80px;
+	overflow: hidden;
+	position: absolute;
+	top: 40px;
+	z-index: 999;
+}
+
+.jm-vertical_right .active {}
+
+.jm-vertical_left .active {}
+
+.jm-slide-right{
+	margin-left: auto;
+	right: 0;
+	top: 0;
+}
+
+.jm-slideshowjm-vertical_left .jm-mask-desc .jm-slide-desc {
+	right: 40px;
+	left: auto;
+}
+
+.jm-slideshowjm-vertical_left .jm-mask-desc a.readon {
+	right: 60px;
+	left: auto;
+}
+
+.jm-vertical_right .jm-slide-thumb,
+.jm-vertical_right .jm-slide-thumbs-handles span {
+	float: none!important; 
+}
+
+.jm-vertical_left .jm-slide-thumb,
+.jm-vertical_left .jm-slide-thumbs-handles span {
+	float: none!important; 
+}
+
+.jm-slide-thumbs-wrap .active .jm-slide-thumb-inner {
+	background-image: url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmslideshow/images/grad2.gif);
+	color: #eee;
+}
+
+.jm-vertical_right .jm-slide-thumbs-mask-left,
+.jm-vertical_right .jm-slide-thumbs-mask-right,
+.jm-vertical_right .jm-slide-thumbs-mask-center {
+	display: block;
+	float: none;
+}
+
+.jm-vertical_left .jm-slide-thumbs-mask-left,
+.jm-vertical_left .jm-slide-thumbs-mask-right,
+.jm-vertical_left .jm-slide-thumbs-mask-center {
+	display: block;
+	float: none;
+}
+
+.jm-vertical_left .jm-slide-thumb-inner {
+	margin-left: 0px;
+	margin-right: 19px;
+}
+
+.jm-slide-thumb-inner img {
+	background: #fcfcfc;
+	border: 1px solid #ddd;
+	margin: 15px 15px 4px !important;
+	padding: 3px;
+}
+ 
+.jm-slide-thumb-inner h3 {
+	color: #1c1c1c;
+	font-family: "Segoe UI", Verdana, Arial, sans-serif;
+	font-size: 125%;
+	margin-top: 15px;
+}
+
+.jm-slide-thumb-inner .ratings {
+	height: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+.jm-slide-thumb-inner .price-box {
+	font-size: 110%;
+	margin: 0;
+}
+
+.active .jm-slide-thumb-inner {
+	border-top: 1px solid #65A7F5;
+}
+
+.active .jm-slide-thumb-inner img {
+	background: #88BBF7;
+	border: 1px solid #5F9DE7;
+}
+
+.active .jm-slide-thumb-inner h3 {
+	color: #eee;
+}
+
+.ja-slideshow .block .block-title {
+	margin-bottom: 20px;
+	margin-top: -10px;
+	padding-top: 0;
+}
+
+.jm-slide-loader {
+	background: #fff url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmslideshow/images/ajax-loader.gif);
+	width: 16px;
+	height: 11px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -5px 0 0 -8px;
+	z-index: 501;
+}
+
+.jm-slide-progress {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	height: 7px;
+	z-index: 500;
+	background: #fff;
+	opacity: 0.7;
+}
+.jm-megamenu {
+	background: #0A263D;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+ul.megamenu {
+  margin: 15px 0 0 20px;
+  height: 100%;
+}
+
+.column3 ul.megamenu {
+  border-right: 0;
+}
+
+ul.megamenu.level2 {
+	border-right: 0; 
+}
+
+ul.megamenu li {
+	overflow: visible
+}
+/* lv - 0
+-----------------------------------*/
+/* Styling ---*/
+.jm-megamenu ul.level0 {
+	margin: 0;
+	padding: 0;
+}
+
+.jm-megamenu ul.level0 li.mega {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: auto
+}
+
+.jm-megamenu ul.level0 li.mega a.mega {
+	color: #fff;
+	display: block;
+	float: left;
+	font-size: 107%;
+	font-style: normal;
+	line-height: 44px;
+	font-weight: bold;
+	min-height: 44px;
+	padding: 0 20px 0 19px;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+.jm-megamenu ul.level0 li.mega a.mega span.titlecolors {
+	padding: 0;
+	color: #F26432;
+}
+.jm-megamenu ul.level0 li.mega a.mega:hover,
+.jm-megamenu ul.level0 li.mega:hover > a.mega {
+	color: #E26703;
+
+}
+
+.jm-megamenu ul.level0 li.mega a.active{
+}
+
+.jm-megamenu ul.level0 li.mega .has-image {
+	background-position: left top;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: block;
+	padding-left: 25px
+}
+
+.jm-megamenu ul.level0 li.mega .icon-image {
+	float: left;
+	height: auto;
+	margin: 13px 5px 0 0;
+	max-width: 20px;
+	vertical-align: middle;
+}
+
+.jm-megamenu ul.level0 li.mega .menu-title{
+	
+}
+
+.jm-megamenu ul.level0 li.mega .mega-item-des {
+	float: left;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 140%;
+    margin: 0;
+	overflow: hidden;
+    padding: 0;	
+	position: relative;
+	top: -11px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.jm-megamenu ul.level1 li.mega .mega-item-des {
+    margin: 0;
+	color: #333;
+}
+
+.jm-megamenu ul.level0 li.mega a.mega.haschild:hover span.menu-title ,
+.jm-megamenu ul.level0 li.mega.haschild:hover > a.mega  span.menu-title {
+	background: url('http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmmegamenu/images/bg-arrow-menu.png') no-repeat center bottom;
+}
+
+
+.jm-megamenu ul.level0 li.mega span.menu-desc {
+	display: block;
+	font-size: 92%;
+	font-weight: normal
+}
+
+/* lv - 1 */
+.jm-megamenu ul.level1 li.mega a.mega {
+	border-bottom: 1px solid #e5e5e5;
+	color: #333;
+	float: none;
+	display: block;
+	padding: 0 10px;
+	margin: 0 20px 0 0;
+}
+
+.jm-megamenu ul.level1 li.mega a.mega.haschilds{
+	background: url(http://localhost/autotech.ua/skin/frontend/default/default/joomlart/jmmegamenu/images/bg-haschild.png) no-repeat 97% 20px;
+}
+
+.jm-megamenu ul.level1 li.mega a.mega.haschilds:active,
+.jm-megamenu ul.level1 li.mega a.mega.haschilds:focus,
+.jm-megamenu ul.level1 li.mega a.mega.haschilds:hover{
+	background-position: 97% -33px;
+}
+
+.jm-megamenu li.mega .childcontent{
+	display: block;
+	height: auto;
+	max-height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 60px;
+	box-shadow: 0 0 3px #666;
+	-box-shadow: 0 0 3px #666;
+	-moz-box-shadow: 0 0 3px #666;
+	-webkit-box-shadow: 0 0 3px #666;
+	-moz-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px; 
+	-webkit-border-radius: 0 0 5px 5px; 
+}
+
+.jm-megamenu li.mega.mnuright .childcontent{
+	/*right: 0;*/
+}
+
+.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	overflow: visible;
+	-moz-transition: all 0.8s linear;
+	-o-transition: all 0.8s linear;
+	transition: all 0.8s linear;
+	-webkit-transition: all 0.8s linear
+}
+
+.jm-megamenu li.haschild:hover > .childcontent{
+	border: 1px solid #666\9;
+	border-top-color: #fff\9;
+}
+
+.jm-megamenu ul.level1 li.haschild .childcontent {
+	-moz-transition: all 0s linear;
+	-o-transition: all 0s linear;
+	transition: all 0s linear;
+	-webkit-transition: all 0s linear
+}
+
+.jm-megamenu ul.level1 li.haschild:hover > .childcontent {
+	border-top-color: #666;
+	left: 150px;
+	-moz-transition: all 0s linear;
+	-o-transition: all 0s linear;
+	transition: all 0s linear;
+	-webkit-transition: all 0s linear
+}
+
+.jm-megamenu ul.level1 li.mega {
+	text-align: left;
+	width: 100%;
+}
+
+.jm-megamenu ul.level1 li.mega a {
+	border-left: 0 !important;
+}
+
+.jm-megamenu ul.level1 .childcontent {
+	margin: 0 0 0 0;
+	top: 0px;
+}
+
+/*lv 2*/
+.jm-megamenu ul.level2 li.mega {
+	padding: 3px 0;
+}
+
+.jm-megamenu ul.level2 li.mega.last {
+	border-bottom: 0 none;
+	padding: 3px 0 0 0;
+}
+
+.jm-megamenu ul.level2 li.mega a.mega {
+	color: #333;
+	float: none;
+	font-size: 100%;
+	font-weight: normal;
+	display: block;
+	min-height: 13px;
+	padding: 0 10px;
+	text-decoration: none;
+	margin: 0;
+}
+
+.jm-megamenu ul.level2 li.mega li li a.mega {
+	line-height: 28px;
+}
+
+.jm-megamenu ul.level2 li.mega.active a.mega,
+.jm-megamenu ul.level2 li.mega a.mega:active,
+.jm-megamenu ul.level2 li.mega a.mega:focus,
+.jm-megamenu ul.level2 li.mega a.mega:hover {
+	color: #E26703;
+	text-decoration: none;
+}
+
+ /* Columns ---*/
+.jm-megamenu .megacol {
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.jm-megamenu .megacol.last {
+	margin: 0
+}
+
+
+ /* CHILD CONTENT
+-----------------------------------*/
+.jm-megamenu .childcontent {
+	z-index: 88
+}
+.jm-megamenu .childcontent-inner {
+	background: #fff;
+	box-shadow: 0 5px 3px 0 #666
+}
+.jm-megamenu .level1 .childcontent-inner,
+.jm-megamenu .level2 .childcontent-inner {
+	box-shadow: 0 0 10px 0 #666
+}
+.jm-megamenu .childcontent .block {
+	line-height: 1.5;
+	margin: 10px 0;
+	padding: 0
+}
+.jm-megamenu .childcontent .block h3 {
+	background: none;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-indent: 5px;
+	text-transform: none
+}
+.jm-megamenu .childcontent .block .ja-box-ct {
+	padding: 0 5px
+}
+.jm-megamenu .childcontent .block a {
+	text-decoration: none
+}
+.jm-megamenu .childcontent .block a:hover,
+.jm-megamenu .childcontent .block a:focus,
+.jm-megamenu .childcontent .block a:active {
+	text-decoration: none
+}
+.jm-megamenu .childcontent .block ul:first-child {
+	margin-top: 0 !important
+}
+.jm-megamenu .childcontent .block li {
+	margin-bottom: 5px
+}
+.jm-megamenu .menu-adv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  float: left;
+}
+/* Grouped --- */
+.jm-megamenu .group {
+}
+.jm-megamenu .group-title {
+	color: #E26703;
+	font-size: 13px;
+	margin: 0 0 10px 0;
+	padding: 0 0;
+	overflow: hidden
+}
+.jm-megamenu .group-content{
+	float: left;
+	padding: 0 0 10px;
+}
+.jm-megamenu .group-content a.link-more {
+	text-decoration: none;
+}
+.jm-megamenu .group-content a.link-more:active,
+.jm-megamenu .group-content a.link-more:focus,
+.jm-megamenu .group-content a.link-more:hover {
+	text-decoration: underline;
+}
+.jm-megamenu ul.level1 li.mega div.group-title a.mega {
+	color: #E26703;
+	font-weight: bold;
+}
+.jm-megamenu .group-title .menu-desc {
+	padding-left: 0 !important
+}
+.jm-megamenu .group-content .block,
+.jm-megamenu .group-content ul.megamenu {
+	margin: 0
+}
+
+/* override --- */
+.jm-megamenu .childcontent ul.megamenu .block {
+	padding: 0
+}
+.jm-megamenu .childcontent ul.megamenu .block h3 {
+	margin-left: 0;
+	margin-right: 0
+}
+
+.jm-megamenu .products-grid div.item .inner {
+	margin: 0;
+	min-height: 0;
+	width: auto
+}
+
+.jm-megamenu .products-grid {
+	background: none;
+	border-bottom: 0 none;
+	margin: 0 !important;	
+}
+
+.jm-megamenu .products-grid li.item {
+	margin: 0 8px 0 0;
+	padding: 10px 15px 10px
+}
+
+.jm-megamenu .products-grid li.item.last {
+	margin: 0;
+}
+
+.jm-megamenu .products-grid .product-name {
+	margin: 0 0 10px;
+	min-height: 100%;
+}
+
+.jm-megamenu .products-grid .product-name a{ 
+	color: #333;
+	text-decoration: none;
+}
+.jm-megamenu .products-grid .product-name a:active,
+.jm-megamenu .products-grid .product-name a:focus,
+.jm-megamenu .products-grid .product-name a:hover {
+	color: #E26703;
+	text-decoration: none;
+}
+
+.jm-megamenu .products-grid .product-image {
+	float: left;
+	margin: 9px 0 10px;
+}
+
+.jm-megamenu .products-grid .ratings {
+	margin: 0 0 10px;
+}
+
+.jm-megamenu .products-grid .price{ 
+	color: #C76200;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 5px 0;
+}
+
+.jm-megamenu .group-content .buttons-set{
+	border: 0 none;
+	margin: 1em 0;
+}
+
+.jm-megamenu #childcontent15 .megacol{
+	margin: 0 !important;
+}
+
+/* Clearfix
+-------------------------------------------------------------*/
+* html .clearfix {
+	height: 1% /* IE5-6 */
+}
+.clearfix {
+	display: inline-block /* IE7xhtml*/
+}
+html[xmlns] .clearfix {
+	display: block /* O */
+}
+.clearfix:after {
+	clear: both;
+	/* FF, O, etc. */
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden
+}
+.clearer {
+	clear: both;
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	overflow: hidden
+}
+/*menu effect*/
+/*jaws*/
+.jaws.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: rotate(90deg);
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: rotate(90deg);
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: rotate(90deg);
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: rotate(90deg);
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: rotate(90deg);
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.jaws.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*fence*/
+.fence.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: rotateY(-90deg);
+	-moz-transform-origin: 100% 50%;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: rotateY(-90deg);
+	-ms-transform-origin: 100% 50%;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: rotateY(-90deg);
+	-o-transform-origin: 100% 50%;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: rotateY(-90deg);
+	transform-origin: 100% 50%;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: rotateY(-90deg);
+	-webkit-transform-origin: 100% 50%;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.fence.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*venitian*/
+.venitian.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: scale(1,0);
+	-moz-transform-origin: 50% 0;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: scale(1,0);
+	-ms-transform-origin: 50% 0;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: scale(1,0);
+	-o-transform-origin: 50% 0;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: scale(1,0);
+	transform-origin: 50% 0;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: scale(1,0);
+	-webkit-transform-origin: 50% 0;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.venitian.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*fly*/
+.fly.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: rotateX( -180deg );
+	-moz-transform-origin: 50% 50% -50px;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: rotateX( -180deg );
+	-ms-transform-origin: 50% 50% -50px;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: rotateX( -180deg );
+	-o-transform-origin: 50% 50% -50px;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: rotateX( -180deg );
+	transform-origin: 50% 50% -50px;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: rotateX( -180deg );
+	-webkit-transform-origin: 50% 50% -50px;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.fly.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*papercut*/
+.papercut.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: skewY(30deg);
+	-moz-transform-origin: 0% 0%;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: skewY(30deg);
+	-ms-transform-origin: 0% 0%;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: skewY(30deg);
+	-o-transform-origin: 0% 0%;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: skewY(30deg);
+	transform-origin: 0% 0%;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: skewY(30deg);
+	-webkit-transform-origin: 0% 0%;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.papercut.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*fan*/
+.fan.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: rotate(90deg);
+	-moz-transform-origin: 0% 0%;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: rotate(90deg);
+	-ms-transform-origin: 0% 0%;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: rotate(90deg);
+	-o-transform-origin: 0% 0%;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: rotate(90deg);
+	transform-origin: 0% 0%;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: rotate(90deg);
+	-webkit-transform-origin: 0% 0%;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.fan.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*wave*/
+.wave.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: skewY(-90deg);
+	-moz-transform-origin: 0% 0%;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: skewY(-90deg);
+	-ms-transform-origin: 0% 0%;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: skewY(-90deg);
+	-o-transform-origin: 0% 0%;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: skewY(-90deg);
+	transform-origin: 0% 0%;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: skewY(-90deg);
+	-webkit-transform-origin: 0% 0%;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.wave.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*helix*/
+.helix.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: rotateY(90deg);
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: rotateY(90deg);
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: rotateY(90deg);
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: rotateY(90deg);
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: rotateY(90deg);
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.helix.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*pop*/
+.pop.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: scale(.2);
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-moz-transition-timing-function: cubic-bezier(0, .35, .5, 1.5);
+	-ms-transform: translateX(-80%);
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	-ms-transition-timing-function: cubic-bezier(0, .35, .5, 1.5);
+	opacity: 0;
+	-o-transform: translateX(-80%);
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	-o-transition-timing-function: cubic-bezier(0, .35, .5, 1.5);
+	overflow: hidden;
+	transform: translateX(-80%);
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	transition-timing-function: cubic-bezier(0, .35, .5, 1.5);
+	-webkit-transform: scale(.2);
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s;
+	-webkit-transition-timing-function: cubic-bezier(0, .35, .5, 1.5)
+}
+.pop.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*linear*/
+.linear.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: translateX(-40%);
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-moz-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	-ms-transform: translateX(-40%);
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	-ms-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	opacity: 0;
+	-o-transform: translateX(-40%);
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	-o-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	overflow: hidden;
+	transform: translateX(-40%);
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	-webkit-transform: translateX(-40%);
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s;
+	-webkit-transition-timing-function: cubic-bezier(0, .35, .5, 1.7)
+}
+.linear.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*bounce*/
+.bounce.jm-megamenu li.mega .childcontent {
+	left: 0;
+	max-height: 0;
+	-moz-transform: translateX(-40%);
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-moz-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	-ms-transform: translateX(-40%);
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	-ms-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	opacity: 0;
+	-o-transform: translateX(-40%);
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	-o-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	overflow: hidden;
+	transform: translateX(-40%);
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	-webkit-transform: translateX(-40%);
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s;
+	-webkit-transition-timing-function: cubic-bezier(0, .35, .5, 1.7)
+}
+.bounce.jm-megamenu li.haschild:hover > .childcontent {
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*Radial*/
+.radial.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: translateY(-120px) rotate(70deg);
+	-moz-transform-origin: 0 0;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: translateY(-120px) rotate(70deg);
+	-ms-transform-origin: 0 0;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: translateY(-120px) rotate(70deg);
+	-o-transform-origin: 0 0;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: translateY(-120px) rotate(70deg);
+	transform-origin: 0 0;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: translateY(-120px) rotate(70deg);
+	-webkit-transform-origin: 0 0;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.radial.jm-megamenu li.haschild:hover > .childcontent {
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*winding*/
+.winding.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: rotateY(90deg);
+	-moz-transform-origin: 0 0;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-ms-transform: rotateY(90deg);
+	-ms-transform-origin: 0 0;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	opacity: 0;
+	-o-transform: rotateY(90deg);
+	-o-transform-origin: 0 0;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	overflow: hidden;
+	transform: rotateY(90deg);
+	transform-origin: 0 0;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	-webkit-transform: rotateY(90deg);
+	-webkit-transform-origin: 0 0;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s
+}
+.winding.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/*shield*/
+.shield.jm-megamenu li.mega .childcontent{
+	left: 0;
+	max-height: 0;
+	-moz-transform: rotateX(90deg);
+	-moz-transform-origin: 0 0;
+	-moz-transition: opacity .4s,    -moz-transform .6s, max-height .6s;
+	-moz-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	-ms-transform: rotateX(90deg);
+	-ms-transform-origin: 0 0;
+	-ms-transition: opacity .4s,     -ms-transform .6s, max-height .6s;
+	-ms-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	opacity: 0;
+	-o-transform: rotateX(90deg);
+	-o-transform-origin: 0 0;
+	-o-transition: opacity .4s,      -o-transform .6s, max-height .6s;
+	-o-transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	overflow: hidden;
+	transform: rotateX(90deg);
+	transform-origin: 0 0;
+	transition: opacity .4s,         transform .6s, max-height .6s;
+	transition-timing-function: cubic-bezier(0, .35, .5, 1.7);
+	-webkit-transform: rotateX(90deg);
+	-webkit-transform-origin: 0 0;
+	-webkit-transition: opacity .4s, -webkit-transform .6s, max-height .6s;
+	-webkit-transition-timing-function: cubic-bezier(0, .35, .5, 1.7)
+}
+.shield.jm-megamenu li.haschild:hover > .childcontent{
+	max-height: 1000px;
+	-moz-transform: none;
+	-ms-transform: none;
+	opacity: 1;
+	-o-transform: none;
+	overflow: hidden;
+	transform: none;
+	-webkit-transform: none
+}
+/* CSS Document */
+#jmoverlay {
+  background: none repeat scroll 0 0 transparent;
+  height: 100% !important;
+  left: 0;
+  min-height: 100% !important;
+  position: fixed !important;
+  top: 0;
+  width: 100% !important;
+  z-index: 3;
+  zoom: 1;
+  background-color: #000;
+  opacity: 0.05;
+  filter: alpha(opacity=5);
+}
+
+.cart-collaterals .totals {
+  width: 100% !important;
+}
+
+

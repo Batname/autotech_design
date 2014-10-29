@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sitemaster_Siterobot>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Sitemaster_Siterobot>
+    </modules>
+</config>
+        <!-- Ok -->

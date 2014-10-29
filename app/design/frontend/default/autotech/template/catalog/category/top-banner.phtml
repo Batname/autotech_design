@@ -1,0 +1,16 @@
+<!--category-top-banner-->
+<?php if (Mage::app()->getRequest()->getRouteName() == 'catalog'
+    && Mage::app()->getRequest()->getControllerName() == 'category'
+    && Mage::app()->getRequest()->getActionName() == 'view'
+    && Mage::app()->getLayout()->createBlock('catalog/category_view')->isMixedMode()
+): ?>
+    <div class="main clearfix category-top-banner">
+        <div class="inner clearfix">
+            <div class="block">
+                <div class="block-content">
+                    <?php echo $this->getCmsBlockHtml() ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

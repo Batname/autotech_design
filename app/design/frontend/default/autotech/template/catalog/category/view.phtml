@@ -63,7 +63,9 @@
     <?php echo $this->getCmsBlockHtml() ?>
 
 <?php elseif($this->isMixedMode()): ?>
-    <?php echo $this->getCmsBlockHtml() ?>
+    <!-- category-top-banner Put in root template-->
+    <?php // echo $this->getCmsBlockHtml() ?>
+    <!-- //category-top-banner Put in root template-->
     <?php echo $this->getProductListHtml() ?>
 
 <?php else: ?>

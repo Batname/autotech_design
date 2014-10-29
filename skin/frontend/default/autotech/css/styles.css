@@ -2720,6 +2720,20 @@ ul.ul-dropdown li a:hover img{
 .block-login .block-title strong {
 }
 
+/* category-top-banner */
+
+.category-top-banner {
+    padding-top: 20px;
+}
+
+.category-top-banner .inner .block {
+    margin-bottom: 0;
+}
+
+.category-top-banner .block .block-content{
+    min-height: 120px;
+}
+
 /* Mini Products List */
 .mini-products-list .product-image {
 	border-color: #ebebeb;

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Sitemaster_Exportyandexua>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
         </Sitemaster_Exportyandexua>
     </modules>

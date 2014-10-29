@@ -49,6 +49,7 @@ $baseconfig = Mage::helper("jmbasetheme")->getactiveprofile();
     </div>
     <div id="jm-header" class="wrap clearfix">
         <?php echo $this->getChildHtml('header') ?>
+
     </div>
 </div>
 <!-- END: HEADER -->
@@ -232,6 +233,13 @@ $baseconfig = Mage::helper("jmbasetheme")->getactiveprofile();
     </div>
     <!-- //TOP MASS -->
 <?php endif; ?>
+
+<!-- category-top-banner -->
+<?php if ($this->getChildHtml('category-top-banner')) : ?>
+    <?php echo $this->getChildHtml('category-top-banner') ?>
+<?php endif; ?>
+<!-- //category-top-banner -->
+
 <?php if ($this->getChildHtml('breadcrumbs')) : ?>
     <!-- breadcrums -->
     <div id="jm-breadcrumbs" class="wrap clearfix">

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Mgt_DeleteOrders>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
         </Mgt_DeleteOrders>
     </modules>
