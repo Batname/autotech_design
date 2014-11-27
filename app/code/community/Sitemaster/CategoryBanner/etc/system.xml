@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <sitemaster_categorybanner translate="label" module="sitemaster_categorybanner">
+            <label>Sitemaster Extensions</label>
+            <sort_order>153</sort_order>
+        </sitemaster_categorybanner>
+    </tabs>
+    <sections>
+        <sitemaster_categorybanner translate="label">
+            <label>Sitemaster Categorybanner</label>
+            <tab>sitemaster_categorybanner</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>300</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <comment><![CDATA[Base settings]]></comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Activete module</label>
+                            <comment>If set to "No" than show base category DisplayMode settings</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                        <menumasla_staticblockid translate="label">
+                            <label>Menu Masla Static Block id</label>
+                            <comment><![CDATA[Set your block to menu masla.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menumasla_staticblockid>
+                        <menuorigin_staticblockid translate="label">
+                            <label>Menu Original Masla Static Block id</label>
+                            <comment><![CDATA[Set your block to menu original masla.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menuorigin_staticblockid>
+                        <menusmazki_staticblockid translate="label">
+                            <label>Menu Smazki Static Block id</label>
+                            <comment><![CDATA[Set your block to menu smazki.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menusmazki_staticblockid>
+                        <menufiltra_staticblockid translate="label">
+                            <label>Menu Filtra Static Block id</label>
+                            <comment><![CDATA[Set your block to menu filtra.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menufiltra_staticblockid>
+                        <menuautohimia_staticblockid translate="label">
+                            <label>Menu Autohimia Static Block id</label>
+                            <comment><![CDATA[Set your block to menu autohimia.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menuautohimia_staticblockid>
+                        <menuautocosm_staticblockid translate="label">
+                            <label>Menu Autocosmetik Static Block id</label>
+                            <comment><![CDATA[Set your block to menu autocosmetik.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menuautocosm_staticblockid>
+                        <menuzapchasti_staticblockid translate="label">
+                            <label>Menu Zapchasti Static Block id</label>
+                            <comment><![CDATA[Set your block to menu zapchasti.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menuzapchasti_staticblockid>
+                        <menushini_staticblockid translate="label">
+                            <label>Menu Shini Static Block id</label>
+                            <comment><![CDATA[Set your block to menu shini.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menushini_staticblockid>
+                        <menuactii_staticblockid translate="label">
+                            <label>Menu Actii Static Block id</label>
+                            <comment><![CDATA[Set your block to menu actii.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menuactii_staticblockid>
+                        <menudefault_staticblockid translate="label">
+                            <label>Default Static Block id</label>
+                            <comment><![CDATA[Set your block to menu other menu]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sitemaster_categorybanner/system_config_source_blockid</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </menudefault_staticblockid>
+                    </fields>
+                </general>
+            </groups>
+        </sitemaster_categorybanner>
+    </sections>
+</config>

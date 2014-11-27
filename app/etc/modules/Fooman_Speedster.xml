@@ -7,8 +7,8 @@
             <depends>
                 <Mage_Page/>
                 <Mage_Adminhtml/>
+                <Fooman_Common/>
             </depends>
         </Fooman_Speedster>
     </modules>
 </config>
-        <!-- OK -->

@@ -78,6 +78,11 @@ class Fooman_Common_Model_Selftester extends Fooman_Common_Model_Selftester_Abst
         return true;
     }
 
+    /**
+     * return fix boolean flag
+     *
+     * @return bool
+     */
     public function shouldFix()
     {
         return $this->_fix;

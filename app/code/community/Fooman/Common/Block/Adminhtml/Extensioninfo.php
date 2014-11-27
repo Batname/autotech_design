@@ -16,6 +16,13 @@ class Fooman_Common_Block_Adminhtml_Extensioninfo extends Mage_Adminhtml_Block_S
     protected $_idString = '';
     protected $_moduleName = '';
 
+    /**
+     * return the selftest button if a selftest is supported for this extension
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     *
+     * @return string
+     */
     protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
     {
         $this->setTemplate('fooman/common/selftester.phtml');

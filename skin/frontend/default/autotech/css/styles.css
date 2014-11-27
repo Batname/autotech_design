@@ -46,7 +46,7 @@ a:hover {
 
 span.price,
 .special-price .price{
-	color: #009bcb
+	color: #e31e24
 }
 
 .old-price .price{
@@ -998,11 +998,11 @@ p.required {
 .breadcrumbs li a:active,
 .breadcrumbs li a:focus,
 .breadcrumbs li a:hover{
-	color: #009bcb
+	color: #e31e24
 }
 
 .breadcrumbs li strong {
-	color: #009bcb;
+	color: #e31e24;
 	font-weight: normal
 }
 
@@ -1269,7 +1269,7 @@ p.required {
 }
 
 .view-mode span.active{
-	color: #23a7d0
+	color: #e31e24
 }
 
 .view-mode i{
@@ -1304,7 +1304,7 @@ p.required {
 }
 
 .pages ol li a{
-	color: #23a7d0;
+	color: #e31e24;
 	padding: 5px
 }
 
@@ -2357,7 +2357,7 @@ ul.ul-dropdown li a:hover img{
 }
 
 .colors-setting a.colors-default {
-	background: #009bcb
+	background: #e31e24
 }
 
 .colors-setting a.colors-green {
@@ -3784,7 +3784,7 @@ Linear
 
 
 .icon-label{
-	background: #23a7d0;
+	background: #e31e24;
 	color: #fff;
 	font-size: 116.6%;
 	font-weight: bold;
@@ -3806,11 +3806,11 @@ Linear
 }
 
 .hot-label.icon-label{
-	background: #23a7d0
+	background: #e31e24
 }
 
 .sales-label.icon-label{
-	background: #23a7d0
+	background: #e31e24
 }
 
 
@@ -4339,7 +4339,7 @@ Linear
 }
 
 .price-notice .price {
-	color: #009bcb;
+	color: #e31e24;
 	font-weight: bold
 }
 
@@ -6347,7 +6347,7 @@ ul.ja-tab-navigator li.active a{
 }
 
 #opc-login .col-2 .buttons-set a{
-	color: #009bcb;
+	color: #e31e24;
 	font-weight: bold;
 	padding: 10px;
 	text-decoration: underline
@@ -7760,7 +7760,7 @@ ul.list-socials li a:hover{
 }
 
 .jm-legal a{
-	color: #009bcb
+	color: #e31e24
 }
 
 /* ======= */
@@ -8245,7 +8245,7 @@ button.btn-checkout,
 }
 
 .info-inner2 ul.list-info li a{
-	color: #009bcb
+	color: #e31e24
 }
 
 .info-inner2 ul.list-info li em{

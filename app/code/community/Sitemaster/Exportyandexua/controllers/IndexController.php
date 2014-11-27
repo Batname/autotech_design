@@ -77,8 +77,12 @@ class Sitemaster_Exportyandexua_IndexController extends Mage_Adminhtml_Controlle
                 'id' => $category->getId(),
                 'parentId' => $category->getParentId(), // parent id
                 'name' => $category->getName(),
-                'parentname' => $category->getParentCategory()->getName(), //http://www.magentocommerce.com/boards/viewthread/19476/
+            );
 
+            $parrentcategoriesArray[] = array(
+                'id' => $category->getId(),
+                'parentId' => $category->getParentId(), // parent id
+                'parentname' => $category->getParentCategory()->getName(),
             );
 
 
@@ -102,7 +106,7 @@ class Sitemaster_Exportyandexua_IndexController extends Mage_Adminhtml_Controlle
                         $p = Mage::getModel('catalog/product')->load($p->getData('entity_id'));
 
                         if ($p->getFinalPrice()) {
-                            $price = number_format($p->getFinalPrice(), 2, '.', ',');
+                            $price = number_format($p->getFinalPrice(), 2, '.', '');
                         } else {
                             $price = number_format($p->getPrice(), 2, '.', '');
                         }
@@ -119,10 +123,18 @@ class Sitemaster_Exportyandexua_IndexController extends Mage_Adminhtml_Controlle
                         $manufacturer = array(
                             "man1" => $p->getAttributeText('manufacturer'),
                             "man2" => $p->getAttributeText('brend_diskov'),
-                            "man3" => $p->getAttributeText('brend_shin')
+                            "man3" => $p->getAttributeText('proizvoditel_zapchast')
                         );
 
                         $brand = $manufacturer["man1"] . "" . $manufacturer["man2"] . "" . $manufacturer["man3"];
+
+
+
+                        if ($p->getData('original_number')) {
+                            $vendor_code = $p->getData('original_number');
+                        } else {
+                            $vendor_code = '';
+                        }
 
                         $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($p)->getQty(); // get available="true"
                         if ($stock > 0) {
@@ -155,20 +167,28 @@ class Sitemaster_Exportyandexua_IndexController extends Mage_Adminhtml_Controlle
                         // }
 
 
-                        if ($p->getImage() == true) {
+                        if (($p->getImage() != 'no_selection') && ($p->getImage() != '')) {
                             $imagePath = Mage::getBaseUrl('media') . 'catalog/product' . $p->getImage();
                         } else {
                             $imagePath = '';
                         }
 
+
+                        $type = "vendor.model";
+
+                        $productmodel = $p->getData('name');
+
                         $productsArray[] = array(
                             'cat_ids' => $c,
                             'product_id' => $p->getData('entity_id'),
+                            'type_id' => $type,
                             'product_name' => $p->getData('name'),
+                            'product_model' => $productmodel,
                             'product_description' => $p->getData('description'),
                             'product_url' => Mage::getUrl($p->getUrlPath()),
                             'product_image' => $imagePath,
                             'product_brand' => $brand,
+                            'product_brand_number' => $vendor_code,
                             'product_stock' => $stock, // Mage::getModel('cataloginventory/stock_item')->loadByProduct($p)->getIsInStock(), // get stock getQty()  getIsInStock()
                             'product_price' => $price,
                             'product_currency' => $currencyid,
@@ -251,8 +271,6 @@ class Sitemaster_Exportyandexua_IndexController extends Mage_Adminhtml_Controlle
 
             $v['url'] = $_product['product_url'];
 
-            $v['vendor'] = strip_tags($_product['product_brand']);
-
             $v['price'] = $_product['product_price'];
 
             $v['currencyId'] = $_product['product_currency'];
@@ -261,19 +279,26 @@ class Sitemaster_Exportyandexua_IndexController extends Mage_Adminhtml_Controlle
 
             $v['picture'] = $_product['product_image'];
 
-            $v['pickup'] = $_product['product_pickup'];
-
             $v['delivery'] = $_product['product_delivery'];
 
-            $v['name'] = $_product['product_name'];
+            //$v['name'] = $_product['product_name'];
+
+            $v['vendor'] = strip_tags($_product['product_brand']);
+
+            $v['vendorCode'] = strip_tags($_product['product_brand_number']);
+
+            $v['model'] = $_product['product_model'];
 
             $v['description'] = strip_tags($_product['product_description']);
+
+            // $v['pickup'] = $_product['product_pickup'];
 
             if (!empty($_product['product_name']) AND !empty($_product['product_price'])) {
                 $occ = $dom->createElement('offer');
                 $occ = $items->appendChild($occ);
-                $occ->setAttribute("available", $_product['product_stock']); // get available
-                $occ->setAttribute("id", $_product['product_id']);
+                $occ->setAttribute("id", $_product['product_id']); // get available
+                $occ->setAttribute("type", $_product['type_id']);
+                $occ->setAttribute("available", $_product['product_stock']);
 
 
                 foreach ($v as $fieldName => $fieldValue) {
@@ -289,20 +314,24 @@ class Sitemaster_Exportyandexua_IndexController extends Mage_Adminhtml_Controlle
         }
 
 
-        //create category section
-        foreach ($categoriesArray as $c) {
-            //$ctg = $doc->createElement('category');
-            //$ctg = $cat->appendChild($ctg);
-            //$ctg->setAttribute("parentId", $c['parentId']);
-            //$value = $doc->createTextNode($c['name']);
-            //$ctg->appendChild($value);
+        //create category section - category such as kay
+
+        foreach ($parrentcategoriesArray as $value) {
+            $new[$value['parentId']] = $value;
+        }
+
+
+        foreach ($new as $p) {
 
             $ctg = $dom->createElement('category');
             $ctg = $cat->appendChild($ctg);
-            $ctg->setAttribute("id", $c['parentId']); // node category
-            // $ctg->setAttribute("parentId", $c['parentId']); // parent
-            $value = $dom->createTextNode($c['parentname']);
+            $ctg->setAttribute("id", $p['parentId']); // node category
+            $value = $dom->createTextNode($p['parentname']);
             $ctg->appendChild($value);
+        };
+
+
+        foreach ($categoriesArray as $c) {
 
             $ctg = $dom->createElement('category');
             $ctg = $cat->appendChild($ctg);
@@ -321,10 +350,22 @@ class Sitemaster_Exportyandexua_IndexController extends Mage_Adminhtml_Controlle
         header('Content-type: text/xml', true);
         header('Content-Disposition:  attachment; filename="yandex-ua.xml"');
 
-
         echo $dom->saveXML();
 
         //sleep(10);
+
+       // save file
+
+        $file = 'exportprice/yandex.xml';
+        if($handle = fopen($file, 'w')) { // overwrite
+
+            $content =  $dom->saveXML();  // double quotes matter (with \n)
+            fwrite($handle, $content);
+
+            fclose($handle);
+        } else {
+            echo "Could not open file for writing.";
+        }
 
     }
 

@@ -68,7 +68,6 @@ class Fooman_Speedster_Model_Selftester extends Fooman_Common_Model_Selftester
             'app/code/community/Fooman/Speedster/Model/Selftester.php',
             'app/code/community/Fooman/Speedster/LICENSE.txt',
             'app/etc/modules/Fooman_Speedster.xml',
-            'var/minifycache/cache.txt',
             'lib/minify/m.php',
             'lib/minify/Minify.php',
             'lib/minify/SpeedsterMinify.php',
@@ -167,6 +166,7 @@ class Fooman_Speedster_Model_Selftester extends Fooman_Common_Model_Selftester
     {
         $stepOk = true;
         try {
+            $varPath = Mage::getConfig()->getVarDir('minifycache');
             $url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB) . 'skin/frontend/default' .
                 '/default/css/print.css';
             $client = new Zend_Http_Client($url);
@@ -186,7 +186,6 @@ class Fooman_Speedster_Model_Selftester extends Fooman_Common_Model_Selftester
                 $stepOk = false;
             }
 
-            $varPath = Mage::getBaseDir() . DS . 'var' . DS . 'minifycache';
             if (!is_dir($varPath)) {
                 $this->messages[] = 'Verify Minification ERROR: "' . $varPath . '" does not exist (Step 3)';
                 $this->errorOccurred = true;
@@ -197,7 +196,7 @@ class Fooman_Speedster_Model_Selftester extends Fooman_Common_Model_Selftester
                 $this->errorOccurred = true;
                 $stepOk = false;
             }
-
+            clearstatcache();
             if ($handle = opendir($varPath)) {
                 $filesOK = false;
                 while (false !== ($entry = readdir($handle))) {

@@ -312,14 +312,14 @@ ul.megamenu ul ul {
 	font-size: 101%; /* sitemaster */
 	height: 39px;
 	line-height: 42px;
-	padding: 0 19px;
+	padding: 0 17px;
 	text-decoration: none;
 	text-transform: uppercase
 }
 
 .jm-megamenu ul.level0 li.mega a.mega:hover,
 .jm-megamenu ul.level0 li.mega:hover > a.mega {
-	background: #0086af;
+	background: #3f3d3d;
 	color: #fff
 }
 

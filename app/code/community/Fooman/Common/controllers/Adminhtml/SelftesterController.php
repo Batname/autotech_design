@@ -1,15 +1,26 @@
 <?php
+/**
+ * Fooman Common
+ *
+ * @package   Fooman_Common
+ * @author    Kristof Ringleff <kristof@fooman.co.nz>
+ * @copyright Copyright (c) 2012 Fooman Limited (http://www.fooman.co.nz)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 class Fooman_Common_Adminhtml_SelftesterController extends Mage_Adminhtml_Controller_Action
 {
-    protected function _initAction()
-    {
-        return $this;
-    }
 
+    /**
+     * Here we actually run the process of selftesting. All messages are returned to the session
+     *
+     * @return void
+     */
     public function indexAction()
     {
-        //Here we actually run the process of selftesting. All messages are returned to the session
+
         $module = $this->getRequest()->getParam('module');
         $selftester = Mage::getModel($module . '/selftester')->main();
         //Here we get db version of the given module code
@@ -30,9 +41,9 @@ class Fooman_Common_Adminhtml_SelftesterController extends Mage_Adminhtml_Contro
         $configVersion = (string)Mage::getConfig()->getModuleConfig($moduleName)->version;
         $selftester->messages = array_merge(
             array(
-                'Config Version: ' . $configVersion,
-                'DB Version: ' . $dbVersion,
-                'Data Version: ' . $dataVersion,
+                 'Config Version: ' . $configVersion,
+                 'DB Version: ' . $dbVersion,
+                 'Data Version: ' . $dataVersion,
             ), $selftester->messages
         );
 
@@ -47,7 +58,7 @@ class Fooman_Common_Adminhtml_SelftesterController extends Mage_Adminhtml_Contro
         $layout->generateXml();
         $layout->generateBlocks();
         $output = $layout->getOutput();
-            
+
         $this->getResponse()->setBody($output);
         //Here we clear all the messages of the current session, because otherwise we will get a number
         //of duplicates from the previous page loads.
