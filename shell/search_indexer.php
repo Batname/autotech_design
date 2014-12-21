@@ -4,11 +4,7 @@
 require_once 'abstract.php';
 
 /**
- * Magento Compiler Shell Script
- *
- * @category    Mage
- * @package     Mage_Shell
- * @author      Magento Core Team <core@magentocommerce.com>
+ * Magento Searchanise_Search_Indexer Script
  */
 class Searchanise_Search_Indexer extends Mage_Shell_Abstract
 {
@@ -23,15 +19,17 @@ class Searchanise_Search_Indexer extends Mage_Shell_Abstract
     {
         if ($this->getArg('indexation')) {
             $this->indexation();
+        } else {
+            echo $this->usageHelp();
         }
     }
 
     public function usageHelp()
     {
         return <<<USAGE
-Usage:  php -f cache.php -- [options]
+Usage:  php -f search_indexer.php -- [options]
 
-  <cachetype>     Comma separated cache codes or value "all" for all caches
+  indexation     Start indexation
 
 USAGE;
     }
