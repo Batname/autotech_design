@@ -79,17 +79,16 @@ $baseconfig = Mage::helper("jmbasetheme")->getactiveprofile();
 
 
 <?php if ($this->getChildHtml('tops1')) : ?>
-    <!-- TOP SPOTLIGHT -->
-    <div id="jm-tops1" class="jm-position wrap clearfix">
+    <!-- TOP SPOTLIGHT #home-main-block -->
+    <div id="jm-tops4" class="jm-position wrap clearfix">
         <div class="main col1-set">
-            <div class="inner clearfix">
+            <div class="inner">
                 <?php echo $this->getChildHtml('tops1') ?>
             </div>
         </div>
     </div>
-    <!-- //TOP SPOTLIGHT -->
+    <!-- //TOP SPOTLIGHT #home-main-block -->
 <?php endif; ?>
-
 
 <!-- //TOP SPOTLIGHT 2 -->
 <div id="jm-tops2" class="jm-position wrap clearfix">
@@ -100,6 +99,7 @@ $baseconfig = Mage::helper("jmbasetheme")->getactiveprofile();
     </div>
 </div>
 <!-- //TOP SPOTLIGHT 2 -->
+
 
 
 <?php if ($this->getChildHtml('tops3')) : ?>

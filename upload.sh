@@ -12,7 +12,7 @@ iconv -f WINDOWS-1251 -t UTF-8 /var/www/autotech/autotech.ua/var/import/import-1
 /usr/bin/php /var/www/autotech/autotech.ua/shell/indexer.php --reindexall -f
 /usr/bin/php -f /var/www/autotech/autotech.ua/tests/CleanCache.php
 echo "Cache FPC refreshed"
-/usr/bin/php -f /var/www/autotech/autotech.ua/tests/XmlParser.php
+#/usr/bin/php -f /var/www/autotech/autotech.ua/tests/XmlParser.php
 fi
 
 
